@@ -1,14 +1,14 @@
 /**
  * Automatically Generated Shrewd File
  */
-var ProjectCommunicationFromMosaicService = new Class({
+var ProjectFromMosaicService = new Class({
 /**
  * Get the name of the MooTools class.
  * 
  * @returns {string}
  */
 getName : function(){
-return "ProjectCommunicationFromMosaicService";
+return "ProjectFromMosaicService";
 },
 /**
  * @param {ProjectConfigurationData}
@@ -24,7 +24,7 @@ parametersArray.push((courseConfigurationData) ? courseConfigurationData.getShre
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
-"Project.CommunicationFromMosaicService",
+"Project.FromMosaicService",
 "SetCourseConfigurationData",
 parametersArray,
 "void",
@@ -47,7 +47,7 @@ parametersArray.push((courseContentScreenData) ? courseContentScreenData.getShre
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
-"Project.CommunicationFromMosaicService",
+"Project.FromMosaicService",
 "SetCourseContentScreenData",
 parametersArray,
 "void",
@@ -70,21 +70,21 @@ initialize: function(shrewdObject){
 if (shrewdObject instanceof AShrewd) {
 this._shrewd = shrewdObject;
 } else {
-alert ('The object passed to ProjectCommunicationFromMosaicService is not an instance of AShrewd.');
+alert ('The object passed to ProjectFromMosaicService is not an instance of AShrewd.');
 }
 }
 });
 /**
  * Automatically Generated Shrewd File
  */
-var ProjectCommunicationToMosaicService = new Class({
+var ProjectToMosaicService = new Class({
 /**
  * Get the name of the MooTools class.
  * 
  * @returns {string}
  */
 getName : function(){
-return "ProjectCommunicationToMosaicService";
+return "ProjectToMosaicService";
 },
 /**
  * @returns {void} 
@@ -97,7 +97,7 @@ if (this._shrewd.local) {
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
-"Project.CommunicationToMosaicService",
+"Project.ToMosaicService",
 "OpenDialog",
 parametersArray,
 "void",
@@ -120,7 +120,7 @@ initialize: function(shrewdObject){
 if (shrewdObject instanceof AShrewd) {
 this._shrewd = shrewdObject;
 } else {
-alert ('The object passed to ProjectCommunicationToMosaicService is not an instance of AShrewd.');
+alert ('The object passed to ProjectToMosaicService is not an instance of AShrewd.');
 }
 }
 });

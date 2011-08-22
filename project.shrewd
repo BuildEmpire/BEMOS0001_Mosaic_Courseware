@@ -51,7 +51,7 @@ struct ScreenData {
 
 
 
-service CommunicationFromMosaic {
+service FromMosaic {
     void	SetCourseConfigurationData(
         1:   ConfigurationData     courseConfigurationData
     ),
@@ -60,6 +60,6 @@ service CommunicationFromMosaic {
     ),
 }
 
-service CommunicationToMosaic {
+service ToMosaic {
     void	OpenDialog()
 }

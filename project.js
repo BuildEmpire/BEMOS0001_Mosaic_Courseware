@@ -11,6 +11,29 @@ getName : function(){
 return "ProjectFromMosaicService";
 },
 /**
+ * @param {Object} service
+ * @returns {void} 
+ */
+SetProjectToMosaicService: function(service){
+if (this._shrewd) {
+var parametersArray = new Array();
+if (this._shrewd.local) {
+parametersArray.push(service);
+} else {
+parametersArray.push(service);
+}
+var exceptionsArray = new Array();
+return this._shrewd.communicate(
+"Project.FromMosaicService",
+"SetProjectToMosaicService",
+parametersArray,
+"void",
+"",
+exceptionsArray
+);
+}
+},
+/**
  * @param {ProjectConfigurationData}
  * @returns {void} 
  */

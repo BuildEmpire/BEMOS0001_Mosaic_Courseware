@@ -1,0 +1,65 @@
+namespace shrewd MosaicProject
+namespace js MosaicProject
+
+
+struct Column {
+    1:  string-id                          id,
+    2:  integer                            x,
+    3:  integer                            y,
+    4:  integer                            width,
+    5:  integer                            height,
+    6:  boolean                            display = true,
+    7:  boolean                            structure = true
+}
+
+struct Template {
+    1:  string                             name,
+    2:  list<Column>          columns
+}
+
+
+struct Screen {
+    1:  integer                            width,
+    2:  integer                            height
+}
+
+struct Component {
+    1:  string                             name
+}
+
+
+struct ComponentData {
+    1:  string                              name,
+    2:  list                                data
+}
+
+struct ConfigurationData {
+    1:  string-id                          id,
+    2:  string                             name,
+    3:  Screen                             screen,
+    4:  list<Template>        templates,
+    5:  list<Component>       components
+}
+
+struct ScreenData {
+    1:  string-id                          id,
+    2:  Template                           template,
+    3:  list<ComponentData>                components
+}
+
+
+
+
+
+service CommunicationFromMosaic {
+    void	SetCourseConfigurationData(
+        1:   ConfigurationData     courseConfigurationData
+    ),
+    void	SetCourseContentScreenData(
+        1:   ScreenData     courseContentScreenData
+    ),
+}
+
+service CommunicationToMosaic {
+    void	OpenDialog()
+}

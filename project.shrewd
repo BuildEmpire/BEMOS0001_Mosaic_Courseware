@@ -1,5 +1,5 @@
-namespace shrewd MosaicProject
-namespace js MosaicProject
+namespace shrewd Project
+namespace js Project
 
 
 struct Column {

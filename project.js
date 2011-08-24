@@ -1,6 +1,128 @@
 /**
  * Automatically Generated Shrewd File
  */
+var ProjectFromMosaicService = new Class({
+/**
+ * Get the name of the MooTools class.
+ * 
+ * @returns {string}
+ */
+getName : function(){
+return "ProjectFromMosaicService";
+},
+/**
+ * @param {Object} service
+ * @returns {void} 
+ */
+Ready: function(service){
+if (this._shrewd) {
+var parametersArray = new Array();
+if (this._shrewd.local) {
+parametersArray.push(service);
+} else {
+parametersArray.push(service);
+}
+var exceptionsArray = new Array();
+return this._shrewd.communicate(
+"Project.FromMosaicService",
+"Ready",
+parametersArray,
+"void",
+"",
+exceptionsArray
+);
+}
+},
+/**
+ * @param {Object} service
+ * @returns {void} 
+ */
+SetProjectToMosaicService: function(service){
+if (this._shrewd) {
+var parametersArray = new Array();
+if (this._shrewd.local) {
+parametersArray.push(service);
+} else {
+parametersArray.push(service);
+}
+var exceptionsArray = new Array();
+return this._shrewd.communicate(
+"Project.FromMosaicService",
+"SetProjectToMosaicService",
+parametersArray,
+"void",
+"",
+exceptionsArray
+);
+}
+},
+/**
+ * @param {ProjectConfigurationData}
+ * @returns {void} 
+ */
+SetCourseConfigurationData: function(courseConfigurationData){
+if (this._shrewd) {
+var parametersArray = new Array();
+if (this._shrewd.local) {
+parametersArray.push(courseConfigurationData);
+} else {
+parametersArray.push((courseConfigurationData) ? courseConfigurationData.getShrewd() : null);
+}
+var exceptionsArray = new Array();
+return this._shrewd.communicate(
+"Project.FromMosaicService",
+"SetCourseConfigurationData",
+parametersArray,
+"void",
+"",
+exceptionsArray
+);
+}
+},
+/**
+ * @param {ProjectScreenData}
+ * @returns {void} 
+ */
+SetCourseContentScreenData: function(courseContentScreenData){
+if (this._shrewd) {
+var parametersArray = new Array();
+if (this._shrewd.local) {
+parametersArray.push(courseContentScreenData);
+} else {
+parametersArray.push((courseContentScreenData) ? courseContentScreenData.getShrewd() : null);
+}
+var exceptionsArray = new Array();
+return this._shrewd.communicate(
+"Project.FromMosaicService",
+"SetCourseContentScreenData",
+parametersArray,
+"void",
+"",
+exceptionsArray
+);
+}
+},
+/**
+ * @type {Shrewd}
+ */
+_shrewd:null,
+/**
+ * Initialise the service.
+ * 
+ * @type {AShrewd}
+ * @returns {null}
+ */
+initialize: function(shrewdObject){
+if (shrewdObject instanceof AShrewd) {
+this._shrewd = shrewdObject;
+} else {
+alert ('The object passed to ProjectFromMosaicService is not an instance of AShrewd.');
+}
+}
+});
+/**
+ * Automatically Generated Shrewd File
+ */
 var ProjectColumn = new Class({
 /**
  * @type {string} id (ID).

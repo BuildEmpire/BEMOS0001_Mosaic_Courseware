@@ -51,7 +51,7 @@ struct ScreenData {
 service FromMosaic {
     void    Ready(
         1:   native-js-Object     service
-    )
+    ),
     void    SetProjectToMosaicService(
         1:   native-js-Object     service
     ),

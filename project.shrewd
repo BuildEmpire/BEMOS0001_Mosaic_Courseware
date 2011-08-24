@@ -64,6 +64,6 @@ service FromMosaic {
 }
 
 service ToMosaic {
-    void    Ready()
+    void    Ready(),
     void    OpenDialog()
 }

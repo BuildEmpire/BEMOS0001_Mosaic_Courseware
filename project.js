@@ -123,6 +123,76 @@ alert ('The object passed to ProjectFromMosaicService is not an instance of AShr
 /**
  * Automatically Generated Shrewd File
  */
+var ProjectToMosaicService = new Class({
+/**
+ * Get the name of the MooTools class.
+ * 
+ * @returns {string}
+ */
+getName : function(){
+return "ProjectToMosaicService";
+},
+/**
+ * @returns {void} 
+ */
+Ready: function(){
+if (this._shrewd) {
+var parametersArray = new Array();
+if (this._shrewd.local) {
+} else {
+}
+var exceptionsArray = new Array();
+return this._shrewd.communicate(
+"Project.ToMosaicService",
+"Ready",
+parametersArray,
+"void",
+"",
+exceptionsArray
+);
+}
+},
+/**
+ * @returns {void} 
+ */
+OpenDialog: function(){
+if (this._shrewd) {
+var parametersArray = new Array();
+if (this._shrewd.local) {
+} else {
+}
+var exceptionsArray = new Array();
+return this._shrewd.communicate(
+"Project.ToMosaicService",
+"OpenDialog",
+parametersArray,
+"void",
+"",
+exceptionsArray
+);
+}
+},
+/**
+ * @type {Shrewd}
+ */
+_shrewd:null,
+/**
+ * Initialise the service.
+ * 
+ * @type {AShrewd}
+ * @returns {null}
+ */
+initialize: function(shrewdObject){
+if (shrewdObject instanceof AShrewd) {
+this._shrewd = shrewdObject;
+} else {
+alert ('The object passed to ProjectToMosaicService is not an instance of AShrewd.');
+}
+}
+});
+/**
+ * Automatically Generated Shrewd File
+ */
 var ProjectColumn = new Class({
 /**
  * @type {string} id (ID).

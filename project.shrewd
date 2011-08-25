@@ -24,7 +24,8 @@ struct Screen {
 }
 
 struct Component {
-    1:  string                             name
+    1:  string                             name,
+    2:  string                             title
 }
 
 
@@ -48,7 +49,7 @@ struct ScreenData {
 }
 
 
-service FromMosaic {
+service ToCourse {
     void    Ready(
         1:   native-js-Object     service
     ),
@@ -63,7 +64,7 @@ service FromMosaic {
     ),
 }
 
-service ToMosaic {
+service FromCourse {
     void    Ready(),
     void    OpenDialog()
 }

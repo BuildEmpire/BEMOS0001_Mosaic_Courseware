@@ -1,14 +1,14 @@
 /**
  * Automatically Generated Shrewd File
  */
-var ProjectFromMosaicService = new Class({
+var ProjectToCourseService = new Class({
 /**
  * Get the name of the MooTools class.
  * 
  * @returns {string}
  */
 getName : function(){
-return "ProjectFromMosaicService";
+return "ProjectToCourseService";
 },
 /**
  * @param {Object} service
@@ -24,7 +24,7 @@ parametersArray.push(service);
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
-"Project.FromMosaicService",
+"Project.ToCourseService",
 "Ready",
 parametersArray,
 "void",
@@ -47,7 +47,7 @@ parametersArray.push(service);
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
-"Project.FromMosaicService",
+"Project.ToCourseService",
 "SetProjectToMosaicService",
 parametersArray,
 "void",
@@ -70,7 +70,7 @@ parametersArray.push((courseConfigurationData) ? courseConfigurationData.getShre
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
-"Project.FromMosaicService",
+"Project.ToCourseService",
 "SetCourseConfigurationData",
 parametersArray,
 "void",
@@ -93,7 +93,7 @@ parametersArray.push((courseContentScreenData) ? courseContentScreenData.getShre
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
-"Project.FromMosaicService",
+"Project.ToCourseService",
 "SetCourseContentScreenData",
 parametersArray,
 "void",
@@ -116,21 +116,21 @@ initialize: function(shrewdObject){
 if (shrewdObject instanceof AShrewd) {
 this._shrewd = shrewdObject;
 } else {
-alert ('The object passed to ProjectFromMosaicService is not an instance of AShrewd.');
+alert ('The object passed to ProjectToCourseService is not an instance of AShrewd.');
 }
 }
 });
 /**
  * Automatically Generated Shrewd File
  */
-var ProjectToMosaicService = new Class({
+var ProjectFromCourseService = new Class({
 /**
  * Get the name of the MooTools class.
  * 
  * @returns {string}
  */
 getName : function(){
-return "ProjectToMosaicService";
+return "ProjectFromCourseService";
 },
 /**
  * @returns {void} 
@@ -143,7 +143,7 @@ if (this._shrewd.local) {
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
-"Project.ToMosaicService",
+"Project.FromCourseService",
 "Ready",
 parametersArray,
 "void",
@@ -163,7 +163,7 @@ if (this._shrewd.local) {
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
-"Project.ToMosaicService",
+"Project.FromCourseService",
 "OpenDialog",
 parametersArray,
 "void",
@@ -186,7 +186,7 @@ initialize: function(shrewdObject){
 if (shrewdObject instanceof AShrewd) {
 this._shrewd = shrewdObject;
 } else {
-alert ('The object passed to ProjectToMosaicService is not an instance of AShrewd.');
+alert ('The object passed to ProjectFromCourseService is not an instance of AShrewd.');
 }
 }
 });
@@ -384,6 +384,10 @@ var ProjectComponent = new Class({
  */
 name : null,
 /**
+ * @type {string} title
+ */
+title : null,
+/**
  * @type {string}
  */
 shrewdNS : "Project.Component",
@@ -403,6 +407,7 @@ return "ProjectComponent";
 getShrewd: function(){
 var parametersArray = new Array();
 parametersArray.push(this.name);
+parametersArray.push(this.title);
 return parametersArray;
 },
 /**
@@ -413,6 +418,7 @@ return parametersArray;
  */
 setShrewd: function(shrewdArray){
 this.name = shrewdArray[0];
+this.title = shrewdArray[1];
 },
 initialize: function(){
 }

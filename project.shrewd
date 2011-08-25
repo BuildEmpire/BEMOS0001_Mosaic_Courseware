@@ -1,6 +1,6 @@
-namespace shrewd Project
-namespace js Project
-
+namespace shrewd BuildEmpire.Mosaic.Project
+namespace js MosaicProject
+namespace php BuildEmpire\Mosaic\Project
 
 struct Column {
     1:  string-id                          id,
@@ -25,7 +25,8 @@ struct Screen {
 
 struct Component {
     1:  string                             name,
-    2:  string                             title
+    2:  string                             title,
+    3:  integer                            active = 1
 }
 
 
@@ -35,11 +36,11 @@ struct ComponentData {
 }
 
 struct ConfigurationData {
-    1:  string-id                          id,
-    2:  string                             name,
-    3:  Screen                             screen,
-    4:  list<Template>        templates,
-    5:  list<Component>       components
+    1:              string-id             id,
+    2:              string                name,
+    3:  optional    Screen                screen,
+    4:  optional    list<Template>        templates,
+    5:  optional    list<Component>       components
 }
 
 struct ScreenData {

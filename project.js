@@ -1,14 +1,14 @@
 /**
  * Automatically Generated Shrewd File
  */
-var ProjectToCourseService = new Class({
+var MosaicProjectToCourseService = new Class({
 /**
  * Get the name of the MooTools class.
  * 
  * @returns {string}
  */
 getName : function(){
-return "ProjectToCourseService";
+return "MosaicProjectToCourseService";
 },
 /**
  * @param {Object} service
@@ -24,7 +24,7 @@ parametersArray.push(service);
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
-"Project.ToCourseService",
+"BuildEmpire.Mosaic.Project.ToCourseService",
 "Ready",
 parametersArray,
 "void",
@@ -47,7 +47,7 @@ parametersArray.push(service);
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
-"Project.ToCourseService",
+"BuildEmpire.Mosaic.Project.ToCourseService",
 "SetProjectToMosaicService",
 parametersArray,
 "void",
@@ -57,7 +57,7 @@ exceptionsArray
 }
 },
 /**
- * @param {ProjectConfigurationData}
+ * @param {MosaicProjectConfigurationData}
  * @returns {void} 
  */
 SetCourseConfigurationData: function(courseConfigurationData){
@@ -70,7 +70,7 @@ parametersArray.push((courseConfigurationData) ? courseConfigurationData.getShre
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
-"Project.ToCourseService",
+"BuildEmpire.Mosaic.Project.ToCourseService",
 "SetCourseConfigurationData",
 parametersArray,
 "void",
@@ -80,7 +80,7 @@ exceptionsArray
 }
 },
 /**
- * @param {ProjectScreenData}
+ * @param {MosaicProjectScreenData}
  * @returns {void} 
  */
 SetCourseContentScreenData: function(courseContentScreenData){
@@ -93,7 +93,7 @@ parametersArray.push((courseContentScreenData) ? courseContentScreenData.getShre
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
-"Project.ToCourseService",
+"BuildEmpire.Mosaic.Project.ToCourseService",
 "SetCourseContentScreenData",
 parametersArray,
 "void",
@@ -116,21 +116,21 @@ initialize: function(shrewdObject){
 if (shrewdObject instanceof AShrewd) {
 this._shrewd = shrewdObject;
 } else {
-alert ('The object passed to ProjectToCourseService is not an instance of AShrewd.');
+alert ('The object passed to MosaicProjectToCourseService is not an instance of AShrewd.');
 }
 }
 });
 /**
  * Automatically Generated Shrewd File
  */
-var ProjectFromCourseService = new Class({
+var MosaicProjectFromCourseService = new Class({
 /**
  * Get the name of the MooTools class.
  * 
  * @returns {string}
  */
 getName : function(){
-return "ProjectFromCourseService";
+return "MosaicProjectFromCourseService";
 },
 /**
  * @returns {void} 
@@ -143,7 +143,7 @@ if (this._shrewd.local) {
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
-"Project.FromCourseService",
+"BuildEmpire.Mosaic.Project.FromCourseService",
 "Ready",
 parametersArray,
 "void",
@@ -163,7 +163,7 @@ if (this._shrewd.local) {
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
-"Project.FromCourseService",
+"BuildEmpire.Mosaic.Project.FromCourseService",
 "OpenDialog",
 parametersArray,
 "void",
@@ -186,14 +186,14 @@ initialize: function(shrewdObject){
 if (shrewdObject instanceof AShrewd) {
 this._shrewd = shrewdObject;
 } else {
-alert ('The object passed to ProjectFromCourseService is not an instance of AShrewd.');
+alert ('The object passed to MosaicProjectFromCourseService is not an instance of AShrewd.');
 }
 }
 });
 /**
  * Automatically Generated Shrewd File
  */
-var ProjectColumn = new Class({
+var MosaicProjectColumn = new Class({
 /**
  * @type {string} id (ID).
  */
@@ -225,14 +225,14 @@ structure : true,
 /**
  * @type {string}
  */
-shrewdNS : "Project.Column",
+shrewdNS : "BuildEmpire.Mosaic.Project.Column",
 /**
  * Get the name of the MooTools class.
  * 
  * @returns {string}
  */
 getName : function(){
-return "ProjectColumn";
+return "MosaicProjectColumn";
 },
 /**
  * Get the content as a shrewd array.
@@ -271,7 +271,7 @@ initialize: function(){
 /**
  * Automatically Generated Shrewd File
  */
-var ProjectTemplate = new Class({
+var MosaicProjectTemplate = new Class({
 /**
  * @type {string} name
  */
@@ -283,14 +283,14 @@ columns : null,
 /**
  * @type {string}
  */
-shrewdNS : "Project.Template",
+shrewdNS : "BuildEmpire.Mosaic.Project.Template",
 /**
  * Get the name of the MooTools class.
  * 
  * @returns {string}
  */
 getName : function(){
-return "ProjectTemplate";
+return "MosaicProjectTemplate";
 },
 /**
  * Get the content as a shrewd array.
@@ -315,7 +315,7 @@ var l=shrewdArray[1].length;
 var lArray = new Array();
 for (var a=0; a<l; a++) {
 if (shrewdArray[1][a]) {
-var theClass = new ProjectColumn();
+var theClass = new MosaicProjectColumn();
 theClass.setShrewd(shrewdArray[1][a]);
 lArray[a] = theClass;
 } else {
@@ -330,7 +330,7 @@ initialize: function(){
 /**
  * Automatically Generated Shrewd File
  */
-var ProjectScreen = new Class({
+var MosaicProjectScreen = new Class({
 /**
  * @type {integer} width
  */
@@ -342,14 +342,14 @@ height : null,
 /**
  * @type {string}
  */
-shrewdNS : "Project.Screen",
+shrewdNS : "BuildEmpire.Mosaic.Project.Screen",
 /**
  * Get the name of the MooTools class.
  * 
  * @returns {string}
  */
 getName : function(){
-return "ProjectScreen";
+return "MosaicProjectScreen";
 },
 /**
  * Get the content as a shrewd array.
@@ -378,7 +378,7 @@ initialize: function(){
 /**
  * Automatically Generated Shrewd File
  */
-var ProjectComponent = new Class({
+var MosaicProjectComponent = new Class({
 /**
  * @type {string} name
  */
@@ -388,16 +388,20 @@ name : null,
  */
 title : null,
 /**
+ * @type {integer} active
+ */
+active : 1,
+/**
  * @type {string}
  */
-shrewdNS : "Project.Component",
+shrewdNS : "BuildEmpire.Mosaic.Project.Component",
 /**
  * Get the name of the MooTools class.
  * 
  * @returns {string}
  */
 getName : function(){
-return "ProjectComponent";
+return "MosaicProjectComponent";
 },
 /**
  * Get the content as a shrewd array.
@@ -408,6 +412,7 @@ getShrewd: function(){
 var parametersArray = new Array();
 parametersArray.push(this.name);
 parametersArray.push(this.title);
+parametersArray.push(this.active);
 return parametersArray;
 },
 /**
@@ -419,6 +424,7 @@ return parametersArray;
 setShrewd: function(shrewdArray){
 this.name = shrewdArray[0];
 this.title = shrewdArray[1];
+this.active = shrewdArray[2];
 },
 initialize: function(){
 }
@@ -426,7 +432,7 @@ initialize: function(){
 /**
  * Automatically Generated Shrewd File
  */
-var ProjectComponentData = new Class({
+var MosaicProjectComponentData = new Class({
 /**
  * @type {string} name
  */
@@ -438,14 +444,14 @@ data : null,
 /**
  * @type {string}
  */
-shrewdNS : "Project.ComponentData",
+shrewdNS : "BuildEmpire.Mosaic.Project.ComponentData",
 /**
  * Get the name of the MooTools class.
  * 
  * @returns {string}
  */
 getName : function(){
-return "ProjectComponentData";
+return "MosaicProjectComponentData";
 },
 /**
  * Get the content as a shrewd array.
@@ -474,7 +480,7 @@ initialize: function(){
 /**
  * Automatically Generated Shrewd File
  */
-var ProjectConfigurationData = new Class({
+var MosaicProjectConfigurationData = new Class({
 /**
  * @type {string} id (ID).
  */
@@ -484,9 +490,9 @@ id : null,
  */
 name : null,
 /**
- * @type {ProjectScreen}
+ * @type {MosaicProjectScreen}
  */
-screen : new ProjectScreen(),
+screen : new MosaicProjectScreen(),
 /**
  * @type {Array} templates
  */
@@ -498,14 +504,14 @@ components : null,
 /**
  * @type {string}
  */
-shrewdNS : "Project.ConfigurationData",
+shrewdNS : "BuildEmpire.Mosaic.Project.ConfigurationData",
 /**
  * Get the name of the MooTools class.
  * 
  * @returns {string}
  */
 getName : function(){
-return "ProjectConfigurationData";
+return "MosaicProjectConfigurationData";
 },
 /**
  * Get the content as a shrewd array.
@@ -531,7 +537,7 @@ setShrewd: function(shrewdArray){
 this.id = shrewdArray[0];
 this.name = shrewdArray[1];
 if (shrewdArray[2]) {
-var theClass = new ProjectScreen();
+var theClass = new MosaicProjectScreen();
 theClass.setShrewd(shrewdArray[2]);
 this.screen = theClass;
 } else {
@@ -541,7 +547,7 @@ var l=shrewdArray[3].length;
 var lArray = new Array();
 for (var a=0; a<l; a++) {
 if (shrewdArray[3][a]) {
-var theClass = new ProjectTemplate();
+var theClass = new MosaicProjectTemplate();
 theClass.setShrewd(shrewdArray[3][a]);
 lArray[a] = theClass;
 } else {
@@ -553,7 +559,7 @@ var l=shrewdArray[4].length;
 var lArray = new Array();
 for (var a=0; a<l; a++) {
 if (shrewdArray[4][a]) {
-var theClass = new ProjectComponent();
+var theClass = new MosaicProjectComponent();
 theClass.setShrewd(shrewdArray[4][a]);
 lArray[a] = theClass;
 } else {
@@ -568,15 +574,15 @@ initialize: function(){
 /**
  * Automatically Generated Shrewd File
  */
-var ProjectScreenData = new Class({
+var MosaicProjectScreenData = new Class({
 /**
  * @type {string} id (ID).
  */
 id : null,
 /**
- * @type {ProjectTemplate}
+ * @type {MosaicProjectTemplate}
  */
-template : new ProjectTemplate(),
+template : new MosaicProjectTemplate(),
 /**
  * @type {Array} components
  */
@@ -584,14 +590,14 @@ components : null,
 /**
  * @type {string}
  */
-shrewdNS : "Project.ScreenData",
+shrewdNS : "BuildEmpire.Mosaic.Project.ScreenData",
 /**
  * Get the name of the MooTools class.
  * 
  * @returns {string}
  */
 getName : function(){
-return "ProjectScreenData";
+return "MosaicProjectScreenData";
 },
 /**
  * Get the content as a shrewd array.
@@ -614,7 +620,7 @@ return parametersArray;
 setShrewd: function(shrewdArray){
 this.id = shrewdArray[0];
 if (shrewdArray[1]) {
-var theClass = new ProjectTemplate();
+var theClass = new MosaicProjectTemplate();
 theClass.setShrewd(shrewdArray[1]);
 this.template = theClass;
 } else {
@@ -624,7 +630,7 @@ var l=shrewdArray[2].length;
 var lArray = new Array();
 for (var a=0; a<l; a++) {
 if (shrewdArray[2][a]) {
-var theClass = new ProjectComponentData();
+var theClass = new MosaicProjectComponentData();
 theClass.setShrewd(shrewdArray[2][a]);
 lArray[a] = theClass;
 } else {

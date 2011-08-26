@@ -23,55 +23,40 @@ return "void";
 private function _ReadyGetReturnContentType() {
 return "";
 }
-private function _SetProjectToMosaicServiceGetReturnType() {
+private function _SetConfigurationDataGetReturnType() {
 return "void";
 }
-private function _SetProjectToMosaicServiceGetReturnContentType() {
+private function _SetConfigurationDataGetReturnContentType() {
 return "";
 }
-private function _SetCourseConfigurationDataGetReturnType() {
+private function _SetScreenDataGetReturnType() {
 return "void";
 }
-private function _SetCourseConfigurationDataGetReturnContentType() {
-return "";
-}
-private function _SetCourseContentScreenDataGetReturnType() {
-return "void";
-}
-private function _SetCourseContentScreenDataGetReturnContentType() {
+private function _SetScreenDataGetReturnContentType() {
 return "";
 }
 private function _ReadyGetArguments() {
 $params = array();
 $param = new Parameter();
-$param->name = "service";
+$param->name = "OutboundService";
 $param->type = "\\native-js-Object";
 $param->optional = false;
 $params[] = $param;
 return $params;
 }
-private function _SetProjectToMosaicServiceGetArguments() {
+private function _SetConfigurationDataGetArguments() {
 $params = array();
 $param = new Parameter();
-$param->name = "service";
-$param->type = "\\native-js-Object";
-$param->optional = false;
-$params[] = $param;
-return $params;
-}
-private function _SetCourseConfigurationDataGetArguments() {
-$params = array();
-$param = new Parameter();
-$param->name = "courseConfigurationData";
+$param->name = "configurationData";
 $param->type = "\BuildEmpire\Mosaic\Courseware\ConfigurationData";
 $param->optional = false;
 $params[] = $param;
 return $params;
 }
-private function _SetCourseContentScreenDataGetArguments() {
+private function _SetScreenDataGetArguments() {
 $params = array();
 $param = new Parameter();
-$param->name = "courseContentScreenData";
+$param->name = "screenData";
 $param->type = "\BuildEmpire\Mosaic\Courseware\ScreenData";
 $param->optional = false;
 $params[] = $param;
@@ -81,15 +66,11 @@ private function _ReadyGetExceptions() {
 $params = array();
 return $params;
 }
-private function _SetProjectToMosaicServiceGetExceptions() {
+private function _SetConfigurationDataGetExceptions() {
 $params = array();
 return $params;
 }
-private function _SetCourseConfigurationDataGetExceptions() {
-$params = array();
-return $params;
-}
-private function _SetCourseContentScreenDataGetExceptions() {
+private function _SetScreenDataGetExceptions() {
 $params = array();
 return $params;
 }

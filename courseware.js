@@ -11,16 +11,16 @@ getName : function(){
 return "CoursewareConnectorInboundService";
 },
 /**
- * @param {Object} service
+ * @param {Object} OutboundService
  * @returns {void} 
  */
-Ready: function(service){
+Ready: function(OutboundService){
 if (this._shrewd) {
 var parametersArray = new Array();
 if (this._shrewd.local) {
-parametersArray.push(service);
+parametersArray.push(OutboundService);
 } else {
-parametersArray.push(service);
+parametersArray.push(OutboundService);
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
@@ -34,44 +34,21 @@ exceptionsArray
 }
 },
 /**
- * @param {Object} service
- * @returns {void} 
- */
-SetProjectToMosaicService: function(service){
-if (this._shrewd) {
-var parametersArray = new Array();
-if (this._shrewd.local) {
-parametersArray.push(service);
-} else {
-parametersArray.push(service);
-}
-var exceptionsArray = new Array();
-return this._shrewd.communicate(
-"BuildEmpire.Mosaic.Courseware.ConnectorInboundService",
-"SetProjectToMosaicService",
-parametersArray,
-"void",
-"",
-exceptionsArray
-);
-}
-},
-/**
  * @param {CoursewareConfigurationData}
  * @returns {void} 
  */
-SetCourseConfigurationData: function(courseConfigurationData){
+SetConfigurationData: function(configurationData){
 if (this._shrewd) {
 var parametersArray = new Array();
 if (this._shrewd.local) {
-parametersArray.push(courseConfigurationData);
+parametersArray.push(configurationData);
 } else {
-parametersArray.push((courseConfigurationData) ? courseConfigurationData.getShrewd() : null);
+parametersArray.push((configurationData) ? configurationData.getShrewd() : null);
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 "BuildEmpire.Mosaic.Courseware.ConnectorInboundService",
-"SetCourseConfigurationData",
+"SetConfigurationData",
 parametersArray,
 "void",
 "",
@@ -83,18 +60,18 @@ exceptionsArray
  * @param {CoursewareScreenData}
  * @returns {void} 
  */
-SetCourseContentScreenData: function(courseContentScreenData){
+SetScreenData: function(screenData){
 if (this._shrewd) {
 var parametersArray = new Array();
 if (this._shrewd.local) {
-parametersArray.push(courseContentScreenData);
+parametersArray.push(screenData);
 } else {
-parametersArray.push((courseContentScreenData) ? courseContentScreenData.getShrewd() : null);
+parametersArray.push((screenData) ? screenData.getShrewd() : null);
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 "BuildEmpire.Mosaic.Courseware.ConnectorInboundService",
-"SetCourseContentScreenData",
+"SetScreenData",
 parametersArray,
 "void",
 "",

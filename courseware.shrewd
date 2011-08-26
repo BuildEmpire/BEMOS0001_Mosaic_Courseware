@@ -52,16 +52,13 @@ struct ScreenData {
 
 service ConnectorInbound {
     void    Ready(
-        1:   native-js-Object     service
+        1:   native-js-Object     OutboundService
     ),
-    void    SetProjectToMosaicService(
-        1:   native-js-Object     service
+    void    SetConfigurationData(
+        1:   ConfigurationData     configurationData
     ),
-    void    SetCourseConfigurationData(
-        1:   ConfigurationData     courseConfigurationData
-    ),
-    void    SetCourseContentScreenData(
-        1:   ScreenData     courseContentScreenData
+    void    SetScreenData(
+        1:   ScreenData     screenData
     ),
 }
 

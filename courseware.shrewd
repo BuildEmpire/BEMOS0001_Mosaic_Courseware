@@ -1,6 +1,6 @@
-namespace shrewd BuildEmpire.Mosaic.Project
-namespace js MosaicProject
-namespace php BuildEmpire\Mosaic\Project
+namespace shrewd BuildEmpire.Mosaic.Courseware
+namespace js Courseware
+namespace php BuildEmpire\Mosaic\Courseware
 
 struct Column {
     1:  string-id                          id,
@@ -50,7 +50,7 @@ struct ScreenData {
 }
 
 
-service ToCourse {
+service ConnectorInbound {
     void    Ready(
         1:   native-js-Object     service
     ),
@@ -65,7 +65,7 @@ service ToCourse {
     ),
 }
 
-service FromCourse {
+service ConnectorOutbound {
     void    Ready(),
     void    OpenDialog()
 }

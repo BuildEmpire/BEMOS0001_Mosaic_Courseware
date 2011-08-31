@@ -12,11 +12,21 @@ struct Column {
     7:  boolean                            structure = true
 }
 
+struct Translation {
+    1:  optional    string-id       id,
+    2:              string          name,
+    3:              string          value
+}
+
+struct LearningPath {
+    1:  string-id       id,
+    2:  string          name
+}
+
 struct Template {
     1:  string                             name,
     2:  list<Column>          columns
 }
-
 
 struct Screen {
     1:  integer                            width,
@@ -39,14 +49,19 @@ struct ConfigurationData {
     1:              string-id             id,
     2:              string                name,
     3:  optional    Screen                screen,
-    4:  optional    list<Template>        templates,
-    5:  optional    list<Component>       components
+    4:  optional    list<Translation>     translations,
+    5:  optional    list<LearningPath>    learningPaths,
+    6:  optional    list<Template>        templates,
+    7:  optional    list<Component>       components
 }
 
 struct ScreenData {
     1:  string-id                          id,
-    2:  Template                           template,
-    3:  list<ComponentData>                components
+    2:  Translation                        translation,
+    3:  optional    list<LearningPath>     learningPaths,
+    4:  Template                           template,
+    5:  Template                           template,
+    6:  list<ComponentData>                components
 }
 
 

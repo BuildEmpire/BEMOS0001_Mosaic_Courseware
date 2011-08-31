@@ -248,6 +248,108 @@ initialize: function(){
 /**
  * Automatically Generated Shrewd File
  */
+var CoursewareTranslation = new Class({
+/**
+ * @type {string} id (ID).
+ */
+id : null,
+/**
+ * @type {string} name
+ */
+name : null,
+/**
+ * @type {string} value
+ */
+value : null,
+/**
+ * @type {string}
+ */
+shrewdNS : "BuildEmpire.Mosaic.Courseware.Translation",
+/**
+ * Get the name of the MooTools class.
+ * 
+ * @returns {string}
+ */
+getName : function(){
+return "CoursewareTranslation";
+},
+/**
+ * Get the content as a shrewd array.
+ * 
+ * @returns {null} The shrewd array.
+ */
+getShrewd: function(){
+var parametersArray = new Array();
+parametersArray.push(this.id);
+parametersArray.push(this.name);
+parametersArray.push(this.value);
+return parametersArray;
+},
+/**
+ * Set the content via the shrewd array.
+ * 
+ * @param {Array} shrewdArray
+ * @returns {null} 
+ */
+setShrewd: function(shrewdArray){
+this.id = shrewdArray[0];
+this.name = shrewdArray[1];
+this.value = shrewdArray[2];
+},
+initialize: function(){
+}
+});
+/**
+ * Automatically Generated Shrewd File
+ */
+var CoursewareLearningPath = new Class({
+/**
+ * @type {string} id (ID).
+ */
+id : null,
+/**
+ * @type {string} name
+ */
+name : null,
+/**
+ * @type {string}
+ */
+shrewdNS : "BuildEmpire.Mosaic.Courseware.LearningPath",
+/**
+ * Get the name of the MooTools class.
+ * 
+ * @returns {string}
+ */
+getName : function(){
+return "CoursewareLearningPath";
+},
+/**
+ * Get the content as a shrewd array.
+ * 
+ * @returns {null} The shrewd array.
+ */
+getShrewd: function(){
+var parametersArray = new Array();
+parametersArray.push(this.id);
+parametersArray.push(this.name);
+return parametersArray;
+},
+/**
+ * Set the content via the shrewd array.
+ * 
+ * @param {Array} shrewdArray
+ * @returns {null} 
+ */
+setShrewd: function(shrewdArray){
+this.id = shrewdArray[0];
+this.name = shrewdArray[1];
+},
+initialize: function(){
+}
+});
+/**
+ * Automatically Generated Shrewd File
+ */
 var CoursewareTemplate = new Class({
 /**
  * @type {string} name
@@ -471,6 +573,14 @@ name : null,
  */
 screen : new CoursewareScreen(),
 /**
+ * @type {Array} translations
+ */
+translations : null,
+/**
+ * @type {Array} learningPaths
+ */
+learningPaths : null,
+/**
  * @type {Array} templates
  */
 templates : null,
@@ -500,6 +610,8 @@ var parametersArray = new Array();
 parametersArray.push(this.id);
 parametersArray.push(this.name);
 parametersArray.push((this.screen) ? this.screen.getShrewd() : null);
+var l=this.translations.length;var lArray = new Array();for (var a=0; a<l; a++) {lArray.push((this.translations[a]) ? this.translations[a].getShrewd() : null);}parametersArray.push(lArray);
+var l=this.learningPaths.length;var lArray = new Array();for (var a=0; a<l; a++) {lArray.push((this.learningPaths[a]) ? this.learningPaths[a].getShrewd() : null);}parametersArray.push(lArray);
 var l=this.templates.length;var lArray = new Array();for (var a=0; a<l; a++) {lArray.push((this.templates[a]) ? this.templates[a].getShrewd() : null);}parametersArray.push(lArray);
 var l=this.components.length;var lArray = new Array();for (var a=0; a<l; a++) {lArray.push((this.components[a]) ? this.components[a].getShrewd() : null);}parametersArray.push(lArray);
 return parametersArray;
@@ -524,20 +636,44 @@ var l=shrewdArray[3].length;
 var lArray = new Array();
 for (var a=0; a<l; a++) {
 if (shrewdArray[3][a]) {
-var theClass = new CoursewareTemplate();
+var theClass = new CoursewareTranslation();
 theClass.setShrewd(shrewdArray[3][a]);
 lArray[a] = theClass;
 } else {
 lArray[a] = null;
 }
 }
-this.templates = lArray;
+this.translations = lArray;
 var l=shrewdArray[4].length;
 var lArray = new Array();
 for (var a=0; a<l; a++) {
 if (shrewdArray[4][a]) {
-var theClass = new CoursewareComponent();
+var theClass = new CoursewareLearningPath();
 theClass.setShrewd(shrewdArray[4][a]);
+lArray[a] = theClass;
+} else {
+lArray[a] = null;
+}
+}
+this.learningPaths = lArray;
+var l=shrewdArray[5].length;
+var lArray = new Array();
+for (var a=0; a<l; a++) {
+if (shrewdArray[5][a]) {
+var theClass = new CoursewareTemplate();
+theClass.setShrewd(shrewdArray[5][a]);
+lArray[a] = theClass;
+} else {
+lArray[a] = null;
+}
+}
+this.templates = lArray;
+var l=shrewdArray[6].length;
+var lArray = new Array();
+for (var a=0; a<l; a++) {
+if (shrewdArray[6][a]) {
+var theClass = new CoursewareComponent();
+theClass.setShrewd(shrewdArray[6][a]);
 lArray[a] = theClass;
 } else {
 lArray[a] = null;
@@ -556,6 +692,18 @@ var CoursewareScreenData = new Class({
  * @type {string} id (ID).
  */
 id : null,
+/**
+ * @type {CoursewareTranslation}
+ */
+translation : new CoursewareTranslation(),
+/**
+ * @type {Array} learningPaths
+ */
+learningPaths : null,
+/**
+ * @type {CoursewareTemplate}
+ */
+template : new CoursewareTemplate(),
 /**
  * @type {CoursewareTemplate}
  */
@@ -584,6 +732,9 @@ return "CoursewareScreenData";
 getShrewd: function(){
 var parametersArray = new Array();
 parametersArray.push(this.id);
+parametersArray.push((this.translation) ? this.translation.getShrewd() : null);
+var l=this.learningPaths.length;var lArray = new Array();for (var a=0; a<l; a++) {lArray.push((this.learningPaths[a]) ? this.learningPaths[a].getShrewd() : null);}parametersArray.push(lArray);
+parametersArray.push((this.template) ? this.template.getShrewd() : null);
 parametersArray.push((this.template) ? this.template.getShrewd() : null);
 var l=this.components.length;var lArray = new Array();for (var a=0; a<l; a++) {lArray.push((this.components[a]) ? this.components[a].getShrewd() : null);}parametersArray.push(lArray);
 return parametersArray;
@@ -597,18 +748,44 @@ return parametersArray;
 setShrewd: function(shrewdArray){
 this.id = shrewdArray[0];
 if (shrewdArray[1]) {
-var theClass = new CoursewareTemplate();
+var theClass = new CoursewareTranslation();
 theClass.setShrewd(shrewdArray[1]);
-this.template = theClass;
+this.translation = theClass;
 } else {
-this.template = null;
+this.translation = null;
 }
 var l=shrewdArray[2].length;
 var lArray = new Array();
 for (var a=0; a<l; a++) {
 if (shrewdArray[2][a]) {
-var theClass = new CoursewareComponentData();
+var theClass = new CoursewareLearningPath();
 theClass.setShrewd(shrewdArray[2][a]);
+lArray[a] = theClass;
+} else {
+lArray[a] = null;
+}
+}
+this.learningPaths = lArray;
+if (shrewdArray[3]) {
+var theClass = new CoursewareTemplate();
+theClass.setShrewd(shrewdArray[3]);
+this.template = theClass;
+} else {
+this.template = null;
+}
+if (shrewdArray[4]) {
+var theClass = new CoursewareTemplate();
+theClass.setShrewd(shrewdArray[4]);
+this.template = theClass;
+} else {
+this.template = null;
+}
+var l=shrewdArray[5].length;
+var lArray = new Array();
+for (var a=0; a<l; a++) {
+if (shrewdArray[5][a]) {
+var theClass = new CoursewareComponentData();
+theClass.setShrewd(shrewdArray[5][a]);
 lArray[a] = theClass;
 } else {
 lArray[a] = null;

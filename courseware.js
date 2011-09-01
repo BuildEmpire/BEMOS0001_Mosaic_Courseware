@@ -254,6 +254,10 @@ var CoursewareTranslation = new Class({
  */
 id : null,
 /**
+ * @type {boolean} base
+ */
+base : false,
+/**
  * @type {string} name
  */
 name : null,
@@ -281,6 +285,7 @@ return "CoursewareTranslation";
 getShrewd: function(){
 var parametersArray = new Array();
 parametersArray.push(this.id);
+parametersArray.push(this.base);
 parametersArray.push(this.name);
 parametersArray.push(this.value);
 return parametersArray;
@@ -293,8 +298,9 @@ return parametersArray;
  */
 setShrewd: function(shrewdArray){
 this.id = shrewdArray[0];
-this.name = shrewdArray[1];
-this.value = shrewdArray[2];
+this.base = shrewdArray[1];
+this.name = shrewdArray[2];
+this.value = shrewdArray[3];
 },
 initialize: function(){
 }

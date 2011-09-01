@@ -14,8 +14,9 @@ struct Column {
 
 struct Translation {
     1:  optional    string-id       id,
-    2:              string          name,
-    3:              string          value
+    2:              boolean         base = false,
+    3:              string          name,
+    4:              string          value
 }
 
 struct LearningPath {

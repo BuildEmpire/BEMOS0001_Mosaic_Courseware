@@ -314,6 +314,10 @@ var CoursewareLearningPath = new Class({
  */
 id : null,
 /**
+ * @type {boolean} base
+ */
+base : false,
+/**
  * @type {string} name
  */
 name : null,
@@ -337,6 +341,7 @@ return "CoursewareLearningPath";
 getShrewd: function(){
 var parametersArray = new Array();
 parametersArray.push(this.id);
+parametersArray.push(this.base);
 parametersArray.push(this.name);
 return parametersArray;
 },
@@ -348,7 +353,8 @@ return parametersArray;
  */
 setShrewd: function(shrewdArray){
 this.id = shrewdArray[0];
-this.name = shrewdArray[1];
+this.base = shrewdArray[1];
+this.name = shrewdArray[2];
 },
 initialize: function(){
 }

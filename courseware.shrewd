@@ -20,8 +20,9 @@ struct Translation {
 }
 
 struct LearningPath {
-    1:  string-id       id,
-    2:  string          name
+    1:  optional    string-id       id,
+    2:              boolean         base = false,
+    3:              string          name
 }
 
 struct Template {

@@ -30,6 +30,19 @@ struct Template {
     2:  list<Column>          columns
 }
 
+enum StructureItemType {
+    PROJECT = 1,
+    FOLDER = 2,
+    SCREEN = 3,
+}
+
+struct StructureItem {
+    1:  optional    string-id               id,
+    2:              StructureItemType       type,
+    3:              string                  title,
+    4:  optional    list<StructureItem>     children
+}
+
 struct Screen {
     1:  integer                            width,
     2:  integer                            height

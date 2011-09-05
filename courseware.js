@@ -443,6 +443,10 @@ type : null,
  */
 title : null,
 /**
+ * @type {integer} available
+ */
+available : null,
+/**
  * @type {Array} children
  */
 children : null,
@@ -468,6 +472,7 @@ var parametersArray = new Array();
 parametersArray.push(this.id);
 parametersArray.push(this.type);
 parametersArray.push(this.title);
+parametersArray.push(this.available);
 if (this.children) {var l=this.children.length;var lArray = new Array();for (var a=0; a<l; a++) {lArray.push((this.children[a]) ? this.children[a].getShrewd() : null);}parametersArray.push(lArray);} else {parametersArray.push(this.children)}
 return parametersArray;
 },
@@ -481,13 +486,14 @@ setShrewd: function(shrewdArray){
 this.id = shrewdArray[0];
 this.type = shrewdArray[1];
 this.title = shrewdArray[2];
-if (shrewdArray[3]) {
-var l=shrewdArray[3].length;
+this.available = shrewdArray[3];
+if (shrewdArray[4]) {
+var l=shrewdArray[4].length;
 var lArray = new Array();
 for (var a=0; a<l; a++) {
-if (shrewdArray[3][a]) {
+if (shrewdArray[4][a]) {
 var theClass = new CoursewareStructureItem();
-theClass.setShrewd(shrewdArray[3][a]);
+theClass.setShrewd(shrewdArray[4][a]);
 lArray[a] = theClass;
 } else {
 lArray[a] = null;

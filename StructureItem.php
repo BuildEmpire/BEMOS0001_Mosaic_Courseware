@@ -19,6 +19,10 @@ public $type;
  */
 public $title;
 /**
+ * @var integer
+ */
+public $available;
+/**
  * @var \BuildEmpire\Mosaic\Courseware\StructureItem[]
  */
 public $children;
@@ -31,6 +35,7 @@ $paramArray = array();
 $paramArray[] = $shrewd->getParameter("StructureItem", 1, $this->id, "id", "string-id", "", true);
 $paramArray[] = $shrewd->getParameter("StructureItem", 1, $this->type, "type", "integer", "", false);
 $paramArray[] = $shrewd->getParameter("StructureItem", 1, $this->title, "title", "string", "", false);
+$paramArray[] = $shrewd->getParameter("StructureItem", 1, $this->available, "available", "integer", "", false);
 $paramArray[] = $shrewd->getParameter("StructureItem", 1, $this->children, "children", "list", "\BuildEmpire\Mosaic\Courseware\StructureItem", true);
 return $paramArray;
 }
@@ -40,6 +45,7 @@ $shrewdArray){
 $this->id = $shrewd->setParameter("StructureItem", 2, $shrewdArray[0], "id", "string-id", "", true);
 $this->type = $shrewd->setParameter("StructureItem", 2, $shrewdArray[1], "type", "integer", "", false);
 $this->title = $shrewd->setParameter("StructureItem", 2, $shrewdArray[2], "title", "string", "", false);
-$this->children = $shrewd->setParameter("StructureItem", 2, $shrewdArray[3], "children", "list", "\BuildEmpire\Mosaic\Courseware\StructureItem", true);
+$this->available = $shrewd->setParameter("StructureItem", 2, $shrewdArray[3], "available", "integer", "", false);
+$this->children = $shrewd->setParameter("StructureItem", 2, $shrewdArray[4], "children", "list", "\BuildEmpire\Mosaic\Courseware\StructureItem", true);
 }
 }

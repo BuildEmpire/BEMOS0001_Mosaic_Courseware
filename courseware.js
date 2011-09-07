@@ -451,6 +451,10 @@ available : null,
  */
 children : null,
 /**
+ * @type {Array} learningPathIds
+ */
+learningPathIds : null,
+/**
  * @type {string}
  */
 shrewdNS : "BuildEmpire.Mosaic.Courseware.StructureItem",
@@ -474,6 +478,7 @@ parametersArray.push(this.type);
 parametersArray.push(this.title);
 parametersArray.push(this.available);
 if (this.children) {var l=this.children.length;var lArray = new Array();for (var a=0; a<l; a++) {lArray.push((this.children[a]) ? this.children[a].getShrewd() : null);}parametersArray.push(lArray);} else {parametersArray.push(this.children)}
+if (this.learningPathIds) {var l=this.learningPathIds.length;var lArray = new Array();for (var a=0; a<l; a++) {lArray.push(this.learningPathIds[a]);}parametersArray.push(lArray);} else {parametersArray.push(this.learningPathIds)}
 return parametersArray;
 },
 /**
@@ -503,6 +508,16 @@ lArray[a] = null;
 lArray = null;
 }
 this.children = lArray;
+if (shrewdArray[5]) {
+var l=shrewdArray[5].length;
+var lArray = new Array();
+for (var a=0; a<l; a++) {
+lArray[a] = shrewdArray[5][a];
+}
+} else {
+lArray = null;
+}
+this.learningPathIds = lArray;
 },
 initialize: function(){
 }

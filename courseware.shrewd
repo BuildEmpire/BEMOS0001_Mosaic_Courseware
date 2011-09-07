@@ -41,7 +41,8 @@ struct StructureItem {
     2:              StructureItemType       type,
     3:              string                  title,
     4:              integer                 available,
-    5:  optional    list<StructureItem>     children
+    5:  optional    list<StructureItem>     children,
+    6:  optional    list<string-id>         learningPathIds
 }
 
 struct Screen {

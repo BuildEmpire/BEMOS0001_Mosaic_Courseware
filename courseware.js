@@ -170,6 +170,10 @@ alert ('The object passed to CoursewareConnectorOutboundService is not an instan
 /**
  * Automatically Generated Shrewd File
  */
+var CoursewareLearningPathFulfilmentType = {"NONE" : 1, "CHILDREN" : 2, "ALL" : 3};
+/**
+ * Automatically Generated Shrewd File
+ */
 var CoursewareStructureItemType = {"PROJECT" : 1, "FOLDER" : 2, "SCREEN" : 3};
 /**
  * Automatically Generated Shrewd File
@@ -451,7 +455,7 @@ available : null,
  */
 children : null,
 /**
- * @type {Array} learningPathIds
+ * @type {Hash} learningPathIds
  */
 learningPathIds : null,
 /**
@@ -478,7 +482,7 @@ parametersArray.push(this.type);
 parametersArray.push(this.title);
 parametersArray.push(this.available);
 if (this.children) {var l=this.children.length;var lArray = new Array();for (var a=0; a<l; a++) {lArray.push((this.children[a]) ? this.children[a].getShrewd() : null);}parametersArray.push(lArray);} else {parametersArray.push(this.children)}
-if (this.learningPathIds) {var l=this.learningPathIds.length;var lArray = new Array();for (var a=0; a<l; a++) {lArray.push(this.learningPathIds[a]);}parametersArray.push(lArray);} else {parametersArray.push(this.learningPathIds)}
+if (this.learningPathIds) {var lHash = new Hash();this.learningPathIds.each(function(v, k){lHash[k] = v;});parametersArray.push(lHash);} else {parametersArray.push(this.learningPathIds)}
 return parametersArray;
 },
 /**
@@ -509,15 +513,14 @@ lArray = null;
 }
 this.children = lArray;
 if (shrewdArray[5]) {
-var l=shrewdArray[5].length;
-var lArray = new Array();
-for (var a=0; a<l; a++) {
-lArray[a] = shrewdArray[5][a];
-}
+var lHash = new Hash();
+for (var p in shrewdArray[5]) {
+lHash[p] = shrewdArray[5][p];
+};
 } else {
-lArray = null;
+lHash = null;
 }
-this.learningPathIds = lArray;
+this.learningPathIds = lHash;
 },
 initialize: function(){
 }

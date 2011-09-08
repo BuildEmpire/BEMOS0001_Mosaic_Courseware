@@ -30,6 +30,12 @@ struct Template {
     2:  list<Column>          columns
 }
 
+enum LearningPathFulfilmentType {
+    NONE = 1,
+    CHILDREN = 2,
+    ALL = 3,
+}
+
 enum StructureItemType {
     PROJECT = 1,
     FOLDER = 2,
@@ -42,7 +48,7 @@ struct StructureItem {
     3:              string                  title,
     4:              integer                 available,
     5:  optional    list<StructureItem>     children,
-    6:  optional    list<string-id>         learningPathIds
+    6:  optional    map<string-id,StructureItemType>         learningPathIds
 }
 
 struct Screen {

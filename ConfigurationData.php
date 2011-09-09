@@ -34,6 +34,10 @@ public $templates;
  * @var \BuildEmpire\Mosaic\Courseware\Component[]
  */
 public $components;
+/**
+ * @var string[]
+ */
+public $errors;
 public function getShrewdNS(){
 return "BuildEmpire.Mosaic.Courseware.ConfigurationData";
 }
@@ -47,6 +51,7 @@ $paramArray[] = $shrewd->getParameter("ConfigurationData", 1, $this->translation
 $paramArray[] = $shrewd->getParameter("ConfigurationData", 1, $this->learningPaths, "learningPaths", "list", "\BuildEmpire\Mosaic\Courseware\LearningPath", true);
 $paramArray[] = $shrewd->getParameter("ConfigurationData", 1, $this->templates, "templates", "list", "\BuildEmpire\Mosaic\Courseware\Template", true);
 $paramArray[] = $shrewd->getParameter("ConfigurationData", 1, $this->components, "components", "list", "\BuildEmpire\Mosaic\Courseware\Component", true);
+$paramArray[] = $shrewd->getParameter("ConfigurationData", 1, $this->errors, "errors", "list", "string", true);
 return $paramArray;
 }
 public function setShrewd(
@@ -61,5 +66,6 @@ $this->translations = $shrewd->setParameter("ConfigurationData", 2, $shrewdArray
 $this->learningPaths = $shrewd->setParameter("ConfigurationData", 2, $shrewdArray[4], "learningPaths", "list", "\BuildEmpire\Mosaic\Courseware\LearningPath", true);
 $this->templates = $shrewd->setParameter("ConfigurationData", 2, $shrewdArray[5], "templates", "list", "\BuildEmpire\Mosaic\Courseware\Template", true);
 $this->components = $shrewd->setParameter("ConfigurationData", 2, $shrewdArray[6], "components", "list", "\BuildEmpire\Mosaic\Courseware\Component", true);
+$this->errors = $shrewd->setParameter("ConfigurationData", 2, $shrewdArray[7], "errors", "list", "string", true);
 }
 }

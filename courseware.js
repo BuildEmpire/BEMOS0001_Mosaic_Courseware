@@ -708,6 +708,10 @@ templates : null,
  */
 components : null,
 /**
+ * @type {Array} errors
+ */
+errors : null,
+/**
  * @type {string}
  */
 shrewdNS : "BuildEmpire.Mosaic.Courseware.ConfigurationData",
@@ -733,6 +737,7 @@ if (this.translations) {var l=this.translations.length;var lArray = new Array();
 if (this.learningPaths) {var l=this.learningPaths.length;var lArray = new Array();for (var a=0; a<l; a++) {lArray.push((this.learningPaths[a]) ? this.learningPaths[a].getShrewd() : null);}parametersArray.push(lArray);} else {parametersArray.push(this.learningPaths)}
 if (this.templates) {var l=this.templates.length;var lArray = new Array();for (var a=0; a<l; a++) {lArray.push((this.templates[a]) ? this.templates[a].getShrewd() : null);}parametersArray.push(lArray);} else {parametersArray.push(this.templates)}
 if (this.components) {var l=this.components.length;var lArray = new Array();for (var a=0; a<l; a++) {lArray.push((this.components[a]) ? this.components[a].getShrewd() : null);}parametersArray.push(lArray);} else {parametersArray.push(this.components)}
+if (this.errors) {var l=this.errors.length;var lArray = new Array();for (var a=0; a<l; a++) {lArray.push(this.errors[a]);}parametersArray.push(lArray);} else {parametersArray.push(this.errors)}
 return parametersArray;
 },
 /**
@@ -815,6 +820,16 @@ lArray[a] = null;
 lArray = null;
 }
 this.components = lArray;
+if (shrewdArray[7]) {
+var l=shrewdArray[7].length;
+var lArray = new Array();
+for (var a=0; a<l; a++) {
+lArray[a] = shrewdArray[7][a];
+}
+} else {
+lArray = null;
+}
+this.errors = lArray;
 },
 initialize: function(){
 }

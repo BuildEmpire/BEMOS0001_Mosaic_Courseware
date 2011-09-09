@@ -75,7 +75,8 @@ struct ConfigurationData {
     4:  optional    list<Translation>     translations,
     5:  optional    list<LearningPath>    learningPaths,
     6:  optional    list<Template>        templates,
-    7:  optional    list<Component>       components
+    7:  optional    list<Component>       components,
+    8:  optional    list<string>          errors
 }
 
 struct ScreenData {

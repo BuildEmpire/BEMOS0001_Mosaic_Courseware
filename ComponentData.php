@@ -27,7 +27,7 @@ return $paramArray;
 public function setShrewd(
 \BuildEmpire\Shrewd\IShrewd $shrewd, 
 $shrewdArray){
-$this->name = $shrewd->setParameter("ComponentData", 2, $shrewdArray[0], "name", "string", "", false);
-$this->data = $shrewd->setParameter("ComponentData", 2, $shrewdArray[1], "data", "list", "", false);
+if (isset($shrewdArray[0])) {$this->name = $shrewd->setParameter("ComponentData", 2, $shrewdArray[0], "name", "string", "", false);}
+if (isset($shrewdArray[1])) {$this->data = $shrewd->setParameter("ComponentData", 2, $shrewdArray[1], "data", "list", "", false);}
 }
 }

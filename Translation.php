@@ -37,9 +37,9 @@ return $paramArray;
 public function setShrewd(
 \BuildEmpire\Shrewd\IShrewd $shrewd, 
 $shrewdArray){
-$this->id = $shrewd->setParameter("Translation", 2, $shrewdArray[0], "id", "string-id", "", true);
-$this->base = $shrewd->setParameter("Translation", 2, $shrewdArray[1], "base", "boolean", "", false);
-$this->name = $shrewd->setParameter("Translation", 2, $shrewdArray[2], "name", "string", "", false);
-$this->value = $shrewd->setParameter("Translation", 2, $shrewdArray[3], "value", "string", "", false);
+if (isset($shrewdArray[0])) {$this->id = $shrewd->setParameter("Translation", 2, $shrewdArray[0], "id", "string-id", "", true);}
+if (isset($shrewdArray[1])) {$this->base = $shrewd->setParameter("Translation", 2, $shrewdArray[1], "base", "boolean", "", false);}
+if (isset($shrewdArray[2])) {$this->name = $shrewd->setParameter("Translation", 2, $shrewdArray[2], "name", "string", "", false);}
+if (isset($shrewdArray[3])) {$this->value = $shrewd->setParameter("Translation", 2, $shrewdArray[3], "value", "string", "", false);}
 }
 }

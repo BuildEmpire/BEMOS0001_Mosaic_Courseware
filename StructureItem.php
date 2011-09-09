@@ -47,11 +47,11 @@ return $paramArray;
 public function setShrewd(
 \BuildEmpire\Shrewd\IShrewd $shrewd, 
 $shrewdArray){
-$this->id = $shrewd->setParameter("StructureItem", 2, $shrewdArray[0], "id", "string-id", "", true);
-$this->type = $shrewd->setParameter("StructureItem", 2, $shrewdArray[1], "type", "integer", "", false);
-$this->title = $shrewd->setParameter("StructureItem", 2, $shrewdArray[2], "title", "string", "", false);
-$this->available = $shrewd->setParameter("StructureItem", 2, $shrewdArray[3], "available", "integer", "", false);
-$this->children = $shrewd->setParameter("StructureItem", 2, $shrewdArray[4], "children", "list", "\BuildEmpire\Mosaic\Courseware\StructureItem", true);
-$this->learningPathIds = $shrewd->setParameter("StructureItem", 2, $shrewdArray[5], "learningPathIds", "map", "integer", true);
+if (isset($shrewdArray[0])) {$this->id = $shrewd->setParameter("StructureItem", 2, $shrewdArray[0], "id", "string-id", "", true);}
+if (isset($shrewdArray[1])) {$this->type = $shrewd->setParameter("StructureItem", 2, $shrewdArray[1], "type", "integer", "", false);}
+if (isset($shrewdArray[2])) {$this->title = $shrewd->setParameter("StructureItem", 2, $shrewdArray[2], "title", "string", "", false);}
+if (isset($shrewdArray[3])) {$this->available = $shrewd->setParameter("StructureItem", 2, $shrewdArray[3], "available", "integer", "", false);}
+if (isset($shrewdArray[4])) {$this->children = $shrewd->setParameter("StructureItem", 2, $shrewdArray[4], "children", "list", "\BuildEmpire\Mosaic\Courseware\StructureItem", true);}
+if (isset($shrewdArray[5])) {$this->learningPathIds = $shrewd->setParameter("StructureItem", 2, $shrewdArray[5], "learningPathIds", "map", "integer", true);}
 }
 }

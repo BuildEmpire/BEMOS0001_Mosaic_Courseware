@@ -47,17 +47,23 @@ return $paramArray;
 public function setShrewd(
 \BuildEmpire\Shrewd\IShrewd $shrewd, 
 $shrewdArray){
-$this->id = $shrewd->setParameter("ScreenData", 2, $shrewdArray[0], "id", "string-id", "", false);
+if (isset($shrewdArray[0])) {$this->id = $shrewd->setParameter("ScreenData", 2, $shrewdArray[0], "id", "string-id", "", false);}
+if ($shrewdArray[1]) {
 $theClass = new \BuildEmpire\Mosaic\Courseware\Translation();
 $theClass->setShrewd($shrewd, $shrewdArray[1]);
 $this->translation = $theClass;
-$this->learningPaths = $shrewd->setParameter("ScreenData", 2, $shrewdArray[2], "learningPaths", "list", "\BuildEmpire\Mosaic\Courseware\LearningPath", true);
+}
+if (isset($shrewdArray[2])) {$this->learningPaths = $shrewd->setParameter("ScreenData", 2, $shrewdArray[2], "learningPaths", "list", "\BuildEmpire\Mosaic\Courseware\LearningPath", true);}
+if ($shrewdArray[3]) {
 $theClass = new \BuildEmpire\Mosaic\Courseware\Template();
 $theClass->setShrewd($shrewd, $shrewdArray[3]);
 $this->template = $theClass;
+}
+if ($shrewdArray[4]) {
 $theClass = new \BuildEmpire\Mosaic\Courseware\Template();
 $theClass->setShrewd($shrewd, $shrewdArray[4]);
 $this->template = $theClass;
-$this->components = $shrewd->setParameter("ScreenData", 2, $shrewdArray[5], "components", "list", "\BuildEmpire\Mosaic\Courseware\ComponentData", false);
+}
+if (isset($shrewdArray[5])) {$this->components = $shrewd->setParameter("ScreenData", 2, $shrewdArray[5], "components", "list", "\BuildEmpire\Mosaic\Courseware\ComponentData", false);}
 }
 }

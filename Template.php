@@ -27,7 +27,7 @@ return $paramArray;
 public function setShrewd(
 \BuildEmpire\Shrewd\IShrewd $shrewd, 
 $shrewdArray){
-$this->name = $shrewd->setParameter("Template", 2, $shrewdArray[0], "name", "string", "", false);
-$this->columns = $shrewd->setParameter("Template", 2, $shrewdArray[1], "columns", "list", "\BuildEmpire\Mosaic\Courseware\Column", false);
+if (isset($shrewdArray[0])) {$this->name = $shrewd->setParameter("Template", 2, $shrewdArray[0], "name", "string", "", false);}
+if (isset($shrewdArray[1])) {$this->columns = $shrewd->setParameter("Template", 2, $shrewdArray[1], "columns", "list", "\BuildEmpire\Mosaic\Courseware\Column", false);}
 }
 }

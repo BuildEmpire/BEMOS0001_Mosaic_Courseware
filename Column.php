@@ -52,12 +52,12 @@ return $paramArray;
 public function setShrewd(
 \BuildEmpire\Shrewd\IShrewd $shrewd, 
 $shrewdArray){
-$this->id = $shrewd->setParameter("Column", 2, $shrewdArray[0], "id", "string-id", "", false);
-$this->x = $shrewd->setParameter("Column", 2, $shrewdArray[1], "x", "integer", "", false);
-$this->y = $shrewd->setParameter("Column", 2, $shrewdArray[2], "y", "integer", "", false);
-$this->width = $shrewd->setParameter("Column", 2, $shrewdArray[3], "width", "integer", "", false);
-$this->height = $shrewd->setParameter("Column", 2, $shrewdArray[4], "height", "integer", "", false);
-$this->display = $shrewd->setParameter("Column", 2, $shrewdArray[5], "display", "boolean", "", false);
-$this->structure = $shrewd->setParameter("Column", 2, $shrewdArray[6], "structure", "boolean", "", false);
+if (isset($shrewdArray[0])) {$this->id = $shrewd->setParameter("Column", 2, $shrewdArray[0], "id", "string-id", "", false);}
+if (isset($shrewdArray[1])) {$this->x = $shrewd->setParameter("Column", 2, $shrewdArray[1], "x", "integer", "", false);}
+if (isset($shrewdArray[2])) {$this->y = $shrewd->setParameter("Column", 2, $shrewdArray[2], "y", "integer", "", false);}
+if (isset($shrewdArray[3])) {$this->width = $shrewd->setParameter("Column", 2, $shrewdArray[3], "width", "integer", "", false);}
+if (isset($shrewdArray[4])) {$this->height = $shrewd->setParameter("Column", 2, $shrewdArray[4], "height", "integer", "", false);}
+if (isset($shrewdArray[5])) {$this->display = $shrewd->setParameter("Column", 2, $shrewdArray[5], "display", "boolean", "", false);}
+if (isset($shrewdArray[6])) {$this->structure = $shrewd->setParameter("Column", 2, $shrewdArray[6], "structure", "boolean", "", false);}
 }
 }

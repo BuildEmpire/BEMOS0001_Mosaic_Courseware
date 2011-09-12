@@ -99,6 +99,9 @@ service ConnectorInbound {
     void    SetScreenData(
         1:   ScreenData     screenData
     ),
+    void    AddComponent(
+        1:   string     componentName
+    ),
 }
 
 service ConnectorOutbound {

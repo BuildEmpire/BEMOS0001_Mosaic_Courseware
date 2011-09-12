@@ -80,6 +80,29 @@ exceptionsArray
 }
 },
 /**
+ * @param {string} componentName
+ * @returns {void} 
+ */
+AddComponent: function(componentName){
+if (this._shrewd) {
+var parametersArray = new Array();
+if (this._shrewd.local) {
+parametersArray.push(componentName);
+} else {
+parametersArray.push(componentName);
+}
+var exceptionsArray = new Array();
+return this._shrewd.communicate(
+"BuildEmpire.Mosaic.Courseware.ConnectorInboundService",
+"AddComponent",
+parametersArray,
+"void",
+"",
+exceptionsArray
+);
+}
+},
+/**
  * @type {Shrewd}
  */
 _shrewd:null,

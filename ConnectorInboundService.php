@@ -35,6 +35,12 @@ return "void";
 private function _SetScreenDataGetReturnContentType() {
 return "";
 }
+private function _AddComponentGetReturnType() {
+return "void";
+}
+private function _AddComponentGetReturnContentType() {
+return "";
+}
 private function _ReadyGetArguments() {
 $params = array();
 $param = new Parameter();
@@ -62,6 +68,15 @@ $param->optional = false;
 $params[] = $param;
 return $params;
 }
+private function _AddComponentGetArguments() {
+$params = array();
+$param = new Parameter();
+$param->name = "componentName";
+$param->type = "string";
+$param->optional = false;
+$params[] = $param;
+return $params;
+}
 private function _ReadyGetExceptions() {
 $params = array();
 return $params;
@@ -71,6 +86,10 @@ $params = array();
 return $params;
 }
 private function _SetScreenDataGetExceptions() {
+$params = array();
+return $params;
+}
+private function _AddComponentGetExceptions() {
 $params = array();
 return $params;
 }

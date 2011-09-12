@@ -106,5 +106,11 @@ service ConnectorInbound {
 
 service ConnectorOutbound {
     void    Ready(),
+    void    SetInboundService(
+        1:   native-js-Object     InboundService
+    ),
+    void    OpenResourceManager(
+        1:   list<string>       fileExtensions
+    )
     void    OpenDialog()
 }

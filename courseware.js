@@ -176,15 +176,18 @@ exceptionsArray
 }
 },
 /**
+ * @param {string} componentId (ID).
  * @param {Array} fileExtensions
  * @returns {void} 
  */
-OpenResourceManager: function(fileExtensions){
+OpenResourceManager: function(componentId, fileExtensions){
 if (this._shrewd) {
 var parametersArray = new Array();
 if (this._shrewd.local) {
+parametersArray.push(componentId);
 parametersArray.push(fileExtensions);
 } else {
+parametersArray.push(componentId);
 if (fileExtensions) {var l=fileExtensions.length;var lArray = new Array();for (var a=0; a<l; a++) {lArray.push(fileExtensions[a]);}parametersArray.push(lArray);} else {parametersArray.push(fileExtensions)}
 }
 var exceptionsArray = new Array();

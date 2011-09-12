@@ -57,6 +57,11 @@ return $params;
 private function _OpenResourceManagerGetArguments() {
 $params = array();
 $param = new Parameter();
+$param->name = "componentId";
+$param->type = "string-id";
+$param->optional = false;
+$params[] = $param;
+$param = new Parameter();
 $param->name = "fileExtensions";
 $param->type = "list";
 $param->contentType = "string";

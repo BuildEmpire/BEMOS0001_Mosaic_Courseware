@@ -111,6 +111,6 @@ service ConnectorOutbound {
     ),
     void    OpenResourceManager(
         1:   list<string>       fileExtensions
-    )
+    ),
     void    OpenDialog()
 }

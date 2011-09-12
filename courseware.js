@@ -123,6 +123,122 @@ alert ('The object passed to CoursewareConnectorInboundService is not an instanc
 /**
  * Automatically Generated Shrewd File
  */
+var CoursewareConnectorOutboundService = new Class({
+/**
+ * Get the name of the MooTools class.
+ * 
+ * @returns {string}
+ */
+getName : function(){
+return "CoursewareConnectorOutboundService";
+},
+/**
+ * @returns {void} 
+ */
+Ready: function(){
+if (this._shrewd) {
+var parametersArray = new Array();
+if (this._shrewd.local) {
+} else {
+}
+var exceptionsArray = new Array();
+return this._shrewd.communicate(
+"BuildEmpire.Mosaic.Courseware.ConnectorOutboundService",
+"Ready",
+parametersArray,
+"void",
+"",
+exceptionsArray
+);
+}
+},
+/**
+ * @param {Object} InboundService
+ * @returns {void} 
+ */
+SetInboundService: function(InboundService){
+if (this._shrewd) {
+var parametersArray = new Array();
+if (this._shrewd.local) {
+parametersArray.push(InboundService);
+} else {
+parametersArray.push(InboundService);
+}
+var exceptionsArray = new Array();
+return this._shrewd.communicate(
+"BuildEmpire.Mosaic.Courseware.ConnectorOutboundService",
+"SetInboundService",
+parametersArray,
+"void",
+"",
+exceptionsArray
+);
+}
+},
+/**
+ * @param {Array} fileExtensions
+ * @returns {void} 
+ */
+OpenResourceManager: function(fileExtensions){
+if (this._shrewd) {
+var parametersArray = new Array();
+if (this._shrewd.local) {
+parametersArray.push(fileExtensions);
+} else {
+if (fileExtensions) {var l=fileExtensions.length;var lArray = new Array();for (var a=0; a<l; a++) {lArray.push(fileExtensions[a]);}parametersArray.push(lArray);} else {parametersArray.push(fileExtensions)}
+}
+var exceptionsArray = new Array();
+return this._shrewd.communicate(
+"BuildEmpire.Mosaic.Courseware.ConnectorOutboundService",
+"OpenResourceManager",
+parametersArray,
+"void",
+"",
+exceptionsArray
+);
+}
+},
+/**
+ * @returns {void} 
+ */
+OpenDialog: function(){
+if (this._shrewd) {
+var parametersArray = new Array();
+if (this._shrewd.local) {
+} else {
+}
+var exceptionsArray = new Array();
+return this._shrewd.communicate(
+"BuildEmpire.Mosaic.Courseware.ConnectorOutboundService",
+"OpenDialog",
+parametersArray,
+"void",
+"",
+exceptionsArray
+);
+}
+},
+/**
+ * @type {Shrewd}
+ */
+_shrewd:null,
+/**
+ * Initialise the service.
+ * 
+ * @type {AShrewd}
+ * @returns {null}
+ */
+initialize: function(shrewdObject){
+if (shrewdObject instanceof AShrewd) {
+this._shrewd = shrewdObject;
+} else {
+alert ('The object passed to CoursewareConnectorOutboundService is not an instance of AShrewd.');
+}
+}
+});
+/**
+ * Automatically Generated Shrewd File
+ */
 var CoursewareLearningPathFulfilmentType = {"NONE" : 1, "CHILDREN" : 2, "ALL" : 3};
 /**
  * Automatically Generated Shrewd File

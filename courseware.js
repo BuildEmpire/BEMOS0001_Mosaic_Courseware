@@ -80,18 +80,15 @@ exceptionsArray
 }
 },
 /**
- * @param {string} componentGUID (ID).
  * @param {string} componentName
  * @returns {void} 
  */
-AddComponent: function(componentGUID, componentName){
+AddComponent: function(componentName){
 if (this._shrewd) {
 var parametersArray = new Array();
 if (this._shrewd.local) {
-parametersArray.push(componentGUID);
 parametersArray.push(componentName);
 } else {
-parametersArray.push(componentGUID);
 parametersArray.push(componentName);
 }
 var exceptionsArray = new Array();

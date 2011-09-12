@@ -100,7 +100,8 @@ service ConnectorInbound {
         1:   ScreenData     screenData
     ),
     void    AddComponent(
-        1:   string     componentName
+        1:   string-id       componentGUID,
+        2:   string          componentName
     ),
 }
 

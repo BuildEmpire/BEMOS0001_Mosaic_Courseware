@@ -71,6 +71,11 @@ return $params;
 private function _AddComponentGetArguments() {
 $params = array();
 $param = new Parameter();
+$param->name = "componentGUID";
+$param->type = "string-id";
+$param->optional = false;
+$params[] = $param;
+$param = new Parameter();
 $param->name = "componentName";
 $param->type = "string";
 $param->optional = false;

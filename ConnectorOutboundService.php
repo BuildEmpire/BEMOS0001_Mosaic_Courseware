@@ -63,9 +63,14 @@ $param->contentType = "string";
 $param->optional = false;
 $params[] = $param;
 $param = new Parameter();
-$param->name = "dialogClosedCallback";
+$param->name = "onSelectCallback";
 $param->type = "\\native-js-Object";
-$param->optional = false;
+$param->optional = true;
+$params[] = $param;
+$param = new Parameter();
+$param->name = "onCancelCallback";
+$param->type = "\\native-js-Object";
+$param->optional = true;
 $params[] = $param;
 return $params;
 }

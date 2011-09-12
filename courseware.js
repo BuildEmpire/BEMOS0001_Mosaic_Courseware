@@ -177,18 +177,21 @@ exceptionsArray
 },
 /**
  * @param {Array} fileExtensions
- * @param {Object} dialogClosedCallback
+ * @param {Object} onSelectCallback
+ * @param {Object} onCancelCallback
  * @returns {void} 
  */
-OpenResourceManager: function(fileExtensions, dialogClosedCallback){
+OpenResourceManager: function(fileExtensions, onSelectCallback, onCancelCallback){
 if (this._shrewd) {
 var parametersArray = new Array();
 if (this._shrewd.local) {
 parametersArray.push(fileExtensions);
-parametersArray.push(dialogClosedCallback);
+parametersArray.push(onSelectCallback);
+parametersArray.push(onCancelCallback);
 } else {
 if (fileExtensions) {var l=fileExtensions.length;var lArray = new Array();for (var a=0; a<l; a++) {lArray.push(fileExtensions[a]);}parametersArray.push(lArray);} else {parametersArray.push(fileExtensions)}
-parametersArray.push(dialogClosedCallback);
+parametersArray.push(onSelectCallback);
+parametersArray.push(onCancelCallback);
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(

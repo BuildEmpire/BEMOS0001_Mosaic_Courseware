@@ -110,8 +110,9 @@ service ConnectorOutbound {
         1:   native-js-Object     InboundService
     ),
     void    OpenResourceManager(
-        1:   list<string>         fileExtensions,
-        2:   native-js-Object     onCloseCallback
+        1:              list<string>         fileExtensions,
+        2:   optional   native-js-Object     onSelectCallback,
+        3:   optional   native-js-Object     onCancelCallback
     ),
     void    OpenDialog()
 }

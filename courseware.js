@@ -80,6 +80,26 @@ exceptionsArray
 }
 },
 /**
+ * @returns {CoursewareScreenData}
+ */
+GetScreenData: function(){
+if (this._shrewd) {
+var parametersArray = new Array();
+if (this._shrewd.local) {
+} else {
+}
+var exceptionsArray = new Array();
+return this._shrewd.communicate(
+"BuildEmpire.Mosaic.Courseware.ConnectorInboundService",
+"GetScreenData",
+parametersArray,
+"CoursewareScreenData",
+"",
+exceptionsArray
+);
+}
+},
+/**
  * @param {string} componentName
  * @returns {void} 
  */
@@ -250,6 +270,10 @@ var CoursewareLearningPathFulfilmentType = {"NONE" : 1, "CHILDREN" : 2, "ALL" : 
  * Automatically Generated Shrewd File
  */
 var CoursewareStructureItemType = {"PROJECT" : 1, "FOLDER" : 2, "SCREEN" : 3};
+/**
+ * Automatically Generated Shrewd File
+ */
+var CoursewareEditableFormFieldType = {"TEXT" : 1, "PASSWORD" : 2, "HTML" : 3, "SELECT" : 4, "CHECKBOX" : 5, "RADIO" : 6};
 /**
  * Automatically Generated Shrewd File
  */
@@ -930,10 +954,6 @@ learningPaths : null,
  */
 template : new CoursewareTemplate(),
 /**
- * @type {CoursewareTemplate}
- */
-template : new CoursewareTemplate(),
-/**
  * @type {Array} components
  */
 components : null,
@@ -959,7 +979,6 @@ var parametersArray = new Array();
 parametersArray.push(this.id);
 parametersArray.push((this.translation) ? this.translation.getShrewd() : null);
 if (this.learningPaths) {var l=this.learningPaths.length;var lArray = new Array();for (var a=0; a<l; a++) {lArray.push((this.learningPaths[a]) ? this.learningPaths[a].getShrewd() : null);}parametersArray.push(lArray);} else {parametersArray.push(this.learningPaths)}
-parametersArray.push((this.template) ? this.template.getShrewd() : null);
 parametersArray.push((this.template) ? this.template.getShrewd() : null);
 if (this.components) {var l=this.components.length;var lArray = new Array();for (var a=0; a<l; a++) {lArray.push((this.components[a]) ? this.components[a].getShrewd() : null);}parametersArray.push(lArray);} else {parametersArray.push(this.components)}
 return parametersArray;
@@ -1003,19 +1022,12 @@ this.template = theClass;
 this.template = null;
 }
 if (shrewdArray[4]) {
-var theClass = new CoursewareTemplate();
-theClass.setShrewd(shrewdArray[4]);
-this.template = theClass;
-} else {
-this.template = null;
-}
-if (shrewdArray[5]) {
-var l=shrewdArray[5].length;
+var l=shrewdArray[4].length;
 var lArray = new Array();
 for (var a=0; a<l; a++) {
-if (shrewdArray[5][a]) {
+if (shrewdArray[4][a]) {
 var theClass = new CoursewareComponentData();
-theClass.setShrewd(shrewdArray[5][a]);
+theClass.setShrewd(shrewdArray[4][a]);
 lArray[a] = theClass;
 } else {
 lArray[a] = null;
@@ -1025,6 +1037,240 @@ lArray[a] = null;
 lArray = null;
 }
 this.components = lArray;
+},
+initialize: function(){
+}
+});
+/**
+ * Automatically Generated Shrewd File
+ */
+var CoursewareEditableFormFieldHTML = new Class({
+/**
+ * @type {string} name
+ */
+name : null,
+/**
+ * @type {string}
+ */
+shrewdNS : "BuildEmpire.Mosaic.Courseware.EditableFormFieldHTML",
+/**
+ * Get the name of the MooTools class.
+ * 
+ * @returns {string}
+ */
+getName : function(){
+return "CoursewareEditableFormFieldHTML";
+},
+/**
+ * Get the content as a shrewd array.
+ * 
+ * @returns {null} The shrewd array.
+ */
+getShrewd: function(){
+var parametersArray = new Array();
+parametersArray.push(this.name);
+return parametersArray;
+},
+/**
+ * Set the content via the shrewd array.
+ * 
+ * @param {Array} shrewdArray
+ * @returns {null} 
+ */
+setShrewd: function(shrewdArray){
+this.name = shrewdArray[0];
+},
+initialize: function(){
+}
+});
+/**
+ * Automatically Generated Shrewd File
+ */
+var CoursewareEditableFormField = new Class({
+/**
+ * @type {integer} type
+ */
+type : null,
+/**
+ * @type {string} name
+ */
+name : null,
+/**
+ * @type {string} title
+ */
+title : null,
+/**
+ * @type {string} value
+ */
+value : null,
+/**
+ * @type {boolean} required
+ */
+required : null,
+/**
+ * @type {Object} data
+ */
+data : null,
+/**
+ * @type {string}
+ */
+shrewdNS : "BuildEmpire.Mosaic.Courseware.EditableFormField",
+/**
+ * Get the name of the MooTools class.
+ * 
+ * @returns {string}
+ */
+getName : function(){
+return "CoursewareEditableFormField";
+},
+/**
+ * Get the content as a shrewd array.
+ * 
+ * @returns {null} The shrewd array.
+ */
+getShrewd: function(){
+var parametersArray = new Array();
+parametersArray.push(this.type);
+parametersArray.push(this.name);
+parametersArray.push(this.title);
+parametersArray.push(this.value);
+parametersArray.push(this.required);
+parametersArray.push(this.data);
+return parametersArray;
+},
+/**
+ * Set the content via the shrewd array.
+ * 
+ * @param {Array} shrewdArray
+ * @returns {null} 
+ */
+setShrewd: function(shrewdArray){
+this.type = shrewdArray[0];
+this.name = shrewdArray[1];
+this.title = shrewdArray[2];
+this.value = shrewdArray[3];
+this.required = shrewdArray[4];
+this.data = shrewdArray[5];
+},
+initialize: function(){
+}
+});
+/**
+ * Automatically Generated Shrewd File
+ */
+var CoursewareEditableFormGroup = new Class({
+/**
+ * @type {string} name
+ */
+name : null,
+/**
+ * @type {Array} fields
+ */
+fields : null,
+/**
+ * @type {string}
+ */
+shrewdNS : "BuildEmpire.Mosaic.Courseware.EditableFormGroup",
+/**
+ * Get the name of the MooTools class.
+ * 
+ * @returns {string}
+ */
+getName : function(){
+return "CoursewareEditableFormGroup";
+},
+/**
+ * Get the content as a shrewd array.
+ * 
+ * @returns {null} The shrewd array.
+ */
+getShrewd: function(){
+var parametersArray = new Array();
+parametersArray.push(this.name);
+if (this.fields) {var l=this.fields.length;var lArray = new Array();for (var a=0; a<l; a++) {lArray.push((this.fields[a]) ? this.fields[a].getShrewd() : null);}parametersArray.push(lArray);} else {parametersArray.push(this.fields)}
+return parametersArray;
+},
+/**
+ * Set the content via the shrewd array.
+ * 
+ * @param {Array} shrewdArray
+ * @returns {null} 
+ */
+setShrewd: function(shrewdArray){
+this.name = shrewdArray[0];
+if (shrewdArray[1]) {
+var l=shrewdArray[1].length;
+var lArray = new Array();
+for (var a=0; a<l; a++) {
+if (shrewdArray[1][a]) {
+var theClass = new CoursewareEditableFormField();
+theClass.setShrewd(shrewdArray[1][a]);
+lArray[a] = theClass;
+} else {
+lArray[a] = null;
+}
+}
+} else {
+lArray = null;
+}
+this.fields = lArray;
+},
+initialize: function(){
+}
+});
+/**
+ * Automatically Generated Shrewd File
+ */
+var CoursewareEditableForm = new Class({
+/**
+ * @type {Array} groups
+ */
+groups : null,
+/**
+ * @type {string}
+ */
+shrewdNS : "BuildEmpire.Mosaic.Courseware.EditableForm",
+/**
+ * Get the name of the MooTools class.
+ * 
+ * @returns {string}
+ */
+getName : function(){
+return "CoursewareEditableForm";
+},
+/**
+ * Get the content as a shrewd array.
+ * 
+ * @returns {null} The shrewd array.
+ */
+getShrewd: function(){
+var parametersArray = new Array();
+if (this.groups) {var l=this.groups.length;var lArray = new Array();for (var a=0; a<l; a++) {lArray.push((this.groups[a]) ? this.groups[a].getShrewd() : null);}parametersArray.push(lArray);} else {parametersArray.push(this.groups)}
+return parametersArray;
+},
+/**
+ * Set the content via the shrewd array.
+ * 
+ * @param {Array} shrewdArray
+ * @returns {null} 
+ */
+setShrewd: function(shrewdArray){
+if (shrewdArray[0]) {
+var l=shrewdArray[0].length;
+var lArray = new Array();
+for (var a=0; a<l; a++) {
+if (shrewdArray[0][a]) {
+var theClass = new CoursewareEditableFormGroup();
+theClass.setShrewd(shrewdArray[0][a]);
+lArray[a] = theClass;
+} else {
+lArray[a] = null;
+}
+}
+} else {
+lArray = null;
+}
+this.groups = lArray;
 },
 initialize: function(){
 }

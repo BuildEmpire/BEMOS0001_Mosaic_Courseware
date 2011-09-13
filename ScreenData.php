@@ -23,10 +23,6 @@ public $learningPaths;
  */
 public $template;
 /**
- * @var \BuildEmpire\Mosaic\Courseware\Template
- */
-public $template;
-/**
  * @var \BuildEmpire\Mosaic\Courseware\ComponentData[]
  */
 public $components;
@@ -39,7 +35,6 @@ $paramArray = array();
 $paramArray[] = $shrewd->getParameter("ScreenData", 1, $this->id, "id", "string-id", "", false);
 $paramArray[] = ($shrewd->getParameter("ScreenData", 1, $this->translation, "translation", "\BuildEmpire\Mosaic\Courseware\Translation", "", false)) ? $shrewd->getParameter("ScreenData", 1, $this->translation, "translation", "\BuildEmpire\Mosaic\Courseware\Translation", "", false) : null;
 $paramArray[] = $shrewd->getParameter("ScreenData", 1, $this->learningPaths, "learningPaths", "list", "\BuildEmpire\Mosaic\Courseware\LearningPath", true);
-$paramArray[] = ($shrewd->getParameter("ScreenData", 1, $this->template, "template", "\BuildEmpire\Mosaic\Courseware\Template", "", false)) ? $shrewd->getParameter("ScreenData", 1, $this->template, "template", "\BuildEmpire\Mosaic\Courseware\Template", "", false) : null;
 $paramArray[] = ($shrewd->getParameter("ScreenData", 1, $this->template, "template", "\BuildEmpire\Mosaic\Courseware\Template", "", false)) ? $shrewd->getParameter("ScreenData", 1, $this->template, "template", "\BuildEmpire\Mosaic\Courseware\Template", "", false) : null;
 $paramArray[] = $shrewd->getParameter("ScreenData", 1, $this->components, "components", "list", "\BuildEmpire\Mosaic\Courseware\ComponentData", false);
 return $paramArray;
@@ -59,11 +54,6 @@ $theClass = new \BuildEmpire\Mosaic\Courseware\Template();
 $theClass->setShrewd($shrewd, $shrewdArray[3]);
 $this->template = $theClass;
 }
-if ($shrewdArray[4]) {
-$theClass = new \BuildEmpire\Mosaic\Courseware\Template();
-$theClass->setShrewd($shrewd, $shrewdArray[4]);
-$this->template = $theClass;
-}
-if (isset($shrewdArray[5])) {$this->components = $shrewd->setParameter("ScreenData", 2, $shrewdArray[5], "components", "list", "\BuildEmpire\Mosaic\Courseware\ComponentData", false);}
+if (isset($shrewdArray[4])) {$this->components = $shrewd->setParameter("ScreenData", 2, $shrewdArray[4], "components", "list", "\BuildEmpire\Mosaic\Courseware\ComponentData", false);}
 }
 }

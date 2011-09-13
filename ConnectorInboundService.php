@@ -35,6 +35,12 @@ return "void";
 private function _SetScreenDataGetReturnContentType() {
 return "";
 }
+private function _GetScreenDataGetReturnType() {
+return "\BuildEmpire\Mosaic\Courseware\ScreenData";
+}
+private function _GetScreenDataGetReturnContentType() {
+return "";
+}
 private function _AddComponentGetReturnType() {
 return "void";
 }
@@ -68,6 +74,10 @@ $param->optional = false;
 $params[] = $param;
 return $params;
 }
+private function _GetScreenDataGetArguments() {
+$params = array();
+return $params;
+}
 private function _AddComponentGetArguments() {
 $params = array();
 $param = new Parameter();
@@ -86,6 +96,10 @@ $params = array();
 return $params;
 }
 private function _SetScreenDataGetExceptions() {
+$params = array();
+return $params;
+}
+private function _GetScreenDataGetExceptions() {
 $params = array();
 return $params;
 }

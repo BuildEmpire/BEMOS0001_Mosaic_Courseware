@@ -84,8 +84,39 @@ struct ScreenData {
     2:  Translation                        translation,
     3:  optional    list<LearningPath>     learningPaths,
     4:  Template                           template,
-    5:  Template                           template,
-    6:  list<ComponentData>                components
+    5:  list<ComponentData>                components
+}
+
+
+enum EditableFormFieldType {
+    TEXT = 1,
+    PASSWORD = 2,
+    HTML = 3,
+    SELECT = 4,
+    CHECKBOX = 5,
+    RADIO = 6
+}
+
+struct EditableFormFieldHTML {
+    1: string                 name,
+}
+
+struct EditableFormField {
+    1: EditableFormFieldType  type,
+    2: string                 name,
+    3: string                 title,
+    4: string                 value,
+    5: boolean                required,
+    6: native-js-Object       data
+}
+
+struct EditableFormGroup {
+    1: string                      name,
+    2: list<EditableFormField>     fields
+}
+
+struct EditableForm {
+    1: list<EditableFormGroup>     groups
 }
 
 
@@ -99,6 +130,7 @@ service ConnectorInbound {
     void    SetScreenData(
         1:   ScreenData     screenData
     ),
+    ScreenData    GetScreenData(),
     void    AddComponent(
         1:   string          componentName
     ),

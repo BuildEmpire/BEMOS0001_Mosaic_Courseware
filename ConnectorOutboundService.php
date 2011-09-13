@@ -35,6 +35,12 @@ return "void";
 private function _OpenResourceManagerGetReturnContentType() {
 return "";
 }
+private function _OpenEditDialogGetReturnType() {
+return "void";
+}
+private function _OpenEditDialogGetReturnContentType() {
+return "";
+}
 private function _OpenDialogGetReturnType() {
 return "void";
 }
@@ -74,6 +80,25 @@ $param->optional = true;
 $params[] = $param;
 return $params;
 }
+private function _OpenEditDialogGetArguments() {
+$params = array();
+$param = new Parameter();
+$param->name = "editableForm";
+$param->type = "\BuildEmpire\Mosaic\Courseware\EditableForm";
+$param->optional = false;
+$params[] = $param;
+$param = new Parameter();
+$param->name = "onSaveCallback";
+$param->type = "\\native-js-Object";
+$param->optional = true;
+$params[] = $param;
+$param = new Parameter();
+$param->name = "onCancelCallback";
+$param->type = "\\native-js-Object";
+$param->optional = true;
+$params[] = $param;
+return $params;
+}
 private function _OpenDialogGetArguments() {
 $params = array();
 return $params;
@@ -87,6 +112,10 @@ $params = array();
 return $params;
 }
 private function _OpenResourceManagerGetExceptions() {
+$params = array();
+return $params;
+}
+private function _OpenEditDialogGetExceptions() {
 $params = array();
 return $params;
 }

@@ -225,6 +225,35 @@ exceptionsArray
 }
 },
 /**
+ * @param {CoursewareEditableForm}
+ * @param {Object} onSaveCallback
+ * @param {Object} onCancelCallback
+ * @returns {void} 
+ */
+OpenEditDialog: function(editableForm, onSaveCallback, onCancelCallback){
+if (this._shrewd) {
+var parametersArray = new Array();
+if (this._shrewd.local) {
+parametersArray.push(editableForm);
+parametersArray.push(onSaveCallback);
+parametersArray.push(onCancelCallback);
+} else {
+parametersArray.push((editableForm) ? editableForm.getShrewd() : null);
+parametersArray.push(onSaveCallback);
+parametersArray.push(onCancelCallback);
+}
+var exceptionsArray = new Array();
+return this._shrewd.communicate(
+"BuildEmpire.Mosaic.Courseware.ConnectorOutboundService",
+"OpenEditDialog",
+parametersArray,
+"void",
+"",
+exceptionsArray
+);
+}
+},
+/**
  * @returns {void} 
  */
 OpenDialog: function(){
@@ -1100,13 +1129,13 @@ name : null,
  */
 title : null,
 /**
- * @type {string} value
- */
-value : null,
-/**
  * @type {boolean} required
  */
 required : null,
+/**
+ * @type {string} value
+ */
+value : null,
 /**
  * @type {Object} data
  */
@@ -1133,8 +1162,8 @@ var parametersArray = new Array();
 parametersArray.push(this.type);
 parametersArray.push(this.name);
 parametersArray.push(this.title);
-parametersArray.push(this.value);
 parametersArray.push(this.required);
+parametersArray.push(this.value);
 parametersArray.push(this.data);
 return parametersArray;
 },
@@ -1148,8 +1177,8 @@ setShrewd: function(shrewdArray){
 this.type = shrewdArray[0];
 this.name = shrewdArray[1];
 this.title = shrewdArray[2];
-this.value = shrewdArray[3];
-this.required = shrewdArray[4];
+this.required = shrewdArray[3];
+this.value = shrewdArray[4];
 this.data = shrewdArray[5];
 },
 initialize: function(){

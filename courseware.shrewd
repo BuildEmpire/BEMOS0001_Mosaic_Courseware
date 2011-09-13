@@ -102,12 +102,12 @@ struct EditableFormFieldHTML {
 }
 
 struct EditableFormField {
-    1: EditableFormFieldType  type,
-    2: string                 name,
-    3: string                 title,
-    4: string                 value,
-    5: boolean                required,
-    6: native-js-Object       data
+    1:              EditableFormFieldType  type,
+    2:              string                 name,
+    3:              string                 title,
+    4:              boolean                required,
+    5: optional     string                 value,
+    6: optional     native-js-Object       data
 }
 
 struct EditableFormGroup {
@@ -144,6 +144,11 @@ service ConnectorOutbound {
     void    OpenResourceManager(
         1:              list<string>         fileExtensions,
         2:   optional   native-js-Object     onSelectCallback,
+        3:   optional   native-js-Object     onCancelCallback
+    ),
+    void    OpenEditDialog(
+        1:              EditableForm         editableForm,
+        2:   optional   native-js-Object     onSaveCallback,
         3:   optional   native-js-Object     onCancelCallback
     ),
     void    OpenDialog()

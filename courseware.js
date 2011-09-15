@@ -760,6 +760,10 @@ initialize: function(){
  */
 var CoursewareComponentData = new Class({
 /**
+ * @type {string} id (ID).
+ */
+id : null,
+/**
  * @type {string} name
  */
 name : null,
@@ -786,6 +790,7 @@ return "CoursewareComponentData";
  */
 getShrewd: function(){
 var parametersArray = new Array();
+parametersArray.push(this.id);
 parametersArray.push(this.name);
 parametersArray.push(this.data);
 return parametersArray;
@@ -797,8 +802,9 @@ return parametersArray;
  * @returns {null} 
  */
 setShrewd: function(shrewdArray){
-this.name = shrewdArray[0];
-this.data = shrewdArray[1];
+this.id = shrewdArray[0];
+this.name = shrewdArray[1];
+this.data = shrewdArray[2];
 },
 initialize: function(){
 }

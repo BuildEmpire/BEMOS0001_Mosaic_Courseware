@@ -64,8 +64,9 @@ struct Component {
 
 
 struct ComponentData {
-    1:  string                              name,
-    2:  list                                data
+    1:  string-id                           id,
+    2:  string                              name,
+    3:  list                                data
 }
 
 struct ConfigurationData {

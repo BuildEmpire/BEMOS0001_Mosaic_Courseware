@@ -30,6 +30,10 @@ public $children;
  * @var integer[]
  */
 public $learningPathIds;
+/**
+ * @var \BuildEmpire\Mosaic\Courseware\ScreenData
+ */
+public $screenData;
 public function getShrewdNS(){
 return "BuildEmpire.Mosaic.Courseware.StructureItem";
 }
@@ -42,6 +46,7 @@ $paramArray[] = $shrewd->getParameter("StructureItem", 1, $this->title, "title",
 $paramArray[] = $shrewd->getParameter("StructureItem", 1, $this->available, "available", "integer", "", false);
 $paramArray[] = $shrewd->getParameter("StructureItem", 1, $this->children, "children", "list", "\BuildEmpire\Mosaic\Courseware\StructureItem", true);
 $paramArray[] = $shrewd->getParameter("StructureItem", 1, $this->learningPathIds, "learningPathIds", "map", "integer", true);
+$paramArray[] = ($shrewd->getParameter("StructureItem", 1, $this->screenData, "screenData", "\BuildEmpire\Mosaic\Courseware\ScreenData", "", true)) ? $shrewd->getParameter("StructureItem", 1, $this->screenData, "screenData", "\BuildEmpire\Mosaic\Courseware\ScreenData", "", true) : null;
 return $paramArray;
 }
 public function setShrewd(
@@ -53,5 +58,10 @@ if (isset($shrewdArray[2])) {$this->title = $shrewd->setParameter("StructureItem
 if (isset($shrewdArray[3])) {$this->available = $shrewd->setParameter("StructureItem", 2, $shrewdArray[3], "available", "integer", "", false);}
 if (isset($shrewdArray[4])) {$this->children = $shrewd->setParameter("StructureItem", 2, $shrewdArray[4], "children", "list", "\BuildEmpire\Mosaic\Courseware\StructureItem", true);}
 if (isset($shrewdArray[5])) {$this->learningPathIds = $shrewd->setParameter("StructureItem", 2, $shrewdArray[5], "learningPathIds", "map", "integer", true);}
+if ($shrewdArray[6]) {
+$theClass = new \BuildEmpire\Mosaic\Courseware\ScreenData();
+$theClass->setShrewd($shrewd, $shrewdArray[6]);
+$this->screenData = $theClass;
+}
 }
 }

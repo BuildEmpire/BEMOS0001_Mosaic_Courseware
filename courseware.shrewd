@@ -26,7 +26,7 @@ struct LearningPath {
 }
 
 struct Template {
-    1:  string                             name,
+    1:  string                name,
     2:  list<Column>          columns
 }
 
@@ -34,21 +34,6 @@ enum LearningPathFulfilmentType {
     NONE = 1,
     CHILDREN = 2,
     ALL = 3,
-}
-
-enum StructureItemType {
-    PROJECT = 1,
-    FOLDER = 2,
-    SCREEN = 3,
-}
-
-struct StructureItem {
-    1:  optional    string-id               id,
-    2:              StructureItemType       type,
-    3:              string                  title,
-    4:              integer                 available,
-    5:  optional    list<StructureItem>     children,
-    6:  optional    map<string-id,StructureItemType>         learningPathIds
 }
 
 struct Screen {
@@ -84,10 +69,25 @@ struct ScreenData {
     1:  string-id                          id,
     2:  Translation                        translation,
     3:  optional    list<LearningPath>     learningPaths,
-    4:  Template                           template,
-    5:  list<ComponentData>                components
+    4:  optional    Template               template,
+    5:  optional    list<ComponentData>    components
 }
 
+enum StructureItemType {
+    PROJECT = 1,
+    FOLDER = 2,
+    SCREEN = 3,
+}
+
+struct StructureItem {
+    1:  optional    string-id                           id,
+    2:              StructureItemType                   type,
+    3:              string                              title,
+    4:              integer                             available,
+    5:  optional    list<StructureItem>                 children,
+    6:  optional    map<string-id,StructureItemType>    learningPathIds,
+    7   optional    ScreenData                          screenData
+}
 
 enum EditableFormFieldType {
     TEXT = 1,

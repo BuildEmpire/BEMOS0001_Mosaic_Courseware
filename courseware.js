@@ -561,101 +561,6 @@ initialize: function(){
 /**
  * Automatically Generated Shrewd File
  */
-var CoursewareStructureItem = new Class({
-/**
- * @type {string} id (ID).
- */
-id : null,
-/**
- * @type {integer} type
- */
-type : null,
-/**
- * @type {string} title
- */
-title : null,
-/**
- * @type {integer} available
- */
-available : null,
-/**
- * @type {Array} children
- */
-children : null,
-/**
- * @type {Hash} learningPathIds
- */
-learningPathIds : null,
-/**
- * @type {string}
- */
-shrewdNS : "BuildEmpire.Mosaic.Courseware.StructureItem",
-/**
- * Get the name of the MooTools class.
- * 
- * @returns {string}
- */
-getName : function(){
-return "CoursewareStructureItem";
-},
-/**
- * Get the content as a shrewd array.
- * 
- * @returns {null} The shrewd array.
- */
-getShrewd: function(){
-var parametersArray = new Array();
-parametersArray.push(this.id);
-parametersArray.push(this.type);
-parametersArray.push(this.title);
-parametersArray.push(this.available);
-if (this.children) {var l=this.children.length;var lArray = new Array();for (var a=0; a<l; a++) {lArray.push((this.children[a]) ? this.children[a].getShrewd() : null);}parametersArray.push(lArray);} else {parametersArray.push(this.children)}
-if (this.learningPathIds) {var lHash = new Hash();this.learningPathIds.each(function(v, k){lHash[k] = v;});parametersArray.push(lHash);} else {parametersArray.push(this.learningPathIds)}
-return parametersArray;
-},
-/**
- * Set the content via the shrewd array.
- * 
- * @param {Array} shrewdArray
- * @returns {null} 
- */
-setShrewd: function(shrewdArray){
-this.id = shrewdArray[0];
-this.type = shrewdArray[1];
-this.title = shrewdArray[2];
-this.available = shrewdArray[3];
-if (shrewdArray[4]) {
-var l=shrewdArray[4].length;
-var lArray = new Array();
-for (var a=0; a<l; a++) {
-if (shrewdArray[4][a]) {
-var theClass = new CoursewareStructureItem();
-theClass.setShrewd(shrewdArray[4][a]);
-lArray[a] = theClass;
-} else {
-lArray[a] = null;
-}
-}
-} else {
-lArray = null;
-}
-this.children = lArray;
-if (shrewdArray[5]) {
-var lHash = new Hash();
-for (var p in shrewdArray[5]) {
-lHash[p] = shrewdArray[5][p];
-};
-} else {
-lHash = null;
-}
-this.learningPathIds = lHash;
-},
-initialize: function(){
-}
-});
-/**
- * Automatically Generated Shrewd File
- */
 var CoursewareScreen = new Class({
 /**
  * @type {integer} width
@@ -1072,6 +977,113 @@ lArray[a] = null;
 lArray = null;
 }
 this.components = lArray;
+},
+initialize: function(){
+}
+});
+/**
+ * Automatically Generated Shrewd File
+ */
+var CoursewareStructureItem = new Class({
+/**
+ * @type {string} id (ID).
+ */
+id : null,
+/**
+ * @type {integer} type
+ */
+type : null,
+/**
+ * @type {string} title
+ */
+title : null,
+/**
+ * @type {integer} available
+ */
+available : null,
+/**
+ * @type {Array} children
+ */
+children : null,
+/**
+ * @type {Hash} learningPathIds
+ */
+learningPathIds : null,
+/**
+ * @type {CoursewareScreenData}
+ */
+screenData : new CoursewareScreenData(),
+/**
+ * @type {string}
+ */
+shrewdNS : "BuildEmpire.Mosaic.Courseware.StructureItem",
+/**
+ * Get the name of the MooTools class.
+ * 
+ * @returns {string}
+ */
+getName : function(){
+return "CoursewareStructureItem";
+},
+/**
+ * Get the content as a shrewd array.
+ * 
+ * @returns {null} The shrewd array.
+ */
+getShrewd: function(){
+var parametersArray = new Array();
+parametersArray.push(this.id);
+parametersArray.push(this.type);
+parametersArray.push(this.title);
+parametersArray.push(this.available);
+if (this.children) {var l=this.children.length;var lArray = new Array();for (var a=0; a<l; a++) {lArray.push((this.children[a]) ? this.children[a].getShrewd() : null);}parametersArray.push(lArray);} else {parametersArray.push(this.children)}
+if (this.learningPathIds) {var lHash = new Hash();this.learningPathIds.each(function(v, k){lHash[k] = v;});parametersArray.push(lHash);} else {parametersArray.push(this.learningPathIds)}
+parametersArray.push((this.screenData) ? this.screenData.getShrewd() : null);
+return parametersArray;
+},
+/**
+ * Set the content via the shrewd array.
+ * 
+ * @param {Array} shrewdArray
+ * @returns {null} 
+ */
+setShrewd: function(shrewdArray){
+this.id = shrewdArray[0];
+this.type = shrewdArray[1];
+this.title = shrewdArray[2];
+this.available = shrewdArray[3];
+if (shrewdArray[4]) {
+var l=shrewdArray[4].length;
+var lArray = new Array();
+for (var a=0; a<l; a++) {
+if (shrewdArray[4][a]) {
+var theClass = new CoursewareStructureItem();
+theClass.setShrewd(shrewdArray[4][a]);
+lArray[a] = theClass;
+} else {
+lArray[a] = null;
+}
+}
+} else {
+lArray = null;
+}
+this.children = lArray;
+if (shrewdArray[5]) {
+var lHash = new Hash();
+for (var p in shrewdArray[5]) {
+lHash[p] = shrewdArray[5][p];
+};
+} else {
+lHash = null;
+}
+this.learningPathIds = lHash;
+if (shrewdArray[6]) {
+var theClass = new CoursewareScreenData();
+theClass.setShrewd(shrewdArray[6]);
+this.screenData = theClass;
+} else {
+this.screenData = null;
+}
 },
 initialize: function(){
 }

@@ -67,10 +67,9 @@ struct ConfigurationData {
 
 struct ScreenData {
     1:  string-id                          id,
-    2:  Translation                        translation,
-    3:  optional    list<LearningPath>     learningPaths,
-    4:  optional    Template               template,
-    5:  optional    list<ComponentData>    components
+    2:  optional    list<LearningPath>     learningPaths,
+    3:  optional    Template               template,
+    4:  optional    list<ComponentData>    components
 }
 
 enum StructureItemType {
@@ -81,11 +80,12 @@ enum StructureItemType {
 
 struct StructureItem {
     1:  optional    string-id                           id,
-    2:  optional    StructureItemType                   type,
-    3:  optional    string                              title,
-    4:  optional    list<StructureItem>                 children,
-    5:  optional    map<string-id,StructureItemType>    learningPathIds,
-    6   optional    ScreenData                          screenData
+    2:  optional    string-id                           alias,
+    3:  optional    StructureItemType                   type,
+    4:  optional    string                              title,
+    5:  optional    list<StructureItem>                 children,
+    6:  optional    map<string-id,StructureItemType>    learningPathIds,
+    7:  optional    ScreenData                          screenData
 }
 
 enum EditableFormFieldType {

@@ -905,10 +905,6 @@ var CoursewareScreenData = new Class({
  */
 id : null,
 /**
- * @type {CoursewareTranslation}
- */
-translation : new CoursewareTranslation(),
-/**
  * @type {Array} learningPaths
  */
 learningPaths : null,
@@ -940,7 +936,6 @@ return "CoursewareScreenData";
 getShrewd: function(){
 var parametersArray = new Array();
 parametersArray.push(this.id);
-parametersArray.push((this.translation) ? this.translation.getShrewd() : null);
 if (this.learningPaths) {var l=this.learningPaths.length;var lArray = new Array();for (var a=0; a<l; a++) {lArray.push((this.learningPaths[a]) ? this.learningPaths[a].getShrewd() : null);}parametersArray.push(lArray);} else {parametersArray.push(this.learningPaths)}
 parametersArray.push((this.template) ? this.template.getShrewd() : null);
 if (this.components) {var l=this.components.length;var lArray = new Array();for (var a=0; a<l; a++) {lArray.push((this.components[a]) ? this.components[a].getShrewd() : null);}parametersArray.push(lArray);} else {parametersArray.push(this.components)}
@@ -955,19 +950,12 @@ return parametersArray;
 setShrewd: function(shrewdArray){
 this.id = shrewdArray[0];
 if (shrewdArray[1]) {
-var theClass = new CoursewareTranslation();
-theClass.setShrewd(shrewdArray[1]);
-this.translation = theClass;
-} else {
-this.translation = null;
-}
-if (shrewdArray[2]) {
-var l=shrewdArray[2].length;
+var l=shrewdArray[1].length;
 var lArray = new Array();
 for (var a=0; a<l; a++) {
-if (shrewdArray[2][a]) {
+if (shrewdArray[1][a]) {
 var theClass = new CoursewareLearningPath();
-theClass.setShrewd(shrewdArray[2][a]);
+theClass.setShrewd(shrewdArray[1][a]);
 lArray[a] = theClass;
 } else {
 lArray[a] = null;
@@ -977,20 +965,20 @@ lArray[a] = null;
 lArray = null;
 }
 this.learningPaths = lArray;
-if (shrewdArray[3]) {
+if (shrewdArray[2]) {
 var theClass = new CoursewareTemplate();
-theClass.setShrewd(shrewdArray[3]);
+theClass.setShrewd(shrewdArray[2]);
 this.template = theClass;
 } else {
 this.template = null;
 }
-if (shrewdArray[4]) {
-var l=shrewdArray[4].length;
+if (shrewdArray[3]) {
+var l=shrewdArray[3].length;
 var lArray = new Array();
 for (var a=0; a<l; a++) {
-if (shrewdArray[4][a]) {
+if (shrewdArray[3][a]) {
 var theClass = new CoursewareComponentData();
-theClass.setShrewd(shrewdArray[4][a]);
+theClass.setShrewd(shrewdArray[3][a]);
 lArray[a] = theClass;
 } else {
 lArray[a] = null;
@@ -1012,6 +1000,10 @@ var CoursewareStructureItem = new Class({
  * @type {string} id (ID).
  */
 id : null,
+/**
+ * @type {string} alias (ID).
+ */
+alias : null,
 /**
  * @type {integer} type
  */
@@ -1052,6 +1044,7 @@ return "CoursewareStructureItem";
 getShrewd: function(){
 var parametersArray = new Array();
 parametersArray.push(this.id);
+parametersArray.push(this.alias);
 parametersArray.push(this.type);
 parametersArray.push(this.title);
 if (this.children) {var l=this.children.length;var lArray = new Array();for (var a=0; a<l; a++) {lArray.push((this.children[a]) ? this.children[a].getShrewd() : null);}parametersArray.push(lArray);} else {parametersArray.push(this.children)}
@@ -1067,15 +1060,16 @@ return parametersArray;
  */
 setShrewd: function(shrewdArray){
 this.id = shrewdArray[0];
-this.type = shrewdArray[1];
-this.title = shrewdArray[2];
-if (shrewdArray[3]) {
-var l=shrewdArray[3].length;
+this.alias = shrewdArray[1];
+this.type = shrewdArray[2];
+this.title = shrewdArray[3];
+if (shrewdArray[4]) {
+var l=shrewdArray[4].length;
 var lArray = new Array();
 for (var a=0; a<l; a++) {
-if (shrewdArray[3][a]) {
+if (shrewdArray[4][a]) {
 var theClass = new CoursewareStructureItem();
-theClass.setShrewd(shrewdArray[3][a]);
+theClass.setShrewd(shrewdArray[4][a]);
 lArray[a] = theClass;
 } else {
 lArray[a] = null;
@@ -1085,18 +1079,18 @@ lArray[a] = null;
 lArray = null;
 }
 this.children = lArray;
-if (shrewdArray[4]) {
+if (shrewdArray[5]) {
 var lHash = new Hash();
-for (var p in shrewdArray[4]) {
-lHash[p] = shrewdArray[4][p];
+for (var p in shrewdArray[5]) {
+lHash[p] = shrewdArray[5][p];
 };
 } else {
 lHash = null;
 }
 this.learningPathIds = lHash;
-if (shrewdArray[5]) {
+if (shrewdArray[6]) {
 var theClass = new CoursewareScreenData();
-theClass.setShrewd(shrewdArray[5]);
+theClass.setShrewd(shrewdArray[6]);
 this.screenData = theClass;
 } else {
 this.screenData = null;

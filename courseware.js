@@ -196,6 +196,29 @@ exceptionsArray
 }
 },
 /**
+ * @param {boolean} dirtyState
+ * @returns {void} 
+ */
+SetDirty: function(dirtyState){
+if (this._shrewd) {
+var parametersArray = new Array();
+if (this._shrewd.local) {
+parametersArray.push(dirtyState);
+} else {
+parametersArray.push(dirtyState);
+}
+var exceptionsArray = new Array();
+return this._shrewd.communicate(
+"BuildEmpire.Mosaic.Courseware.ConnectorOutboundService",
+"SetDirty",
+parametersArray,
+"void",
+"",
+exceptionsArray
+);
+}
+},
+/**
  * @param {Array} fileExtensions
  * @param {Object} onSelectCallback
  * @param {Object} onCancelCallback

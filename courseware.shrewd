@@ -142,6 +142,9 @@ service ConnectorOutbound {
     void    SetInboundService(
         1:   native-js-Object     InboundService
     ),
+    void    SetDirty(
+        1:  boolean     dirtyState
+    ),
     void    OpenResourceManager(
         1:              list<string>         fileExtensions,
         2:   optional   native-js-Object     onSelectCallback,

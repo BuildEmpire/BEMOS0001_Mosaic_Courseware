@@ -29,6 +29,12 @@ return "void";
 private function _SetInboundServiceGetReturnContentType() {
 return "";
 }
+private function _SetDirtyGetReturnType() {
+return "void";
+}
+private function _SetDirtyGetReturnContentType() {
+return "";
+}
 private function _OpenResourceManagerGetReturnType() {
 return "void";
 }
@@ -56,6 +62,15 @@ $params = array();
 $param = new Parameter();
 $param->name = "InboundService";
 $param->type = "\\native-js-Object";
+$param->optional = false;
+$params[] = $param;
+return $params;
+}
+private function _SetDirtyGetArguments() {
+$params = array();
+$param = new Parameter();
+$param->name = "dirtyState";
+$param->type = "boolean";
 $param->optional = false;
 $params[] = $param;
 return $params;
@@ -108,6 +123,10 @@ $params = array();
 return $params;
 }
 private function _SetInboundServiceGetExceptions() {
+$params = array();
+return $params;
+}
+private function _SetDirtyGetExceptions() {
 $params = array();
 return $params;
 }

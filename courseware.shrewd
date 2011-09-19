@@ -81,12 +81,11 @@ enum StructureItemType {
 
 struct StructureItem {
     1:  optional    string-id                           id,
-    2:              StructureItemType                   type,
-    3:              string                              title,
-    4:              integer                             available,
-    5:  optional    list<StructureItem>                 children,
-    6:  optional    map<string-id,StructureItemType>    learningPathIds,
-    7   optional    ScreenData                          screenData
+    2:  optional    StructureItemType                   type,
+    3:  optional    string                              title,
+    4:  optional    list<StructureItem>                 children,
+    5:  optional    map<string-id,StructureItemType>    learningPathIds,
+    6   optional    ScreenData                          screenData
 }
 
 enum EditableFormFieldType {

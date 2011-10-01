@@ -752,7 +752,7 @@ name : null,
 /**
  * @type {CoursewareScreen}
  */
-screen : new CoursewareScreen(),
+screen : null,
 /**
  * @type {Array} translations
  */
@@ -903,7 +903,7 @@ var CoursewareScreenData = new Class({
 /**
  * @type {CoursewareTemplate}
  */
-template : new CoursewareTemplate(),
+template : null,
 /**
  * @type {Array} components
  */
@@ -1000,7 +1000,7 @@ learningPathIds : null,
 /**
  * @type {CoursewareScreenData}
  */
-screenData : new CoursewareScreenData(),
+screenData : null,
 /**
  * @type {string}
  */

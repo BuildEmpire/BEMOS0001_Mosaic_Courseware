@@ -1083,9 +1083,13 @@ initialize: function(){
  */
 var CoursewareEditableFormFieldHTML = new Class({
 /**
- * @type {string} name
+ * @type {string} cssPath
  */
-name : null,
+cssPath : null,
+/**
+ * @type {Array} styleFormats
+ */
+styleFormats : null,
 /**
  * @type {string}
  */
@@ -1105,7 +1109,8 @@ return "CoursewareEditableFormFieldHTML";
  */
 getShrewd: function(){
 var parametersArray = new Array();
-parametersArray.push(this.name);
+parametersArray.push(this.cssPath);
+parametersArray.push(this.styleFormats);
 return parametersArray;
 },
 /**
@@ -1115,7 +1120,8 @@ return parametersArray;
  * @returns {null} 
  */
 setShrewd: function(shrewdArray){
-this.name = shrewdArray[0];
+this.cssPath = shrewdArray[0];
+this.styleFormats = shrewdArray[1];
 },
 initialize: function(){
 }

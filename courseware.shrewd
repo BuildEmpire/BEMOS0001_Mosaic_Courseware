@@ -97,7 +97,8 @@ enum EditableFormFieldType {
 }
 
 struct EditableFormFieldHTML {
-    1: string                 name,
+    1: string                 cssPath,
+    2: list                   styleFormats,
 }
 
 struct EditableFormField {

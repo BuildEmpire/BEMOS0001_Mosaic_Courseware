@@ -121,19 +121,78 @@ struct EditableForm {
 
 
 service ConnectorInbound {
+
+    /**
+    Ready
+    When the external service has received the inbound service
+    successfully, it may let the inbound service know by calling Ready().
+    It will also pass an outbound service for which the courseware can
+    communicate to the external service with.
+    The inbound service is achieved by the declaration of a variable named
+    InboundService on the root of the javascript page, which must be defined
+    before page load completion.
+    */
     void    Ready(
         1:   native-js-Object     OutboundService
     ),
+
+    /**
+    SetEditable
+    Set the current editable status of the courseware.
+    */
+    void    SetEditable(
+        1:   boolean     editable
+    ),
+
+    /**
+    GetEditable
+    Get the current editable status of the courseware.
+    */
+    boolean    GetEditable(),
+
+    /**
+    SetConfigurationData
+    Set the configuration data object for the courseware.
+    This must be done before a Draw() call.
+    */
     void    SetConfigurationData(
         1:   ConfigurationData     configurationData
     ),
-    void    SetScreenData(
+
+    /**
+    SetScreenData
+    This returns a jQuery.Deferred promise object, which will be resolved
+    on load of all the component contained within the screen data.
+    When the call is resolved, you may call Draw().
+    */
+    native-js-jQuery    SetScreenData(
         1:   ScreenData     screenData
     ),
+
+    /**
+    GetScreenData
+    Retrieve the current screen data.
+    This may be after an amendment has been made by the course editor.
+    */
     ScreenData    GetScreenData(),
+
+    /**
+    Draw
+    Draw the screen, using the configuration and screen data set.
+    This may be called numerous times per load.
+    */
+    void    Draw(),
+
+    /**
+    AddComponent
+    Add a component of the component name type to the screen.
+    This may or may not be supported by the editor.
+    No re-draw is required.
+    */
     void    AddComponent(
         1:   string          componentName
     ),
+
 }
 
 service ConnectorOutbound {

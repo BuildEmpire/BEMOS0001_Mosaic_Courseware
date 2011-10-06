@@ -34,6 +34,49 @@ exceptionsArray
 }
 },
 /**
+ * @param {boolean} editable
+ * @returns {void} 
+ */
+SetEditable: function(editable){
+if (this._shrewd) {
+var parametersArray = new Array();
+if (this._shrewd.local) {
+parametersArray.push(editable);
+} else {
+parametersArray.push(editable);
+}
+var exceptionsArray = new Array();
+return this._shrewd.communicate(
+"BuildEmpire.Mosaic.Courseware.ConnectorInboundService",
+"SetEditable",
+parametersArray,
+"void",
+"",
+exceptionsArray
+);
+}
+},
+/**
+ * @returns {boolean} 
+ */
+GetEditable: function(){
+if (this._shrewd) {
+var parametersArray = new Array();
+if (this._shrewd.local) {
+} else {
+}
+var exceptionsArray = new Array();
+return this._shrewd.communicate(
+"BuildEmpire.Mosaic.Courseware.ConnectorInboundService",
+"GetEditable",
+parametersArray,
+"boolean",
+"",
+exceptionsArray
+);
+}
+},
+/**
  * @param {CoursewareConfigurationData}
  * @returns {void} 
  */
@@ -58,7 +101,7 @@ exceptionsArray
 },
 /**
  * @param {CoursewareScreenData}
- * @returns {void} 
+ * @returns {jQuery} 
  */
 SetScreenData: function(screenData){
 if (this._shrewd) {
@@ -73,7 +116,7 @@ return this._shrewd.communicate(
 "BuildEmpire.Mosaic.Courseware.ConnectorInboundService",
 "SetScreenData",
 parametersArray,
-"void",
+"jQuery",
 "",
 exceptionsArray
 );
@@ -94,6 +137,26 @@ return this._shrewd.communicate(
 "GetScreenData",
 parametersArray,
 "CoursewareScreenData",
+"",
+exceptionsArray
+);
+}
+},
+/**
+ * @returns {void} 
+ */
+Draw: function(){
+if (this._shrewd) {
+var parametersArray = new Array();
+if (this._shrewd.local) {
+} else {
+}
+var exceptionsArray = new Array();
+return this._shrewd.communicate(
+"BuildEmpire.Mosaic.Courseware.ConnectorInboundService",
+"Draw",
+parametersArray,
+"void",
 "",
 exceptionsArray
 );

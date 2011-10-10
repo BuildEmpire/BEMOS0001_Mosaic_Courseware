@@ -2,6 +2,17 @@ namespace shrewd BuildEmpire.Mosaic.Courseware
 namespace js Courseware
 namespace php BuildEmpire\Mosaic\Courseware
 
+/*
+This allows the courseware to define a mode and thus behave
+differently in said mode. This value may also be transferred to an
+external service, who may also act differently dependant on the mode set.
+*/
+enum Mode {
+    TEMPLATE_EDITOR = 1,
+    SCREEN_EDITOR = 2,
+    SCREEN_DISPLAY = 3
+}
+
 struct Column {
     1:  string-id                          id,
     2:  integer                            x,
@@ -226,23 +237,13 @@ service ConnectorOutbound {
     void    Ready(),
 
     /**
-    SetScreenDataEditStatus
-    This status of the screen data reported by the product can enable or
-    disable editing functionality (like a toolbar or button) in the external
-    product.
+    SetMode
+    Set the mode that the product is operating in.
+    This helps the external service to tailor its interface around
+    the mode.
     */
-    void    SetScreenDataEditStatus(
-        1:  boolean     state
-    ),
-
-    /**
-    SetTemplateEditStatus
-    This status of the template reported by the product can enable or
-    disable editing functionality (like a toolbar or button) in the external
-    product.
-    */
-    void    SetTemplateEditStatus(
-        1:  boolean     state
+    void    SetMode(
+        1:  Mode     mode
     ),
 
     /**

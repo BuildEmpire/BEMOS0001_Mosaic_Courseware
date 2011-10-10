@@ -23,16 +23,10 @@ return "void";
 private function _ReadyGetReturnContentType() {
 return "";
 }
-private function _SetScreenDataEditStatusGetReturnType() {
+private function _SetModeGetReturnType() {
 return "void";
 }
-private function _SetScreenDataEditStatusGetReturnContentType() {
-return "";
-}
-private function _SetTemplateEditStatusGetReturnType() {
-return "void";
-}
-private function _SetTemplateEditStatusGetReturnContentType() {
+private function _SetModeGetReturnContentType() {
 return "";
 }
 private function _SetDirtyGetReturnType() {
@@ -57,20 +51,11 @@ private function _ReadyGetArguments() {
 $params = array();
 return $params;
 }
-private function _SetScreenDataEditStatusGetArguments() {
+private function _SetModeGetArguments() {
 $params = array();
 $param = new Parameter();
-$param->name = "state";
-$param->type = "boolean";
-$param->optional = false;
-$params[] = $param;
-return $params;
-}
-private function _SetTemplateEditStatusGetArguments() {
-$params = array();
-$param = new Parameter();
-$param->name = "state";
-$param->type = "boolean";
+$param->name = "mode";
+$param->type = "integer";
 $param->optional = false;
 $params[] = $param;
 return $params;
@@ -127,11 +112,7 @@ private function _ReadyGetExceptions() {
 $params = array();
 return $params;
 }
-private function _SetScreenDataEditStatusGetExceptions() {
-$params = array();
-return $params;
-}
-private function _SetTemplateEditStatusGetExceptions() {
+private function _SetModeGetExceptions() {
 $params = array();
 return $params;
 }

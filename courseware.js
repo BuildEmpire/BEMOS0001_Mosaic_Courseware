@@ -279,44 +279,21 @@ exceptionsArray
 }
 },
 /**
- * @param {boolean} state
+ * @param {integer} mode
  * @returns {void} 
  */
-SetScreenDataEditStatus: function(state){
+SetMode: function(mode){
 if (this._shrewd) {
 var parametersArray = new Array();
 if (this._shrewd.local) {
-parametersArray.push(state);
+parametersArray.push(mode);
 } else {
-parametersArray.push(state);
+parametersArray.push(mode);
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 "BuildEmpire.Mosaic.Courseware.ConnectorOutboundService",
-"SetScreenDataEditStatus",
-parametersArray,
-"void",
-"",
-exceptionsArray
-);
-}
-},
-/**
- * @param {boolean} state
- * @returns {void} 
- */
-SetTemplateEditStatus: function(state){
-if (this._shrewd) {
-var parametersArray = new Array();
-if (this._shrewd.local) {
-parametersArray.push(state);
-} else {
-parametersArray.push(state);
-}
-var exceptionsArray = new Array();
-return this._shrewd.communicate(
-"BuildEmpire.Mosaic.Courseware.ConnectorOutboundService",
-"SetTemplateEditStatus",
+"SetMode",
 parametersArray,
 "void",
 "",
@@ -423,6 +400,10 @@ alert ('The object passed to CoursewareConnectorOutboundService is not an instan
 }
 }
 });
+/**
+ * Automatically Generated Shrewd File
+ */
+var CoursewareMode = {"TEMPLATE_EDITOR" : 1, "SCREEN_EDITOR" : 2, "SCREEN_DISPLAY" : 3};
 /**
  * Automatically Generated Shrewd File
  */

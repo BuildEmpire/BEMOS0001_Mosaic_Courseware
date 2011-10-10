@@ -1356,6 +1356,10 @@ initialize: function(){
  */
 var CoursewareEditableForm = new Class({
 /**
+ * @type {string} name
+ */
+name : null,
+/**
  * @type {Array} groups
  */
 groups : null,
@@ -1378,6 +1382,7 @@ return "CoursewareEditableForm";
  */
 getShrewd: function(){
 var parametersArray = new Array();
+parametersArray.push(this.name);
 if (this.groups) {var l=this.groups.length;var lArray = new Array();for (var a=0; a<l; a++) {lArray.push((this.groups[a]) ? this.groups[a].getShrewd() : null);}parametersArray.push(lArray);} else {parametersArray.push(this.groups)}
 return parametersArray;
 },
@@ -1388,13 +1393,14 @@ return parametersArray;
  * @returns {null} 
  */
 setShrewd: function(shrewdArray){
-if (shrewdArray[0]) {
-var l=shrewdArray[0].length;
+this.name = shrewdArray[0];
+if (shrewdArray[1]) {
+var l=shrewdArray[1].length;
 var lArray = new Array();
 for (var a=0; a<l; a++) {
-if (shrewdArray[0][a]) {
+if (shrewdArray[1][a]) {
 var theClass = new CoursewareEditableFormGroup();
-theClass.setShrewd(shrewdArray[0][a]);
+theClass.setShrewd(shrewdArray[1][a]);
 lArray[a] = theClass;
 } else {
 lArray[a] = null;

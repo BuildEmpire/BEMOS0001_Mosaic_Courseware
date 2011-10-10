@@ -127,7 +127,8 @@ struct EditableFormGroup {
 }
 
 struct EditableForm {
-    1: list<EditableFormGroup>     groups
+    1: string                      name,
+    2: list<EditableFormGroup>     groups
 }
 
 

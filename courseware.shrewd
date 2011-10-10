@@ -211,6 +211,17 @@ service ConnectorInbound {
     void    Draw(),
 
     /**
+    AddColumn
+    Add a column with the column name to the current template.
+    This may be within the template editor, or to the current screen template.
+    This may or may not be supported by the editor.
+    No re-draw is required.
+    */
+    void    AddColumn(
+        1:   string          columnName
+    ),
+
+    /**
     AddComponent
     Add a component of the component name type to the screen.
     This may or may not be supported by the editor.

@@ -206,6 +206,29 @@ exceptionsArray
 }
 },
 /**
+ * @param {string} columnName
+ * @returns {void} 
+ */
+AddColumn: function(columnName){
+if (this._shrewd) {
+var parametersArray = new Array();
+if (this._shrewd.local) {
+parametersArray.push(columnName);
+} else {
+parametersArray.push(columnName);
+}
+var exceptionsArray = new Array();
+return this._shrewd.communicate(
+"BuildEmpire.Mosaic.Courseware.ConnectorInboundService",
+"AddColumn",
+parametersArray,
+"void",
+"",
+exceptionsArray
+);
+}
+},
+/**
  * @param {string} componentName
  * @returns {void} 
  */

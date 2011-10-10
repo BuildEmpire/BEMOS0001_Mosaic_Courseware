@@ -71,6 +71,12 @@ return "void";
 private function _DrawGetReturnContentType() {
 return "";
 }
+private function _AddColumnGetReturnType() {
+return "void";
+}
+private function _AddColumnGetReturnContentType() {
+return "";
+}
 private function _AddComponentGetReturnType() {
 return "void";
 }
@@ -138,6 +144,15 @@ private function _DrawGetArguments() {
 $params = array();
 return $params;
 }
+private function _AddColumnGetArguments() {
+$params = array();
+$param = new Parameter();
+$param->name = "columnName";
+$param->type = "string";
+$param->optional = false;
+$params[] = $param;
+return $params;
+}
 private function _AddComponentGetArguments() {
 $params = array();
 $param = new Parameter();
@@ -180,6 +195,10 @@ $params = array();
 return $params;
 }
 private function _DrawGetExceptions() {
+$params = array();
+return $params;
+}
+private function _AddColumnGetExceptions() {
 $params = array();
 return $params;
 }

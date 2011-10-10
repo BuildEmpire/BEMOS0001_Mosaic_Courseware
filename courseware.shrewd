@@ -210,23 +210,76 @@ service ConnectorInbound {
 
 }
 
+
+/**
+The outbound connector is the channel the courseware can communicate
+outbound (externally) to Mosaic.
+*/
 service ConnectorOutbound {
+
+    /**
+    Ready
+    When the product has received the outbound service via its inbound
+    connector, it can inform the external service that it is ready to receive
+    data by calling the Ready() method on the outbound connector.
+    */
     void    Ready(),
-    void    SetInboundService(
-        1:   native-js-Object     InboundService
+
+    /**
+    SetScreenDataEditStatus
+    This status of the screen data reported by the product can enable or
+    disable editing functionality (like a toolbar or button) in the external
+    product.
+    */
+    void    SetScreenDataEditStatus(
+        1:  boolean     state
     ),
+
+    /**
+    SetTemplateEditStatus
+    This status of the template reported by the product can enable or
+    disable editing functionality (like a toolbar or button) in the external
+    product.
+    */
+    void    SetTemplateEditStatus(
+        1:  boolean     state
+    ),
+
+    /**
+    SetDirty
+    Inform the external service of the dirty state (edited).
+    If true, the content has been edited (is dirty).
+    This may, for instance, prompt the save button in the external
+    service to enable.
+    */
     void    SetDirty(
         1:  boolean     dirtyState
     ),
+
+    /**
+    OpenResourceManager
+    Open the resource manager inside the external service.
+    It is also possible to send methods that will be called on select or
+    cancel.
+    */
     void    OpenResourceManager(
         1:              list<string>         fileExtensions,
         2:   optional   native-js-Object     onSelectCallback,
         3:   optional   native-js-Object     onCancelCallback
     ),
+
+    /**
+    OpenEditDialog
+    Open an edit dialog inside the external service.
+    An editable form is passed with teh required field information to draw
+    an editable form dialog.
+    It is also possible to send methods that will be called on select or
+    cancel.
+    */
     void    OpenEditDialog(
         1:              EditableForm         editableForm,
         2:   optional   native-js-Object     onSaveCallback,
         3:   optional   native-js-Object     onCancelCallback
-    ),
-    void    OpenDialog()
+    )
+
 }

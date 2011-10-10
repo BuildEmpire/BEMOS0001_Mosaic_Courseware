@@ -279,21 +279,44 @@ exceptionsArray
 }
 },
 /**
- * @param {Object} InboundService
+ * @param {boolean} state
  * @returns {void} 
  */
-SetInboundService: function(InboundService){
+SetScreenDataEditStatus: function(state){
 if (this._shrewd) {
 var parametersArray = new Array();
 if (this._shrewd.local) {
-parametersArray.push(InboundService);
+parametersArray.push(state);
 } else {
-parametersArray.push(InboundService);
+parametersArray.push(state);
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 "BuildEmpire.Mosaic.Courseware.ConnectorOutboundService",
-"SetInboundService",
+"SetScreenDataEditStatus",
+parametersArray,
+"void",
+"",
+exceptionsArray
+);
+}
+},
+/**
+ * @param {boolean} state
+ * @returns {void} 
+ */
+SetTemplateEditStatus: function(state){
+if (this._shrewd) {
+var parametersArray = new Array();
+if (this._shrewd.local) {
+parametersArray.push(state);
+} else {
+parametersArray.push(state);
+}
+var exceptionsArray = new Array();
+return this._shrewd.communicate(
+"BuildEmpire.Mosaic.Courseware.ConnectorOutboundService",
+"SetTemplateEditStatus",
 parametersArray,
 "void",
 "",
@@ -375,26 +398,6 @@ var exceptionsArray = new Array();
 return this._shrewd.communicate(
 "BuildEmpire.Mosaic.Courseware.ConnectorOutboundService",
 "OpenEditDialog",
-parametersArray,
-"void",
-"",
-exceptionsArray
-);
-}
-},
-/**
- * @returns {void} 
- */
-OpenDialog: function(){
-if (this._shrewd) {
-var parametersArray = new Array();
-if (this._shrewd.local) {
-} else {
-}
-var exceptionsArray = new Array();
-return this._shrewd.communicate(
-"BuildEmpire.Mosaic.Courseware.ConnectorOutboundService",
-"OpenDialog",
 parametersArray,
 "void",
 "",

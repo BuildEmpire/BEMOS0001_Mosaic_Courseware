@@ -23,10 +23,16 @@ return "void";
 private function _ReadyGetReturnContentType() {
 return "";
 }
-private function _SetInboundServiceGetReturnType() {
+private function _SetScreenDataEditStatusGetReturnType() {
 return "void";
 }
-private function _SetInboundServiceGetReturnContentType() {
+private function _SetScreenDataEditStatusGetReturnContentType() {
+return "";
+}
+private function _SetTemplateEditStatusGetReturnType() {
+return "void";
+}
+private function _SetTemplateEditStatusGetReturnContentType() {
 return "";
 }
 private function _SetDirtyGetReturnType() {
@@ -47,21 +53,24 @@ return "void";
 private function _OpenEditDialogGetReturnContentType() {
 return "";
 }
-private function _OpenDialogGetReturnType() {
-return "void";
-}
-private function _OpenDialogGetReturnContentType() {
-return "";
-}
 private function _ReadyGetArguments() {
 $params = array();
 return $params;
 }
-private function _SetInboundServiceGetArguments() {
+private function _SetScreenDataEditStatusGetArguments() {
 $params = array();
 $param = new Parameter();
-$param->name = "InboundService";
-$param->type = "\\native-js-Object";
+$param->name = "state";
+$param->type = "boolean";
+$param->optional = false;
+$params[] = $param;
+return $params;
+}
+private function _SetTemplateEditStatusGetArguments() {
+$params = array();
+$param = new Parameter();
+$param->name = "state";
+$param->type = "boolean";
 $param->optional = false;
 $params[] = $param;
 return $params;
@@ -114,15 +123,15 @@ $param->optional = true;
 $params[] = $param;
 return $params;
 }
-private function _OpenDialogGetArguments() {
-$params = array();
-return $params;
-}
 private function _ReadyGetExceptions() {
 $params = array();
 return $params;
 }
-private function _SetInboundServiceGetExceptions() {
+private function _SetScreenDataEditStatusGetExceptions() {
+$params = array();
+return $params;
+}
+private function _SetTemplateEditStatusGetExceptions() {
 $params = array();
 return $params;
 }
@@ -135,10 +144,6 @@ $params = array();
 return $params;
 }
 private function _OpenEditDialogGetExceptions() {
-$params = array();
-return $params;
-}
-private function _OpenDialogGetExceptions() {
 $params = array();
 return $params;
 }

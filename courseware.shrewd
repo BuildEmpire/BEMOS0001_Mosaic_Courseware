@@ -151,6 +151,21 @@ service ConnectorInbound {
     boolean    GetEditable(),
 
     /**
+    SetScale
+    Set the scale decimal, if required.
+    1 = No Scale, 0.5 = 50%.
+    */
+    void    SetScale(
+        1:   float    scale
+    ),
+
+    /**
+    GetScale
+    Get the current scale decimal.
+    */
+    float    GetScale(),
+
+    /**
     SetConfigurationData
     Set the configuration data object for the courseware.
     This must be done before a Draw() call.

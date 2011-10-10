@@ -35,6 +35,18 @@ return "boolean";
 private function _GetEditableGetReturnContentType() {
 return "";
 }
+private function _SetScaleGetReturnType() {
+return "void";
+}
+private function _SetScaleGetReturnContentType() {
+return "";
+}
+private function _GetScaleGetReturnType() {
+return "float";
+}
+private function _GetScaleGetReturnContentType() {
+return "";
+}
 private function _SetConfigurationDataGetReturnType() {
 return "void";
 }
@@ -87,6 +99,19 @@ private function _GetEditableGetArguments() {
 $params = array();
 return $params;
 }
+private function _SetScaleGetArguments() {
+$params = array();
+$param = new Parameter();
+$param->name = "scale";
+$param->type = "float";
+$param->optional = false;
+$params[] = $param;
+return $params;
+}
+private function _GetScaleGetArguments() {
+$params = array();
+return $params;
+}
 private function _SetConfigurationDataGetArguments() {
 $params = array();
 $param = new Parameter();
@@ -131,6 +156,14 @@ $params = array();
 return $params;
 }
 private function _GetEditableGetExceptions() {
+$params = array();
+return $params;
+}
+private function _SetScaleGetExceptions() {
+$params = array();
+return $params;
+}
+private function _GetScaleGetExceptions() {
 $params = array();
 return $params;
 }

@@ -77,6 +77,49 @@ exceptionsArray
 }
 },
 /**
+ * @param {float} scale
+ * @returns {void} 
+ */
+SetScale: function(scale){
+if (this._shrewd) {
+var parametersArray = new Array();
+if (this._shrewd.local) {
+parametersArray.push(scale);
+} else {
+parametersArray.push(scale);
+}
+var exceptionsArray = new Array();
+return this._shrewd.communicate(
+"BuildEmpire.Mosaic.Courseware.ConnectorInboundService",
+"SetScale",
+parametersArray,
+"void",
+"",
+exceptionsArray
+);
+}
+},
+/**
+ * @returns {float} 
+ */
+GetScale: function(){
+if (this._shrewd) {
+var parametersArray = new Array();
+if (this._shrewd.local) {
+} else {
+}
+var exceptionsArray = new Array();
+return this._shrewd.communicate(
+"BuildEmpire.Mosaic.Courseware.ConnectorInboundService",
+"GetScale",
+parametersArray,
+"float",
+"",
+exceptionsArray
+);
+}
+},
+/**
  * @param {CoursewareConfigurationData}
  * @returns {void} 
  */

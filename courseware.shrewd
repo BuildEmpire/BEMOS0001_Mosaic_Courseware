@@ -3,7 +3,7 @@ namespace js Courseware
 namespace php BuildEmpire\Mosaic\Courseware
 
 /*
-This allows the courseware to define a mode and thus behave
+This allows the product to define a mode and thus behave
 differently in said mode. This value may also be transferred to an
 external service, who may also act differently dependant on the mode set.
 */
@@ -11,6 +11,15 @@ enum Mode {
     TEMPLATE_EDITOR = 1,
     SCREEN_EDITOR = 2,
     SCREEN_DISPLAY = 3
+}
+
+/*
+This allows the product to declare a context type when returning
+contextual data to the external service.
+*/
+enum Context {
+    GENERAL = 1,
+    POSITION = 2
 }
 
 struct Column {
@@ -267,6 +276,19 @@ service ConnectorOutbound {
     */
     void    SetDirty(
         1:  boolean     dirtyState
+    ),
+
+    /**
+    SetContextInformation
+    This allows for the product to send textual information to the
+    external service regarding the current context. This can be used to
+    send data relevant to what is happening, i.e. mouse co-ordinates or the
+    name of the item we are hovering over.
+    The external service does not have to action this method.
+    */
+    void    SetContextInformation(
+        1:  Context     context,
+        2:  string      text
     ),
 
     /**

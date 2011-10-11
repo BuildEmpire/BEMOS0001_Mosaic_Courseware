@@ -35,6 +35,12 @@ return "void";
 private function _SetDirtyGetReturnContentType() {
 return "";
 }
+private function _SetContextInformationGetReturnType() {
+return "void";
+}
+private function _SetContextInformationGetReturnContentType() {
+return "";
+}
 private function _OpenResourceManagerGetReturnType() {
 return "void";
 }
@@ -65,6 +71,20 @@ $params = array();
 $param = new Parameter();
 $param->name = "dirtyState";
 $param->type = "boolean";
+$param->optional = false;
+$params[] = $param;
+return $params;
+}
+private function _SetContextInformationGetArguments() {
+$params = array();
+$param = new Parameter();
+$param->name = "context";
+$param->type = "integer";
+$param->optional = false;
+$params[] = $param;
+$param = new Parameter();
+$param->name = "text";
+$param->type = "string";
 $param->optional = false;
 $params[] = $param;
 return $params;
@@ -117,6 +137,10 @@ $params = array();
 return $params;
 }
 private function _SetDirtyGetExceptions() {
+$params = array();
+return $params;
+}
+private function _SetContextInformationGetExceptions() {
 $params = array();
 return $params;
 }

@@ -348,6 +348,32 @@ exceptionsArray
 }
 },
 /**
+ * @param {integer} context
+ * @param {string} text
+ * @returns {void} 
+ */
+SetContextInformation: function(context, text){
+if (this._shrewd) {
+var parametersArray = new Array();
+if (this._shrewd.local) {
+parametersArray.push(context);
+parametersArray.push(text);
+} else {
+parametersArray.push(context);
+parametersArray.push(text);
+}
+var exceptionsArray = new Array();
+return this._shrewd.communicate(
+"BuildEmpire.Mosaic.Courseware.ConnectorOutboundService",
+"SetContextInformation",
+parametersArray,
+"void",
+"",
+exceptionsArray
+);
+}
+},
+/**
  * @param {Array} fileExtensions
  * @param {Object} onSelectCallback
  * @param {Object} onCancelCallback
@@ -427,6 +453,10 @@ alert ('The object passed to CoursewareConnectorOutboundService is not an instan
  * Automatically Generated Shrewd File
  */
 var CoursewareMode = {"TEMPLATE_EDITOR" : 1, "SCREEN_EDITOR" : 2, "SCREEN_DISPLAY" : 3};
+/**
+ * Automatically Generated Shrewd File
+ */
+var CoursewareContext = {"GENERAL" : 1, "POSITION" : 2};
 /**
  * Automatically Generated Shrewd File
  */

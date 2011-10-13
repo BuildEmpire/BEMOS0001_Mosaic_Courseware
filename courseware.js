@@ -34,49 +34,6 @@ exceptionsArray
 }
 },
 /**
- * @param {boolean} editable
- * @returns {void} 
- */
-SetEditable: function(editable){
-if (this._shrewd) {
-var parametersArray = new Array();
-if (this._shrewd.local) {
-parametersArray.push(editable);
-} else {
-parametersArray.push(editable);
-}
-var exceptionsArray = new Array();
-return this._shrewd.communicate(
-"BuildEmpire.Mosaic.Courseware.ConnectorInboundService",
-"SetEditable",
-parametersArray,
-"void",
-"",
-exceptionsArray
-);
-}
-},
-/**
- * @returns {boolean} 
- */
-GetEditable: function(){
-if (this._shrewd) {
-var parametersArray = new Array();
-if (this._shrewd.local) {
-} else {
-}
-var exceptionsArray = new Array();
-return this._shrewd.communicate(
-"BuildEmpire.Mosaic.Courseware.ConnectorInboundService",
-"GetEditable",
-parametersArray,
-"boolean",
-"",
-exceptionsArray
-);
-}
-},
-/**
  * @param {float} scale
  * @returns {void} 
  */
@@ -94,26 +51,6 @@ return this._shrewd.communicate(
 "SetScale",
 parametersArray,
 "void",
-"",
-exceptionsArray
-);
-}
-},
-/**
- * @returns {float} 
- */
-GetScale: function(){
-if (this._shrewd) {
-var parametersArray = new Array();
-if (this._shrewd.local) {
-} else {
-}
-var exceptionsArray = new Array();
-return this._shrewd.communicate(
-"BuildEmpire.Mosaic.Courseware.ConnectorInboundService",
-"GetScale",
-parametersArray,
-"float",
 "",
 exceptionsArray
 );
@@ -206,16 +143,13 @@ exceptionsArray
 }
 },
 /**
- * @param {string} columnName
  * @returns {void} 
  */
-AddColumn: function(columnName){
+AddColumn: function(){
 if (this._shrewd) {
 var parametersArray = new Array();
 if (this._shrewd.local) {
-parametersArray.push(columnName);
 } else {
-parametersArray.push(columnName);
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(

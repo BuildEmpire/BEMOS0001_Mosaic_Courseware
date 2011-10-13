@@ -158,20 +158,6 @@ service ConnectorInbound {
     ),
 
     /**
-    SetEditable
-    Set the current editable status of the courseware.
-    */
-    void    SetEditable(
-        1:   boolean     editable
-    ),
-
-    /**
-    GetEditable
-    Get the current editable status of the courseware.
-    */
-    boolean    GetEditable(),
-
-    /**
     SetScale
     Set the scale decimal, if required.
     1 = No Scale, 0.5 = 50%.
@@ -179,12 +165,6 @@ service ConnectorInbound {
     void    SetScale(
         1:   float    scale
     ),
-
-    /**
-    GetScale
-    Get the current scale decimal.
-    */
-    float    GetScale(),
 
     /**
     SetConfigurationData

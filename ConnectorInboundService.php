@@ -23,28 +23,10 @@ return "void";
 private function _ReadyGetReturnContentType() {
 return "";
 }
-private function _SetEditableGetReturnType() {
-return "void";
-}
-private function _SetEditableGetReturnContentType() {
-return "";
-}
-private function _GetEditableGetReturnType() {
-return "boolean";
-}
-private function _GetEditableGetReturnContentType() {
-return "";
-}
 private function _SetScaleGetReturnType() {
 return "void";
 }
 private function _SetScaleGetReturnContentType() {
-return "";
-}
-private function _GetScaleGetReturnType() {
-return "float";
-}
-private function _GetScaleGetReturnContentType() {
 return "";
 }
 private function _SetConfigurationDataGetReturnType() {
@@ -92,19 +74,6 @@ $param->optional = false;
 $params[] = $param;
 return $params;
 }
-private function _SetEditableGetArguments() {
-$params = array();
-$param = new Parameter();
-$param->name = "editable";
-$param->type = "boolean";
-$param->optional = false;
-$params[] = $param;
-return $params;
-}
-private function _GetEditableGetArguments() {
-$params = array();
-return $params;
-}
 private function _SetScaleGetArguments() {
 $params = array();
 $param = new Parameter();
@@ -112,10 +81,6 @@ $param->name = "scale";
 $param->type = "float";
 $param->optional = false;
 $params[] = $param;
-return $params;
-}
-private function _GetScaleGetArguments() {
-$params = array();
 return $params;
 }
 private function _SetConfigurationDataGetArguments() {
@@ -146,11 +111,6 @@ return $params;
 }
 private function _AddColumnGetArguments() {
 $params = array();
-$param = new Parameter();
-$param->name = "columnName";
-$param->type = "string";
-$param->optional = false;
-$params[] = $param;
 return $params;
 }
 private function _AddComponentGetArguments() {
@@ -166,19 +126,7 @@ private function _ReadyGetExceptions() {
 $params = array();
 return $params;
 }
-private function _SetEditableGetExceptions() {
-$params = array();
-return $params;
-}
-private function _GetEditableGetExceptions() {
-$params = array();
-return $params;
-}
 private function _SetScaleGetExceptions() {
-$params = array();
-return $params;
-}
-private function _GetScaleGetExceptions() {
 $params = array();
 return $params;
 }

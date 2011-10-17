@@ -201,6 +201,14 @@ this._shrewd = shrewdObject;
 } else {
 alert ('The object passed to CoursewareConnectorInboundService is not an instance of AShrewd.');
 }
+},
+/**
+ * Fetch the reference to the shrewd service.
+ * 
+ * @returns {AShrewd}
+ */
+getShrewd: function(shrewdObject){
+return this._shrewd;
 }
 });
 /**
@@ -381,6 +389,14 @@ this._shrewd = shrewdObject;
 } else {
 alert ('The object passed to CoursewareConnectorOutboundService is not an instance of AShrewd.');
 }
+},
+/**
+ * Fetch the reference to the shrewd service.
+ * 
+ * @returns {AShrewd}
+ */
+getShrewd: function(shrewdObject){
+return this._shrewd;
 }
 });
 /**

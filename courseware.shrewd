@@ -221,7 +221,6 @@ service ConnectorInbound {
 
 }
 
-
 /**
 The outbound connector is the channel the courseware can communicate
 outbound (externally) to Mosaic.
@@ -296,4 +295,15 @@ service ConnectorOutbound {
         3:   optional   native-js-Object     onCancelCallback
     )
 
+}
+
+/*
+Not required by the product, these event id's can be used by the connector
+to trigger events on any object with bindings to the connector service.
+*/
+enum EventsOutbound {
+    READY = "READY",
+    MODE = "MODE",
+    DIRTY = "DIRTY",
+    CONTEXT = "CONTEXT"
 }

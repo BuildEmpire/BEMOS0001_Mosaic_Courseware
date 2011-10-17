@@ -406,6 +406,10 @@ var CoursewareEditableFormFieldType = {"TEXT" : 1, "PASSWORD" : 2, "HTML" : 3, "
 /**
  * Automatically Generated Shrewd File
  */
+var CoursewareEventsOutbound = {"READY" : "READY", "MODE" : "MODE", "DIRTY" : "DIRTY", "CONTEXT" : "CONTEXT"};
+/**
+ * Automatically Generated Shrewd File
+ */
 var CoursewareColumn = new Class({
 /**
  * @type {string} id (ID).

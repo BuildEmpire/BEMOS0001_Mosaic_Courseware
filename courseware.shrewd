@@ -206,7 +206,7 @@ service ConnectorInbound {
     This may or may not be supported by the editor.
     No re-draw is required.
     */
-    void    AddColumn(
+    Column    AddColumn(
     ),
 
     /**

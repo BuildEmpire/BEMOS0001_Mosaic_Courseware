@@ -54,7 +54,7 @@ private function _DrawGetReturnContentType() {
 return "";
 }
 private function _AddColumnGetReturnType() {
-return "void";
+return "\BuildEmpire\Mosaic\Courseware\Column";
 }
 private function _AddColumnGetReturnContentType() {
 return "";

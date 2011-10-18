@@ -143,7 +143,7 @@ exceptionsArray
 }
 },
 /**
- * @returns {void} 
+ * @returns {CoursewareColumn}
  */
 AddColumn: function(){
 if (this._shrewd) {
@@ -156,7 +156,7 @@ return this._shrewd.communicate(
 "BuildEmpire.Mosaic.Courseware.ConnectorInboundService",
 "AddColumn",
 parametersArray,
-"void",
+"CoursewareColumn",
 "",
 exceptionsArray
 );

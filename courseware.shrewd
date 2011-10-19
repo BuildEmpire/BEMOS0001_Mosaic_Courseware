@@ -223,6 +223,20 @@ service ConnectorInbound {
 
 }
 
+/*
+Not required by the product, these event id's can be used by the connector
+to trigger events on any object with bindings to the connector service.
+*/
+enum EventsInbound {
+    READY = "READY",
+    SCALE = "SCALE",
+    DATA_CONFIGURATION = "DATA_CONFIGURATION",
+    DATA_SCREEN = "DATA_SCREEN",
+    DRAW = "DRAW",
+    COLUMN_ADD = "COLUMN_ADD",
+    COMPONENT_ADD = "COMPONENT_ADD"
+}
+
 /**
 The outbound connector is the channel the courseware can communicate
 outbound (externally) to Mosaic.

@@ -422,6 +422,10 @@ var CoursewareEditableFormFieldType = {"TEXT" : 1, "PASSWORD" : 2, "HTML" : 3, "
 /**
  * Automatically Generated Shrewd File
  */
+var CoursewareEventsInbound = {"READY" : "READY", "SCALE" : "SCALE", "DATA_CONFIGURATION" : "DATA_CONFIGURATION", "DATA_SCREEN" : "DATA_SCREEN", "DRAW" : "DRAW", "COLUMN_ADD" : "COLUMN_ADD", "COMPONENT_ADD" : "COMPONENT_ADD"};
+/**
+ * Automatically Generated Shrewd File
+ */
 var CoursewareEventsOutbound = {"READY" : "READY", "MODE" : "MODE", "CONTEXT" : "CONTEXT", "UPDATE" : "UPDATE"};
 /**
  * Automatically Generated Shrewd File

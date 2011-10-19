@@ -29,10 +29,22 @@ return "void";
 private function _SetScaleGetReturnContentType() {
 return "";
 }
+private function _GetScaleGetReturnType() {
+return "float";
+}
+private function _GetScaleGetReturnContentType() {
+return "";
+}
 private function _SetConfigurationDataGetReturnType() {
 return "void";
 }
 private function _SetConfigurationDataGetReturnContentType() {
+return "";
+}
+private function _GetConfigurationDataGetReturnType() {
+return "\BuildEmpire\Mosaic\Courseware\ConfigurationData";
+}
+private function _GetConfigurationDataGetReturnContentType() {
 return "";
 }
 private function _SetScreenDataGetReturnType() {
@@ -83,6 +95,10 @@ $param->optional = false;
 $params[] = $param;
 return $params;
 }
+private function _GetScaleGetArguments() {
+$params = array();
+return $params;
+}
 private function _SetConfigurationDataGetArguments() {
 $params = array();
 $param = new Parameter();
@@ -90,6 +106,10 @@ $param->name = "configurationData";
 $param->type = "\BuildEmpire\Mosaic\Courseware\ConfigurationData";
 $param->optional = false;
 $params[] = $param;
+return $params;
+}
+private function _GetConfigurationDataGetArguments() {
+$params = array();
 return $params;
 }
 private function _SetScreenDataGetArguments() {
@@ -130,7 +150,15 @@ private function _SetScaleGetExceptions() {
 $params = array();
 return $params;
 }
+private function _GetScaleGetExceptions() {
+$params = array();
+return $params;
+}
 private function _SetConfigurationDataGetExceptions() {
+$params = array();
+return $params;
+}
+private function _GetConfigurationDataGetExceptions() {
 $params = array();
 return $params;
 }

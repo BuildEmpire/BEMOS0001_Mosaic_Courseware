@@ -159,11 +159,18 @@ service ConnectorInbound {
 
     /**
     SetScale
-    Set the scale decimal, if required.
-    1 = No Scale, 0.5 = 50%.
+    Get the scale decimal.
     */
     void    SetScale(
         1:   float    scale
+    ),
+
+    /**
+    GetScale
+    Set the scale decimal, if required.
+    1 = No Scale, 0.5 = 50%.
+    */
+    float    GetScale(
     ),
 
     /**
@@ -173,6 +180,13 @@ service ConnectorInbound {
     */
     void    SetConfigurationData(
         1:   ConfigurationData     configurationData
+    ),
+
+    /**
+    GetConfigurationData
+    Get the configuration data object for the courseware.
+    */
+    ConfigurationData    GetConfigurationData(
     ),
 
     /**

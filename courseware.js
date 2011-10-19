@@ -57,6 +57,26 @@ exceptionsArray
 }
 },
 /**
+ * @returns {float} 
+ */
+GetScale: function(){
+if (this._shrewd) {
+var parametersArray = new Array();
+if (this._shrewd.local) {
+} else {
+}
+var exceptionsArray = new Array();
+return this._shrewd.communicate(
+"BuildEmpire.Mosaic.Courseware.ConnectorInboundService",
+"GetScale",
+parametersArray,
+"float",
+"",
+exceptionsArray
+);
+}
+},
+/**
  * @param {CoursewareConfigurationData}
  * @returns {void} 
  */
@@ -74,6 +94,26 @@ return this._shrewd.communicate(
 "SetConfigurationData",
 parametersArray,
 "void",
+"",
+exceptionsArray
+);
+}
+},
+/**
+ * @returns {CoursewareConfigurationData}
+ */
+GetConfigurationData: function(){
+if (this._shrewd) {
+var parametersArray = new Array();
+if (this._shrewd.local) {
+} else {
+}
+var exceptionsArray = new Array();
+return this._shrewd.communicate(
+"BuildEmpire.Mosaic.Courseware.ConnectorInboundService",
+"GetConfigurationData",
+parametersArray,
+"CoursewareConfigurationData",
 "",
 exceptionsArray
 );

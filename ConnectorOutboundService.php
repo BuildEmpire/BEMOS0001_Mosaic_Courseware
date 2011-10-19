@@ -29,10 +29,10 @@ return "void";
 private function _SetModeGetReturnContentType() {
 return "";
 }
-private function _SetDirtyGetReturnType() {
+private function _UpdateScreenDataGetReturnType() {
 return "void";
 }
-private function _SetDirtyGetReturnContentType() {
+private function _UpdateScreenDataGetReturnContentType() {
 return "";
 }
 private function _SetContextInformationGetReturnType() {
@@ -66,11 +66,11 @@ $param->optional = false;
 $params[] = $param;
 return $params;
 }
-private function _SetDirtyGetArguments() {
+private function _UpdateScreenDataGetArguments() {
 $params = array();
 $param = new Parameter();
-$param->name = "dirtyState";
-$param->type = "boolean";
+$param->name = "sScreenData";
+$param->type = "\BuildEmpire\Mosaic\Courseware\ScreenData";
 $param->optional = false;
 $params[] = $param;
 return $params;
@@ -136,7 +136,7 @@ private function _SetModeGetExceptions() {
 $params = array();
 return $params;
 }
-private function _SetDirtyGetExceptions() {
+private function _UpdateScreenDataGetExceptions() {
 $params = array();
 return $params;
 }

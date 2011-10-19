@@ -248,14 +248,13 @@ service ConnectorOutbound {
     ),
 
     /**
-    SetDirty
-    Inform the external service of the dirty state (edited).
-    If true, the content has been edited (is dirty).
-    This may, for instance, prompt the save button in the external
-    service to enable.
+    UpdateScreenData
+    Inform the external service that the screen data has been updated.
+    This could additionally, for instance, prompt the save button in
+    the external service to enable.
     */
-    void    SetDirty(
-        1:  boolean     dirtyState
+    void    UpdateScreenData(
+        1:  ScreenData     sScreenData
     ),
 
     /**
@@ -306,6 +305,6 @@ to trigger events on any object with bindings to the connector service.
 enum EventsOutbound {
     READY = "READY",
     MODE = "MODE",
-    DIRTY = "DIRTY",
-    CONTEXT = "CONTEXT"
+    CONTEXT = "CONTEXT",
+    UPDATE = "UPDATE"
 }

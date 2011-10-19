@@ -267,21 +267,21 @@ exceptionsArray
 }
 },
 /**
- * @param {boolean} dirtyState
+ * @param {CoursewareScreenData}
  * @returns {void} 
  */
-SetDirty: function(dirtyState){
+UpdateScreenData: function(sScreenData){
 if (this._shrewd) {
 var parametersArray = new Array();
 if (this._shrewd.local) {
-parametersArray.push(dirtyState);
+parametersArray.push(sScreenData);
 } else {
-parametersArray.push(dirtyState);
+parametersArray.push((sScreenData) ? sScreenData.getShrewd() : null);
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 "BuildEmpire.Mosaic.Courseware.ConnectorOutboundService",
-"SetDirty",
+"UpdateScreenData",
 parametersArray,
 "void",
 "",
@@ -422,7 +422,7 @@ var CoursewareEditableFormFieldType = {"TEXT" : 1, "PASSWORD" : 2, "HTML" : 3, "
 /**
  * Automatically Generated Shrewd File
  */
-var CoursewareEventsOutbound = {"READY" : "READY", "MODE" : "MODE", "DIRTY" : "DIRTY", "CONTEXT" : "CONTEXT"};
+var CoursewareEventsOutbound = {"READY" : "READY", "MODE" : "MODE", "CONTEXT" : "CONTEXT", "UPDATE" : "UPDATE"};
 /**
  * Automatically Generated Shrewd File
  */

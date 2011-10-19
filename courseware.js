@@ -143,7 +143,7 @@ exceptionsArray
 }
 },
 /**
- * @returns {CoursewareColumn}
+ * @returns {string} 
  */
 AddColumn: function(){
 if (this._shrewd) {
@@ -156,7 +156,7 @@ return this._shrewd.communicate(
 "BuildEmpire.Mosaic.Courseware.ConnectorInboundService",
 "AddColumn",
 parametersArray,
-"CoursewareColumn",
+"string",
 "",
 exceptionsArray
 );
@@ -164,7 +164,7 @@ exceptionsArray
 },
 /**
  * @param {string} componentName
- * @returns {void} 
+ * @returns {string} 
  */
 AddComponent: function(componentName){
 if (this._shrewd) {
@@ -179,7 +179,7 @@ return this._shrewd.communicate(
 "BuildEmpire.Mosaic.Courseware.ConnectorInboundService",
 "AddComponent",
 parametersArray,
-"void",
+"string",
 "",
 exceptionsArray
 );

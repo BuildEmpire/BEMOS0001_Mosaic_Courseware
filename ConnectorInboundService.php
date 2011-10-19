@@ -54,13 +54,13 @@ private function _DrawGetReturnContentType() {
 return "";
 }
 private function _AddColumnGetReturnType() {
-return "\BuildEmpire\Mosaic\Courseware\Column";
+return "string";
 }
 private function _AddColumnGetReturnContentType() {
 return "";
 }
 private function _AddComponentGetReturnType() {
-return "void";
+return "string";
 }
 private function _AddComponentGetReturnContentType() {
 return "";

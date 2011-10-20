@@ -221,7 +221,7 @@ service ConnectorInbound {
     No re-draw is required.
     The column id will be returned.
     */
-    string    AddColumn(
+    void    AddColumn(
     ),
 
     /**
@@ -231,7 +231,7 @@ service ConnectorInbound {
     No re-draw is required.
     The component id will be returned.
     */
-    string    AddComponent(
+    void    AddComponent(
         1:   string          componentName
     ),
 

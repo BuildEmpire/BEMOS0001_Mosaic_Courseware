@@ -66,13 +66,13 @@ private function _DrawGetReturnContentType() {
 return "";
 }
 private function _AddColumnGetReturnType() {
-return "string";
+return "void";
 }
 private function _AddColumnGetReturnContentType() {
 return "";
 }
 private function _AddComponentGetReturnType() {
-return "string";
+return "void";
 }
 private function _AddComponentGetReturnContentType() {
 return "";

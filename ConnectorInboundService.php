@@ -77,6 +77,18 @@ return "void";
 private function _AddComponentGetReturnContentType() {
 return "";
 }
+private function _HighlightColumnGetReturnType() {
+return "void";
+}
+private function _HighlightColumnGetReturnContentType() {
+return "";
+}
+private function _UnhighlightColumnGetReturnType() {
+return "void";
+}
+private function _UnhighlightColumnGetReturnContentType() {
+return "";
+}
 private function _ReadyGetArguments() {
 $params = array();
 $param = new Parameter();
@@ -142,6 +154,24 @@ $param->optional = false;
 $params[] = $param;
 return $params;
 }
+private function _HighlightColumnGetArguments() {
+$params = array();
+$param = new Parameter();
+$param->name = "id";
+$param->type = "string";
+$param->optional = false;
+$params[] = $param;
+return $params;
+}
+private function _UnhighlightColumnGetArguments() {
+$params = array();
+$param = new Parameter();
+$param->name = "id";
+$param->type = "string";
+$param->optional = false;
+$params[] = $param;
+return $params;
+}
 private function _ReadyGetExceptions() {
 $params = array();
 return $params;
@@ -179,6 +209,14 @@ $params = array();
 return $params;
 }
 private function _AddComponentGetExceptions() {
+$params = array();
+return $params;
+}
+private function _HighlightColumnGetExceptions() {
+$params = array();
+return $params;
+}
+private function _UnhighlightColumnGetExceptions() {
 $params = array();
 return $params;
 }

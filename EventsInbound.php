@@ -11,5 +11,7 @@ public static $DATA_CONFIGURATION = "DATA_CONFIGURATION";
 public static $DATA_SCREEN = "DATA_SCREEN";
 public static $DRAW = "DRAW";
 public static $COLUMN_ADD = "COLUMN_ADD";
+public static $COLUMN_HIGHLIGHT = "COLUMN_HIGHLIGHT";
+public static $COLUMN_UNHIGHLIGHT = "COLUMN_UNHIGHLIGHT";
 public static $COMPONENT_ADD = "COMPONENT_ADD";
 }

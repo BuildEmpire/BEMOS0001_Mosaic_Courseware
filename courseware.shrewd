@@ -235,6 +235,26 @@ service ConnectorInbound {
         1:   string          componentName
     ),
 
+    /**
+    HighlightColumn
+    Highlight the column with the given id.
+    This may be within the template editor, or to the current screen template.
+    This may or may not be supported by the editor.
+    */
+    void    HighlightColumn(
+        1:  string      id
+    ),
+
+    /**
+    UnhighlightColumn
+    Unhighlight the column with the given id.
+    This may be within the template editor, or to the current screen template.
+    This may or may not be supported by the editor.
+    */
+    void    UnhighlightColumn(
+        1:  string      id
+    ),
+
 }
 
 /*
@@ -248,6 +268,8 @@ enum EventsInbound {
     DATA_SCREEN = "DATA_SCREEN",
     DRAW = "DRAW",
     COLUMN_ADD = "COLUMN_ADD",
+    COLUMN_HIGHLIGHT = "COLUMN_HIGHLIGHT",
+    COLUMN_UNHIGHLIGHT = "COLUMN_UNHIGHLIGHT",
     COMPONENT_ADD = "COMPONENT_ADD"
 }
 

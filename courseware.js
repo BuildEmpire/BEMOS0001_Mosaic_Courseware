@@ -226,6 +226,52 @@ exceptionsArray
 }
 },
 /**
+ * @param {string} id
+ * @returns {void} 
+ */
+HighlightColumn: function(id){
+if (this._shrewd) {
+var parametersArray = new Array();
+if (this._shrewd.local) {
+parametersArray.push(id);
+} else {
+parametersArray.push(id);
+}
+var exceptionsArray = new Array();
+return this._shrewd.communicate(
+"BuildEmpire.Mosaic.Courseware.ConnectorInboundService",
+"HighlightColumn",
+parametersArray,
+"void",
+"",
+exceptionsArray
+);
+}
+},
+/**
+ * @param {string} id
+ * @returns {void} 
+ */
+UnhighlightColumn: function(id){
+if (this._shrewd) {
+var parametersArray = new Array();
+if (this._shrewd.local) {
+parametersArray.push(id);
+} else {
+parametersArray.push(id);
+}
+var exceptionsArray = new Array();
+return this._shrewd.communicate(
+"BuildEmpire.Mosaic.Courseware.ConnectorInboundService",
+"UnhighlightColumn",
+parametersArray,
+"void",
+"",
+exceptionsArray
+);
+}
+},
+/**
  * @type {Shrewd}
  */
 _shrewd:null,
@@ -462,7 +508,7 @@ var CoursewareEditableFormFieldType = {"TEXT" : 1, "PASSWORD" : 2, "HTML" : 3, "
 /**
  * Automatically Generated Shrewd File
  */
-var CoursewareEventsInbound = {"READY" : "READY", "SCALE" : "SCALE", "DATA_CONFIGURATION" : "DATA_CONFIGURATION", "DATA_SCREEN" : "DATA_SCREEN", "DRAW" : "DRAW", "COLUMN_ADD" : "COLUMN_ADD", "COMPONENT_ADD" : "COMPONENT_ADD"};
+var CoursewareEventsInbound = {"READY" : "READY", "SCALE" : "SCALE", "DATA_CONFIGURATION" : "DATA_CONFIGURATION", "DATA_SCREEN" : "DATA_SCREEN", "DRAW" : "DRAW", "COLUMN_ADD" : "COLUMN_ADD", "COLUMN_HIGHLIGHT" : "COLUMN_HIGHLIGHT", "COLUMN_UNHIGHLIGHT" : "COLUMN_UNHIGHLIGHT", "COMPONENT_ADD" : "COMPONENT_ADD"};
 /**
  * Automatically Generated Shrewd File
  */

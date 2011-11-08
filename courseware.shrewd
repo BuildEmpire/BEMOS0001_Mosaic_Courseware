@@ -22,16 +22,6 @@ enum Context {
     POSITION = 2
 }
 
-struct Column {
-    1:  string-id                          id,
-    2:  integer                            x,
-    3:  integer                            y,
-    4:  integer                            width,
-    5:  integer                            height,
-    6:  boolean                            display = true,
-    7:  boolean                            structure = true
-}
-
 struct Translation {
     1:  optional    string-id       id,
     2:              boolean         base = false,
@@ -43,6 +33,23 @@ struct LearningPath {
     1:  optional    string-id       id,
     2:              boolean         base = false,
     3:              string          name
+}
+
+struct Component {
+    1:  string                             name,
+    2:  string                             title,
+    3:  integer                            active = 1
+}
+
+struct Column {
+    1:              string-id              id,
+    2:              integer                x,
+    3:              integer                y,
+    4:              integer                width,
+    5:              integer                height,
+    6:              boolean                display = true,
+    7:              boolean                structure = true,
+	8:  optional    list<Component>        components
 }
 
 struct Template {
@@ -61,17 +68,10 @@ struct Screen {
     2:  integer                            height
 }
 
-struct Component {
-    1:  string                             name,
-    2:  string                             title,
-    3:  integer                            active = 1
-}
-
-
 struct ComponentData {
-    1:  string-id                           id,
-    2:  string                              name,
-    3:  list                                data
+    1:  string-id                          id,
+    2:  string                             name,
+    3:  list                               data
 }
 
 struct ConfigurationData {
@@ -87,7 +87,8 @@ struct ConfigurationData {
 
 struct ScreenData {
     1:  optional    Template               template,
-    2:  optional    list<ComponentData>    components
+	2:  optional    list<Column>           columns,
+    3:  optional    list<ComponentData>    components
 }
 
 enum StructureItemType {

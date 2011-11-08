@@ -34,6 +34,10 @@ public $display = true;
  * @var boolean
  */
 public $structure = true;
+/**
+ * @var \BuildEmpire\Mosaic\Courseware\Component[]
+ */
+public $components;
 public function getShrewdNS(){
 return "BuildEmpire.Mosaic.Courseware.Column";
 }
@@ -47,6 +51,7 @@ $paramArray[] = $shrewd->getParameter("Column", 1, $this->width, "width", "integ
 $paramArray[] = $shrewd->getParameter("Column", 1, $this->height, "height", "integer", "", false);
 $paramArray[] = $shrewd->getParameter("Column", 1, $this->display, "display", "boolean", "", false);
 $paramArray[] = $shrewd->getParameter("Column", 1, $this->structure, "structure", "boolean", "", false);
+$paramArray[] = $shrewd->getParameter("Column", 1, $this->components, "components", "list", "\BuildEmpire\Mosaic\Courseware\Component", true);
 return $paramArray;
 }
 public function setShrewd(
@@ -59,5 +64,6 @@ if (isset($shrewdArray[3])) {$this->width = $shrewd->setParameter("Column", 2, $
 if (isset($shrewdArray[4])) {$this->height = $shrewd->setParameter("Column", 2, $shrewdArray[4], "height", "integer", "", false);}
 if (isset($shrewdArray[5])) {$this->display = $shrewd->setParameter("Column", 2, $shrewdArray[5], "display", "boolean", "", false);}
 if (isset($shrewdArray[6])) {$this->structure = $shrewd->setParameter("Column", 2, $shrewdArray[6], "structure", "boolean", "", false);}
+if (isset($shrewdArray[7])) {$this->components = $shrewd->setParameter("Column", 2, $shrewdArray[7], "components", "list", "\BuildEmpire\Mosaic\Courseware\Component", true);}
 }
 }

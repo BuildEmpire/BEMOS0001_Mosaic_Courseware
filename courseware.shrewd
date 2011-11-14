@@ -43,18 +43,19 @@ struct Component {
 
 struct Column {
     1:              string-id              id,
-    2:              integer                x,
-    3:              integer                y,
-    4:              integer                width,
-    5:              integer                height,
     6:              boolean                display = true,
     7:              boolean                structure = true,
 	8:  optional    list<Component>        components
 }
 
+struct Row {
+    1:              string-id              id,
+	8:  optional    list<Column>           columns
+}
+
 struct Template {
     1:  string                name,
-    2:  list<Column>          columns
+    2:  list<Row>             rows
 }
 
 enum LearningPathFulfilmentType {
@@ -87,8 +88,7 @@ struct ConfigurationData {
 
 struct ScreenData {
     1:  optional    Template               template,
-	2:  optional    list<Column>           columns,
-    3:  optional    list<ComponentData>    components
+	2:  optional    list<Row>              rows
 }
 
 enum StructureItemType {

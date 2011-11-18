@@ -35,10 +35,21 @@ struct LearningPath {
     3:              string          name
 }
 
+struct ComponentMetrics {
+    1:  integer                            xPercent,
+    2:  integer                            yPercent,
+    3:  integer                            widthPercent,
+    4:  integer                            heightPercent,
+    5:  integer                            tabIndex,
+    6:  integer                            zIndex
+}
+
 struct Component {
     1:  string                             name,
     2:  string                             title,
-    3:  integer                            active = 1
+    3:  integer                            active = 1,
+    4:  boolean                            isFreeComponent = true,
+    5:  ComponentMetrics                   metrics
 }
 
 struct Column {
@@ -88,7 +99,8 @@ struct ConfigurationData {
 
 struct ScreenData {
     1:  optional    Template               template,
-	2:  optional    list<Row>              rows
+	2:  optional    list<Row>              rows,
+	2:  optional    list<Component>        freeComponents
 }
 
 enum StructureItemType {

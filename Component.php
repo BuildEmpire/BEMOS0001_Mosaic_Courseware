@@ -18,6 +18,14 @@ public $title;
  * @var integer
  */
 public $active = 1;
+/**
+ * @var boolean
+ */
+public $isFreeComponent = true;
+/**
+ * @var \BuildEmpire\Mosaic\Courseware\ComponentMetrics
+ */
+public $metrics;
 public function getShrewdNS(){
 return "BuildEmpire.Mosaic.Courseware.Component";
 }
@@ -27,6 +35,8 @@ $paramArray = array();
 $paramArray[] = $shrewd->getParameter("Component", 1, $this->name, "name", "string", "", false);
 $paramArray[] = $shrewd->getParameter("Component", 1, $this->title, "title", "string", "", false);
 $paramArray[] = $shrewd->getParameter("Component", 1, $this->active, "active", "integer", "", false);
+$paramArray[] = $shrewd->getParameter("Component", 1, $this->isFreeComponent, "isFreeComponent", "boolean", "", false);
+$paramArray[] = ($shrewd->getParameter("Component", 1, $this->metrics, "metrics", "\BuildEmpire\Mosaic\Courseware\ComponentMetrics", "", false)) ? $shrewd->getParameter("Component", 1, $this->metrics, "metrics", "\BuildEmpire\Mosaic\Courseware\ComponentMetrics", "", false) : null;
 return $paramArray;
 }
 public function setShrewd(
@@ -35,5 +45,11 @@ $shrewdArray){
 if (isset($shrewdArray[0])) {$this->name = $shrewd->setParameter("Component", 2, $shrewdArray[0], "name", "string", "", false);}
 if (isset($shrewdArray[1])) {$this->title = $shrewd->setParameter("Component", 2, $shrewdArray[1], "title", "string", "", false);}
 if (isset($shrewdArray[2])) {$this->active = $shrewd->setParameter("Component", 2, $shrewdArray[2], "active", "integer", "", false);}
+if (isset($shrewdArray[3])) {$this->isFreeComponent = $shrewd->setParameter("Component", 2, $shrewdArray[3], "isFreeComponent", "boolean", "", false);}
+if ($shrewdArray[4]) {
+$theClass = new \BuildEmpire\Mosaic\Courseware\ComponentMetrics();
+$theClass->setShrewd($shrewd, $shrewdArray[4]);
+$this->metrics = $theClass;
+}
 }
 }

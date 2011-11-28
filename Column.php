@@ -22,6 +22,10 @@ public $structure = true;
  * @var \BuildEmpire\Mosaic\Courseware\Component[]
  */
 public $components;
+/**
+ * @var \BuildEmpire\Mosaic\Courseware\ColumnRowMetrics
+ */
+public $metrics;
 public function getShrewdNS(){
 return "BuildEmpire.Mosaic.Courseware.Column";
 }
@@ -32,6 +36,7 @@ $paramArray[] = $shrewd->getParameter("Column", 1, $this->id, "id", "string-id",
 $paramArray[] = $shrewd->getParameter("Column", 1, $this->display, "display", "boolean", "", false);
 $paramArray[] = $shrewd->getParameter("Column", 1, $this->structure, "structure", "boolean", "", false);
 $paramArray[] = $shrewd->getParameter("Column", 1, $this->components, "components", "list", "\BuildEmpire\Mosaic\Courseware\Component", true);
+$paramArray[] = ($shrewd->getParameter("Column", 1, $this->metrics, "metrics", "\BuildEmpire\Mosaic\Courseware\ColumnRowMetrics", "", false)) ? $shrewd->getParameter("Column", 1, $this->metrics, "metrics", "\BuildEmpire\Mosaic\Courseware\ColumnRowMetrics", "", false) : null;
 return $paramArray;
 }
 public function setShrewd(
@@ -41,5 +46,10 @@ if (isset($shrewdArray[0])) {$this->id = $shrewd->setParameter("Column", 2, $shr
 if (isset($shrewdArray[1])) {$this->display = $shrewd->setParameter("Column", 2, $shrewdArray[1], "display", "boolean", "", false);}
 if (isset($shrewdArray[2])) {$this->structure = $shrewd->setParameter("Column", 2, $shrewdArray[2], "structure", "boolean", "", false);}
 if (isset($shrewdArray[3])) {$this->components = $shrewd->setParameter("Column", 2, $shrewdArray[3], "components", "list", "\BuildEmpire\Mosaic\Courseware\Component", true);}
+if ($shrewdArray[4]) {
+$theClass = new \BuildEmpire\Mosaic\Courseware\ColumnRowMetrics();
+$theClass->setShrewd($shrewd, $shrewdArray[4]);
+$this->metrics = $theClass;
+}
 }
 }

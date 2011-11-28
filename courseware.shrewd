@@ -23,16 +23,16 @@ enum Context {
 }
 
 struct Translation {
-    1:  optional    string-id       id,
-    2:              boolean         base = false,
-    3:              string          name,
-    4:              string          value
+    1:  optional    string-id               id,
+    2:              boolean                 base = false,
+    3:              string                  name,
+    4:              string                  value
 }
 
 struct LearningPath {
-    1:  optional    string-id       id,
-    2:              boolean         base = false,
-    3:              string          name
+    1:  optional    string-id               id,
+    2:              boolean                 base = false,
+    3:              string                  name
 }
 
 struct ComponentMetrics {
@@ -45,28 +45,35 @@ struct ComponentMetrics {
 }
 
 struct Component {
-    1:  string                             name,
-    2:  string                             title,
-    3:  integer                            active = 1,
-    4:  boolean                            isFreeComponent = true,
-    5:  ComponentMetrics                   metrics
+    1:              string                 name,
+    2:              string                 title,
+    3:              integer                active = 1,
+    4:              boolean                isFreeComponent = true,
+    5:  optional    ComponentMetrics       metrics
+}
+
+struct ColumnRowMetrics {
+    1:  optional    integer                widthPercent,
+    2:  optional    integer                heightPercent
 }
 
 struct Column {
     1:              string-id              id,
-    6:              boolean                display = true,
-    7:              boolean                structure = true,
-	8:  optional    list<Component>        components
+    2:              boolean                display = true,
+    3:              boolean                structure = true,
+	4:  optional    list<Component>        components,
+	5:              ColumnRowMetrics       metrics
 }
 
 struct Row {
     1:              string-id              id,
-	8:  optional    list<Column>           columns
+	2:  optional    list<Column>           columns,
+	3:              ColumnRowMetrics       metrics
 }
 
 struct Template {
-    1:  string                name,
-    2:  list<Row>             rows
+    1:              string                name,
+    2:              list<Row>             rows
 }
 
 enum LearningPathFulfilmentType {
@@ -76,37 +83,79 @@ enum LearningPathFulfilmentType {
 }
 
 struct Screen {
-    1:  integer                            width,
-    2:  integer                            height
+    1:              integer                width,
+    2:              integer                height
 }
 
 struct ComponentData {
-    1:  string-id                          id,
-    2:  string                             name,
-    3:  list                               data
+    1:              string-id              id,
+    2:              string                 name,
+    3:              list                   data
 }
 
-struct ConfigurationData {
-    1:              string-id             id,
-    2:              string                name,
-    3:  optional    Screen                screen,
-    4:  optional    list<Translation>     translations,
-    5:  optional    list<LearningPath>    learningPaths,
-    6:  optional    list<Template>        templates,
-    7:  optional    list<Component>       components,
-    8:  optional    list<string>          errors
+
+enum DragMode {
+    ALL     = 1,
+    FREE    = 2,
+    COLUMNS = 3
 }
+
+struct ComponentDataRows {
+    1:              boolean                allow   = true,
+    2:              integer                min     = 0,
+    3:              integer                max     = 0
+}
+
+struct ComponentDataColumns {
+    1:              boolean                allow   = true,
+    2:              integer                min     = 0,
+    3:              integer                max     = 0
+}
+
+struct ComponentDataCanvas {
+    1:              integer                width   = 0,
+    2:              integer                height  = 0,
+    3:              integer                sensitiveBoundarySize = 50,
+    4:              integer                resizeHandleSize = 8
+}
+
+struct ComponentDataGrid {
+    1:              integer                 x = 20,
+    2:              integer                 y = 20
+}
+
+
+struct ConfigurationData {
+    1:              string-id              id,
+    2:              string                 name,
+
+    3:  optional    list<Translation>      translations,
+    4:  optional    list<LearningPath>     learningPaths,
+    5:  optional    list<Component>        components,
+
+    6:              DragMode               dragMode,
+    7:              boolean                allowFreeComponents,
+    8:              integer                componentLoadTimeout,
+
+    9:              ComponentDataRows      rows,
+    10:             ComponentDataColumns   columns,
+    11:             ComponentDataCanvas    canvas,
+    12:             ComponentDataGrid      grid,
+
+    13:             string                 language = "en",
+}
+
 
 struct ScreenData {
     1:  optional    Template               template,
 	2:  optional    list<Row>              rows,
-	2:  optional    list<Component>        freeComponents
+	3:  optional    list<Component>        freeComponents
 }
 
 enum StructureItemType {
     PROJECT = 1,
-    FOLDER = 2,
-    SCREEN = 3,
+    FOLDER  = 2,
+    SCREEN  = 3
 }
 
 struct StructureItem {

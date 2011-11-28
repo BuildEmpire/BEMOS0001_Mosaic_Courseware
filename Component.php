@@ -36,7 +36,7 @@ $paramArray[] = $shrewd->getParameter("Component", 1, $this->name, "name", "stri
 $paramArray[] = $shrewd->getParameter("Component", 1, $this->title, "title", "string", "", false);
 $paramArray[] = $shrewd->getParameter("Component", 1, $this->active, "active", "integer", "", false);
 $paramArray[] = $shrewd->getParameter("Component", 1, $this->isFreeComponent, "isFreeComponent", "boolean", "", false);
-$paramArray[] = ($shrewd->getParameter("Component", 1, $this->metrics, "metrics", "\BuildEmpire\Mosaic\Courseware\ComponentMetrics", "", false)) ? $shrewd->getParameter("Component", 1, $this->metrics, "metrics", "\BuildEmpire\Mosaic\Courseware\ComponentMetrics", "", false) : null;
+$paramArray[] = ($shrewd->getParameter("Component", 1, $this->metrics, "metrics", "\BuildEmpire\Mosaic\Courseware\ComponentMetrics", "", true)) ? $shrewd->getParameter("Component", 1, $this->metrics, "metrics", "\BuildEmpire\Mosaic\Courseware\ComponentMetrics", "", true) : null;
 return $paramArray;
 }
 public function setShrewd(

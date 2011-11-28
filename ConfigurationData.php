@@ -15,10 +15,6 @@ public $id;
  */
 public $name;
 /**
- * @var \BuildEmpire\Mosaic\Courseware\Screen
- */
-public $screen;
-/**
  * @var \BuildEmpire\Mosaic\Courseware\Translation[]
  */
 public $translations;
@@ -27,17 +23,41 @@ public $translations;
  */
 public $learningPaths;
 /**
- * @var \BuildEmpire\Mosaic\Courseware\Template[]
- */
-public $templates;
-/**
  * @var \BuildEmpire\Mosaic\Courseware\Component[]
  */
 public $components;
 /**
- * @var string[]
+ * @var integer
  */
-public $errors;
+public $dragMode;
+/**
+ * @var boolean
+ */
+public $allowFreeComponents;
+/**
+ * @var integer
+ */
+public $componentLoadTimeout;
+/**
+ * @var \BuildEmpire\Mosaic\Courseware\ComponentDataRows
+ */
+public $rows;
+/**
+ * @var \BuildEmpire\Mosaic\Courseware\ComponentDataColumns
+ */
+public $columns;
+/**
+ * @var \BuildEmpire\Mosaic\Courseware\ComponentDataCanvas
+ */
+public $canvas;
+/**
+ * @var \BuildEmpire\Mosaic\Courseware\ComponentDataGrid
+ */
+public $grid;
+/**
+ * @var string
+ */
+public $language = "en";
 public function getShrewdNS(){
 return "BuildEmpire.Mosaic.Courseware.ConfigurationData";
 }
@@ -46,12 +66,17 @@ public function getShrewd(
 $paramArray = array();
 $paramArray[] = $shrewd->getParameter("ConfigurationData", 1, $this->id, "id", "string-id", "", false);
 $paramArray[] = $shrewd->getParameter("ConfigurationData", 1, $this->name, "name", "string", "", false);
-$paramArray[] = ($shrewd->getParameter("ConfigurationData", 1, $this->screen, "screen", "\BuildEmpire\Mosaic\Courseware\Screen", "", true)) ? $shrewd->getParameter("ConfigurationData", 1, $this->screen, "screen", "\BuildEmpire\Mosaic\Courseware\Screen", "", true) : null;
 $paramArray[] = $shrewd->getParameter("ConfigurationData", 1, $this->translations, "translations", "list", "\BuildEmpire\Mosaic\Courseware\Translation", true);
 $paramArray[] = $shrewd->getParameter("ConfigurationData", 1, $this->learningPaths, "learningPaths", "list", "\BuildEmpire\Mosaic\Courseware\LearningPath", true);
-$paramArray[] = $shrewd->getParameter("ConfigurationData", 1, $this->templates, "templates", "list", "\BuildEmpire\Mosaic\Courseware\Template", true);
 $paramArray[] = $shrewd->getParameter("ConfigurationData", 1, $this->components, "components", "list", "\BuildEmpire\Mosaic\Courseware\Component", true);
-$paramArray[] = $shrewd->getParameter("ConfigurationData", 1, $this->errors, "errors", "list", "string", true);
+$paramArray[] = $shrewd->getParameter("ConfigurationData", 1, $this->dragMode, "dragMode", "integer", "", false);
+$paramArray[] = $shrewd->getParameter("ConfigurationData", 1, $this->allowFreeComponents, "allowFreeComponents", "boolean", "", false);
+$paramArray[] = $shrewd->getParameter("ConfigurationData", 1, $this->componentLoadTimeout, "componentLoadTimeout", "integer", "", false);
+$paramArray[] = ($shrewd->getParameter("ConfigurationData", 1, $this->rows, "rows", "\BuildEmpire\Mosaic\Courseware\ComponentDataRows", "", false)) ? $shrewd->getParameter("ConfigurationData", 1, $this->rows, "rows", "\BuildEmpire\Mosaic\Courseware\ComponentDataRows", "", false) : null;
+$paramArray[] = ($shrewd->getParameter("ConfigurationData", 1, $this->columns, "columns", "\BuildEmpire\Mosaic\Courseware\ComponentDataColumns", "", false)) ? $shrewd->getParameter("ConfigurationData", 1, $this->columns, "columns", "\BuildEmpire\Mosaic\Courseware\ComponentDataColumns", "", false) : null;
+$paramArray[] = ($shrewd->getParameter("ConfigurationData", 1, $this->canvas, "canvas", "\BuildEmpire\Mosaic\Courseware\ComponentDataCanvas", "", false)) ? $shrewd->getParameter("ConfigurationData", 1, $this->canvas, "canvas", "\BuildEmpire\Mosaic\Courseware\ComponentDataCanvas", "", false) : null;
+$paramArray[] = ($shrewd->getParameter("ConfigurationData", 1, $this->grid, "grid", "\BuildEmpire\Mosaic\Courseware\ComponentDataGrid", "", false)) ? $shrewd->getParameter("ConfigurationData", 1, $this->grid, "grid", "\BuildEmpire\Mosaic\Courseware\ComponentDataGrid", "", false) : null;
+$paramArray[] = $shrewd->getParameter("ConfigurationData", 1, $this->language, "language", "string", "", false);
 return $paramArray;
 }
 public function setShrewd(
@@ -59,15 +84,32 @@ public function setShrewd(
 $shrewdArray){
 if (isset($shrewdArray[0])) {$this->id = $shrewd->setParameter("ConfigurationData", 2, $shrewdArray[0], "id", "string-id", "", false);}
 if (isset($shrewdArray[1])) {$this->name = $shrewd->setParameter("ConfigurationData", 2, $shrewdArray[1], "name", "string", "", false);}
-if ($shrewdArray[2]) {
-$theClass = new \BuildEmpire\Mosaic\Courseware\Screen();
-$theClass->setShrewd($shrewd, $shrewdArray[2]);
-$this->screen = $theClass;
+if (isset($shrewdArray[2])) {$this->translations = $shrewd->setParameter("ConfigurationData", 2, $shrewdArray[2], "translations", "list", "\BuildEmpire\Mosaic\Courseware\Translation", true);}
+if (isset($shrewdArray[3])) {$this->learningPaths = $shrewd->setParameter("ConfigurationData", 2, $shrewdArray[3], "learningPaths", "list", "\BuildEmpire\Mosaic\Courseware\LearningPath", true);}
+if (isset($shrewdArray[4])) {$this->components = $shrewd->setParameter("ConfigurationData", 2, $shrewdArray[4], "components", "list", "\BuildEmpire\Mosaic\Courseware\Component", true);}
+if (isset($shrewdArray[5])) {$this->dragMode = $shrewd->setParameter("ConfigurationData", 2, $shrewdArray[5], "dragMode", "integer", "", false);}
+if (isset($shrewdArray[6])) {$this->allowFreeComponents = $shrewd->setParameter("ConfigurationData", 2, $shrewdArray[6], "allowFreeComponents", "boolean", "", false);}
+if (isset($shrewdArray[7])) {$this->componentLoadTimeout = $shrewd->setParameter("ConfigurationData", 2, $shrewdArray[7], "componentLoadTimeout", "integer", "", false);}
+if ($shrewdArray[8]) {
+$theClass = new \BuildEmpire\Mosaic\Courseware\ComponentDataRows();
+$theClass->setShrewd($shrewd, $shrewdArray[8]);
+$this->rows = $theClass;
 }
-if (isset($shrewdArray[3])) {$this->translations = $shrewd->setParameter("ConfigurationData", 2, $shrewdArray[3], "translations", "list", "\BuildEmpire\Mosaic\Courseware\Translation", true);}
-if (isset($shrewdArray[4])) {$this->learningPaths = $shrewd->setParameter("ConfigurationData", 2, $shrewdArray[4], "learningPaths", "list", "\BuildEmpire\Mosaic\Courseware\LearningPath", true);}
-if (isset($shrewdArray[5])) {$this->templates = $shrewd->setParameter("ConfigurationData", 2, $shrewdArray[5], "templates", "list", "\BuildEmpire\Mosaic\Courseware\Template", true);}
-if (isset($shrewdArray[6])) {$this->components = $shrewd->setParameter("ConfigurationData", 2, $shrewdArray[6], "components", "list", "\BuildEmpire\Mosaic\Courseware\Component", true);}
-if (isset($shrewdArray[7])) {$this->errors = $shrewd->setParameter("ConfigurationData", 2, $shrewdArray[7], "errors", "list", "string", true);}
+if ($shrewdArray[9]) {
+$theClass = new \BuildEmpire\Mosaic\Courseware\ComponentDataColumns();
+$theClass->setShrewd($shrewd, $shrewdArray[9]);
+$this->columns = $theClass;
+}
+if ($shrewdArray[10]) {
+$theClass = new \BuildEmpire\Mosaic\Courseware\ComponentDataCanvas();
+$theClass->setShrewd($shrewd, $shrewdArray[10]);
+$this->canvas = $theClass;
+}
+if ($shrewdArray[11]) {
+$theClass = new \BuildEmpire\Mosaic\Courseware\ComponentDataGrid();
+$theClass->setShrewd($shrewd, $shrewdArray[11]);
+$this->grid = $theClass;
+}
+if (isset($shrewdArray[12])) {$this->language = $shrewd->setParameter("ConfigurationData", 2, $shrewdArray[12], "language", "string", "", false);}
 }
 }

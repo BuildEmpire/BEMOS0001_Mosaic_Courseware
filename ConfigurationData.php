@@ -39,19 +39,19 @@ public $allowFreeComponents;
  */
 public $componentLoadTimeout;
 /**
- * @var \BuildEmpire\Mosaic\Courseware\ComponentDataRows
+ * @var \BuildEmpire\Mosaic\Courseware\DataRows
  */
 public $rows;
 /**
- * @var \BuildEmpire\Mosaic\Courseware\ComponentDataColumns
+ * @var \BuildEmpire\Mosaic\Courseware\DataColumns
  */
 public $columns;
 /**
- * @var \BuildEmpire\Mosaic\Courseware\ComponentDataCanvas
+ * @var \BuildEmpire\Mosaic\Courseware\DataCanvas
  */
 public $canvas;
 /**
- * @var \BuildEmpire\Mosaic\Courseware\ComponentDataGrid
+ * @var \BuildEmpire\Mosaic\Courseware\DataGrid
  */
 public $grid;
 /**
@@ -72,10 +72,10 @@ $paramArray[] = $shrewd->getParameter("ConfigurationData", 1, $this->components,
 $paramArray[] = $shrewd->getParameter("ConfigurationData", 1, $this->dragMode, "dragMode", "integer", "", false);
 $paramArray[] = $shrewd->getParameter("ConfigurationData", 1, $this->allowFreeComponents, "allowFreeComponents", "boolean", "", false);
 $paramArray[] = $shrewd->getParameter("ConfigurationData", 1, $this->componentLoadTimeout, "componentLoadTimeout", "integer", "", false);
-$paramArray[] = ($shrewd->getParameter("ConfigurationData", 1, $this->rows, "rows", "\BuildEmpire\Mosaic\Courseware\ComponentDataRows", "", false)) ? $shrewd->getParameter("ConfigurationData", 1, $this->rows, "rows", "\BuildEmpire\Mosaic\Courseware\ComponentDataRows", "", false) : null;
-$paramArray[] = ($shrewd->getParameter("ConfigurationData", 1, $this->columns, "columns", "\BuildEmpire\Mosaic\Courseware\ComponentDataColumns", "", false)) ? $shrewd->getParameter("ConfigurationData", 1, $this->columns, "columns", "\BuildEmpire\Mosaic\Courseware\ComponentDataColumns", "", false) : null;
-$paramArray[] = ($shrewd->getParameter("ConfigurationData", 1, $this->canvas, "canvas", "\BuildEmpire\Mosaic\Courseware\ComponentDataCanvas", "", false)) ? $shrewd->getParameter("ConfigurationData", 1, $this->canvas, "canvas", "\BuildEmpire\Mosaic\Courseware\ComponentDataCanvas", "", false) : null;
-$paramArray[] = ($shrewd->getParameter("ConfigurationData", 1, $this->grid, "grid", "\BuildEmpire\Mosaic\Courseware\ComponentDataGrid", "", false)) ? $shrewd->getParameter("ConfigurationData", 1, $this->grid, "grid", "\BuildEmpire\Mosaic\Courseware\ComponentDataGrid", "", false) : null;
+$paramArray[] = ($shrewd->getParameter("ConfigurationData", 1, $this->rows, "rows", "\BuildEmpire\Mosaic\Courseware\DataRows", "", false)) ? $shrewd->getParameter("ConfigurationData", 1, $this->rows, "rows", "\BuildEmpire\Mosaic\Courseware\DataRows", "", false) : null;
+$paramArray[] = ($shrewd->getParameter("ConfigurationData", 1, $this->columns, "columns", "\BuildEmpire\Mosaic\Courseware\DataColumns", "", false)) ? $shrewd->getParameter("ConfigurationData", 1, $this->columns, "columns", "\BuildEmpire\Mosaic\Courseware\DataColumns", "", false) : null;
+$paramArray[] = ($shrewd->getParameter("ConfigurationData", 1, $this->canvas, "canvas", "\BuildEmpire\Mosaic\Courseware\DataCanvas", "", false)) ? $shrewd->getParameter("ConfigurationData", 1, $this->canvas, "canvas", "\BuildEmpire\Mosaic\Courseware\DataCanvas", "", false) : null;
+$paramArray[] = ($shrewd->getParameter("ConfigurationData", 1, $this->grid, "grid", "\BuildEmpire\Mosaic\Courseware\DataGrid", "", false)) ? $shrewd->getParameter("ConfigurationData", 1, $this->grid, "grid", "\BuildEmpire\Mosaic\Courseware\DataGrid", "", false) : null;
 $paramArray[] = $shrewd->getParameter("ConfigurationData", 1, $this->language, "language", "string", "", false);
 return $paramArray;
 }
@@ -91,22 +91,22 @@ if (isset($shrewdArray[5])) {$this->dragMode = $shrewd->setParameter("Configurat
 if (isset($shrewdArray[6])) {$this->allowFreeComponents = $shrewd->setParameter("ConfigurationData", 2, $shrewdArray[6], "allowFreeComponents", "boolean", "", false);}
 if (isset($shrewdArray[7])) {$this->componentLoadTimeout = $shrewd->setParameter("ConfigurationData", 2, $shrewdArray[7], "componentLoadTimeout", "integer", "", false);}
 if ($shrewdArray[8]) {
-$theClass = new \BuildEmpire\Mosaic\Courseware\ComponentDataRows();
+$theClass = new \BuildEmpire\Mosaic\Courseware\DataRows();
 $theClass->setShrewd($shrewd, $shrewdArray[8]);
 $this->rows = $theClass;
 }
 if ($shrewdArray[9]) {
-$theClass = new \BuildEmpire\Mosaic\Courseware\ComponentDataColumns();
+$theClass = new \BuildEmpire\Mosaic\Courseware\DataColumns();
 $theClass->setShrewd($shrewd, $shrewdArray[9]);
 $this->columns = $theClass;
 }
 if ($shrewdArray[10]) {
-$theClass = new \BuildEmpire\Mosaic\Courseware\ComponentDataCanvas();
+$theClass = new \BuildEmpire\Mosaic\Courseware\DataCanvas();
 $theClass->setShrewd($shrewd, $shrewdArray[10]);
 $this->canvas = $theClass;
 }
 if ($shrewdArray[11]) {
-$theClass = new \BuildEmpire\Mosaic\Courseware\ComponentDataGrid();
+$theClass = new \BuildEmpire\Mosaic\Courseware\DataGrid();
 $theClass->setShrewd($shrewd, $shrewdArray[11]);
 $this->grid = $theClass;
 }

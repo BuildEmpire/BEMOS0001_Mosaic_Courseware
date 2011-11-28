@@ -1153,7 +1153,7 @@ initialize: function(){
 /**
  * Automatically Generated Shrewd File
  */
-var CoursewareComponentDataRows = new Class({
+var CoursewareDataRows = new Class({
 /**
  * @type {boolean} allow
  */
@@ -1169,14 +1169,14 @@ max : 0,
 /**
  * @type {string}
  */
-shrewdNS : "BuildEmpire.Mosaic.Courseware.ComponentDataRows",
+shrewdNS : "BuildEmpire.Mosaic.Courseware.DataRows",
 /**
  * Get the name of the MooTools class.
  * 
  * @returns {string}
  */
 getName : function(){
-return "CoursewareComponentDataRows";
+return "CoursewareDataRows";
 },
 /**
  * Get the content as a shrewd array.
@@ -1207,7 +1207,7 @@ initialize: function(){
 /**
  * Automatically Generated Shrewd File
  */
-var CoursewareComponentDataColumns = new Class({
+var CoursewareDataColumns = new Class({
 /**
  * @type {boolean} allow
  */
@@ -1223,14 +1223,14 @@ max : 0,
 /**
  * @type {string}
  */
-shrewdNS : "BuildEmpire.Mosaic.Courseware.ComponentDataColumns",
+shrewdNS : "BuildEmpire.Mosaic.Courseware.DataColumns",
 /**
  * Get the name of the MooTools class.
  * 
  * @returns {string}
  */
 getName : function(){
-return "CoursewareComponentDataColumns";
+return "CoursewareDataColumns";
 },
 /**
  * Get the content as a shrewd array.
@@ -1261,7 +1261,7 @@ initialize: function(){
 /**
  * Automatically Generated Shrewd File
  */
-var CoursewareComponentDataCanvas = new Class({
+var CoursewareDataCanvas = new Class({
 /**
  * @type {integer} width
  */
@@ -1281,14 +1281,14 @@ resizeHandleSize : 8,
 /**
  * @type {string}
  */
-shrewdNS : "BuildEmpire.Mosaic.Courseware.ComponentDataCanvas",
+shrewdNS : "BuildEmpire.Mosaic.Courseware.DataCanvas",
 /**
  * Get the name of the MooTools class.
  * 
  * @returns {string}
  */
 getName : function(){
-return "CoursewareComponentDataCanvas";
+return "CoursewareDataCanvas";
 },
 /**
  * Get the content as a shrewd array.
@@ -1321,7 +1321,7 @@ initialize: function(){
 /**
  * Automatically Generated Shrewd File
  */
-var CoursewareComponentDataGrid = new Class({
+var CoursewareDataGrid = new Class({
 /**
  * @type {integer} x
  */
@@ -1333,14 +1333,14 @@ y : 20,
 /**
  * @type {string}
  */
-shrewdNS : "BuildEmpire.Mosaic.Courseware.ComponentDataGrid",
+shrewdNS : "BuildEmpire.Mosaic.Courseware.DataGrid",
 /**
  * Get the name of the MooTools class.
  * 
  * @returns {string}
  */
 getName : function(){
-return "CoursewareComponentDataGrid";
+return "CoursewareDataGrid";
 },
 /**
  * Get the content as a shrewd array.
@@ -1403,19 +1403,19 @@ allowFreeComponents : null,
  */
 componentLoadTimeout : null,
 /**
- * @type {CoursewareComponentDataRows}
+ * @type {CoursewareDataRows}
  */
 rows : null,
 /**
- * @type {CoursewareComponentDataColumns}
+ * @type {CoursewareDataColumns}
  */
 columns : null,
 /**
- * @type {CoursewareComponentDataCanvas}
+ * @type {CoursewareDataCanvas}
  */
 canvas : null,
 /**
- * @type {CoursewareComponentDataGrid}
+ * @type {CoursewareDataGrid}
  */
 grid : null,
 /**
@@ -1517,28 +1517,28 @@ this.dragMode = shrewdArray[5];
 this.allowFreeComponents = shrewdArray[6];
 this.componentLoadTimeout = shrewdArray[7];
 if (shrewdArray[8]) {
-var theClass = new CoursewareComponentDataRows();
+var theClass = new CoursewareDataRows();
 theClass.setShrewd(shrewdArray[8]);
 this.rows = theClass;
 } else {
 this.rows = null;
 }
 if (shrewdArray[9]) {
-var theClass = new CoursewareComponentDataColumns();
+var theClass = new CoursewareDataColumns();
 theClass.setShrewd(shrewdArray[9]);
 this.columns = theClass;
 } else {
 this.columns = null;
 }
 if (shrewdArray[10]) {
-var theClass = new CoursewareComponentDataCanvas();
+var theClass = new CoursewareDataCanvas();
 theClass.setShrewd(shrewdArray[10]);
 this.canvas = theClass;
 } else {
 this.canvas = null;
 }
 if (shrewdArray[11]) {
-var theClass = new CoursewareComponentDataGrid();
+var theClass = new CoursewareDataGrid();
 theClass.setShrewd(shrewdArray[11]);
 this.grid = theClass;
 } else {

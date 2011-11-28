@@ -100,26 +100,26 @@ enum DragMode {
     COLUMNS = 3
 }
 
-struct ComponentDataRows {
+struct DataRows {
     1:              boolean                allow   = true,
     2:              integer                min     = 0,
     3:              integer                max     = 0
 }
 
-struct ComponentDataColumns {
+struct DataColumns {
     1:              boolean                allow   = true,
     2:              integer                min     = 0,
     3:              integer                max     = 0
 }
 
-struct ComponentDataCanvas {
+struct DataCanvas {
     1:              integer                width   = 0,
     2:              integer                height  = 0,
     3:              integer                sensitiveBoundarySize = 50,
     4:              integer                resizeHandleSize = 8
 }
 
-struct ComponentDataGrid {
+struct DataGrid {
     1:              integer                 x = 20,
     2:              integer                 y = 20
 }
@@ -137,12 +137,12 @@ struct ConfigurationData {
     7:              boolean                allowFreeComponents,
     8:              integer                componentLoadTimeout,
 
-    9:              ComponentDataRows      rows,
-    10:             ComponentDataColumns   columns,
-    11:             ComponentDataCanvas    canvas,
-    12:             ComponentDataGrid      grid,
+    9:              DataRows               rows,
+    10:             DataColumns            columns,
+    11:             DataCanvas             canvas,
+    12:             DataGrid               grid,
 
-    13:             string                 language = "en",
+    13:             string                 language = "en"
 }
 
 

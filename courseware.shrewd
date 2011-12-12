@@ -48,8 +48,7 @@ struct Component {
     1:              string                 name,
     2:              string                 title,
     3:              integer                active = 1,
-    4:              boolean                isFreeComponent = true,
-    5:  optional    ComponentMetrics       metrics
+    4:  optional    ComponentMetrics       metrics
 }
 
 struct ColumnRowMetrics {

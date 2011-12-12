@@ -720,10 +720,6 @@ title : null,
  */
 active : 1,
 /**
- * @type {boolean} isFreeComponent
- */
-isFreeComponent : true,
-/**
  * @type {CoursewareComponentMetrics}
  */
 metrics : null,
@@ -749,7 +745,6 @@ var parametersArray = new Array();
 parametersArray.push(this.name);
 parametersArray.push(this.title);
 parametersArray.push(this.active);
-parametersArray.push(this.isFreeComponent);
 parametersArray.push((this.metrics) ? this.metrics.getShrewd() : null);
 return parametersArray;
 },
@@ -763,10 +758,9 @@ setShrewd: function(shrewdArray){
 this.name = shrewdArray[0];
 this.title = shrewdArray[1];
 this.active = shrewdArray[2];
-this.isFreeComponent = shrewdArray[3];
-if (shrewdArray[4]) {
+if (shrewdArray[3]) {
 var theClass = new CoursewareComponentMetrics();
-theClass.setShrewd(shrewdArray[4]);
+theClass.setShrewd(shrewdArray[3]);
 this.metrics = theClass;
 } else {
 this.metrics = null;

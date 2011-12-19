@@ -5,7 +5,8 @@
 namespace BuildEmpire\Mosaic\Courseware;
 class DragMode
 {
-public static $ALL = 1;
-public static $FREE = 2;
-public static $COLUMNS = 3;
+public static $FREE = 1;
+public static $COLUMNS = 2;
+public static $BLA = 4;
+public static $ALL = 7;
 }

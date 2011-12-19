@@ -98,9 +98,10 @@ enum LearningPathFulfilmentType {
 
 
 enum DragMode {
-    ALL     = 1,
-    FREE    = 2,
-    COLUMNS = 3
+    FREE    = 1,
+    COLUMNS = 2,
+    BLA     = 4,
+    ALL     = 7
 }
 
 struct DataRows {
@@ -139,14 +140,13 @@ struct ConfigurationData {
     5:  optional    list<Component>         components,
 
     6:              DragMode                dragMode,
-    7:              boolean                 allowFreeComponents,
 
-    8:              DataRows                rows,
-    9:              DataColumns             columns,
-    10:             DataCanvas              canvas,
-    11:             DataGrid                grid,
+    7:              DataRows                rows,
+    8:              DataColumns             columns,
+    9:              DataCanvas              canvas,
+    10:             DataGrid                grid,
 
-    12:             string                  language = "en"
+    11:             string                  language = "en"
 }
 
 

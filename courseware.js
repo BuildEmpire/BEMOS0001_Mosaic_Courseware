@@ -1121,6 +1121,10 @@ var CoursewareDataRows = new Class({
  */
 allow : true,
 /**
+ * @type {boolean} resizable
+ */
+resizable : true,
+/**
  * @type {integer} default
  */
 default : 1,
@@ -1152,6 +1156,7 @@ return "CoursewareDataRows";
 getShrewd: function(){
 var parametersArray = new Array();
 parametersArray.push(this.allow);
+parametersArray.push(this.resizable);
 parametersArray.push(this.default);
 parametersArray.push(this.min);
 parametersArray.push(this.max);
@@ -1165,9 +1170,10 @@ return parametersArray;
  */
 setShrewd: function(shrewdArray){
 this.allow = shrewdArray[0];
-this.default = shrewdArray[1];
-this.min = shrewdArray[2];
-this.max = shrewdArray[3];
+this.resizable = shrewdArray[1];
+this.default = shrewdArray[2];
+this.min = shrewdArray[3];
+this.max = shrewdArray[4];
 },
 initialize: function(){
 }
@@ -1180,6 +1186,10 @@ var CoursewareDataColumns = new Class({
  * @type {boolean} allow
  */
 allow : true,
+/**
+ * @type {boolean} resizable
+ */
+resizable : true,
 /**
  * @type {integer} default
  */
@@ -1212,6 +1222,7 @@ return "CoursewareDataColumns";
 getShrewd: function(){
 var parametersArray = new Array();
 parametersArray.push(this.allow);
+parametersArray.push(this.resizable);
 parametersArray.push(this.default);
 parametersArray.push(this.min);
 parametersArray.push(this.max);
@@ -1225,9 +1236,10 @@ return parametersArray;
  */
 setShrewd: function(shrewdArray){
 this.allow = shrewdArray[0];
-this.default = shrewdArray[1];
-this.min = shrewdArray[2];
-this.max = shrewdArray[3];
+this.resizable = shrewdArray[1];
+this.default = shrewdArray[2];
+this.min = shrewdArray[3];
+this.max = shrewdArray[4];
 },
 initialize: function(){
 }

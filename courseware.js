@@ -496,6 +496,10 @@ var CoursewareContext = {"GENERAL" : 1, "POSITION" : 2};
 /**
  * Automatically Generated Shrewd File
  */
+var CoursewareScalingMode = {"FREE" : 1, "RATIO" : 2, "XAXIS" : 3, "YAXIS" : 4};
+/**
+ * Automatically Generated Shrewd File
+ */
 var CoursewareLearningPathFulfilmentType = {"NONE" : 1, "CHILDREN" : 2, "ALL" : 3};
 /**
  * Automatically Generated Shrewd File
@@ -708,6 +712,10 @@ initialize: function(){
  */
 var CoursewareComponent = new Class({
 /**
+ * @type {string} id (ID).
+ */
+id : null,
+/**
  * @type {string} name
  */
 name : null,
@@ -720,9 +728,17 @@ title : null,
  */
 active : 1,
 /**
+ * @type {Array} data
+ */
+data : null,
+/**
  * @type {CoursewareComponentMetrics}
  */
 metrics : null,
+/**
+ * @type {integer} scale
+ */
+scale : null,
 /**
  * @type {string}
  */
@@ -742,10 +758,13 @@ return "CoursewareComponent";
  */
 getShrewd: function(){
 var parametersArray = new Array();
+parametersArray.push(this.id);
 parametersArray.push(this.name);
 parametersArray.push(this.title);
 parametersArray.push(this.active);
+parametersArray.push(this.data);
 parametersArray.push((this.metrics) ? this.metrics.getShrewd() : null);
+parametersArray.push(this.scale);
 return parametersArray;
 },
 /**
@@ -755,16 +774,19 @@ return parametersArray;
  * @returns {null} 
  */
 setShrewd: function(shrewdArray){
-this.name = shrewdArray[0];
-this.title = shrewdArray[1];
-this.active = shrewdArray[2];
-if (shrewdArray[3]) {
+this.id = shrewdArray[0];
+this.name = shrewdArray[1];
+this.title = shrewdArray[2];
+this.active = shrewdArray[3];
+this.data = shrewdArray[4];
+if (shrewdArray[5]) {
 var theClass = new CoursewareComponentMetrics();
-theClass.setShrewd(shrewdArray[3]);
+theClass.setShrewd(shrewdArray[5]);
 this.metrics = theClass;
 } else {
 this.metrics = null;
 }
+this.scale = shrewdArray[6];
 },
 initialize: function(){
 }
@@ -1093,65 +1115,15 @@ initialize: function(){
 /**
  * Automatically Generated Shrewd File
  */
-var CoursewareComponentData = new Class({
-/**
- * @type {string} id (ID).
- */
-id : null,
-/**
- * @type {string} name
- */
-name : null,
-/**
- * @type {Array} data
- */
-data : null,
-/**
- * @type {string}
- */
-shrewdNS : "BuildEmpire.Mosaic.Courseware.ComponentData",
-/**
- * Get the name of the MooTools class.
- * 
- * @returns {string}
- */
-getName : function(){
-return "CoursewareComponentData";
-},
-/**
- * Get the content as a shrewd array.
- * 
- * @returns {null} The shrewd array.
- */
-getShrewd: function(){
-var parametersArray = new Array();
-parametersArray.push(this.id);
-parametersArray.push(this.name);
-parametersArray.push(this.data);
-return parametersArray;
-},
-/**
- * Set the content via the shrewd array.
- * 
- * @param {Array} shrewdArray
- * @returns {null} 
- */
-setShrewd: function(shrewdArray){
-this.id = shrewdArray[0];
-this.name = shrewdArray[1];
-this.data = shrewdArray[2];
-},
-initialize: function(){
-}
-});
-/**
- * Automatically Generated Shrewd File
- */
 var CoursewareDataRows = new Class({
 /**
  * @type {boolean} allow
  */
 allow : true,
+/**
+ * @type {integer} default
+ */
+default : 1,
 /**
  * @type {integer} min
  */
@@ -1180,6 +1152,7 @@ return "CoursewareDataRows";
 getShrewd: function(){
 var parametersArray = new Array();
 parametersArray.push(this.allow);
+parametersArray.push(this.default);
 parametersArray.push(this.min);
 parametersArray.push(this.max);
 return parametersArray;
@@ -1192,8 +1165,9 @@ return parametersArray;
  */
 setShrewd: function(shrewdArray){
 this.allow = shrewdArray[0];
-this.min = shrewdArray[1];
-this.max = shrewdArray[2];
+this.default = shrewdArray[1];
+this.min = shrewdArray[2];
+this.max = shrewdArray[3];
 },
 initialize: function(){
 }
@@ -1206,6 +1180,10 @@ var CoursewareDataColumns = new Class({
  * @type {boolean} allow
  */
 allow : true,
+/**
+ * @type {integer} default
+ */
+default : 1,
 /**
  * @type {integer} min
  */
@@ -1234,6 +1212,7 @@ return "CoursewareDataColumns";
 getShrewd: function(){
 var parametersArray = new Array();
 parametersArray.push(this.allow);
+parametersArray.push(this.default);
 parametersArray.push(this.min);
 parametersArray.push(this.max);
 return parametersArray;
@@ -1246,8 +1225,9 @@ return parametersArray;
  */
 setShrewd: function(shrewdArray){
 this.allow = shrewdArray[0];
-this.min = shrewdArray[1];
-this.max = shrewdArray[2];
+this.default = shrewdArray[1];
+this.min = shrewdArray[2];
+this.max = shrewdArray[3];
 },
 initialize: function(){
 }

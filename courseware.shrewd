@@ -9,8 +9,8 @@ external service, who may also act differently dependant on the mode set.
 */
 enum Mode {
     TEMPLATE_EDITOR = 1,
-    SCREEN_EDITOR = 2,
-    SCREEN_DISPLAY = 3
+    SCREEN_EDITOR   = 2,
+    SCREEN_DISPLAY  = 3
 }
 
 /*
@@ -18,8 +18,8 @@ This allows the product to declare a context type when returning
 contextual data to the external service.
 */
 enum Context {
-    GENERAL = 1,
-    POSITION = 2
+    GENERAL         = 1,
+    POSITION        = 2
 }
 
 struct Translation {
@@ -35,44 +35,58 @@ struct LearningPath {
     3:              string                  name
 }
 
+
+
+enum ScalingMode {
+    FREE    = 1,
+    RATIO   = 2,
+    XAXIS   = 3,
+    YAXIS   = 4
+}
+
 struct ComponentMetrics {
-    1:  integer                            xPercent,
-    2:  integer                            yPercent,
-    3:  integer                            widthPercent,
-    4:  integer                            heightPercent,
-    5:  integer                            tabIndex,
-    6:  integer                            zIndex
+    1:  integer                             xPercent,
+    2:  integer                             yPercent,
+    3:  integer                             widthPercent,
+    4:  integer                             heightPercent,
+    5:  integer                             tabIndex,
+    6:  integer                             zIndex
 }
 
 struct Component {
-    1:              string                 name,
-    2:              string                 title,
-    3:              integer                active = 1,
-    4:  optional    ComponentMetrics       metrics
+    1:              string-id               id,
+    2:              string                  name,
+    3:              string                  title,
+    4:              integer                 active = 1,
+    5:              list                    data,
+    6:  optional    ComponentMetrics        metrics,
+    7:  optional    ScalingMode             scale
 }
 
+
+
 struct ColumnRowMetrics {
-    1:  optional    integer                widthPercent,
-    2:  optional    integer                heightPercent
+    1:  optional    integer                 widthPercent,
+    2:  optional    integer                 heightPercent
 }
 
 struct Column {
-    1:              string-id              id,
-    2:              boolean                display = true,
-    3:              boolean                structure = true,
-	4:  optional    list<Component>        components,
-	5:              ColumnRowMetrics       metrics
+    1:              string-id               id,
+    2:              boolean                 display = true,
+    3:              boolean                 structure = true,
+    4:  optional    list<Component>         components,
+    5:              ColumnRowMetrics        metrics
 }
 
 struct Row {
-    1:              string-id              id,
-	2:  optional    list<Column>           columns,
-	3:              ColumnRowMetrics       metrics
+    1:              string-id               id,
+    2:  optional    list<Column>            columns,
+    3:              ColumnRowMetrics        metrics
 }
 
 struct Template {
-    1:              string                name,
-    2:              list<Row>             rows
+    1:              string                  name,
+    2:              list<Row>               rows
 }
 
 enum LearningPathFulfilmentType {
@@ -82,14 +96,8 @@ enum LearningPathFulfilmentType {
 }
 
 struct Screen {
-    1:              integer                width,
-    2:              integer                height
-}
-
-struct ComponentData {
-    1:              string-id              id,
-    2:              string                 name,
-    3:              list                   data
+    1:              integer                 width,
+    2:              integer                 height
 }
 
 
@@ -100,22 +108,24 @@ enum DragMode {
 }
 
 struct DataRows {
-    1:              boolean                allow   = true,
-    2:              integer                min     = 0,
-    3:              integer                max     = 0
+    1:              boolean                 allow   = true,
+    2:              integer                 default = 1,
+    3:              integer                 min     = 0,
+    4:              integer                 max     = 0
 }
 
 struct DataColumns {
-    1:              boolean                allow   = true,
-    2:              integer                min     = 0,
-    3:              integer                max     = 0
+    1:              boolean                 allow   = true,
+    2:              integer                 default = 1,
+    3:              integer                 min     = 0,
+    4:              integer                 max     = 0
 }
 
 struct DataCanvas {
-    1:              integer                width   = 0,
-    2:              integer                height  = 0,
-    3:              integer                sensitiveBoundarySize = 50,
-    4:              integer                resizeHandleSize = 8
+    1:              integer                 width   = 0,
+    2:              integer                 height  = 0,
+    3:              integer                 sensitiveBoundarySize = 50,
+    4:              integer                 resizeHandleSize = 8
 }
 
 struct DataGrid {
@@ -125,30 +135,30 @@ struct DataGrid {
 
 
 struct ConfigurationData {
-    1:              string-id              id,
-    2:              string                 name,
+    1:              string-id               id,
+    2:              string                  name,
 
-    3:  optional    list<Translation>      translations,
-    4:  optional    list<LearningPath>     learningPaths,
-    5:  optional    list<Component>        components,
+    3:  optional    list<Translation>       translations,
+    4:  optional    list<LearningPath>      learningPaths,
+    5:  optional    list<Component>         components,
 
-    6:              DragMode               dragMode,
-    7:              boolean                allowFreeComponents,
-    8:              integer                componentLoadTimeout,
+    6:              DragMode                dragMode,
+    7:              boolean                 allowFreeComponents,
+    8:              integer                 componentLoadTimeout,
 
-    9:              DataRows               rows,
-    10:             DataColumns            columns,
-    11:             DataCanvas             canvas,
-    12:             DataGrid               grid,
+    9:              DataRows                rows,
+    10:             DataColumns             columns,
+    11:             DataCanvas              canvas,
+    12:             DataGrid                grid,
 
-    13:             string                 language = "en"
+    13:             string                  language = "en"
 }
 
 
 struct ScreenData {
-    1:  optional    Template               template,
-	2:  optional    list<Row>              rows,
-	3:  optional    list<Component>        freeComponents
+    1:  optional    Template                template,
+    2:  optional    list<Row>               rows,
+    3:  optional    list<Component>         freeComponents
 }
 
 enum StructureItemType {
@@ -178,27 +188,27 @@ enum EditableFormFieldType {
 }
 
 struct EditableFormFieldHTML {
-    1: string                 cssPath,
-    2: list                   styleFormats,
+    1:              string                  cssPath,
+    2:              list                    styleFormats,
 }
 
 struct EditableFormField {
-    1:              EditableFormFieldType  type,
-    2:              string                 name,
-    3:              string                 title,
-    4:              boolean                required,
-    5: optional     string                 value,
-    6: optional     native-js-Object       data
+    1:              EditableFormFieldType   type,
+    2:              string                  name,
+    3:              string                  title,
+    4:              boolean                 required,
+    5: optional     string                  value,
+    6: optional     native-js-Object        data
 }
 
 struct EditableFormGroup {
-    1: string                      name,
-    2: list<EditableFormField>     fields
+    1:              string                  name,
+    2:              list<EditableFormField> fields
 }
 
 struct EditableForm {
-    1: string                      name,
-    2: list<EditableFormGroup>     groups
+    1:              string                  name,
+    2:              list<EditableFormGroup> groups
 }
 
 

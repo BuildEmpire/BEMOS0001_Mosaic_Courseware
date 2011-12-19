@@ -504,7 +504,7 @@ var CoursewareLearningPathFulfilmentType = {"NONE" : 1, "CHILDREN" : 2, "ALL" : 
 /**
  * Automatically Generated Shrewd File
  */
-var CoursewareDragMode = {"FREE" : 1, "COLUMNS" : 2, "BLA" : 4, "ALL" : 7};
+var CoursewareDragMode = {"FREE" : 1, "COLUMNS" : 2, "ALL" : 3};
 /**
  * Automatically Generated Shrewd File
  */

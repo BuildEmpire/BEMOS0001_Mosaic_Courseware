@@ -100,8 +100,7 @@ enum LearningPathFulfilmentType {
 enum DragMode {
     FREE    = 1,
     COLUMNS = 2,
-    BLA     = 4,
-    ALL     = 7
+    ALL     = 3
 }
 
 struct DataRows {

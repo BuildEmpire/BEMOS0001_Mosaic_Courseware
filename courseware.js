@@ -890,14 +890,6 @@ var CoursewareColumn = new Class({
  */
 id : null,
 /**
- * @type {boolean} display
- */
-display : true,
-/**
- * @type {boolean} structure
- */
-structure : true,
-/**
  * @type {Array} components
  */
 components : null,
@@ -925,8 +917,6 @@ return "CoursewareColumn";
 getShrewd: function(){
 var parametersArray = new Array();
 parametersArray.push(this.id);
-parametersArray.push(this.display);
-parametersArray.push(this.structure);
 if (this.components) {var l=this.components.length;var lArray = new Array();for (var a=0; a<l; a++) {lArray.push((this.components[a]) ? this.components[a].getShrewd() : null);}parametersArray.push(lArray);} else {parametersArray.push(this.components)}
 parametersArray.push((this.metrics) ? this.metrics.getShrewd() : null);
 return parametersArray;
@@ -939,15 +929,13 @@ return parametersArray;
  */
 setShrewd: function(shrewdArray){
 this.id = shrewdArray[0];
-this.display = shrewdArray[1];
-this.structure = shrewdArray[2];
-if (shrewdArray[3]) {
-var l=shrewdArray[3].length;
+if (shrewdArray[1]) {
+var l=shrewdArray[1].length;
 var lArray = new Array();
 for (var a=0; a<l; a++) {
-if (shrewdArray[3][a]) {
+if (shrewdArray[1][a]) {
 var theClass = new CoursewareComponentInstance();
-theClass.setShrewd(shrewdArray[3][a]);
+theClass.setShrewd(shrewdArray[1][a]);
 lArray[a] = theClass;
 } else {
 lArray[a] = null;
@@ -957,9 +945,9 @@ lArray[a] = null;
 lArray = null;
 }
 this.components = lArray;
-if (shrewdArray[4]) {
+if (shrewdArray[2]) {
 var theClass = new CoursewareColumnRowMetrics();
-theClass.setShrewd(shrewdArray[4]);
+theClass.setShrewd(shrewdArray[2]);
 this.metrics = theClass;
 } else {
 this.metrics = null;
@@ -1109,54 +1097,6 @@ initialize: function(){
 /**
  * Automatically Generated Shrewd File
  */
-var CoursewareScreen = new Class({
-/**
- * @type {integer} width
- */
-width : null,
-/**
- * @type {integer} height
- */
-height : null,
-/**
- * @type {string}
- */
-shrewdNS : "BuildEmpire.Mosaic.Courseware.Screen",
-/**
- * Get the name of the MooTools class.
- * 
- * @returns {string}
- */
-getName : function(){
-return "CoursewareScreen";
-},
-/**
- * Get the content as a shrewd array.
- * 
- * @returns {null} The shrewd array.
- */
-getShrewd: function(){
-var parametersArray = new Array();
-parametersArray.push(this.width);
-parametersArray.push(this.height);
-return parametersArray;
-},
-/**
- * Set the content via the shrewd array.
- * 
- * @param {Array} shrewdArray
- * @returns {null} 
- */
-setShrewd: function(shrewdArray){
-this.width = shrewdArray[0];
-this.height = shrewdArray[1];
-},
-initialize: function(){
-}
-});
-/**
- * Automatically Generated Shrewd File
- */
 var CoursewareDataRows = new Class({
 /**
  * @type {boolean} allow
@@ -1299,14 +1239,6 @@ width : 0,
  */
 height : 0,
 /**
- * @type {integer} sensitiveBoundarySize
- */
-sensitiveBoundarySize : 50,
-/**
- * @type {integer} resizeHandleSize
- */
-resizeHandleSize : 8,
-/**
  * @type {string}
  */
 shrewdNS : "BuildEmpire.Mosaic.Courseware.DataCanvas",
@@ -1327,8 +1259,6 @@ getShrewd: function(){
 var parametersArray = new Array();
 parametersArray.push(this.width);
 parametersArray.push(this.height);
-parametersArray.push(this.sensitiveBoundarySize);
-parametersArray.push(this.resizeHandleSize);
 return parametersArray;
 },
 /**
@@ -1340,8 +1270,6 @@ return parametersArray;
 setShrewd: function(shrewdArray){
 this.width = shrewdArray[0];
 this.height = shrewdArray[1];
-this.sensitiveBoundarySize = shrewdArray[2];
-this.resizeHandleSize = shrewdArray[3];
 },
 initialize: function(){
 }
@@ -1427,10 +1355,6 @@ dragMode : null,
  */
 allowFreeComponents : null,
 /**
- * @type {integer} componentLoadTimeout
- */
-componentLoadTimeout : null,
-/**
  * @type {CoursewareDataRows}
  */
 rows : null,
@@ -1476,7 +1400,6 @@ if (this.learningPaths) {var l=this.learningPaths.length;var lArray = new Array(
 if (this.components) {var l=this.components.length;var lArray = new Array();for (var a=0; a<l; a++) {lArray.push((this.components[a]) ? this.components[a].getShrewd() : null);}parametersArray.push(lArray);} else {parametersArray.push(this.components)}
 parametersArray.push(this.dragMode);
 parametersArray.push(this.allowFreeComponents);
-parametersArray.push(this.componentLoadTimeout);
 parametersArray.push((this.rows) ? this.rows.getShrewd() : null);
 parametersArray.push((this.columns) ? this.columns.getShrewd() : null);
 parametersArray.push((this.canvas) ? this.canvas.getShrewd() : null);
@@ -1543,36 +1466,35 @@ lArray = null;
 this.components = lArray;
 this.dragMode = shrewdArray[5];
 this.allowFreeComponents = shrewdArray[6];
-this.componentLoadTimeout = shrewdArray[7];
-if (shrewdArray[8]) {
+if (shrewdArray[7]) {
 var theClass = new CoursewareDataRows();
-theClass.setShrewd(shrewdArray[8]);
+theClass.setShrewd(shrewdArray[7]);
 this.rows = theClass;
 } else {
 this.rows = null;
 }
-if (shrewdArray[9]) {
+if (shrewdArray[8]) {
 var theClass = new CoursewareDataColumns();
-theClass.setShrewd(shrewdArray[9]);
+theClass.setShrewd(shrewdArray[8]);
 this.columns = theClass;
 } else {
 this.columns = null;
 }
-if (shrewdArray[10]) {
+if (shrewdArray[9]) {
 var theClass = new CoursewareDataCanvas();
-theClass.setShrewd(shrewdArray[10]);
+theClass.setShrewd(shrewdArray[9]);
 this.canvas = theClass;
 } else {
 this.canvas = null;
 }
-if (shrewdArray[11]) {
+if (shrewdArray[10]) {
 var theClass = new CoursewareDataGrid();
-theClass.setShrewd(shrewdArray[11]);
+theClass.setShrewd(shrewdArray[10]);
 this.grid = theClass;
 } else {
 this.grid = null;
 }
-this.language = shrewdArray[12];
+this.language = shrewdArray[11];
 },
 initialize: function(){
 }

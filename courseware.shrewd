@@ -74,10 +74,8 @@ struct ColumnRowMetrics {
 
 struct Column {
     1:              string-id               id,
-    2:              boolean                 display = true,
-    3:              boolean                 structure = true,
-    4:  optional    list<ComponentInstance> components,
-    5:              ColumnRowMetrics        metrics
+    2:  optional    list<ComponentInstance> components,
+    3:              ColumnRowMetrics        metrics
 }
 
 struct Row {
@@ -92,15 +90,11 @@ struct Template {
 }
 
 enum LearningPathFulfilmentType {
-    NONE = 1,
-    CHILDREN = 2,
-    ALL = 3,
+    NONE        = 1,
+    CHILDREN    = 2,
+    ALL         = 3
 }
 
-struct Screen {
-    1:              integer                 width,
-    2:              integer                 height
-}
 
 
 enum DragMode {
@@ -127,9 +121,7 @@ struct DataColumns {
 
 struct DataCanvas {
     1:              integer                 width   = 0,
-    2:              integer                 height  = 0,
-    3:              integer                 sensitiveBoundarySize = 50,
-    4:              integer                 resizeHandleSize = 8
+    2:              integer                 height  = 0
 }
 
 struct DataGrid {
@@ -148,14 +140,13 @@ struct ConfigurationData {
 
     6:              DragMode                dragMode,
     7:              boolean                 allowFreeComponents,
-    8:              integer                 componentLoadTimeout,
 
-    9:              DataRows                rows,
-    10:             DataColumns             columns,
-    11:             DataCanvas              canvas,
-    12:             DataGrid                grid,
+    8:              DataRows                rows,
+    9:              DataColumns             columns,
+    10:             DataCanvas              canvas,
+    11:             DataGrid                grid,
 
-    13:             string                  language = "en"
+    12:             string                  language = "en"
 }
 
 

@@ -54,16 +54,18 @@ struct ComponentMetrics {
 }
 
 struct Component {
-    1:              string-id               id,
-    2:              string                  name,
-    3:              string                  title,
-    4:              integer                 active = 1,
-    5:              list                    data,
-    6:  optional    ComponentMetrics        metrics,
-    7:  optional    ScalingMode             scale
+    1:              string                  name,
+    2:              string                  title,
+    3:              integer                 active = 1
 }
 
-
+struct ComponentInstance {
+    1:              string-id               id,
+    2:              string                  name,
+    3:              list                    data,
+    4:  optional    ComponentMetrics        metrics,
+    5:  optional    ScalingMode             scale
+}
 
 struct ColumnRowMetrics {
     1:  optional    integer                 widthPercent,
@@ -74,7 +76,7 @@ struct Column {
     1:              string-id               id,
     2:              boolean                 display = true,
     3:              boolean                 structure = true,
-    4:  optional    list<Component>         components,
+    4:  optional    list<ComponentInstance> components,
     5:              ColumnRowMetrics        metrics
 }
 
@@ -160,7 +162,7 @@ struct ConfigurationData {
 struct ScreenData {
     1:  optional    Template                template,
     2:  optional    list<Row>               rows,
-    3:  optional    list<Component>         freeComponents
+    3:  optional    list<ComponentInstance> freeComponents
 }
 
 enum StructureItemType {

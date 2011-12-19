@@ -15,7 +15,7 @@ public $template;
  */
 public $rows;
 /**
- * @var \BuildEmpire\Mosaic\Courseware\Component[]
+ * @var \BuildEmpire\Mosaic\Courseware\ComponentInstance[]
  */
 public $freeComponents;
 public function getShrewdNS(){
@@ -26,7 +26,7 @@ public function getShrewd(
 $paramArray = array();
 $paramArray[] = ($shrewd->getParameter("ScreenData", 1, $this->template, "template", "\BuildEmpire\Mosaic\Courseware\Template", "", true)) ? $shrewd->getParameter("ScreenData", 1, $this->template, "template", "\BuildEmpire\Mosaic\Courseware\Template", "", true) : null;
 $paramArray[] = $shrewd->getParameter("ScreenData", 1, $this->rows, "rows", "list", "\BuildEmpire\Mosaic\Courseware\Row", true);
-$paramArray[] = $shrewd->getParameter("ScreenData", 1, $this->freeComponents, "freeComponents", "list", "\BuildEmpire\Mosaic\Courseware\Component", true);
+$paramArray[] = $shrewd->getParameter("ScreenData", 1, $this->freeComponents, "freeComponents", "list", "\BuildEmpire\Mosaic\Courseware\ComponentInstance", true);
 return $paramArray;
 }
 public function setShrewd(
@@ -38,6 +38,6 @@ $theClass->setShrewd($shrewd, $shrewdArray[0]);
 $this->template = $theClass;
 }
 if (isset($shrewdArray[1])) {$this->rows = $shrewd->setParameter("ScreenData", 2, $shrewdArray[1], "rows", "list", "\BuildEmpire\Mosaic\Courseware\Row", true);}
-if (isset($shrewdArray[2])) {$this->freeComponents = $shrewd->setParameter("ScreenData", 2, $shrewdArray[2], "freeComponents", "list", "\BuildEmpire\Mosaic\Courseware\Component", true);}
+if (isset($shrewdArray[2])) {$this->freeComponents = $shrewd->setParameter("ScreenData", 2, $shrewdArray[2], "freeComponents", "list", "\BuildEmpire\Mosaic\Courseware\ComponentInstance", true);}
 }
 }

@@ -712,10 +712,6 @@ initialize: function(){
  */
 var CoursewareComponent = new Class({
 /**
- * @type {string} id (ID).
- */
-id : null,
-/**
  * @type {string} name
  */
 name : null,
@@ -727,18 +723,6 @@ title : null,
  * @type {integer} active
  */
 active : 1,
-/**
- * @type {Array} data
- */
-data : null,
-/**
- * @type {CoursewareComponentMetrics}
- */
-metrics : null,
-/**
- * @type {integer} scale
- */
-scale : null,
 /**
  * @type {string}
  */
@@ -758,10 +742,70 @@ return "CoursewareComponent";
  */
 getShrewd: function(){
 var parametersArray = new Array();
-parametersArray.push(this.id);
 parametersArray.push(this.name);
 parametersArray.push(this.title);
 parametersArray.push(this.active);
+return parametersArray;
+},
+/**
+ * Set the content via the shrewd array.
+ * 
+ * @param {Array} shrewdArray
+ * @returns {null} 
+ */
+setShrewd: function(shrewdArray){
+this.name = shrewdArray[0];
+this.title = shrewdArray[1];
+this.active = shrewdArray[2];
+},
+initialize: function(){
+}
+});
+/**
+ * Automatically Generated Shrewd File
+ */
+var CoursewareComponentInstance = new Class({
+/**
+ * @type {string} id (ID).
+ */
+id : null,
+/**
+ * @type {string} name
+ */
+name : null,
+/**
+ * @type {Array} data
+ */
+data : null,
+/**
+ * @type {CoursewareComponentMetrics}
+ */
+metrics : null,
+/**
+ * @type {integer} scale
+ */
+scale : null,
+/**
+ * @type {string}
+ */
+shrewdNS : "BuildEmpire.Mosaic.Courseware.ComponentInstance",
+/**
+ * Get the name of the MooTools class.
+ * 
+ * @returns {string}
+ */
+getName : function(){
+return "CoursewareComponentInstance";
+},
+/**
+ * Get the content as a shrewd array.
+ * 
+ * @returns {null} The shrewd array.
+ */
+getShrewd: function(){
+var parametersArray = new Array();
+parametersArray.push(this.id);
+parametersArray.push(this.name);
 parametersArray.push(this.data);
 parametersArray.push((this.metrics) ? this.metrics.getShrewd() : null);
 parametersArray.push(this.scale);
@@ -776,17 +820,15 @@ return parametersArray;
 setShrewd: function(shrewdArray){
 this.id = shrewdArray[0];
 this.name = shrewdArray[1];
-this.title = shrewdArray[2];
-this.active = shrewdArray[3];
-this.data = shrewdArray[4];
-if (shrewdArray[5]) {
+this.data = shrewdArray[2];
+if (shrewdArray[3]) {
 var theClass = new CoursewareComponentMetrics();
-theClass.setShrewd(shrewdArray[5]);
+theClass.setShrewd(shrewdArray[3]);
 this.metrics = theClass;
 } else {
 this.metrics = null;
 }
-this.scale = shrewdArray[6];
+this.scale = shrewdArray[4];
 },
 initialize: function(){
 }
@@ -904,7 +946,7 @@ var l=shrewdArray[3].length;
 var lArray = new Array();
 for (var a=0; a<l; a++) {
 if (shrewdArray[3][a]) {
-var theClass = new CoursewareComponent();
+var theClass = new CoursewareComponentInstance();
 theClass.setShrewd(shrewdArray[3][a]);
 lArray[a] = theClass;
 } else {
@@ -1610,7 +1652,7 @@ var l=shrewdArray[2].length;
 var lArray = new Array();
 for (var a=0; a<l; a++) {
 if (shrewdArray[2][a]) {
-var theClass = new CoursewareComponent();
+var theClass = new CoursewareComponentInstance();
 theClass.setShrewd(shrewdArray[2][a]);
 lArray[a] = theClass;
 } else {

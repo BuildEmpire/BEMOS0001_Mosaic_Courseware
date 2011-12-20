@@ -1371,6 +1371,10 @@ grid : null,
  */
 language : "en",
 /**
+ * @type {boolean} valid
+ */
+valid : false,
+/**
  * @type {string}
  */
 shrewdNS : "BuildEmpire.Mosaic.Courseware.ConfigurationData",
@@ -1400,6 +1404,7 @@ parametersArray.push((this.columns) ? this.columns.getShrewd() : null);
 parametersArray.push((this.canvas) ? this.canvas.getShrewd() : null);
 parametersArray.push((this.grid) ? this.grid.getShrewd() : null);
 parametersArray.push(this.language);
+parametersArray.push(this.valid);
 return parametersArray;
 },
 /**
@@ -1489,6 +1494,7 @@ this.grid = theClass;
 this.grid = null;
 }
 this.language = shrewdArray[10];
+this.valid = shrewdArray[11];
 },
 initialize: function(){
 }

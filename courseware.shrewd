@@ -146,7 +146,7 @@ struct ConfigurationData {
     10:             DataGrid                grid,
 
     11:             string                  language = "en",
-    
+
     12:             boolean                 valid = false
 
 }

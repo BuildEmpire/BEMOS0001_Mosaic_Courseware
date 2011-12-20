@@ -17,7 +17,7 @@ public $resizable = true;
 /**
  * @var integer
  */
-public $default = 1;
+public $initial = 1;
 /**
  * @var integer
  */
@@ -34,7 +34,7 @@ public function getShrewd(
 $paramArray = array();
 $paramArray[] = $shrewd->getParameter("DataRows", 1, $this->allow, "allow", "boolean", "", false);
 $paramArray[] = $shrewd->getParameter("DataRows", 1, $this->resizable, "resizable", "boolean", "", false);
-$paramArray[] = $shrewd->getParameter("DataRows", 1, $this->default, "default", "integer", "", false);
+$paramArray[] = $shrewd->getParameter("DataRows", 1, $this->initial, "initial", "integer", "", false);
 $paramArray[] = $shrewd->getParameter("DataRows", 1, $this->min, "min", "integer", "", false);
 $paramArray[] = $shrewd->getParameter("DataRows", 1, $this->max, "max", "integer", "", false);
 return $paramArray;
@@ -44,7 +44,7 @@ public function setShrewd(
 $shrewdArray){
 if (isset($shrewdArray[0])) {$this->allow = $shrewd->setParameter("DataRows", 2, $shrewdArray[0], "allow", "boolean", "", false);}
 if (isset($shrewdArray[1])) {$this->resizable = $shrewd->setParameter("DataRows", 2, $shrewdArray[1], "resizable", "boolean", "", false);}
-if (isset($shrewdArray[2])) {$this->default = $shrewd->setParameter("DataRows", 2, $shrewdArray[2], "default", "integer", "", false);}
+if (isset($shrewdArray[2])) {$this->initial = $shrewd->setParameter("DataRows", 2, $shrewdArray[2], "initial", "integer", "", false);}
 if (isset($shrewdArray[3])) {$this->min = $shrewd->setParameter("DataRows", 2, $shrewdArray[3], "min", "integer", "", false);}
 if (isset($shrewdArray[4])) {$this->max = $shrewd->setParameter("DataRows", 2, $shrewdArray[4], "max", "integer", "", false);}
 }

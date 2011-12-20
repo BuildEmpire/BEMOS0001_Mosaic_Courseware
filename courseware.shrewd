@@ -106,7 +106,7 @@ enum DragMode {
 struct DataRows {
     1:              boolean                 allow       = true,
     2:              boolean                 resizable   = true,
-    3:              integer                 default     = 1,
+    3:              integer                 initial     = 1,
     4:              integer                 min         = 0,
     5:              integer                 max         = 0
 }
@@ -114,7 +114,7 @@ struct DataRows {
 struct DataColumns {
     1:              boolean                 allow       = true,
     2:              boolean                 resizable   = true,
-    3:              integer                 default     = 1,
+    3:              integer                 initial     = 1,
     4:              integer                 min         = 0,
     5:              integer                 max         = 0
 }

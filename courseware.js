@@ -1107,9 +1107,9 @@ allow : true,
  */
 resizable : true,
 /**
- * @type {integer} default
+ * @type {integer} initial
  */
-default : 1,
+initial : 1,
 /**
  * @type {integer} min
  */
@@ -1139,7 +1139,7 @@ getShrewd: function(){
 var parametersArray = new Array();
 parametersArray.push(this.allow);
 parametersArray.push(this.resizable);
-parametersArray.push(this.default);
+parametersArray.push(this.initial);
 parametersArray.push(this.min);
 parametersArray.push(this.max);
 return parametersArray;
@@ -1153,7 +1153,7 @@ return parametersArray;
 setShrewd: function(shrewdArray){
 this.allow = shrewdArray[0];
 this.resizable = shrewdArray[1];
-this.default = shrewdArray[2];
+this.initial = shrewdArray[2];
 this.min = shrewdArray[3];
 this.max = shrewdArray[4];
 },
@@ -1173,9 +1173,9 @@ allow : true,
  */
 resizable : true,
 /**
- * @type {integer} default
+ * @type {integer} initial
  */
-default : 1,
+initial : 1,
 /**
  * @type {integer} min
  */
@@ -1205,7 +1205,7 @@ getShrewd: function(){
 var parametersArray = new Array();
 parametersArray.push(this.allow);
 parametersArray.push(this.resizable);
-parametersArray.push(this.default);
+parametersArray.push(this.initial);
 parametersArray.push(this.min);
 parametersArray.push(this.max);
 return parametersArray;
@@ -1219,7 +1219,7 @@ return parametersArray;
 setShrewd: function(shrewdArray){
 this.allow = shrewdArray[0];
 this.resizable = shrewdArray[1];
-this.default = shrewdArray[2];
+this.initial = shrewdArray[2];
 this.min = shrewdArray[3];
 this.max = shrewdArray[4];
 },

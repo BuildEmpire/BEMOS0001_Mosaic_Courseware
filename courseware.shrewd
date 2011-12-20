@@ -145,7 +145,10 @@ struct ConfigurationData {
     9:              DataCanvas              canvas,
     10:             DataGrid                grid,
 
-    11:             string                  language = "en"
+    11:             string                  language = "en",
+
+    12:             boolean                 valid = false
+
 }
 
 

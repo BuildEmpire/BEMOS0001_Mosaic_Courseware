@@ -50,6 +50,10 @@ public $grid;
  * @var string
  */
 public $language = "en";
+/**
+ * @var boolean
+ */
+public $valid = false;
 public function getShrewdNS(){
 return "BuildEmpire.Mosaic.Courseware.ConfigurationData";
 }
@@ -67,6 +71,7 @@ $paramArray[] = ($shrewd->getParameter("ConfigurationData", 1, $this->columns, "
 $paramArray[] = ($shrewd->getParameter("ConfigurationData", 1, $this->canvas, "canvas", "\BuildEmpire\Mosaic\Courseware\DataCanvas", "", false)) ? $shrewd->getParameter("ConfigurationData", 1, $this->canvas, "canvas", "\BuildEmpire\Mosaic\Courseware\DataCanvas", "", false) : null;
 $paramArray[] = ($shrewd->getParameter("ConfigurationData", 1, $this->grid, "grid", "\BuildEmpire\Mosaic\Courseware\DataGrid", "", false)) ? $shrewd->getParameter("ConfigurationData", 1, $this->grid, "grid", "\BuildEmpire\Mosaic\Courseware\DataGrid", "", false) : null;
 $paramArray[] = $shrewd->getParameter("ConfigurationData", 1, $this->language, "language", "string", "", false);
+$paramArray[] = $shrewd->getParameter("ConfigurationData", 1, $this->valid, "valid", "boolean", "", false);
 return $paramArray;
 }
 public function setShrewd(
@@ -99,5 +104,6 @@ $theClass->setShrewd($shrewd, $shrewdArray[9]);
 $this->grid = $theClass;
 }
 if (isset($shrewdArray[10])) {$this->language = $shrewd->setParameter("ConfigurationData", 2, $shrewdArray[10], "language", "string", "", false);}
+if (isset($shrewdArray[11])) {$this->valid = $shrewd->setParameter("ConfigurationData", 2, $shrewdArray[11], "valid", "boolean", "", false);}
 }
 }

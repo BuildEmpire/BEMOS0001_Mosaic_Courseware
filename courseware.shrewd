@@ -153,9 +153,8 @@ struct ConfigurationData {
 
 
 struct ScreenData {
-    1:  optional    Template                template,
-    2:  optional    list<Row>               rows,
-    3:  optional    list<ComponentInstance> freeComponents
+    1:  optional    list<Row>               rows,
+    2:  optional    list<ComponentInstance> freeComponents
 }
 
 enum StructureItemType {

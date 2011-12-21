@@ -1504,10 +1504,6 @@ initialize: function(){
  */
 var CoursewareScreenData = new Class({
 /**
- * @type {CoursewareTemplate}
- */
-template : null,
-/**
  * @type {Array} rows
  */
 rows : null,
@@ -1534,7 +1530,6 @@ return "CoursewareScreenData";
  */
 getShrewd: function(){
 var parametersArray = new Array();
-parametersArray.push((this.template) ? this.template.getShrewd() : null);
 if (this.rows) {var l=this.rows.length;var lArray = new Array();for (var a=0; a<l; a++) {lArray.push((this.rows[a]) ? this.rows[a].getShrewd() : null);}parametersArray.push(lArray);} else {parametersArray.push(this.rows)}
 if (this.freeComponents) {var l=this.freeComponents.length;var lArray = new Array();for (var a=0; a<l; a++) {lArray.push((this.freeComponents[a]) ? this.freeComponents[a].getShrewd() : null);}parametersArray.push(lArray);} else {parametersArray.push(this.freeComponents)}
 return parametersArray;
@@ -1547,19 +1542,12 @@ return parametersArray;
  */
 setShrewd: function(shrewdArray){
 if (shrewdArray[0]) {
-var theClass = new CoursewareTemplate();
-theClass.setShrewd(shrewdArray[0]);
-this.template = theClass;
-} else {
-this.template = null;
-}
-if (shrewdArray[1]) {
-var l=shrewdArray[1].length;
+var l=shrewdArray[0].length;
 var lArray = new Array();
 for (var a=0; a<l; a++) {
-if (shrewdArray[1][a]) {
+if (shrewdArray[0][a]) {
 var theClass = new CoursewareRow();
-theClass.setShrewd(shrewdArray[1][a]);
+theClass.setShrewd(shrewdArray[0][a]);
 lArray[a] = theClass;
 } else {
 lArray[a] = null;
@@ -1569,13 +1557,13 @@ lArray[a] = null;
 lArray = null;
 }
 this.rows = lArray;
-if (shrewdArray[2]) {
-var l=shrewdArray[2].length;
+if (shrewdArray[1]) {
+var l=shrewdArray[1].length;
 var lArray = new Array();
 for (var a=0; a<l; a++) {
-if (shrewdArray[2][a]) {
+if (shrewdArray[1][a]) {
 var theClass = new CoursewareComponentInstance();
-theClass.setShrewd(shrewdArray[2][a]);
+theClass.setShrewd(shrewdArray[1][a]);
 lArray[a] = theClass;
 } else {
 lArray[a] = null;

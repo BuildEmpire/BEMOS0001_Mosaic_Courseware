@@ -139,16 +139,15 @@ struct ConfigurationData {
     5:  optional    list<Component>         components,
 
     6:              DragMode                dragMode,
-    7:              boolean                 transformed,
 
-    8:              DataRows                rows,
-    9:              DataColumns             columns,
-    10:             DataCanvas              canvas,
-    11:             DataGrid                grid,
+    7:              DataRows                rows,
+    8:              DataColumns             columns,
+    9:             DataCanvas              canvas,
+    10:             DataGrid                grid,
 
-    12:             string                  language = "en",
+    11:             string                  language = "en",
 
-    13:             boolean                 valid = false
+    12:             boolean                 valid = false
 
 }
 

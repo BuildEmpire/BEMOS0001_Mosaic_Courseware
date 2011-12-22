@@ -1351,10 +1351,6 @@ components : null,
  */
 dragMode : null,
 /**
- * @type {boolean} transformed
- */
-transformed : null,
-/**
  * @type {CoursewareDataRows}
  */
 rows : null,
@@ -1403,7 +1399,6 @@ if (this.translations) {var l=this.translations.length;var lArray = new Array();
 if (this.learningPaths) {var l=this.learningPaths.length;var lArray = new Array();for (var a=0; a<l; a++) {lArray.push((this.learningPaths[a]) ? this.learningPaths[a].getShrewd() : null);}parametersArray.push(lArray);} else {parametersArray.push(this.learningPaths)}
 if (this.components) {var l=this.components.length;var lArray = new Array();for (var a=0; a<l; a++) {lArray.push((this.components[a]) ? this.components[a].getShrewd() : null);}parametersArray.push(lArray);} else {parametersArray.push(this.components)}
 parametersArray.push(this.dragMode);
-parametersArray.push(this.transformed);
 parametersArray.push((this.rows) ? this.rows.getShrewd() : null);
 parametersArray.push((this.columns) ? this.columns.getShrewd() : null);
 parametersArray.push((this.canvas) ? this.canvas.getShrewd() : null);
@@ -1470,37 +1465,36 @@ lArray = null;
 }
 this.components = lArray;
 this.dragMode = shrewdArray[5];
-this.transformed = shrewdArray[6];
-if (shrewdArray[7]) {
+if (shrewdArray[6]) {
 var theClass = new CoursewareDataRows();
-theClass.setShrewd(shrewdArray[7]);
+theClass.setShrewd(shrewdArray[6]);
 this.rows = theClass;
 } else {
 this.rows = null;
 }
-if (shrewdArray[8]) {
+if (shrewdArray[7]) {
 var theClass = new CoursewareDataColumns();
-theClass.setShrewd(shrewdArray[8]);
+theClass.setShrewd(shrewdArray[7]);
 this.columns = theClass;
 } else {
 this.columns = null;
 }
-if (shrewdArray[9]) {
+if (shrewdArray[8]) {
 var theClass = new CoursewareDataCanvas();
-theClass.setShrewd(shrewdArray[9]);
+theClass.setShrewd(shrewdArray[8]);
 this.canvas = theClass;
 } else {
 this.canvas = null;
 }
-if (shrewdArray[10]) {
+if (shrewdArray[9]) {
 var theClass = new CoursewareDataGrid();
-theClass.setShrewd(shrewdArray[10]);
+theClass.setShrewd(shrewdArray[9]);
 this.grid = theClass;
 } else {
 this.grid = null;
 }
-this.language = shrewdArray[11];
-this.valid = shrewdArray[12];
+this.language = shrewdArray[10];
+this.valid = shrewdArray[11];
 },
 initialize: function(){
 }

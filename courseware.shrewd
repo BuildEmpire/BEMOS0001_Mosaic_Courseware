@@ -226,18 +226,41 @@ service ConnectorInbound {
 
     /**
     SetScale
-    Get the scale decimal.
+    Set the scale decimal, if required.
+    1 = No Scale, 0.5 = 50%, 1.5 = 150%.
     */
-    void    SetScale(
+    boolean  SetScale(
         1:   float    scale
     ),
 
     /**
     GetScale
-    Set the scale decimal, if required.
-    1 = No Scale, 0.5 = 50%.
+    Get the scale decimal.
     */
     float    GetScale(
+    ),
+
+    /**
+    IsTransformationApplied
+    Whether set transformation is applied to the rendered screen by the engine
+    */
+    boolean  IsTransformationApplied(
+    ),
+
+    /**
+    SetTransformation
+    Set the transformation decimal, if required.
+    1 = No Scale, 0.5 = 50%, 1.5 = 150%.
+    */
+    boolean  SetTransformation(
+        1:   float    transformation
+    ),
+
+    /**
+    GetTransformation
+    Get the transformation decimal.
+    */
+    float    GetTransformation(
     ),
 
     /**

@@ -24,7 +24,7 @@ private function _ReadyGetReturnContentType() {
 return "";
 }
 private function _SetScaleGetReturnType() {
-return "void";
+return "boolean";
 }
 private function _SetScaleGetReturnContentType() {
 return "";
@@ -33,6 +33,24 @@ private function _GetScaleGetReturnType() {
 return "float";
 }
 private function _GetScaleGetReturnContentType() {
+return "";
+}
+private function _IsTransformationAppliedGetReturnType() {
+return "boolean";
+}
+private function _IsTransformationAppliedGetReturnContentType() {
+return "";
+}
+private function _SetTransformationGetReturnType() {
+return "boolean";
+}
+private function _SetTransformationGetReturnContentType() {
+return "";
+}
+private function _GetTransformationGetReturnType() {
+return "float";
+}
+private function _GetTransformationGetReturnContentType() {
 return "";
 }
 private function _SetConfigurationDataGetReturnType() {
@@ -111,6 +129,23 @@ private function _GetScaleGetArguments() {
 $params = array();
 return $params;
 }
+private function _IsTransformationAppliedGetArguments() {
+$params = array();
+return $params;
+}
+private function _SetTransformationGetArguments() {
+$params = array();
+$param = new Parameter();
+$param->name = "transformation";
+$param->type = "float";
+$param->optional = false;
+$params[] = $param;
+return $params;
+}
+private function _GetTransformationGetArguments() {
+$params = array();
+return $params;
+}
 private function _SetConfigurationDataGetArguments() {
 $params = array();
 $param = new Parameter();
@@ -181,6 +216,18 @@ $params = array();
 return $params;
 }
 private function _GetScaleGetExceptions() {
+$params = array();
+return $params;
+}
+private function _IsTransformationAppliedGetExceptions() {
+$params = array();
+return $params;
+}
+private function _SetTransformationGetExceptions() {
+$params = array();
+return $params;
+}
+private function _GetTransformationGetExceptions() {
 $params = array();
 return $params;
 }

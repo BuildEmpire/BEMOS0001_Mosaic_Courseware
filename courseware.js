@@ -35,7 +35,7 @@ exceptionsArray
 },
 /**
  * @param {float} scale
- * @returns {void} 
+ * @returns {boolean} 
  */
 SetScale: function(scale){
 if (this._shrewd) {
@@ -50,7 +50,7 @@ return this._shrewd.communicate(
 "BuildEmpire.Mosaic.Courseware.ConnectorInboundService",
 "SetScale",
 parametersArray,
-"void",
+"boolean",
 "",
 exceptionsArray
 );
@@ -69,6 +69,69 @@ var exceptionsArray = new Array();
 return this._shrewd.communicate(
 "BuildEmpire.Mosaic.Courseware.ConnectorInboundService",
 "GetScale",
+parametersArray,
+"float",
+"",
+exceptionsArray
+);
+}
+},
+/**
+ * @returns {boolean} 
+ */
+IsTransformationApplied: function(){
+if (this._shrewd) {
+var parametersArray = new Array();
+if (this._shrewd.local) {
+} else {
+}
+var exceptionsArray = new Array();
+return this._shrewd.communicate(
+"BuildEmpire.Mosaic.Courseware.ConnectorInboundService",
+"IsTransformationApplied",
+parametersArray,
+"boolean",
+"",
+exceptionsArray
+);
+}
+},
+/**
+ * @param {float} transformation
+ * @returns {boolean} 
+ */
+SetTransformation: function(transformation){
+if (this._shrewd) {
+var parametersArray = new Array();
+if (this._shrewd.local) {
+parametersArray.push(transformation);
+} else {
+parametersArray.push(transformation);
+}
+var exceptionsArray = new Array();
+return this._shrewd.communicate(
+"BuildEmpire.Mosaic.Courseware.ConnectorInboundService",
+"SetTransformation",
+parametersArray,
+"boolean",
+"",
+exceptionsArray
+);
+}
+},
+/**
+ * @returns {float} 
+ */
+GetTransformation: function(){
+if (this._shrewd) {
+var parametersArray = new Array();
+if (this._shrewd.local) {
+} else {
+}
+var exceptionsArray = new Array();
+return this._shrewd.communicate(
+"BuildEmpire.Mosaic.Courseware.ConnectorInboundService",
+"GetTransformation",
 parametersArray,
 "float",
 "",

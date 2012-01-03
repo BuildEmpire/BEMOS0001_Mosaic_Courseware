@@ -38,19 +38,19 @@ struct LearningPath {
 
 
 enum ScalingMode {
-    FREE    = 1,
-    RATIO   = 2,
-    XAXIS   = 3,
-    YAXIS   = 4
+    FREE            = 1,
+    RATIO           = 2,
+    XAXIS           = 3,
+    YAXIS           = 4
 }
 
 struct ComponentMetrics {
-    1:  integer                             xPercent,
-    2:  integer                             yPercent,
-    3:  integer                             widthPercent,
-    4:  integer                             heightPercent,
-    5:  integer                             tabIndex,
-    6:  integer                             zIndex
+    1:              integer                 xPercent,
+    2:              integer                 yPercent,
+    3:              integer                 widthPercent,
+    4:              integer                 heightPercent,
+    5:              integer                 tabIndex,
+    6:              integer                 zIndex
 }
 
 struct Component {
@@ -142,7 +142,7 @@ struct ConfigurationData {
 
     7:              DataRows                rows,
     8:              DataColumns             columns,
-    9:             DataCanvas              canvas,
+    9:              DataCanvas              canvas,
     10:             DataGrid                grid,
 
     11:             string                  language = "en",

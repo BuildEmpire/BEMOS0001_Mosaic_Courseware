@@ -175,12 +175,13 @@ struct StructureItem {
 }
 
 enum EditableFormFieldType {
-    TEXT = 1,
-    PASSWORD = 2,
-    HTML = 3,
-    SELECT = 4,
-    CHECKBOX = 5,
-    RADIO = 6
+    TEXT            = 1,
+    PASSWORD        = 2,
+    TEXTAREA        = 3,
+    HTML            = 4,
+    SELECT          = 5,
+    CHECKBOX        = 6,
+    RADIO           = 7
 }
 
 struct EditableFormFieldHTML {
@@ -322,7 +323,7 @@ service ConnectorInbound {
     The component id will be returned.
     */
     void    AddComponent(
-        1:   string          componentName
+        1:   string     componentName
     ),
 
     /**
@@ -352,15 +353,15 @@ Not required by the product, these event id's can be used by the connector
 to trigger events on any object with bindings to the connector service.
 */
 enum EventsInbound {
-    READY = "READY",
-    SCALE = "SCALE",
-    DATA_CONFIGURATION = "DATA_CONFIGURATION",
-    DATA_SCREEN = "DATA_SCREEN",
-    DRAW = "DRAW",
-    COLUMN_ADD = "COLUMN_ADD",
-    COLUMN_HIGHLIGHT = "COLUMN_HIGHLIGHT",
-    COLUMN_UNHIGHLIGHT = "COLUMN_UNHIGHLIGHT",
-    COMPONENT_ADD = "COMPONENT_ADD"
+    READY               = "READY",
+    SCALE               = "SCALE",
+    DATA_CONFIGURATION  = "DATA_CONFIGURATION",
+    DATA_SCREEN         = "DATA_SCREEN",
+    DRAW                = "DRAW",
+    COLUMN_ADD          = "COLUMN_ADD",
+    COLUMN_HIGHLIGHT    = "COLUMN_HIGHLIGHT",
+    COLUMN_UNHIGHLIGHT  = "COLUMN_UNHIGHLIGHT",
+    COMPONENT_ADD       = "COMPONENT_ADD"
 }
 
 /**

@@ -425,7 +425,7 @@ service ConnectorOutbound {
     /**
     OpenEditDialog
     Open an edit dialog inside the external service.
-    An editable form is passed with teh required field information to draw
+    An editable form is passed with the required field information to draw
     an editable form dialog.
     It is also possible to send methods that will be called on select or
     cancel.
@@ -443,8 +443,8 @@ Not required by the product, these event id's can be used by the connector
 to trigger events on any object with bindings to the connector service.
 */
 enum EventsOutbound {
-    READY = "READY",
-    MODE = "MODE",
+    READY   = "READY",
+    MODE    = "MODE",
     CONTEXT = "CONTEXT",
-    UPDATE = "UPDATE"
+    UPDATE  = "UPDATE"
 }

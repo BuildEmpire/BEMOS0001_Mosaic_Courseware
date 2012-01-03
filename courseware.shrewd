@@ -68,8 +68,8 @@ struct ComponentInstance {
 }
 
 struct ColumnRowMetrics {
-    1:  optional    integer                 widthPercent,
-    2:  optional    integer                 heightPercent
+    1:  optional    float                 widthPercent,
+    2:  optional    float                 heightPercent
 }
 
 struct Column {

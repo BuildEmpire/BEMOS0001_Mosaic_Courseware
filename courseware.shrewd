@@ -108,7 +108,7 @@ struct DataRows {
     2:              boolean                 resizable   = true,
     3:              integer                 initial     = 1,
     4:              integer                 min         = 0,
-    5:              integer                 max         = 0
+    5:              integer                 max         = 20
 }
 
 struct DataColumns {
@@ -116,7 +116,7 @@ struct DataColumns {
     2:              boolean                 resizable   = true,
     3:              integer                 initial     = 1,
     4:              integer                 min         = 0,
-    5:              integer                 max         = 0
+    5:              integer                 max         = 10
 }
 
 struct DataCanvas {

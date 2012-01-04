@@ -11,6 +11,9 @@ protected $_handler;
 public function __construct($handler) {
 $this->_handler = $handler;
 }
+public function getShrewdVersion(){
+return "92d588e1e53f58eee2b8874a5fe6498f92f51141";
+}
 public function getHandler(){
 return $this->_handler;
 }

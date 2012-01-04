@@ -25,7 +25,7 @@ public $min = 0;
 /**
  * @var integer
  */
-public $max = 0;
+public $max = 10;
 public function getShrewdNS(){
 return "BuildEmpire.Mosaic.Courseware.DataColumns";
 }

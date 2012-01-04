@@ -45,12 +45,12 @@ enum ScalingMode {
 }
 
 struct ComponentMetrics {
-    1:              float                 xPercent,
-    2:              float                 yPercent,
-    3:              float                 widthPercent,
-    4:              float                 heightPercent,
-    5:              integer               tabIndex,
-    6:              integer               zIndex
+    1:              float                   xPercent,
+    2:              float                   yPercent,
+    3:              float                   widthPercent,
+    4:              float                   heightPercent,
+    5:              integer                 tabIndex,
+    6:              integer                 zIndex
 }
 
 struct Component {
@@ -68,20 +68,20 @@ struct ComponentInstance {
 }
 
 struct ColumnRowMetrics {
-    1:  optional    float                 widthPercent,
-    2:  optional    float                 heightPercent
+    1:  optional    float                   widthPercent,
+    2:  optional    float                   heightPercent
 }
 
 struct Column {
     1:              string-id               id,
     2:  optional    list<ComponentInstance> components,
-    3:              ColumnRowMetrics        metrics
+    3:  optional    ColumnRowMetrics        metrics
 }
 
 struct Row {
     1:              string-id               id,
     2:  optional    list<Column>            columns,
-    3:              ColumnRowMetrics        metrics
+    3:  optional    ColumnRowMetrics        metrics
 }
 
 struct Template {

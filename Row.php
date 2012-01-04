@@ -26,7 +26,7 @@ public function getShrewd(
 $paramArray = array();
 $paramArray[] = $shrewd->getParameter("Row", 1, $this->id, "id", "string-id", "", false);
 $paramArray[] = $shrewd->getParameter("Row", 1, $this->columns, "columns", "list", "\BuildEmpire\Mosaic\Courseware\Column", true);
-$paramArray[] = ($shrewd->getParameter("Row", 1, $this->metrics, "metrics", "\BuildEmpire\Mosaic\Courseware\ColumnRowMetrics", "", false)) ? $shrewd->getParameter("Row", 1, $this->metrics, "metrics", "\BuildEmpire\Mosaic\Courseware\ColumnRowMetrics", "", false) : null;
+$paramArray[] = ($shrewd->getParameter("Row", 1, $this->metrics, "metrics", "\BuildEmpire\Mosaic\Courseware\ColumnRowMetrics", "", true)) ? $shrewd->getParameter("Row", 1, $this->metrics, "metrics", "\BuildEmpire\Mosaic\Courseware\ColumnRowMetrics", "", true) : null;
 return $paramArray;
 }
 public function setShrewd(

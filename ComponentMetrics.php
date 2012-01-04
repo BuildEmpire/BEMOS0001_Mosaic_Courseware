@@ -7,19 +7,19 @@ use BuildEmpire\Shrewd\IShrewdStruct;
 class ComponentMetrics implements IShrewdStruct
 {
 /**
- * @var integer
+ * @var float
  */
 public $xPercent;
 /**
- * @var integer
+ * @var float
  */
 public $yPercent;
 /**
- * @var integer
+ * @var float
  */
 public $widthPercent;
 /**
- * @var integer
+ * @var float
  */
 public $heightPercent;
 /**
@@ -36,10 +36,10 @@ return "BuildEmpire.Mosaic.Courseware.ComponentMetrics";
 public function getShrewd(
 \BuildEmpire\Shrewd\IShrewd $shrewd){
 $paramArray = array();
-$paramArray[] = $shrewd->getParameter("ComponentMetrics", 1, $this->xPercent, "xPercent", "integer", "", false);
-$paramArray[] = $shrewd->getParameter("ComponentMetrics", 1, $this->yPercent, "yPercent", "integer", "", false);
-$paramArray[] = $shrewd->getParameter("ComponentMetrics", 1, $this->widthPercent, "widthPercent", "integer", "", false);
-$paramArray[] = $shrewd->getParameter("ComponentMetrics", 1, $this->heightPercent, "heightPercent", "integer", "", false);
+$paramArray[] = $shrewd->getParameter("ComponentMetrics", 1, $this->xPercent, "xPercent", "float", "", false);
+$paramArray[] = $shrewd->getParameter("ComponentMetrics", 1, $this->yPercent, "yPercent", "float", "", false);
+$paramArray[] = $shrewd->getParameter("ComponentMetrics", 1, $this->widthPercent, "widthPercent", "float", "", false);
+$paramArray[] = $shrewd->getParameter("ComponentMetrics", 1, $this->heightPercent, "heightPercent", "float", "", false);
 $paramArray[] = $shrewd->getParameter("ComponentMetrics", 1, $this->tabIndex, "tabIndex", "integer", "", false);
 $paramArray[] = $shrewd->getParameter("ComponentMetrics", 1, $this->zIndex, "zIndex", "integer", "", false);
 return $paramArray;
@@ -47,10 +47,10 @@ return $paramArray;
 public function setShrewd(
 \BuildEmpire\Shrewd\IShrewd $shrewd, 
 $shrewdArray){
-if (isset($shrewdArray[0])) {$this->xPercent = $shrewd->setParameter("ComponentMetrics", 2, $shrewdArray[0], "xPercent", "integer", "", false);}
-if (isset($shrewdArray[1])) {$this->yPercent = $shrewd->setParameter("ComponentMetrics", 2, $shrewdArray[1], "yPercent", "integer", "", false);}
-if (isset($shrewdArray[2])) {$this->widthPercent = $shrewd->setParameter("ComponentMetrics", 2, $shrewdArray[2], "widthPercent", "integer", "", false);}
-if (isset($shrewdArray[3])) {$this->heightPercent = $shrewd->setParameter("ComponentMetrics", 2, $shrewdArray[3], "heightPercent", "integer", "", false);}
+if (isset($shrewdArray[0])) {$this->xPercent = $shrewd->setParameter("ComponentMetrics", 2, $shrewdArray[0], "xPercent", "float", "", false);}
+if (isset($shrewdArray[1])) {$this->yPercent = $shrewd->setParameter("ComponentMetrics", 2, $shrewdArray[1], "yPercent", "float", "", false);}
+if (isset($shrewdArray[2])) {$this->widthPercent = $shrewd->setParameter("ComponentMetrics", 2, $shrewdArray[2], "widthPercent", "float", "", false);}
+if (isset($shrewdArray[3])) {$this->heightPercent = $shrewd->setParameter("ComponentMetrics", 2, $shrewdArray[3], "heightPercent", "float", "", false);}
 if (isset($shrewdArray[4])) {$this->tabIndex = $shrewd->setParameter("ComponentMetrics", 2, $shrewdArray[4], "tabIndex", "integer", "", false);}
 if (isset($shrewdArray[5])) {$this->zIndex = $shrewd->setParameter("ComponentMetrics", 2, $shrewdArray[5], "zIndex", "integer", "", false);}
 }

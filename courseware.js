@@ -3,6 +3,14 @@
  */
 var CoursewareConnectorInboundService = new Class({
 /**
+ * Get the version of the generated shrewd file.
+ * 
+ * @returns {string}
+ */
+getShrewdVersion : function(){
+return "c0fe4a769ad01ea72b6291500da0c8e6060a9bfb";
+},
+/**
  * Get the name of the MooTools class.
  * 
  * @returns {string}
@@ -24,6 +32,7 @@ parametersArray.push(OutboundService);
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
+this.getShrewdVersion(),
 "BuildEmpire.Mosaic.Courseware.ConnectorInboundService",
 "Ready",
 parametersArray,
@@ -47,6 +56,7 @@ parametersArray.push(scale);
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
+this.getShrewdVersion(),
 "BuildEmpire.Mosaic.Courseware.ConnectorInboundService",
 "SetScale",
 parametersArray,
@@ -67,6 +77,7 @@ if (this._shrewd.local) {
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
+this.getShrewdVersion(),
 "BuildEmpire.Mosaic.Courseware.ConnectorInboundService",
 "GetScale",
 parametersArray,
@@ -87,6 +98,7 @@ if (this._shrewd.local) {
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
+this.getShrewdVersion(),
 "BuildEmpire.Mosaic.Courseware.ConnectorInboundService",
 "IsTransformationApplied",
 parametersArray,
@@ -110,6 +122,7 @@ parametersArray.push(transformation);
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
+this.getShrewdVersion(),
 "BuildEmpire.Mosaic.Courseware.ConnectorInboundService",
 "SetTransformation",
 parametersArray,
@@ -130,6 +143,7 @@ if (this._shrewd.local) {
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
+this.getShrewdVersion(),
 "BuildEmpire.Mosaic.Courseware.ConnectorInboundService",
 "GetTransformation",
 parametersArray,
@@ -153,6 +167,7 @@ parametersArray.push((configurationData) ? configurationData.getShrewd() : null)
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
+this.getShrewdVersion(),
 "BuildEmpire.Mosaic.Courseware.ConnectorInboundService",
 "SetConfigurationData",
 parametersArray,
@@ -173,6 +188,7 @@ if (this._shrewd.local) {
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
+this.getShrewdVersion(),
 "BuildEmpire.Mosaic.Courseware.ConnectorInboundService",
 "GetConfigurationData",
 parametersArray,
@@ -196,6 +212,7 @@ parametersArray.push((screenData) ? screenData.getShrewd() : null);
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
+this.getShrewdVersion(),
 "BuildEmpire.Mosaic.Courseware.ConnectorInboundService",
 "SetScreenData",
 parametersArray,
@@ -216,6 +233,7 @@ if (this._shrewd.local) {
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
+this.getShrewdVersion(),
 "BuildEmpire.Mosaic.Courseware.ConnectorInboundService",
 "GetScreenData",
 parametersArray,
@@ -236,6 +254,7 @@ if (this._shrewd.local) {
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
+this.getShrewdVersion(),
 "BuildEmpire.Mosaic.Courseware.ConnectorInboundService",
 "Draw",
 parametersArray,
@@ -256,6 +275,7 @@ if (this._shrewd.local) {
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
+this.getShrewdVersion(),
 "BuildEmpire.Mosaic.Courseware.ConnectorInboundService",
 "AddColumn",
 parametersArray,
@@ -279,6 +299,7 @@ parametersArray.push(componentName);
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
+this.getShrewdVersion(),
 "BuildEmpire.Mosaic.Courseware.ConnectorInboundService",
 "AddComponent",
 parametersArray,
@@ -302,6 +323,7 @@ parametersArray.push(id);
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
+this.getShrewdVersion(),
 "BuildEmpire.Mosaic.Courseware.ConnectorInboundService",
 "HighlightColumn",
 parametersArray,
@@ -325,6 +347,7 @@ parametersArray.push(id);
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
+this.getShrewdVersion(),
 "BuildEmpire.Mosaic.Courseware.ConnectorInboundService",
 "UnhighlightColumn",
 parametersArray,
@@ -365,6 +388,14 @@ return this._shrewd;
  */
 var CoursewareConnectorOutboundService = new Class({
 /**
+ * Get the version of the generated shrewd file.
+ * 
+ * @returns {string}
+ */
+getShrewdVersion : function(){
+return "c0fe4a769ad01ea72b6291500da0c8e6060a9bfb";
+},
+/**
  * Get the name of the MooTools class.
  * 
  * @returns {string}
@@ -383,6 +414,7 @@ if (this._shrewd.local) {
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
+this.getShrewdVersion(),
 "BuildEmpire.Mosaic.Courseware.ConnectorOutboundService",
 "Ready",
 parametersArray,
@@ -406,6 +438,7 @@ parametersArray.push(mode);
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
+this.getShrewdVersion(),
 "BuildEmpire.Mosaic.Courseware.ConnectorOutboundService",
 "SetMode",
 parametersArray,
@@ -429,6 +462,7 @@ parametersArray.push((sScreenData) ? sScreenData.getShrewd() : null);
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
+this.getShrewdVersion(),
 "BuildEmpire.Mosaic.Courseware.ConnectorOutboundService",
 "UpdateScreenData",
 parametersArray,
@@ -455,6 +489,7 @@ parametersArray.push(text);
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
+this.getShrewdVersion(),
 "BuildEmpire.Mosaic.Courseware.ConnectorOutboundService",
 "SetContextInformation",
 parametersArray,
@@ -484,6 +519,7 @@ parametersArray.push(onCancelCallback);
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
+this.getShrewdVersion(),
 "BuildEmpire.Mosaic.Courseware.ConnectorOutboundService",
 "OpenResourceManager",
 parametersArray,
@@ -513,6 +549,7 @@ parametersArray.push(onCancelCallback);
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
+this.getShrewdVersion(),
 "BuildEmpire.Mosaic.Courseware.ConnectorOutboundService",
 "OpenEditDialog",
 parametersArray,
@@ -609,6 +646,14 @@ value : null,
  */
 shrewdNS : "BuildEmpire.Mosaic.Courseware.Translation",
 /**
+ * Get the version of the generated shrewd file.
+ * 
+ * @returns {string}
+ */
+getShrewdVersion : function(){
+return "c0fe4a769ad01ea72b6291500da0c8e6060a9bfb";
+},
+/**
  * Get the name of the MooTools class.
  * 
  * @returns {string}
@@ -665,6 +710,14 @@ name : null,
  */
 shrewdNS : "BuildEmpire.Mosaic.Courseware.LearningPath",
 /**
+ * Get the version of the generated shrewd file.
+ * 
+ * @returns {string}
+ */
+getShrewdVersion : function(){
+return "c0fe4a769ad01ea72b6291500da0c8e6060a9bfb";
+},
+/**
  * Get the name of the MooTools class.
  * 
  * @returns {string}
@@ -703,19 +756,19 @@ initialize: function(){
  */
 var CoursewareComponentMetrics = new Class({
 /**
- * @type {integer} xPercent
+ * @type {float} xPercent
  */
 xPercent : null,
 /**
- * @type {integer} yPercent
+ * @type {float} yPercent
  */
 yPercent : null,
 /**
- * @type {integer} widthPercent
+ * @type {float} widthPercent
  */
 widthPercent : null,
 /**
- * @type {integer} heightPercent
+ * @type {float} heightPercent
  */
 heightPercent : null,
 /**
@@ -730,6 +783,14 @@ zIndex : null,
  * @type {string}
  */
 shrewdNS : "BuildEmpire.Mosaic.Courseware.ComponentMetrics",
+/**
+ * Get the version of the generated shrewd file.
+ * 
+ * @returns {string}
+ */
+getShrewdVersion : function(){
+return "c0fe4a769ad01ea72b6291500da0c8e6060a9bfb";
+},
 /**
  * Get the name of the MooTools class.
  * 
@@ -790,6 +851,14 @@ active : 1,
  * @type {string}
  */
 shrewdNS : "BuildEmpire.Mosaic.Courseware.Component",
+/**
+ * Get the version of the generated shrewd file.
+ * 
+ * @returns {string}
+ */
+getShrewdVersion : function(){
+return "c0fe4a769ad01ea72b6291500da0c8e6060a9bfb";
+},
 /**
  * Get the name of the MooTools class.
  * 
@@ -853,6 +922,14 @@ scale : null,
  */
 shrewdNS : "BuildEmpire.Mosaic.Courseware.ComponentInstance",
 /**
+ * Get the version of the generated shrewd file.
+ * 
+ * @returns {string}
+ */
+getShrewdVersion : function(){
+return "c0fe4a769ad01ea72b6291500da0c8e6060a9bfb";
+},
+/**
  * Get the name of the MooTools class.
  * 
  * @returns {string}
@@ -901,17 +978,25 @@ initialize: function(){
  */
 var CoursewareColumnRowMetrics = new Class({
 /**
- * @type {integer} widthPercent
+ * @type {float} widthPercent
  */
 widthPercent : null,
 /**
- * @type {integer} heightPercent
+ * @type {float} heightPercent
  */
 heightPercent : null,
 /**
  * @type {string}
  */
 shrewdNS : "BuildEmpire.Mosaic.Courseware.ColumnRowMetrics",
+/**
+ * Get the version of the generated shrewd file.
+ * 
+ * @returns {string}
+ */
+getShrewdVersion : function(){
+return "c0fe4a769ad01ea72b6291500da0c8e6060a9bfb";
+},
 /**
  * Get the name of the MooTools class.
  * 
@@ -964,6 +1049,14 @@ metrics : null,
  * @type {string}
  */
 shrewdNS : "BuildEmpire.Mosaic.Courseware.Column",
+/**
+ * Get the version of the generated shrewd file.
+ * 
+ * @returns {string}
+ */
+getShrewdVersion : function(){
+return "c0fe4a769ad01ea72b6291500da0c8e6060a9bfb";
+},
 /**
  * Get the name of the MooTools class.
  * 
@@ -1040,6 +1133,14 @@ metrics : null,
  */
 shrewdNS : "BuildEmpire.Mosaic.Courseware.Row",
 /**
+ * Get the version of the generated shrewd file.
+ * 
+ * @returns {string}
+ */
+getShrewdVersion : function(){
+return "c0fe4a769ad01ea72b6291500da0c8e6060a9bfb";
+},
+/**
  * Get the name of the MooTools class.
  * 
  * @returns {string}
@@ -1110,6 +1211,14 @@ rows : null,
  * @type {string}
  */
 shrewdNS : "BuildEmpire.Mosaic.Courseware.Template",
+/**
+ * Get the version of the generated shrewd file.
+ * 
+ * @returns {string}
+ */
+getShrewdVersion : function(){
+return "c0fe4a769ad01ea72b6291500da0c8e6060a9bfb";
+},
 /**
  * Get the name of the MooTools class.
  * 
@@ -1186,6 +1295,14 @@ max : 0,
  */
 shrewdNS : "BuildEmpire.Mosaic.Courseware.DataRows",
 /**
+ * Get the version of the generated shrewd file.
+ * 
+ * @returns {string}
+ */
+getShrewdVersion : function(){
+return "c0fe4a769ad01ea72b6291500da0c8e6060a9bfb";
+},
+/**
  * Get the name of the MooTools class.
  * 
  * @returns {string}
@@ -1252,6 +1369,14 @@ max : 0,
  */
 shrewdNS : "BuildEmpire.Mosaic.Courseware.DataColumns",
 /**
+ * Get the version of the generated shrewd file.
+ * 
+ * @returns {string}
+ */
+getShrewdVersion : function(){
+return "c0fe4a769ad01ea72b6291500da0c8e6060a9bfb";
+},
+/**
  * Get the name of the MooTools class.
  * 
  * @returns {string}
@@ -1306,6 +1431,14 @@ height : 0,
  */
 shrewdNS : "BuildEmpire.Mosaic.Courseware.DataCanvas",
 /**
+ * Get the version of the generated shrewd file.
+ * 
+ * @returns {string}
+ */
+getShrewdVersion : function(){
+return "c0fe4a769ad01ea72b6291500da0c8e6060a9bfb";
+},
+/**
  * Get the name of the MooTools class.
  * 
  * @returns {string}
@@ -1353,6 +1486,14 @@ y : 20,
  * @type {string}
  */
 shrewdNS : "BuildEmpire.Mosaic.Courseware.DataGrid",
+/**
+ * Get the version of the generated shrewd file.
+ * 
+ * @returns {string}
+ */
+getShrewdVersion : function(){
+return "c0fe4a769ad01ea72b6291500da0c8e6060a9bfb";
+},
 /**
  * Get the name of the MooTools class.
  * 
@@ -1441,6 +1582,14 @@ valid : false,
  * @type {string}
  */
 shrewdNS : "BuildEmpire.Mosaic.Courseware.ConfigurationData",
+/**
+ * Get the version of the generated shrewd file.
+ * 
+ * @returns {string}
+ */
+getShrewdVersion : function(){
+return "c0fe4a769ad01ea72b6291500da0c8e6060a9bfb";
+},
 /**
  * Get the name of the MooTools class.
  * 
@@ -1579,6 +1728,14 @@ freeComponents : null,
  */
 shrewdNS : "BuildEmpire.Mosaic.Courseware.ScreenData",
 /**
+ * Get the version of the generated shrewd file.
+ * 
+ * @returns {string}
+ */
+getShrewdVersion : function(){
+return "c0fe4a769ad01ea72b6291500da0c8e6060a9bfb";
+},
+/**
  * Get the name of the MooTools class.
  * 
  * @returns {string}
@@ -1681,6 +1838,14 @@ screenData : null,
  */
 shrewdNS : "BuildEmpire.Mosaic.Courseware.StructureItem",
 /**
+ * Get the version of the generated shrewd file.
+ * 
+ * @returns {string}
+ */
+getShrewdVersion : function(){
+return "c0fe4a769ad01ea72b6291500da0c8e6060a9bfb";
+},
+/**
  * Get the name of the MooTools class.
  * 
  * @returns {string}
@@ -1770,6 +1935,14 @@ styleFormats : null,
  */
 shrewdNS : "BuildEmpire.Mosaic.Courseware.EditableFormFieldHTML",
 /**
+ * Get the version of the generated shrewd file.
+ * 
+ * @returns {string}
+ */
+getShrewdVersion : function(){
+return "c0fe4a769ad01ea72b6291500da0c8e6060a9bfb";
+},
+/**
  * Get the name of the MooTools class.
  * 
  * @returns {string}
@@ -1834,6 +2007,14 @@ data : null,
  */
 shrewdNS : "BuildEmpire.Mosaic.Courseware.EditableFormField",
 /**
+ * Get the version of the generated shrewd file.
+ * 
+ * @returns {string}
+ */
+getShrewdVersion : function(){
+return "c0fe4a769ad01ea72b6291500da0c8e6060a9bfb";
+},
+/**
  * Get the name of the MooTools class.
  * 
  * @returns {string}
@@ -1889,6 +2070,14 @@ fields : null,
  * @type {string}
  */
 shrewdNS : "BuildEmpire.Mosaic.Courseware.EditableFormGroup",
+/**
+ * Get the version of the generated shrewd file.
+ * 
+ * @returns {string}
+ */
+getShrewdVersion : function(){
+return "c0fe4a769ad01ea72b6291500da0c8e6060a9bfb";
+},
 /**
  * Get the name of the MooTools class.
  * 
@@ -1952,6 +2141,14 @@ groups : null,
  * @type {string}
  */
 shrewdNS : "BuildEmpire.Mosaic.Courseware.EditableForm",
+/**
+ * Get the version of the generated shrewd file.
+ * 
+ * @returns {string}
+ */
+getShrewdVersion : function(){
+return "c0fe4a769ad01ea72b6291500da0c8e6060a9bfb";
+},
 /**
  * Get the name of the MooTools class.
  * 

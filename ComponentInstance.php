@@ -15,7 +15,7 @@ public $id;
  */
 public $name;
 /**
- * @var []
+ * @var string[]
  */
 public $data;
 /**
@@ -34,7 +34,7 @@ public function getShrewd(
 $paramArray = array();
 $paramArray[] = $shrewd->getParameter("ComponentInstance", 1, $this->id, "id", "string-id", "", false);
 $paramArray[] = $shrewd->getParameter("ComponentInstance", 1, $this->name, "name", "string", "", false);
-$paramArray[] = $shrewd->getParameter("ComponentInstance", 1, $this->data, "data", "list", "", false);
+$paramArray[] = $shrewd->getParameter("ComponentInstance", 1, $this->data, "data", "map", "string", false);
 $paramArray[] = ($shrewd->getParameter("ComponentInstance", 1, $this->metrics, "metrics", "\BuildEmpire\Mosaic\Courseware\ComponentMetrics", "", true)) ? $shrewd->getParameter("ComponentInstance", 1, $this->metrics, "metrics", "\BuildEmpire\Mosaic\Courseware\ComponentMetrics", "", true) : null;
 $paramArray[] = $shrewd->getParameter("ComponentInstance", 1, $this->scale, "scale", "integer", "", true);
 return $paramArray;
@@ -44,7 +44,7 @@ public function setShrewd(
 $shrewdArray){
 if (isset($shrewdArray[0])) {$this->id = $shrewd->setParameter("ComponentInstance", 2, $shrewdArray[0], "id", "string-id", "", false);}
 if (isset($shrewdArray[1])) {$this->name = $shrewd->setParameter("ComponentInstance", 2, $shrewdArray[1], "name", "string", "", false);}
-if (isset($shrewdArray[2])) {$this->data = $shrewd->setParameter("ComponentInstance", 2, $shrewdArray[2], "data", "list", "", false);}
+if (isset($shrewdArray[2])) {$this->data = $shrewd->setParameter("ComponentInstance", 2, $shrewdArray[2], "data", "map", "string", false);}
 if ($shrewdArray[3]) {
 $theClass = new \BuildEmpire\Mosaic\Courseware\ComponentMetrics();
 $theClass->setShrewd($shrewd, $shrewdArray[3]);

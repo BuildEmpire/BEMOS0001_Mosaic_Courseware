@@ -122,7 +122,7 @@ struct DataColumns {
 struct DataCanvas {
     1:              integer                 width           = 0,
     2:              integer                 height          = 0,
-    3:              boolean                 placeInColumns  = false
+    3:              boolean                 placeInColumns  = true
 }
 
 struct DataGrid {

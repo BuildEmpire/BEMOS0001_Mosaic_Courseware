@@ -17,7 +17,7 @@ public $height = 0;
 /**
  * @var boolean
  */
-public $placeInColumns = false;
+public $placeInColumns = true;
 public function getShrewdNS(){
 return "BuildEmpire.Mosaic.Courseware.DataCanvas";
 }

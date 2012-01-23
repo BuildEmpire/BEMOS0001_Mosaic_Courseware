@@ -187,9 +187,15 @@ enum EditableFormFieldType {
     RADIO           = 7
 }
 
-struct EditableFormFieldHTML {
-    1:              string                  cssPath,
+struct EditableFormFieldHtml {
+    1:              list                    cssPath,
     2:              list                    styleFormats,
+    3: optional     integer                 rows,
+    4: optional     map<string,string>      cssAttributes
+}
+
+struct EditableFormFieldText {
+    1: optional     integer                 rows
 }
 
 struct EditableFormField {

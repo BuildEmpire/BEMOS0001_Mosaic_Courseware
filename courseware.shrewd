@@ -62,7 +62,7 @@ struct Component {
 struct ComponentInstance {
     1:              string-id               id,
     2:              string                  name,
-    3:              map<string>             data,
+    3:              map                     data,
     4:  optional    ComponentMetrics        metrics,
     5:  optional    ScalingMode             scale
 }

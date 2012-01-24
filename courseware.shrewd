@@ -8,9 +8,8 @@ differently in said mode. This value may also be transferred to an
 external service, who may also act differently dependant on the mode set.
 */
 enum Mode {
-    TEMPLATE_EDITOR = 1,
-    SCREEN_EDITOR   = 2,
-    SCREEN_DISPLAY  = 3
+    SCREEN_EDITOR   = 1,
+    SCREEN_DISPLAY  = 2
 }
 
 /*
@@ -235,6 +234,15 @@ service ConnectorInbound {
     ),
 
     /**
+    SetMode
+    Set the mode that the product is operating in.
+    This enables the Engine to display the screen with the desired UI
+    */
+    boolean  SetMode(
+        1:  Mode     mode
+    ),
+
+    /**
     SetScale
     Set the scale decimal, if required.
     1 = No Scale, 0.5 = 50%, 1.5 = 150%.
@@ -386,16 +394,6 @@ service ConnectorOutbound {
     data by calling the Ready() method on the outbound connector.
     */
     void    Ready(),
-
-    /**
-    SetMode
-    Set the mode that the product is operating in.
-    This helps the external service to tailor its interface around
-    the mode.
-    */
-    void    SetMode(
-        1:  Mode     mode
-    ),
 
     /**
     UpdateScreenData

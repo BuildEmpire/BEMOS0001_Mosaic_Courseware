@@ -12,7 +12,7 @@ public function __construct($handler) {
 $this->_handler = $handler;
 }
 public function getShrewdVersion(){
-return "0836915d44d9cfb0020d77c2df18c47947529f18";
+return "20249376216e8d343e1cdfbc3bb06eb4ec24fe34";
 }
 public function getHandler(){
 return $this->_handler;
@@ -24,12 +24,6 @@ private function _ReadyGetReturnType() {
 return "void";
 }
 private function _ReadyGetReturnContentType() {
-return "";
-}
-private function _SetModeGetReturnType() {
-return "void";
-}
-private function _SetModeGetReturnContentType() {
 return "";
 }
 private function _UpdateScreenDataGetReturnType() {
@@ -58,15 +52,6 @@ return "";
 }
 private function _ReadyGetArguments() {
 $params = array();
-return $params;
-}
-private function _SetModeGetArguments() {
-$params = array();
-$param = new Parameter();
-$param->name = "mode";
-$param->type = "integer";
-$param->optional = false;
-$params[] = $param;
 return $params;
 }
 private function _UpdateScreenDataGetArguments() {
@@ -132,10 +117,6 @@ $params[] = $param;
 return $params;
 }
 private function _ReadyGetExceptions() {
-$params = array();
-return $params;
-}
-private function _SetModeGetExceptions() {
 $params = array();
 return $params;
 }

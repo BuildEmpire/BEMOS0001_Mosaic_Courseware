@@ -102,6 +102,7 @@ enum DragMode {
     ALL     = 3
 }
 
+
 struct DataRows {
     1:              boolean                 allow       = true,
     2:              boolean                 resizable   = true,
@@ -150,13 +151,44 @@ struct ConfigurationData {
     11:             string                  language = "en",
 
     12:             boolean                 valid = false
-
 }
+
+
+
+
+
+enum Event {
+    CLICK   = 1,
+    CHANGE  = 2
+}
+
+enum Action {
+    SHOW            = 1,
+    HIDE            = 2,
+    TOGGLE          = 3,
+    FADEIN          = 4,
+    FADEOUT         = 5,
+    FADETOGGLE      = 6,
+    DATA_CHANGE     = 7,
+    STATE_DISABLED  = 8
+}
+
+struct Relationship {
+    1:              string                  source,
+    2:              Event                   event,
+    3:              string                  target,
+    4:              Action                  action
+}
+
+
+
+
 
 
 struct ScreenData {
     1:  optional    list<Row>               rows,
-    2:  optional    list<ComponentInstance> freeComponents
+    2:  optional    list<ComponentInstance> freeComponents,
+    3:  optional    list<Relationship>      relationships
 }
 
 enum StructureItemType {

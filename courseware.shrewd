@@ -157,27 +157,11 @@ struct ConfigurationData {
 
 
 
-enum Event {
-    CLICK   = 1,
-    CHANGE  = 2
-}
-
-enum Action {
-    SHOW            = 1,
-    HIDE            = 2,
-    TOGGLE          = 3,
-    FADEIN          = 4,
-    FADEOUT         = 5,
-    FADETOGGLE      = 6,
-    DATA_CHANGE     = 7,
-    STATE_DISABLED  = 8
-}
-
 struct Relationship {
     1:              string                  source,
-    2:              Event                   event,
+    2:              integer                 event,
     3:              string                  target,
-    4:              Action                  action
+    4:              integer                 action
 }
 
 

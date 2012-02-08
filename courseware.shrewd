@@ -161,7 +161,8 @@ struct Relationship {
     1:              string                  source,
     2:              integer                 event,
     3:              string                  target,
-    4:              integer                 action
+    4:              integer                 action,
+    5:  optional    native-js-All           data
 }
 
 

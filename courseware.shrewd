@@ -379,6 +379,13 @@ service ConnectorInbound {
         1:  string      id
     ),
 
+    /**
+    GetValidComponentRelationships
+    Get an object containing valid event and actions available on a specified component name (eg. 'image')
+    */
+    native-js-Object    GetValidComponentRelationships(
+        1:  string      componentName
+    )
 }
 
 /*

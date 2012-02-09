@@ -467,7 +467,6 @@ service ConnectorOutbound {
         2:   optional   native-js-Object     onSaveCallback,
         3:   optional   native-js-Object     onCancelCallback
     )
-
 }
 
 /*

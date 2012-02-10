@@ -12,7 +12,7 @@ public function __construct($handler) {
 $this->_handler = $handler;
 }
 public function getShrewdVersion(){
-return "72b5a7e0a5235919a589a1474622b8be2a9a0389";
+return "85b2f63fdd72f4e449c50e156d6829aac69c9ca2";
 }
 public function getHandler(){
 return $this->_handler;
@@ -116,11 +116,35 @@ return "void";
 private function _UnhighlightColumnGetReturnContentType() {
 return "";
 }
+private function _GetValidRelationshipsGetReturnType() {
+return "\\native-js-Object";
+}
+private function _GetValidRelationshipsGetReturnContentType() {
+return "";
+}
 private function _GetValidComponentRelationshipsGetReturnType() {
 return "\\native-js-Object";
 }
 private function _GetValidComponentRelationshipsGetReturnContentType() {
 return "";
+}
+private function _SetVisualRelationshipsEditorGetReturnType() {
+return "void";
+}
+private function _SetVisualRelationshipsEditorGetReturnContentType() {
+return "";
+}
+private function _SetRelationshipsDataGetReturnType() {
+return "void";
+}
+private function _SetRelationshipsDataGetReturnContentType() {
+return "";
+}
+private function _GetRelationshipsDataGetReturnType() {
+return "list";
+}
+private function _GetRelationshipsDataGetReturnContentType() {
+return "\BuildEmpire\Mosaic\Courseware\Relationship";
 }
 private function _ReadyGetArguments() {
 $params = array();
@@ -231,6 +255,10 @@ $param->optional = false;
 $params[] = $param;
 return $params;
 }
+private function _GetValidRelationshipsGetArguments() {
+$params = array();
+return $params;
+}
 private function _GetValidComponentRelationshipsGetArguments() {
 $params = array();
 $param = new Parameter();
@@ -238,6 +266,29 @@ $param->name = "componentName";
 $param->type = "string";
 $param->optional = false;
 $params[] = $param;
+return $params;
+}
+private function _SetVisualRelationshipsEditorGetArguments() {
+$params = array();
+$param = new Parameter();
+$param->name = "stateBoolean";
+$param->type = "boolean";
+$param->optional = false;
+$params[] = $param;
+return $params;
+}
+private function _SetRelationshipsDataGetArguments() {
+$params = array();
+$param = new Parameter();
+$param->name = "relationshipsData";
+$param->type = "list";
+$param->contentType = "\BuildEmpire\Mosaic\Courseware\Relationship";
+$param->optional = false;
+$params[] = $param;
+return $params;
+}
+private function _GetRelationshipsDataGetArguments() {
+$params = array();
 return $params;
 }
 private function _ReadyGetExceptions() {
@@ -304,7 +355,23 @@ private function _UnhighlightColumnGetExceptions() {
 $params = array();
 return $params;
 }
+private function _GetValidRelationshipsGetExceptions() {
+$params = array();
+return $params;
+}
 private function _GetValidComponentRelationshipsGetExceptions() {
+$params = array();
+return $params;
+}
+private function _SetVisualRelationshipsEditorGetExceptions() {
+$params = array();
+return $params;
+}
+private function _SetRelationshipsDataGetExceptions() {
+$params = array();
+return $params;
+}
+private function _GetRelationshipsDataGetExceptions() {
 $params = array();
 return $params;
 }

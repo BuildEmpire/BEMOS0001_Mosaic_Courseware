@@ -159,9 +159,9 @@ struct ConfigurationData {
 
 struct Relationship {
     1:              string                  source,
-    2:              integer                 event,
+    2:              string                  event,
     3:              string                  target,
-    4:              integer                 action,
+    4:              string                  action,
     5:  optional    native-js-All           data
 }
 
@@ -412,11 +412,33 @@ service ConnectorInbound {
     ),
 
     /**
-    SetVisualRelationshipsEditor
-    Accepts a boolean parameter to either open (true) or close (true) the visual relationship editor of the engine
+    ShowVisualRelationshipsEditor
+    Shows the visual relationship editor of the engine
     */
-    void    SetVisualRelationshipsEditor(
-        1:  boolean     stateBoolean
+    void    ShowVisualRelationshipsEditor(
+    ),
+
+    /**
+    HideVisualRelationshipsEditor
+    Hides the visual relationship editor of the engine
+    */
+    void    HideVisualRelationshipsEditor(
+    ),
+
+    /**
+    ShowVisualRelationship
+    Shows the visual relationship of a singular named relationship on screen in the editor
+    */
+    void    ShowVisualRelationship(
+        1:  string      relationshipId
+    ),
+
+    /**
+    HideVisualRelationship
+    Hides the visual relationship of a singular named relationship on screen in the editor
+    */
+    void    HideVisualRelationship(
+        1:  string      relationshipId
     ),
 
     /**

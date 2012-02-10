@@ -12,7 +12,7 @@ public function __construct($handler) {
 $this->_handler = $handler;
 }
 public function getShrewdVersion(){
-return "49f142423dcf1f57f02d77da949176fd4157e49f";
+return "9b9c55eb92e92543826c7ed4dece75e389f90e0d";
 }
 public function getHandler(){
 return $this->_handler;
@@ -140,10 +140,28 @@ return "\\native-js-Object";
 private function _GetValidComponentRelationshipsGetReturnContentType() {
 return "";
 }
-private function _SetVisualRelationshipsEditorGetReturnType() {
+private function _ShowVisualRelationshipsEditorGetReturnType() {
 return "void";
 }
-private function _SetVisualRelationshipsEditorGetReturnContentType() {
+private function _ShowVisualRelationshipsEditorGetReturnContentType() {
+return "";
+}
+private function _HideVisualRelationshipsEditorGetReturnType() {
+return "void";
+}
+private function _HideVisualRelationshipsEditorGetReturnContentType() {
+return "";
+}
+private function _ShowVisualRelationshipGetReturnType() {
+return "void";
+}
+private function _ShowVisualRelationshipGetReturnContentType() {
+return "";
+}
+private function _HideVisualRelationshipGetReturnType() {
+return "void";
+}
+private function _HideVisualRelationshipGetReturnContentType() {
 return "";
 }
 private function _SetRelationshipsDataGetReturnType() {
@@ -298,11 +316,28 @@ $param->optional = false;
 $params[] = $param;
 return $params;
 }
-private function _SetVisualRelationshipsEditorGetArguments() {
+private function _ShowVisualRelationshipsEditorGetArguments() {
+$params = array();
+return $params;
+}
+private function _HideVisualRelationshipsEditorGetArguments() {
+$params = array();
+return $params;
+}
+private function _ShowVisualRelationshipGetArguments() {
 $params = array();
 $param = new Parameter();
-$param->name = "stateBoolean";
-$param->type = "boolean";
+$param->name = "relationshipId";
+$param->type = "string";
+$param->optional = false;
+$params[] = $param;
+return $params;
+}
+private function _HideVisualRelationshipGetArguments() {
+$params = array();
+$param = new Parameter();
+$param->name = "relationshipId";
+$param->type = "string";
 $param->optional = false;
 $params[] = $param;
 return $params;
@@ -401,7 +436,19 @@ private function _GetValidComponentRelationshipsGetExceptions() {
 $params = array();
 return $params;
 }
-private function _SetVisualRelationshipsEditorGetExceptions() {
+private function _ShowVisualRelationshipsEditorGetExceptions() {
+$params = array();
+return $params;
+}
+private function _HideVisualRelationshipsEditorGetExceptions() {
+$params = array();
+return $params;
+}
+private function _ShowVisualRelationshipGetExceptions() {
+$params = array();
+return $params;
+}
+private function _HideVisualRelationshipGetExceptions() {
 $params = array();
 return $params;
 }

@@ -381,6 +381,22 @@ service ConnectorInbound {
     ),
 
     /**
+    HighlightComponent
+    Highlight the component with the given id.
+    */
+    void    HighlightComponent(
+        1:  string      id
+    ),
+
+    /**
+    UnhighlightComponent
+    Unhighlight the component with the given id.
+    */
+    void    UnhighlightComponent(
+        1:  string      id
+    ),
+
+    /**
     GetValidRelationships
     Get an object containing valid event and actions available on both the engine and components on screen
     */

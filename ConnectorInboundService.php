@@ -12,7 +12,7 @@ public function __construct($handler) {
 $this->_handler = $handler;
 }
 public function getShrewdVersion(){
-return "85b2f63fdd72f4e449c50e156d6829aac69c9ca2";
+return "49f142423dcf1f57f02d77da949176fd4157e49f";
 }
 public function getHandler(){
 return $this->_handler;
@@ -114,6 +114,18 @@ private function _UnhighlightColumnGetReturnType() {
 return "void";
 }
 private function _UnhighlightColumnGetReturnContentType() {
+return "";
+}
+private function _HighlightComponentGetReturnType() {
+return "void";
+}
+private function _HighlightComponentGetReturnContentType() {
+return "";
+}
+private function _UnhighlightComponentGetReturnType() {
+return "void";
+}
+private function _UnhighlightComponentGetReturnContentType() {
 return "";
 }
 private function _GetValidRelationshipsGetReturnType() {
@@ -255,6 +267,24 @@ $param->optional = false;
 $params[] = $param;
 return $params;
 }
+private function _HighlightComponentGetArguments() {
+$params = array();
+$param = new Parameter();
+$param->name = "id";
+$param->type = "string";
+$param->optional = false;
+$params[] = $param;
+return $params;
+}
+private function _UnhighlightComponentGetArguments() {
+$params = array();
+$param = new Parameter();
+$param->name = "id";
+$param->type = "string";
+$param->optional = false;
+$params[] = $param;
+return $params;
+}
 private function _GetValidRelationshipsGetArguments() {
 $params = array();
 return $params;
@@ -352,6 +382,14 @@ $params = array();
 return $params;
 }
 private function _UnhighlightColumnGetExceptions() {
+$params = array();
+return $params;
+}
+private function _HighlightComponentGetExceptions() {
+$params = array();
+return $params;
+}
+private function _UnhighlightComponentGetExceptions() {
 $params = array();
 return $params;
 }

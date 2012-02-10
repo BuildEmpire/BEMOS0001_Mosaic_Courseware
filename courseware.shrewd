@@ -158,11 +158,12 @@ struct ConfigurationData {
 
 
 struct Relationship {
-    1:              string                  source,
-    2:              string                  event,
-    3:              string                  target,
-    4:              string                  action,
-    5:  optional    native-js-All           data
+    1:              string                  id,
+    2:              string                  source,
+    3:              string                  event,
+    4:              string                  target,
+    5:              string                  action,
+    6:  optional    native-js-All           data
 }
 
 

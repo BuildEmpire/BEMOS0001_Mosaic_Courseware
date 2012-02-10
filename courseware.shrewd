@@ -102,6 +102,7 @@ enum DragMode {
     ALL     = 3
 }
 
+
 struct DataRows {
     1:              boolean                 allow       = true,
     2:              boolean                 resizable   = true,
@@ -150,13 +151,29 @@ struct ConfigurationData {
     11:             string                  language = "en",
 
     12:             boolean                 valid = false
-
 }
+
+
+
+
+
+struct Relationship {
+    1:              string                  source,
+    2:              integer                 event,
+    3:              string                  target,
+    4:              integer                 action,
+    5:  optional    native-js-All           data
+}
+
+
+
+
 
 
 struct ScreenData {
     1:  optional    list<Row>               rows,
-    2:  optional    list<ComponentInstance> freeComponents
+    2:  optional    list<ComponentInstance> freeComponents,
+    3:  optional    list<Relationship>      relationships
 }
 
 enum StructureItemType {
@@ -363,6 +380,13 @@ service ConnectorInbound {
         1:  string      id
     ),
 
+    /**
+    GetValidComponentRelationships
+    Get an object containing valid event and actions available on a specified component name (eg. 'image')
+    */
+    native-js-Object    GetValidComponentRelationships(
+        1:  string      componentName
+    )
 }
 
 /*
@@ -443,7 +467,6 @@ service ConnectorOutbound {
         2:   optional   native-js-Object     onSaveCallback,
         3:   optional   native-js-Object     onCancelCallback
     )
-
 }
 
 /*

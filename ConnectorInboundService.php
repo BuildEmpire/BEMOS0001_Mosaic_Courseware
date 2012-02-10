@@ -12,7 +12,7 @@ public function __construct($handler) {
 $this->_handler = $handler;
 }
 public function getShrewdVersion(){
-return "20249376216e8d343e1cdfbc3bb06eb4ec24fe34";
+return "72b5a7e0a5235919a589a1474622b8be2a9a0389";
 }
 public function getHandler(){
 return $this->_handler;
@@ -114,6 +114,12 @@ private function _UnhighlightColumnGetReturnType() {
 return "void";
 }
 private function _UnhighlightColumnGetReturnContentType() {
+return "";
+}
+private function _GetValidComponentRelationshipsGetReturnType() {
+return "\\native-js-Object";
+}
+private function _GetValidComponentRelationshipsGetReturnContentType() {
 return "";
 }
 private function _ReadyGetArguments() {
@@ -225,6 +231,15 @@ $param->optional = false;
 $params[] = $param;
 return $params;
 }
+private function _GetValidComponentRelationshipsGetArguments() {
+$params = array();
+$param = new Parameter();
+$param->name = "componentName";
+$param->type = "string";
+$param->optional = false;
+$params[] = $param;
+return $params;
+}
 private function _ReadyGetExceptions() {
 $params = array();
 return $params;
@@ -286,6 +301,10 @@ $params = array();
 return $params;
 }
 private function _UnhighlightColumnGetExceptions() {
+$params = array();
+return $params;
+}
+private function _GetValidComponentRelationshipsGetExceptions() {
 $params = array();
 return $params;
 }

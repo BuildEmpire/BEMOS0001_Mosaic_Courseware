@@ -157,6 +157,55 @@ struct ConfigurationData {
 
 
 
+
+/*
+Forms
+*/
+enum EditableFormFieldType {
+    TEXT            = 1,
+    PASSWORD        = 2,
+    TEXTAREA        = 3,
+    HTML            = 4,
+    SELECT          = 5,
+    CHECKBOX        = 6,
+    RADIO           = 7
+}
+
+struct EditableFormFieldHtml {
+    1:              list                    cssPath,
+    2:              list                    styleFormats,
+    3: optional     integer                 rows,
+    4: optional     map<string,string>      cssAttributes
+}
+
+struct EditableFormFieldText {
+    1: optional     integer                 rows
+}
+
+struct EditableFormField {
+    1:              EditableFormFieldType   type,
+    2:              string                  name,
+    3:              string                  title,
+    4:              boolean                 required,
+    5: optional     string                  value,
+    6: optional     native-js-Object        data
+}
+
+struct EditableFormGroup {
+    1:              string                  name,
+    2:              list<EditableFormField> fields
+}
+
+struct EditableForm {
+    1:              string                  name,
+    2:              list<EditableFormGroup> groups
+}
+
+
+
+
+
+
 /*
 Specific relationships stored within the screen data
 */
@@ -188,7 +237,7 @@ struct ValidRelationshipAction {
     2:              string                  action,
     3:              string                  key,
     4:              string                  string,
-    5:  optional    native-js-Object        options
+    5:  optional    list<EditableFormField> fields
 }
 
 struct RelationshipCollection {
@@ -233,46 +282,6 @@ struct StructureItem {
     6:  optional    list<StructureItem>                 children,
     7:  optional    map<string-id,StructureItemType>    learningPathIds,
     8:  optional    ScreenData                          screenData
-}
-
-enum EditableFormFieldType {
-    TEXT            = 1,
-    PASSWORD        = 2,
-    TEXTAREA        = 3,
-    HTML            = 4,
-    SELECT          = 5,
-    CHECKBOX        = 6,
-    RADIO           = 7
-}
-
-struct EditableFormFieldHtml {
-    1:              list                    cssPath,
-    2:              list                    styleFormats,
-    3: optional     integer                 rows,
-    4: optional     map<string,string>      cssAttributes
-}
-
-struct EditableFormFieldText {
-    1: optional     integer                 rows
-}
-
-struct EditableFormField {
-    1:              EditableFormFieldType   type,
-    2:              string                  name,
-    3:              string                  title,
-    4:              boolean                 required,
-    5: optional     string                  value,
-    6: optional     native-js-Object        data
-}
-
-struct EditableFormGroup {
-    1:              string                  name,
-    2:              list<EditableFormField> fields
-}
-
-struct EditableForm {
-    1:              string                  name,
-    2:              list<EditableFormGroup> groups
 }
 
 

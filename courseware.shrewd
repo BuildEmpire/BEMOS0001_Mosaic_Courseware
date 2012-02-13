@@ -60,7 +60,7 @@ struct Component {
 
 struct ComponentInstance {
     1:              string-id               id,
-    2:              string-id               alias,
+    2:              string                  alias,
     3:              string                  name,
     4:              map                     data,
     5:  optional    ComponentMetrics        metrics,

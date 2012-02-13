@@ -12,7 +12,7 @@ public function __construct($handler) {
 $this->_handler = $handler;
 }
 public function getShrewdVersion(){
-return "72b5a7e0a5235919a589a1474622b8be2a9a0389";
+return "7e6d2ba74c75b979caf2014944c44fbf48444612";
 }
 public function getHandler(){
 return $this->_handler;
@@ -116,11 +116,65 @@ return "void";
 private function _UnhighlightColumnGetReturnContentType() {
 return "";
 }
+private function _HighlightComponentGetReturnType() {
+return "void";
+}
+private function _HighlightComponentGetReturnContentType() {
+return "";
+}
+private function _UnhighlightComponentGetReturnType() {
+return "void";
+}
+private function _UnhighlightComponentGetReturnContentType() {
+return "";
+}
+private function _GetValidRelationshipsGetReturnType() {
+return "\\native-js-Object";
+}
+private function _GetValidRelationshipsGetReturnContentType() {
+return "";
+}
 private function _GetValidComponentRelationshipsGetReturnType() {
 return "\\native-js-Object";
 }
 private function _GetValidComponentRelationshipsGetReturnContentType() {
 return "";
+}
+private function _ShowVisualRelationshipsEditorGetReturnType() {
+return "void";
+}
+private function _ShowVisualRelationshipsEditorGetReturnContentType() {
+return "";
+}
+private function _HideVisualRelationshipsEditorGetReturnType() {
+return "void";
+}
+private function _HideVisualRelationshipsEditorGetReturnContentType() {
+return "";
+}
+private function _ShowVisualRelationshipGetReturnType() {
+return "void";
+}
+private function _ShowVisualRelationshipGetReturnContentType() {
+return "";
+}
+private function _HideVisualRelationshipGetReturnType() {
+return "void";
+}
+private function _HideVisualRelationshipGetReturnContentType() {
+return "";
+}
+private function _SetRelationshipsDataGetReturnType() {
+return "void";
+}
+private function _SetRelationshipsDataGetReturnContentType() {
+return "";
+}
+private function _GetRelationshipsDataGetReturnType() {
+return "list";
+}
+private function _GetRelationshipsDataGetReturnContentType() {
+return "\BuildEmpire\Mosaic\Courseware\Relationship";
 }
 private function _ReadyGetArguments() {
 $params = array();
@@ -231,6 +285,28 @@ $param->optional = false;
 $params[] = $param;
 return $params;
 }
+private function _HighlightComponentGetArguments() {
+$params = array();
+$param = new Parameter();
+$param->name = "id";
+$param->type = "string";
+$param->optional = false;
+$params[] = $param;
+return $params;
+}
+private function _UnhighlightComponentGetArguments() {
+$params = array();
+$param = new Parameter();
+$param->name = "id";
+$param->type = "string";
+$param->optional = false;
+$params[] = $param;
+return $params;
+}
+private function _GetValidRelationshipsGetArguments() {
+$params = array();
+return $params;
+}
 private function _GetValidComponentRelationshipsGetArguments() {
 $params = array();
 $param = new Parameter();
@@ -238,6 +314,46 @@ $param->name = "componentName";
 $param->type = "string";
 $param->optional = false;
 $params[] = $param;
+return $params;
+}
+private function _ShowVisualRelationshipsEditorGetArguments() {
+$params = array();
+return $params;
+}
+private function _HideVisualRelationshipsEditorGetArguments() {
+$params = array();
+return $params;
+}
+private function _ShowVisualRelationshipGetArguments() {
+$params = array();
+$param = new Parameter();
+$param->name = "relationshipId";
+$param->type = "string";
+$param->optional = false;
+$params[] = $param;
+return $params;
+}
+private function _HideVisualRelationshipGetArguments() {
+$params = array();
+$param = new Parameter();
+$param->name = "relationshipId";
+$param->type = "string";
+$param->optional = false;
+$params[] = $param;
+return $params;
+}
+private function _SetRelationshipsDataGetArguments() {
+$params = array();
+$param = new Parameter();
+$param->name = "relationshipsData";
+$param->type = "list";
+$param->contentType = "\BuildEmpire\Mosaic\Courseware\Relationship";
+$param->optional = false;
+$params[] = $param;
+return $params;
+}
+private function _GetRelationshipsDataGetArguments() {
+$params = array();
 return $params;
 }
 private function _ReadyGetExceptions() {
@@ -304,7 +420,43 @@ private function _UnhighlightColumnGetExceptions() {
 $params = array();
 return $params;
 }
+private function _HighlightComponentGetExceptions() {
+$params = array();
+return $params;
+}
+private function _UnhighlightComponentGetExceptions() {
+$params = array();
+return $params;
+}
+private function _GetValidRelationshipsGetExceptions() {
+$params = array();
+return $params;
+}
 private function _GetValidComponentRelationshipsGetExceptions() {
+$params = array();
+return $params;
+}
+private function _ShowVisualRelationshipsEditorGetExceptions() {
+$params = array();
+return $params;
+}
+private function _HideVisualRelationshipsEditorGetExceptions() {
+$params = array();
+return $params;
+}
+private function _ShowVisualRelationshipGetExceptions() {
+$params = array();
+return $params;
+}
+private function _HideVisualRelationshipGetExceptions() {
+$params = array();
+return $params;
+}
+private function _SetRelationshipsDataGetExceptions() {
+$params = array();
+return $params;
+}
+private function _GetRelationshipsDataGetExceptions() {
 $params = array();
 return $params;
 }

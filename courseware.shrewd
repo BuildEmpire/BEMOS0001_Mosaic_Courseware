@@ -156,15 +156,56 @@ struct ConfigurationData {
 
 
 
-
+/*
+Specific relationships stored within the screen data
+*/
 struct Relationship {
-    1:              string                  source,
-    2:              integer                 event,
-    3:              string                  target,
-    4:              integer                 action,
-    5:  optional    native-js-All           data
+    1:              string                  id,
+    2:              string                  source,
+    3:              string                  event,
+    4:              string                  target,
+    5:              string                  action,
+    6:  optional    native-js-All           data
 }
 
+
+
+
+/*
+Valid relationship definitions (provided by Engine / Components, not stored in Shrewd)
+*/
+struct ValidRelationshipEvent {
+    1:              string                  context,
+    2:              string                  event,
+    3:              string                  key,
+    4:              string                  string,
+    5:  optional    native-js-Object        data
+}
+
+struct ValidRelationshipAction {
+    1:              string                  context,
+    2:              string                  action,
+    3:              string                  key,
+    4:              string                  string,
+    5:  optional    native-js-Object        options
+}
+
+struct RelationshipCollection {
+    1:  optional    list<ValidRelationshipEvent>    events,
+    2:  optional    list<ValidRelationshipAction>   actions
+}
+
+struct RelationshipComponentContainer {
+    1:  optional    string                          name,
+    2:  optional    list<ValidRelationshipAction>   actions,
+    3:  optional    list<ValidRelationshipEvent>    events,
+    4:  optional    list<RelationshipCollection>    items
+}
+
+struct RelationshipContainer {
+    1:  optional    RelationshipCollection                          engine,
+    2:  optional    map<string-id,RelationshipComponentContainer>  components
+}
 
 
 
@@ -381,11 +422,79 @@ service ConnectorInbound {
     ),
 
     /**
+    HighlightComponent
+    Highlight the component with the given id.
+    */
+    void    HighlightComponent(
+        1:  string      id
+    ),
+
+    /**
+    UnhighlightComponent
+    Unhighlight the component with the given id.
+    */
+    void    UnhighlightComponent(
+        1:  string      id
+    ),
+
+    /**
+    GetValidRelationships
+    Get an object containing valid event and actions available on both the engine and components on screen
+    */
+    native-js-Object    GetValidRelationships(
+    ),
+
+    /**
     GetValidComponentRelationships
     Get an object containing valid event and actions available on a specified component name (eg. 'image')
     */
     native-js-Object    GetValidComponentRelationships(
         1:  string      componentName
+    ),
+
+    /**
+    ShowVisualRelationshipsEditor
+    Shows the visual relationship editor of the engine
+    */
+    void    ShowVisualRelationshipsEditor(
+    ),
+
+    /**
+    HideVisualRelationshipsEditor
+    Hides the visual relationship editor of the engine
+    */
+    void    HideVisualRelationshipsEditor(
+    ),
+
+    /**
+    ShowVisualRelationship
+    Shows the visual relationship of a singular named relationship on screen in the editor
+    */
+    void    ShowVisualRelationship(
+        1:  string      relationshipId
+    ),
+
+    /**
+    HideVisualRelationship
+    Hides the visual relationship of a singular named relationship on screen in the editor
+    */
+    void    HideVisualRelationship(
+        1:  string      relationshipId
+    ),
+
+    /**
+    SetRelationshipsData
+    Sets the desired list of active event/action relationships into the current screen
+    */
+    void    SetRelationshipsData(
+        1:  list<Relationship>     relationshipsData
+    ),
+
+    /**
+    GetRelationshipsData
+    Sets the list of active event/action relationships from the current screen
+    */
+    list<Relationship>    GetRelationshipsData(
     )
 }
 

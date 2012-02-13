@@ -11,6 +11,10 @@ class ComponentInstance implements IShrewdStruct
  */
 public $id;
 /**
+ * @var string-id
+ */
+public $alias;
+/**
  * @var string
  */
 public $name;
@@ -33,6 +37,7 @@ public function getShrewd(
 \BuildEmpire\Shrewd\IShrewd $shrewd){
 $paramArray = array();
 $paramArray[] = $shrewd->getParameter("ComponentInstance", 1, $this->id, "id", "string-id", "", false);
+$paramArray[] = $shrewd->getParameter("ComponentInstance", 1, $this->alias, "alias", "string-id", "", false);
 $paramArray[] = $shrewd->getParameter("ComponentInstance", 1, $this->name, "name", "string", "", false);
 $paramArray[] = $shrewd->getParameter("ComponentInstance", 1, $this->data, "data", "map", "", false);
 $paramArray[] = ($shrewd->getParameter("ComponentInstance", 1, $this->metrics, "metrics", "\BuildEmpire\Mosaic\Courseware\ComponentMetrics", "", true)) ? $shrewd->getParameter("ComponentInstance", 1, $this->metrics, "metrics", "\BuildEmpire\Mosaic\Courseware\ComponentMetrics", "", true) : null;
@@ -43,13 +48,14 @@ public function setShrewd(
 \BuildEmpire\Shrewd\IShrewd $shrewd, 
 $shrewdArray){
 if (isset($shrewdArray[0])) {$this->id = $shrewd->setParameter("ComponentInstance", 2, $shrewdArray[0], "id", "string-id", "", false);}
-if (isset($shrewdArray[1])) {$this->name = $shrewd->setParameter("ComponentInstance", 2, $shrewdArray[1], "name", "string", "", false);}
-if (isset($shrewdArray[2])) {$this->data = $shrewd->setParameter("ComponentInstance", 2, $shrewdArray[2], "data", "map", "", false);}
-if ($shrewdArray[3]) {
+if (isset($shrewdArray[1])) {$this->alias = $shrewd->setParameter("ComponentInstance", 2, $shrewdArray[1], "alias", "string-id", "", false);}
+if (isset($shrewdArray[2])) {$this->name = $shrewd->setParameter("ComponentInstance", 2, $shrewdArray[2], "name", "string", "", false);}
+if (isset($shrewdArray[3])) {$this->data = $shrewd->setParameter("ComponentInstance", 2, $shrewdArray[3], "data", "map", "", false);}
+if ($shrewdArray[4]) {
 $theClass = new \BuildEmpire\Mosaic\Courseware\ComponentMetrics();
-$theClass->setShrewd($shrewd, $shrewdArray[3]);
+$theClass->setShrewd($shrewd, $shrewdArray[4]);
 $this->metrics = $theClass;
 }
-if (isset($shrewdArray[4])) {$this->scale = $shrewd->setParameter("ComponentInstance", 2, $shrewdArray[4], "scale", "integer", "", true);}
+if (isset($shrewdArray[5])) {$this->scale = $shrewd->setParameter("ComponentInstance", 2, $shrewdArray[5], "scale", "integer", "", true);}
 }
 }

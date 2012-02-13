@@ -23,9 +23,9 @@ public $key;
  */
 public $string;
 /**
- * @var \\native-js-Object
+ * @var \BuildEmpire\Mosaic\Courseware\EditableFormField[]
  */
-public $options;
+public $fields;
 public function getShrewdNS(){
 return "BuildEmpire.Mosaic.Courseware.ValidRelationshipAction";
 }
@@ -36,7 +36,7 @@ $paramArray[] = $shrewd->getParameter("ValidRelationshipAction", 1, $this->conte
 $paramArray[] = $shrewd->getParameter("ValidRelationshipAction", 1, $this->action, "action", "string", "", false);
 $paramArray[] = $shrewd->getParameter("ValidRelationshipAction", 1, $this->key, "key", "string", "", false);
 $paramArray[] = $shrewd->getParameter("ValidRelationshipAction", 1, $this->string, "string", "string", "", false);
-$paramArray[] = ($shrewd->getParameter("ValidRelationshipAction", 1, $this->options, "options", "\\native-js-Object", "", true)) ? $shrewd->getParameter("ValidRelationshipAction", 1, $this->options, "options", "\\native-js-Object", "", true) : null;
+$paramArray[] = $shrewd->getParameter("ValidRelationshipAction", 1, $this->fields, "fields", "list", "\BuildEmpire\Mosaic\Courseware\EditableFormField", true);
 return $paramArray;
 }
 public function setShrewd(
@@ -46,10 +46,6 @@ if (isset($shrewdArray[0])) {$this->context = $shrewd->setParameter("ValidRelati
 if (isset($shrewdArray[1])) {$this->action = $shrewd->setParameter("ValidRelationshipAction", 2, $shrewdArray[1], "action", "string", "", false);}
 if (isset($shrewdArray[2])) {$this->key = $shrewd->setParameter("ValidRelationshipAction", 2, $shrewdArray[2], "key", "string", "", false);}
 if (isset($shrewdArray[3])) {$this->string = $shrewd->setParameter("ValidRelationshipAction", 2, $shrewdArray[3], "string", "string", "", false);}
-if ($shrewdArray[4]) {
-$theClass = new \\native-js-Object();
-$theClass->setShrewd($shrewd, $shrewdArray[4]);
-$this->options = $theClass;
-}
+if (isset($shrewdArray[4])) {$this->fields = $shrewd->setParameter("ValidRelationshipAction", 2, $shrewdArray[4], "fields", "list", "\BuildEmpire\Mosaic\Courseware\EditableFormField", true);}
 }
 }

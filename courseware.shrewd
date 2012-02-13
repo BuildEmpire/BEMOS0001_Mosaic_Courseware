@@ -178,6 +178,10 @@ struct EditableFormFieldHtml {
     4: optional     map<string,string>      cssAttributes
 }
 
+struct EditableFormFieldSelect {
+    1:              map<string,string>      options
+}
+
 struct EditableFormFieldText {
     1: optional     integer                 rows
 }

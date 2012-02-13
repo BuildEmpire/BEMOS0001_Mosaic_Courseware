@@ -60,10 +60,11 @@ struct Component {
 
 struct ComponentInstance {
     1:              string-id               id,
-    2:              string                  name,
-    3:              map                     data,
-    4:  optional    ComponentMetrics        metrics,
-    5:  optional    ScalingMode             scale
+    2:              string-id               alias,
+    3:              string                  name,
+    4:              map                     data,
+    5:  optional    ComponentMetrics        metrics,
+    6:  optional    ScalingMode             scale
 }
 
 struct ColumnRowMetrics {
@@ -204,7 +205,7 @@ struct RelationshipComponentContainer {
 
 struct RelationshipContainer {
     1:  optional    RelationshipCollection                          engine,
-    2:  optional    map<string-id,RelationshipComponentContainer>  components
+    2:  optional    map<string-id,RelationshipComponentContainer>   components
 }
 
 

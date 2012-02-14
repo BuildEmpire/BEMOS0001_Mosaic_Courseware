@@ -585,6 +585,18 @@ service ConnectorOutbound {
     ),
 
     /**
+    OpenRelationshipManager
+    Open the relationship manager inside the external service.
+    It is possible to send methods that will be called on select or
+    cancel.
+    */
+    void    OpenRelationshipManager(
+        1:              EditableForm         editableForm,
+        2:   optional   native-js-Object     onSaveCallback,
+        3:   optional   native-js-Object     onCancelCallback
+    ),
+
+    /**
     OpenEditDialog
     Open an edit dialog inside the external service.
     An editable form is passed with the required field information to draw

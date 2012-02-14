@@ -12,7 +12,7 @@ public function __construct($handler) {
 $this->_handler = $handler;
 }
 public function getShrewdVersion(){
-return "c8cb76ce14f98da62a6f1811920849e41c7868a0";
+return "cf29a84580e42a59f3b38b9b8835672de3c6043c";
 }
 public function getHandler(){
 return $this->_handler;
@@ -42,6 +42,12 @@ private function _OpenResourceManagerGetReturnType() {
 return "void";
 }
 private function _OpenResourceManagerGetReturnContentType() {
+return "";
+}
+private function _OpenRelationshipManagerGetReturnType() {
+return "void";
+}
+private function _OpenRelationshipManagerGetReturnContentType() {
 return "";
 }
 private function _OpenEditDialogGetReturnType() {
@@ -97,6 +103,25 @@ $param->optional = true;
 $params[] = $param;
 return $params;
 }
+private function _OpenRelationshipManagerGetArguments() {
+$params = array();
+$param = new Parameter();
+$param->name = "editableForm";
+$param->type = "\BuildEmpire\Mosaic\Courseware\EditableForm";
+$param->optional = false;
+$params[] = $param;
+$param = new Parameter();
+$param->name = "onSaveCallback";
+$param->type = "\\native-js-Object";
+$param->optional = true;
+$params[] = $param;
+$param = new Parameter();
+$param->name = "onCancelCallback";
+$param->type = "\\native-js-Object";
+$param->optional = true;
+$params[] = $param;
+return $params;
+}
 private function _OpenEditDialogGetArguments() {
 $params = array();
 $param = new Parameter();
@@ -129,6 +154,10 @@ $params = array();
 return $params;
 }
 private function _OpenResourceManagerGetExceptions() {
+$params = array();
+return $params;
+}
+private function _OpenRelationshipManagerGetExceptions() {
 $params = array();
 return $params;
 }

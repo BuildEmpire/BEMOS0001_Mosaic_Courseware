@@ -168,7 +168,8 @@ enum EditableFormFieldType {
     HTML            = 4,
     SELECT          = 5,
     CHECKBOX        = 6,
-    RADIO           = 7
+    RADIO           = 7,
+    RANGE           = 8
 }
 
 struct EditableFormFieldHtml {
@@ -180,6 +181,12 @@ struct EditableFormFieldHtml {
 
 struct EditableFormFieldSelect {
     1:              map<string,string>      options
+}
+
+struct EditableFormFieldRange {
+    1:              integer                 min,
+    2:              integer                 max,
+    3:              integer                 step
 }
 
 struct EditableFormFieldText {
@@ -574,6 +581,18 @@ service ConnectorOutbound {
     void    OpenResourceManager(
         1:              list<string>         fileExtensions,
         2:   optional   native-js-Object     onSelectCallback,
+        3:   optional   native-js-Object     onCancelCallback
+    ),
+
+    /**
+    OpenRelationshipManager
+    Open the relationship manager inside the external service.
+    It is possible to send methods that will be called on select or
+    cancel.
+    */
+    void    OpenRelationshipManager(
+        1:              EditableForm         editableForm,
+        2:   optional   native-js-Object     onSaveCallback,
         3:   optional   native-js-Object     onCancelCallback
     ),
 

@@ -8,7 +8,15 @@ var CoursewareConnectorInboundService = new Class({
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "cf29a84580e42a59f3b38b9b8835672de3c6043c";
+return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
+},
+/**
+ * Get the shrewd namespace.
+ * 
+ * @returns {string}
+ */
+getShrewdNS : function(){
+return "BuildEmpire.Mosaic.Courseware.ConnectorInboundService";
 },
 /**
  * Get the name of the MooTools class.
@@ -25,7 +33,7 @@ return "CoursewareConnectorInboundService";
 Ready: function(OutboundService){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.local) {
+if (this._shrewd.isLocal && this._shrewd.isServer) {
 parametersArray.push(OutboundService);
 } else {
 parametersArray.push(OutboundService);
@@ -33,7 +41,7 @@ parametersArray.push(OutboundService);
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-"BuildEmpire.Mosaic.Courseware.ConnectorInboundService",
+(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
 "Ready",
 parametersArray,
 "void",
@@ -49,7 +57,7 @@ exceptionsArray
 SetMode: function(mode){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.local) {
+if (this._shrewd.isLocal && this._shrewd.isServer) {
 parametersArray.push(mode);
 } else {
 parametersArray.push(mode);
@@ -57,7 +65,7 @@ parametersArray.push(mode);
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-"BuildEmpire.Mosaic.Courseware.ConnectorInboundService",
+(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
 "SetMode",
 parametersArray,
 "boolean",
@@ -73,7 +81,7 @@ exceptionsArray
 SetScale: function(scale){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.local) {
+if (this._shrewd.isLocal && this._shrewd.isServer) {
 parametersArray.push(scale);
 } else {
 parametersArray.push(scale);
@@ -81,7 +89,7 @@ parametersArray.push(scale);
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-"BuildEmpire.Mosaic.Courseware.ConnectorInboundService",
+(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
 "SetScale",
 parametersArray,
 "boolean",
@@ -96,13 +104,13 @@ exceptionsArray
 GetScale: function(){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.local) {
+if (this._shrewd.isLocal && this._shrewd.isServer) {
 } else {
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-"BuildEmpire.Mosaic.Courseware.ConnectorInboundService",
+(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
 "GetScale",
 parametersArray,
 "float",
@@ -117,13 +125,13 @@ exceptionsArray
 IsTransformationApplied: function(){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.local) {
+if (this._shrewd.isLocal && this._shrewd.isServer) {
 } else {
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-"BuildEmpire.Mosaic.Courseware.ConnectorInboundService",
+(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
 "IsTransformationApplied",
 parametersArray,
 "boolean",
@@ -139,7 +147,7 @@ exceptionsArray
 SetTransformation: function(transformation){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.local) {
+if (this._shrewd.isLocal && this._shrewd.isServer) {
 parametersArray.push(transformation);
 } else {
 parametersArray.push(transformation);
@@ -147,7 +155,7 @@ parametersArray.push(transformation);
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-"BuildEmpire.Mosaic.Courseware.ConnectorInboundService",
+(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
 "SetTransformation",
 parametersArray,
 "boolean",
@@ -162,13 +170,13 @@ exceptionsArray
 GetTransformation: function(){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.local) {
+if (this._shrewd.isLocal && this._shrewd.isServer) {
 } else {
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-"BuildEmpire.Mosaic.Courseware.ConnectorInboundService",
+(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
 "GetTransformation",
 parametersArray,
 "float",
@@ -184,7 +192,7 @@ exceptionsArray
 SetConfigurationData: function(configurationData){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.local) {
+if (this._shrewd.isLocal && this._shrewd.isServer) {
 parametersArray.push(configurationData);
 } else {
 parametersArray.push((configurationData) ? configurationData.getShrewd() : null);
@@ -192,7 +200,7 @@ parametersArray.push((configurationData) ? configurationData.getShrewd() : null)
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-"BuildEmpire.Mosaic.Courseware.ConnectorInboundService",
+(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
 "SetConfigurationData",
 parametersArray,
 "void",
@@ -207,13 +215,13 @@ exceptionsArray
 GetConfigurationData: function(){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.local) {
+if (this._shrewd.isLocal && this._shrewd.isServer) {
 } else {
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-"BuildEmpire.Mosaic.Courseware.ConnectorInboundService",
+(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
 "GetConfigurationData",
 parametersArray,
 "CoursewareConfigurationData",
@@ -224,12 +232,12 @@ exceptionsArray
 },
 /**
  * @param {CoursewareScreenData}
- * @returns {jQuery} 
+ * @returns {void} 
  */
 SetScreenData: function(screenData){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.local) {
+if (this._shrewd.isLocal && this._shrewd.isServer) {
 parametersArray.push(screenData);
 } else {
 parametersArray.push((screenData) ? screenData.getShrewd() : null);
@@ -237,10 +245,10 @@ parametersArray.push((screenData) ? screenData.getShrewd() : null);
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-"BuildEmpire.Mosaic.Courseware.ConnectorInboundService",
+(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
 "SetScreenData",
 parametersArray,
-"jQuery",
+"void",
 "",
 exceptionsArray
 );
@@ -252,13 +260,13 @@ exceptionsArray
 GetScreenData: function(){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.local) {
+if (this._shrewd.isLocal && this._shrewd.isServer) {
 } else {
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-"BuildEmpire.Mosaic.Courseware.ConnectorInboundService",
+(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
 "GetScreenData",
 parametersArray,
 "CoursewareScreenData",
@@ -273,13 +281,13 @@ exceptionsArray
 Draw: function(){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.local) {
+if (this._shrewd.isLocal && this._shrewd.isServer) {
 } else {
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-"BuildEmpire.Mosaic.Courseware.ConnectorInboundService",
+(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
 "Draw",
 parametersArray,
 "void",
@@ -294,13 +302,13 @@ exceptionsArray
 AddColumn: function(){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.local) {
+if (this._shrewd.isLocal && this._shrewd.isServer) {
 } else {
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-"BuildEmpire.Mosaic.Courseware.ConnectorInboundService",
+(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
 "AddColumn",
 parametersArray,
 "void",
@@ -316,7 +324,7 @@ exceptionsArray
 AddComponent: function(componentName){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.local) {
+if (this._shrewd.isLocal && this._shrewd.isServer) {
 parametersArray.push(componentName);
 } else {
 parametersArray.push(componentName);
@@ -324,7 +332,7 @@ parametersArray.push(componentName);
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-"BuildEmpire.Mosaic.Courseware.ConnectorInboundService",
+(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
 "AddComponent",
 parametersArray,
 "void",
@@ -340,7 +348,7 @@ exceptionsArray
 HighlightColumn: function(id){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.local) {
+if (this._shrewd.isLocal && this._shrewd.isServer) {
 parametersArray.push(id);
 } else {
 parametersArray.push(id);
@@ -348,7 +356,7 @@ parametersArray.push(id);
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-"BuildEmpire.Mosaic.Courseware.ConnectorInboundService",
+(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
 "HighlightColumn",
 parametersArray,
 "void",
@@ -364,7 +372,7 @@ exceptionsArray
 UnhighlightColumn: function(id){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.local) {
+if (this._shrewd.isLocal && this._shrewd.isServer) {
 parametersArray.push(id);
 } else {
 parametersArray.push(id);
@@ -372,7 +380,7 @@ parametersArray.push(id);
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-"BuildEmpire.Mosaic.Courseware.ConnectorInboundService",
+(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
 "UnhighlightColumn",
 parametersArray,
 "void",
@@ -388,7 +396,7 @@ exceptionsArray
 HighlightComponent: function(id){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.local) {
+if (this._shrewd.isLocal && this._shrewd.isServer) {
 parametersArray.push(id);
 } else {
 parametersArray.push(id);
@@ -396,7 +404,7 @@ parametersArray.push(id);
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-"BuildEmpire.Mosaic.Courseware.ConnectorInboundService",
+(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
 "HighlightComponent",
 parametersArray,
 "void",
@@ -412,7 +420,7 @@ exceptionsArray
 UnhighlightComponent: function(id){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.local) {
+if (this._shrewd.isLocal && this._shrewd.isServer) {
 parametersArray.push(id);
 } else {
 parametersArray.push(id);
@@ -420,7 +428,7 @@ parametersArray.push(id);
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-"BuildEmpire.Mosaic.Courseware.ConnectorInboundService",
+(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
 "UnhighlightComponent",
 parametersArray,
 "void",
@@ -430,21 +438,21 @@ exceptionsArray
 }
 },
 /**
- * @returns {Object} 
+ * @returns {CoursewareRelationshipContainer}
  */
 GetValidRelationships: function(){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.local) {
+if (this._shrewd.isLocal && this._shrewd.isServer) {
 } else {
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-"BuildEmpire.Mosaic.Courseware.ConnectorInboundService",
+(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
 "GetValidRelationships",
 parametersArray,
-"Object",
+"CoursewareRelationshipContainer",
 "",
 exceptionsArray
 );
@@ -457,7 +465,7 @@ exceptionsArray
 GetValidComponentRelationships: function(componentName){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.local) {
+if (this._shrewd.isLocal && this._shrewd.isServer) {
 parametersArray.push(componentName);
 } else {
 parametersArray.push(componentName);
@@ -465,7 +473,7 @@ parametersArray.push(componentName);
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-"BuildEmpire.Mosaic.Courseware.ConnectorInboundService",
+(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
 "GetValidComponentRelationships",
 parametersArray,
 "Object",
@@ -480,13 +488,13 @@ exceptionsArray
 ShowVisualRelationshipsEditor: function(){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.local) {
+if (this._shrewd.isLocal && this._shrewd.isServer) {
 } else {
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-"BuildEmpire.Mosaic.Courseware.ConnectorInboundService",
+(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
 "ShowVisualRelationshipsEditor",
 parametersArray,
 "void",
@@ -501,13 +509,13 @@ exceptionsArray
 HideVisualRelationshipsEditor: function(){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.local) {
+if (this._shrewd.isLocal && this._shrewd.isServer) {
 } else {
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-"BuildEmpire.Mosaic.Courseware.ConnectorInboundService",
+(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
 "HideVisualRelationshipsEditor",
 parametersArray,
 "void",
@@ -523,7 +531,7 @@ exceptionsArray
 ShowVisualRelationship: function(relationshipId){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.local) {
+if (this._shrewd.isLocal && this._shrewd.isServer) {
 parametersArray.push(relationshipId);
 } else {
 parametersArray.push(relationshipId);
@@ -531,7 +539,7 @@ parametersArray.push(relationshipId);
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-"BuildEmpire.Mosaic.Courseware.ConnectorInboundService",
+(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
 "ShowVisualRelationship",
 parametersArray,
 "void",
@@ -547,7 +555,7 @@ exceptionsArray
 HideVisualRelationship: function(relationshipId){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.local) {
+if (this._shrewd.isLocal && this._shrewd.isServer) {
 parametersArray.push(relationshipId);
 } else {
 parametersArray.push(relationshipId);
@@ -555,7 +563,7 @@ parametersArray.push(relationshipId);
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-"BuildEmpire.Mosaic.Courseware.ConnectorInboundService",
+(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
 "HideVisualRelationship",
 parametersArray,
 "void",
@@ -571,7 +579,7 @@ exceptionsArray
 SetRelationshipsData: function(relationshipsData){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.local) {
+if (this._shrewd.isLocal && this._shrewd.isServer) {
 parametersArray.push(relationshipsData);
 } else {
 if (relationshipsData) {var l=relationshipsData.length;var lArray = new Array();for (var a=0; a<l; a++) {lArray.push((relationshipsData[a]) ? relationshipsData[a].getShrewd() : null);}parametersArray.push(lArray);} else {parametersArray.push(relationshipsData)}
@@ -579,7 +587,7 @@ if (relationshipsData) {var l=relationshipsData.length;var lArray = new Array();
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-"BuildEmpire.Mosaic.Courseware.ConnectorInboundService",
+(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
 "SetRelationshipsData",
 parametersArray,
 "void",
@@ -594,13 +602,13 @@ exceptionsArray
 GetRelationshipsData: function(){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.local) {
+if (this._shrewd.isLocal && this._shrewd.isServer) {
 } else {
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-"BuildEmpire.Mosaic.Courseware.ConnectorInboundService",
+(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
 "GetRelationshipsData",
 parametersArray,
 "list",
@@ -608,6 +616,550 @@ parametersArray,
 exceptionsArray
 );
 }
+},
+_ReadyGetReturnType: function() {
+return "void";
+},
+_ReadyGetReturnContentType: function() {
+return "";
+},
+_SetModeGetReturnType: function() {
+return "boolean";
+},
+_SetModeGetReturnContentType: function() {
+return "";
+},
+_SetScaleGetReturnType: function() {
+return "boolean";
+},
+_SetScaleGetReturnContentType: function() {
+return "";
+},
+_GetScaleGetReturnType: function() {
+return "float";
+},
+_GetScaleGetReturnContentType: function() {
+return "";
+},
+_IsTransformationAppliedGetReturnType: function() {
+return "boolean";
+},
+_IsTransformationAppliedGetReturnContentType: function() {
+return "";
+},
+_SetTransformationGetReturnType: function() {
+return "boolean";
+},
+_SetTransformationGetReturnContentType: function() {
+return "";
+},
+_GetTransformationGetReturnType: function() {
+return "float";
+},
+_GetTransformationGetReturnContentType: function() {
+return "";
+},
+_SetConfigurationDataGetReturnType: function() {
+return "void";
+},
+_SetConfigurationDataGetReturnContentType: function() {
+return "";
+},
+_GetConfigurationDataGetReturnType: function() {
+return "CoursewareConfigurationData";
+},
+_GetConfigurationDataGetReturnContentType: function() {
+return "";
+},
+_SetScreenDataGetReturnType: function() {
+return "void";
+},
+_SetScreenDataGetReturnContentType: function() {
+return "";
+},
+_GetScreenDataGetReturnType: function() {
+return "CoursewareScreenData";
+},
+_GetScreenDataGetReturnContentType: function() {
+return "";
+},
+_DrawGetReturnType: function() {
+return "void";
+},
+_DrawGetReturnContentType: function() {
+return "";
+},
+_AddColumnGetReturnType: function() {
+return "void";
+},
+_AddColumnGetReturnContentType: function() {
+return "";
+},
+_AddComponentGetReturnType: function() {
+return "void";
+},
+_AddComponentGetReturnContentType: function() {
+return "";
+},
+_HighlightColumnGetReturnType: function() {
+return "void";
+},
+_HighlightColumnGetReturnContentType: function() {
+return "";
+},
+_UnhighlightColumnGetReturnType: function() {
+return "void";
+},
+_UnhighlightColumnGetReturnContentType: function() {
+return "";
+},
+_HighlightComponentGetReturnType: function() {
+return "void";
+},
+_HighlightComponentGetReturnContentType: function() {
+return "";
+},
+_UnhighlightComponentGetReturnType: function() {
+return "void";
+},
+_UnhighlightComponentGetReturnContentType: function() {
+return "";
+},
+_GetValidRelationshipsGetReturnType: function() {
+return "CoursewareRelationshipContainer";
+},
+_GetValidRelationshipsGetReturnContentType: function() {
+return "";
+},
+_GetValidComponentRelationshipsGetReturnType: function() {
+return "Object";
+},
+_GetValidComponentRelationshipsGetReturnContentType: function() {
+return "";
+},
+_ShowVisualRelationshipsEditorGetReturnType: function() {
+return "void";
+},
+_ShowVisualRelationshipsEditorGetReturnContentType: function() {
+return "";
+},
+_HideVisualRelationshipsEditorGetReturnType: function() {
+return "void";
+},
+_HideVisualRelationshipsEditorGetReturnContentType: function() {
+return "";
+},
+_ShowVisualRelationshipGetReturnType: function() {
+return "void";
+},
+_ShowVisualRelationshipGetReturnContentType: function() {
+return "";
+},
+_HideVisualRelationshipGetReturnType: function() {
+return "void";
+},
+_HideVisualRelationshipGetReturnContentType: function() {
+return "";
+},
+_SetRelationshipsDataGetReturnType: function() {
+return "void";
+},
+_SetRelationshipsDataGetReturnContentType: function() {
+return "";
+},
+_GetRelationshipsDataGetReturnType: function() {
+return "list";
+},
+_GetRelationshipsDataGetReturnContentType: function() {
+return "CoursewareRelationship";
+},
+_ReadyGetArguments: function() {
+var params;
+var param;
+params = [];
+param = {};
+param.name = "OutboundService";
+param.type = "Object";
+param.optional = false;
+params.push(param);
+return params;
+},
+_SetModeGetArguments: function() {
+var params;
+var param;
+params = [];
+param = {};
+param.name = "mode";
+param.type = "integer";
+param.optional = false;
+params.push(param);
+return params;
+},
+_SetScaleGetArguments: function() {
+var params;
+var param;
+params = [];
+param = {};
+param.name = "scale";
+param.type = "float";
+param.optional = false;
+params.push(param);
+return params;
+},
+_GetScaleGetArguments: function() {
+var params;
+var param;
+params = [];
+return params;
+},
+_IsTransformationAppliedGetArguments: function() {
+var params;
+var param;
+params = [];
+return params;
+},
+_SetTransformationGetArguments: function() {
+var params;
+var param;
+params = [];
+param = {};
+param.name = "transformation";
+param.type = "float";
+param.optional = false;
+params.push(param);
+return params;
+},
+_GetTransformationGetArguments: function() {
+var params;
+var param;
+params = [];
+return params;
+},
+_SetConfigurationDataGetArguments: function() {
+var params;
+var param;
+params = [];
+param = {};
+param.name = "configurationData";
+param.type = "CoursewareConfigurationData";
+param.optional = false;
+params.push(param);
+return params;
+},
+_GetConfigurationDataGetArguments: function() {
+var params;
+var param;
+params = [];
+return params;
+},
+_SetScreenDataGetArguments: function() {
+var params;
+var param;
+params = [];
+param = {};
+param.name = "screenData";
+param.type = "CoursewareScreenData";
+param.optional = false;
+params.push(param);
+return params;
+},
+_GetScreenDataGetArguments: function() {
+var params;
+var param;
+params = [];
+return params;
+},
+_DrawGetArguments: function() {
+var params;
+var param;
+params = [];
+return params;
+},
+_AddColumnGetArguments: function() {
+var params;
+var param;
+params = [];
+return params;
+},
+_AddComponentGetArguments: function() {
+var params;
+var param;
+params = [];
+param = {};
+param.name = "componentName";
+param.type = "string";
+param.optional = false;
+params.push(param);
+return params;
+},
+_HighlightColumnGetArguments: function() {
+var params;
+var param;
+params = [];
+param = {};
+param.name = "id";
+param.type = "string";
+param.optional = false;
+params.push(param);
+return params;
+},
+_UnhighlightColumnGetArguments: function() {
+var params;
+var param;
+params = [];
+param = {};
+param.name = "id";
+param.type = "string";
+param.optional = false;
+params.push(param);
+return params;
+},
+_HighlightComponentGetArguments: function() {
+var params;
+var param;
+params = [];
+param = {};
+param.name = "id";
+param.type = "string";
+param.optional = false;
+params.push(param);
+return params;
+},
+_UnhighlightComponentGetArguments: function() {
+var params;
+var param;
+params = [];
+param = {};
+param.name = "id";
+param.type = "string";
+param.optional = false;
+params.push(param);
+return params;
+},
+_GetValidRelationshipsGetArguments: function() {
+var params;
+var param;
+params = [];
+return params;
+},
+_GetValidComponentRelationshipsGetArguments: function() {
+var params;
+var param;
+params = [];
+param = {};
+param.name = "componentName";
+param.type = "string";
+param.optional = false;
+params.push(param);
+return params;
+},
+_ShowVisualRelationshipsEditorGetArguments: function() {
+var params;
+var param;
+params = [];
+return params;
+},
+_HideVisualRelationshipsEditorGetArguments: function() {
+var params;
+var param;
+params = [];
+return params;
+},
+_ShowVisualRelationshipGetArguments: function() {
+var params;
+var param;
+params = [];
+param = {};
+param.name = "relationshipId";
+param.type = "string";
+param.optional = false;
+params.push(param);
+return params;
+},
+_HideVisualRelationshipGetArguments: function() {
+var params;
+var param;
+params = [];
+param = {};
+param.name = "relationshipId";
+param.type = "string";
+param.optional = false;
+params.push(param);
+return params;
+},
+_SetRelationshipsDataGetArguments: function() {
+var params;
+var param;
+params = [];
+param = {};
+param.name = "relationshipsData";
+param.type = "list";
+param.contentType = "CoursewareRelationship";
+param.optional = false;
+params.push(param);
+return params;
+},
+_GetRelationshipsDataGetArguments: function() {
+var params;
+var param;
+params = [];
+return params;
+},
+_ReadyGetExceptions: function() {
+var params;
+var param;
+params = [];
+return params;
+},
+_SetModeGetExceptions: function() {
+var params;
+var param;
+params = [];
+return params;
+},
+_SetScaleGetExceptions: function() {
+var params;
+var param;
+params = [];
+return params;
+},
+_GetScaleGetExceptions: function() {
+var params;
+var param;
+params = [];
+return params;
+},
+_IsTransformationAppliedGetExceptions: function() {
+var params;
+var param;
+params = [];
+return params;
+},
+_SetTransformationGetExceptions: function() {
+var params;
+var param;
+params = [];
+return params;
+},
+_GetTransformationGetExceptions: function() {
+var params;
+var param;
+params = [];
+return params;
+},
+_SetConfigurationDataGetExceptions: function() {
+var params;
+var param;
+params = [];
+return params;
+},
+_GetConfigurationDataGetExceptions: function() {
+var params;
+var param;
+params = [];
+return params;
+},
+_SetScreenDataGetExceptions: function() {
+var params;
+var param;
+params = [];
+return params;
+},
+_GetScreenDataGetExceptions: function() {
+var params;
+var param;
+params = [];
+return params;
+},
+_DrawGetExceptions: function() {
+var params;
+var param;
+params = [];
+return params;
+},
+_AddColumnGetExceptions: function() {
+var params;
+var param;
+params = [];
+return params;
+},
+_AddComponentGetExceptions: function() {
+var params;
+var param;
+params = [];
+return params;
+},
+_HighlightColumnGetExceptions: function() {
+var params;
+var param;
+params = [];
+return params;
+},
+_UnhighlightColumnGetExceptions: function() {
+var params;
+var param;
+params = [];
+return params;
+},
+_HighlightComponentGetExceptions: function() {
+var params;
+var param;
+params = [];
+return params;
+},
+_UnhighlightComponentGetExceptions: function() {
+var params;
+var param;
+params = [];
+return params;
+},
+_GetValidRelationshipsGetExceptions: function() {
+var params;
+var param;
+params = [];
+return params;
+},
+_GetValidComponentRelationshipsGetExceptions: function() {
+var params;
+var param;
+params = [];
+return params;
+},
+_ShowVisualRelationshipsEditorGetExceptions: function() {
+var params;
+var param;
+params = [];
+return params;
+},
+_HideVisualRelationshipsEditorGetExceptions: function() {
+var params;
+var param;
+params = [];
+return params;
+},
+_ShowVisualRelationshipGetExceptions: function() {
+var params;
+var param;
+params = [];
+return params;
+},
+_HideVisualRelationshipGetExceptions: function() {
+var params;
+var param;
+params = [];
+return params;
+},
+_SetRelationshipsDataGetExceptions: function() {
+var params;
+var param;
+params = [];
+return params;
+},
+_GetRelationshipsDataGetExceptions: function() {
+var params;
+var param;
+params = [];
+return params;
 },
 /**
  * @type {Shrewd}
@@ -645,7 +1197,15 @@ var CoursewareConnectorOutboundService = new Class({
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "cf29a84580e42a59f3b38b9b8835672de3c6043c";
+return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
+},
+/**
+ * Get the shrewd namespace.
+ * 
+ * @returns {string}
+ */
+getShrewdNS : function(){
+return "BuildEmpire.Mosaic.Courseware.ConnectorOutboundService";
 },
 /**
  * Get the name of the MooTools class.
@@ -661,13 +1221,13 @@ return "CoursewareConnectorOutboundService";
 Ready: function(){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.local) {
+if (this._shrewd.isLocal && this._shrewd.isServer) {
 } else {
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-"BuildEmpire.Mosaic.Courseware.ConnectorOutboundService",
+(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
 "Ready",
 parametersArray,
 "void",
@@ -683,7 +1243,7 @@ exceptionsArray
 UpdateScreenData: function(sScreenData){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.local) {
+if (this._shrewd.isLocal && this._shrewd.isServer) {
 parametersArray.push(sScreenData);
 } else {
 parametersArray.push((sScreenData) ? sScreenData.getShrewd() : null);
@@ -691,7 +1251,7 @@ parametersArray.push((sScreenData) ? sScreenData.getShrewd() : null);
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-"BuildEmpire.Mosaic.Courseware.ConnectorOutboundService",
+(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
 "UpdateScreenData",
 parametersArray,
 "void",
@@ -708,7 +1268,7 @@ exceptionsArray
 SetContextInformation: function(context, text){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.local) {
+if (this._shrewd.isLocal && this._shrewd.isServer) {
 parametersArray.push(context);
 parametersArray.push(text);
 } else {
@@ -718,7 +1278,7 @@ parametersArray.push(text);
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-"BuildEmpire.Mosaic.Courseware.ConnectorOutboundService",
+(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
 "SetContextInformation",
 parametersArray,
 "void",
@@ -736,7 +1296,7 @@ exceptionsArray
 OpenResourceManager: function(fileExtensions, onSelectCallback, onCancelCallback){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.local) {
+if (this._shrewd.isLocal && this._shrewd.isServer) {
 parametersArray.push(fileExtensions);
 parametersArray.push(onSelectCallback);
 parametersArray.push(onCancelCallback);
@@ -748,7 +1308,7 @@ parametersArray.push(onCancelCallback);
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-"BuildEmpire.Mosaic.Courseware.ConnectorOutboundService",
+(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
 "OpenResourceManager",
 parametersArray,
 "void",
@@ -766,7 +1326,7 @@ exceptionsArray
 OpenRelationshipManager: function(editableForm, onSaveCallback, onCancelCallback){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.local) {
+if (this._shrewd.isLocal && this._shrewd.isServer) {
 parametersArray.push(editableForm);
 parametersArray.push(onSaveCallback);
 parametersArray.push(onCancelCallback);
@@ -778,7 +1338,7 @@ parametersArray.push(onCancelCallback);
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-"BuildEmpire.Mosaic.Courseware.ConnectorOutboundService",
+(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
 "OpenRelationshipManager",
 parametersArray,
 "void",
@@ -796,7 +1356,7 @@ exceptionsArray
 OpenEditDialog: function(editableForm, onSaveCallback, onCancelCallback){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.local) {
+if (this._shrewd.isLocal && this._shrewd.isServer) {
 parametersArray.push(editableForm);
 parametersArray.push(onSaveCallback);
 parametersArray.push(onCancelCallback);
@@ -808,7 +1368,7 @@ parametersArray.push(onCancelCallback);
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-"BuildEmpire.Mosaic.Courseware.ConnectorOutboundService",
+(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
 "OpenEditDialog",
 parametersArray,
 "void",
@@ -816,6 +1376,175 @@ parametersArray,
 exceptionsArray
 );
 }
+},
+_ReadyGetReturnType: function() {
+return "void";
+},
+_ReadyGetReturnContentType: function() {
+return "";
+},
+_UpdateScreenDataGetReturnType: function() {
+return "void";
+},
+_UpdateScreenDataGetReturnContentType: function() {
+return "";
+},
+_SetContextInformationGetReturnType: function() {
+return "void";
+},
+_SetContextInformationGetReturnContentType: function() {
+return "";
+},
+_OpenResourceManagerGetReturnType: function() {
+return "void";
+},
+_OpenResourceManagerGetReturnContentType: function() {
+return "";
+},
+_OpenRelationshipManagerGetReturnType: function() {
+return "void";
+},
+_OpenRelationshipManagerGetReturnContentType: function() {
+return "";
+},
+_OpenEditDialogGetReturnType: function() {
+return "void";
+},
+_OpenEditDialogGetReturnContentType: function() {
+return "";
+},
+_ReadyGetArguments: function() {
+var params;
+var param;
+params = [];
+return params;
+},
+_UpdateScreenDataGetArguments: function() {
+var params;
+var param;
+params = [];
+param = {};
+param.name = "sScreenData";
+param.type = "CoursewareScreenData";
+param.optional = false;
+params.push(param);
+return params;
+},
+_SetContextInformationGetArguments: function() {
+var params;
+var param;
+params = [];
+param = {};
+param.name = "context";
+param.type = "integer";
+param.optional = false;
+params.push(param);
+param = {};
+param.name = "text";
+param.type = "string";
+param.optional = false;
+params.push(param);
+return params;
+},
+_OpenResourceManagerGetArguments: function() {
+var params;
+var param;
+params = [];
+param = {};
+param.name = "fileExtensions";
+param.type = "list";
+param.contentType = "string";
+param.optional = false;
+params.push(param);
+param = {};
+param.name = "onSelectCallback";
+param.type = "Object";
+param.optional = true;
+params.push(param);
+param = {};
+param.name = "onCancelCallback";
+param.type = "Object";
+param.optional = true;
+params.push(param);
+return params;
+},
+_OpenRelationshipManagerGetArguments: function() {
+var params;
+var param;
+params = [];
+param = {};
+param.name = "editableForm";
+param.type = "CoursewareEditableForm";
+param.optional = false;
+params.push(param);
+param = {};
+param.name = "onSaveCallback";
+param.type = "Object";
+param.optional = true;
+params.push(param);
+param = {};
+param.name = "onCancelCallback";
+param.type = "Object";
+param.optional = true;
+params.push(param);
+return params;
+},
+_OpenEditDialogGetArguments: function() {
+var params;
+var param;
+params = [];
+param = {};
+param.name = "editableForm";
+param.type = "CoursewareEditableForm";
+param.optional = false;
+params.push(param);
+param = {};
+param.name = "onSaveCallback";
+param.type = "Object";
+param.optional = true;
+params.push(param);
+param = {};
+param.name = "onCancelCallback";
+param.type = "Object";
+param.optional = true;
+params.push(param);
+return params;
+},
+_ReadyGetExceptions: function() {
+var params;
+var param;
+params = [];
+return params;
+},
+_UpdateScreenDataGetExceptions: function() {
+var params;
+var param;
+params = [];
+return params;
+},
+_SetContextInformationGetExceptions: function() {
+var params;
+var param;
+params = [];
+return params;
+},
+_OpenResourceManagerGetExceptions: function() {
+var params;
+var param;
+params = [];
+return params;
+},
+_OpenRelationshipManagerGetExceptions: function() {
+var params;
+var param;
+params = [];
+return params;
+},
+_OpenEditDialogGetExceptions: function() {
+var params;
+var param;
+params = [];
+return params;
 },
 /**
  * @type {Shrewd}
@@ -909,7 +1638,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.Translation",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "cf29a84580e42a59f3b38b9b8835672de3c6043c";
+return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
 },
 /**
  * Get the name of the MooTools class.
@@ -973,7 +1702,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.LearningPath",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "cf29a84580e42a59f3b38b9b8835672de3c6043c";
+return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
 },
 /**
  * Get the name of the MooTools class.
@@ -1047,7 +1776,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.ComponentMetrics",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "cf29a84580e42a59f3b38b9b8835672de3c6043c";
+return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
 },
 /**
  * Get the name of the MooTools class.
@@ -1115,7 +1844,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.Component",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "cf29a84580e42a59f3b38b9b8835672de3c6043c";
+return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
 },
 /**
  * Get the name of the MooTools class.
@@ -1189,7 +1918,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.ComponentInstance",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "cf29a84580e42a59f3b38b9b8835672de3c6043c";
+return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
 },
 /**
  * Get the name of the MooTools class.
@@ -1259,7 +1988,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.ColumnRowMetrics",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "cf29a84580e42a59f3b38b9b8835672de3c6043c";
+return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
 },
 /**
  * Get the name of the MooTools class.
@@ -1319,7 +2048,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.Column",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "cf29a84580e42a59f3b38b9b8835672de3c6043c";
+return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
 },
 /**
  * Get the name of the MooTools class.
@@ -1402,7 +2131,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.Row",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "cf29a84580e42a59f3b38b9b8835672de3c6043c";
+return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
 },
 /**
  * Get the name of the MooTools class.
@@ -1481,7 +2210,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.Template",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "cf29a84580e42a59f3b38b9b8835672de3c6043c";
+return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
 },
 /**
  * Get the name of the MooTools class.
@@ -1564,7 +2293,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.DataRows",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "cf29a84580e42a59f3b38b9b8835672de3c6043c";
+return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
 },
 /**
  * Get the name of the MooTools class.
@@ -1638,7 +2367,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.DataColumns",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "cf29a84580e42a59f3b38b9b8835672de3c6043c";
+return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
 },
 /**
  * Get the name of the MooTools class.
@@ -1712,7 +2441,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.DataCanvas",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "cf29a84580e42a59f3b38b9b8835672de3c6043c";
+return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
 },
 /**
  * Get the name of the MooTools class.
@@ -1774,7 +2503,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.DataGrid",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "cf29a84580e42a59f3b38b9b8835672de3c6043c";
+return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
 },
 /**
  * Get the name of the MooTools class.
@@ -1870,7 +2599,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.ConfigurationData",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "cf29a84580e42a59f3b38b9b8835672de3c6043c";
+return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
 },
 /**
  * Get the name of the MooTools class.
@@ -2023,7 +2752,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.EditableFormFieldHtml",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "cf29a84580e42a59f3b38b9b8835672de3c6043c";
+return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
 },
 /**
  * Get the name of the MooTools class.
@@ -2087,7 +2816,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.EditableFormFieldSelect",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "cf29a84580e42a59f3b38b9b8835672de3c6043c";
+return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
 },
 /**
  * Get the name of the MooTools class.
@@ -2153,7 +2882,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.EditableFormFieldRange",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "cf29a84580e42a59f3b38b9b8835672de3c6043c";
+return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
 },
 /**
  * Get the name of the MooTools class.
@@ -2207,7 +2936,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.EditableFormFieldText",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "cf29a84580e42a59f3b38b9b8835672de3c6043c";
+return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
 },
 /**
  * Get the name of the MooTools class.
@@ -2277,7 +3006,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.EditableFormField",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "cf29a84580e42a59f3b38b9b8835672de3c6043c";
+return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
 },
 /**
  * Get the name of the MooTools class.
@@ -2341,7 +3070,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.EditableFormGroup",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "cf29a84580e42a59f3b38b9b8835672de3c6043c";
+return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
 },
 /**
  * Get the name of the MooTools class.
@@ -2412,7 +3141,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.EditableForm",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "cf29a84580e42a59f3b38b9b8835672de3c6043c";
+return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
 },
 /**
  * Get the name of the MooTools class.
@@ -2499,7 +3228,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.Relationship",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "cf29a84580e42a59f3b38b9b8835672de3c6043c";
+return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
 },
 /**
  * Get the name of the MooTools class.
@@ -2575,7 +3304,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.ValidRelationshipEvent",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "cf29a84580e42a59f3b38b9b8835672de3c6043c";
+return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
 },
 /**
  * Get the name of the MooTools class.
@@ -2649,7 +3378,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.ValidRelationshipAction",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "cf29a84580e42a59f3b38b9b8835672de3c6043c";
+return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
 },
 /**
  * Get the name of the MooTools class.
@@ -2726,7 +3455,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.RelationshipCollection",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "cf29a84580e42a59f3b38b9b8835672de3c6043c";
+return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
 },
 /**
  * Get the name of the MooTools class.
@@ -2820,7 +3549,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.RelationshipComponentContainer",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "cf29a84580e42a59f3b38b9b8835672de3c6043c";
+return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
 },
 /**
  * Get the name of the MooTools class.
@@ -2925,7 +3654,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.RelationshipContainer",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "cf29a84580e42a59f3b38b9b8835672de3c6043c";
+return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
 },
 /**
  * Get the name of the MooTools class.
@@ -3005,7 +3734,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.ScreenData",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "cf29a84580e42a59f3b38b9b8835672de3c6043c";
+return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
 },
 /**
  * Get the name of the MooTools class.
@@ -3132,7 +3861,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.StructureItem",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "cf29a84580e42a59f3b38b9b8835672de3c6043c";
+return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
 },
 /**
  * Get the name of the MooTools class.

@@ -12,7 +12,7 @@ public function __construct($handler) {
 $this->_handler = $handler;
 }
 public function getShrewdVersion(){
-return "cf29a84580e42a59f3b38b9b8835672de3c6043c";
+return "a410f36affc0eba0e7b371833391434b2dd6db1c";
 }
 public function getHandler(){
 return $this->_handler;
@@ -75,7 +75,7 @@ private function _GetConfigurationDataGetReturnContentType() {
 return "";
 }
 private function _SetScreenDataGetReturnType() {
-return "\\native-js-jQuery";
+return "void";
 }
 private function _SetScreenDataGetReturnContentType() {
 return "";
@@ -129,7 +129,7 @@ private function _UnhighlightComponentGetReturnContentType() {
 return "";
 }
 private function _GetValidRelationshipsGetReturnType() {
-return "\\native-js-Object";
+return "\BuildEmpire\Mosaic\Courseware\RelationshipContainer";
 }
 private function _GetValidRelationshipsGetReturnContentType() {
 return "";

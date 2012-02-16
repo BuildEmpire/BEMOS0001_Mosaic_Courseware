@@ -27,7 +27,7 @@ public $required;
  */
 public $value;
 /**
- * @var \\native-js-Object
+ * @var struct
  */
 public $data;
 public function getShrewdNS(){
@@ -41,7 +41,7 @@ $paramArray[] = $shrewd->getParameter("EditableFormField", 1, $this->name, "name
 $paramArray[] = $shrewd->getParameter("EditableFormField", 1, $this->title, "title", "string", "", false);
 $paramArray[] = $shrewd->getParameter("EditableFormField", 1, $this->required, "required", "boolean", "", false);
 $paramArray[] = $shrewd->getParameter("EditableFormField", 1, $this->value, "value", "string", "", true);
-$paramArray[] = ($shrewd->getParameter("EditableFormField", 1, $this->data, "data", "\\native-js-Object", "", true)) ? $shrewd->getParameter("EditableFormField", 1, $this->data, "data", "\\native-js-Object", "", true) : null;
+$paramArray[] = $shrewd->getParameter("EditableFormField", 1, $this->data, "data", "struct", "", true);
 return $paramArray;
 }
 public function setShrewd(
@@ -52,10 +52,6 @@ if (isset($shrewdArray[1])) {$this->name = $shrewd->setParameter("EditableFormFi
 if (isset($shrewdArray[2])) {$this->title = $shrewd->setParameter("EditableFormField", 2, $shrewdArray[2], "title", "string", "", false);}
 if (isset($shrewdArray[3])) {$this->required = $shrewd->setParameter("EditableFormField", 2, $shrewdArray[3], "required", "boolean", "", false);}
 if (isset($shrewdArray[4])) {$this->value = $shrewd->setParameter("EditableFormField", 2, $shrewdArray[4], "value", "string", "", true);}
-if ($shrewdArray[5]) {
-$theClass = new \\native-js-Object();
-$theClass->setShrewd($shrewd, $shrewdArray[5]);
-$this->data = $theClass;
-}
+if (isset($shrewdArray[5])) {$this->data = $shrewd->setParameter("EditableFormField", 2, $shrewdArray[5], "data", "struct", "", true);}
 }
 }

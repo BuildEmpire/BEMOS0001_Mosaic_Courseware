@@ -27,7 +27,7 @@ public $target;
  */
 public $action;
 /**
- * @var \\native-js-All
+ * @var mixed
  */
 public $data;
 public function getShrewdNS(){
@@ -41,7 +41,7 @@ $paramArray[] = $shrewd->getParameter("Relationship", 1, $this->source, "source"
 $paramArray[] = $shrewd->getParameter("Relationship", 1, $this->event, "event", "string", "", false);
 $paramArray[] = $shrewd->getParameter("Relationship", 1, $this->target, "target", "string", "", false);
 $paramArray[] = $shrewd->getParameter("Relationship", 1, $this->action, "action", "string", "", false);
-$paramArray[] = ($shrewd->getParameter("Relationship", 1, $this->data, "data", "\\native-js-All", "", true)) ? $shrewd->getParameter("Relationship", 1, $this->data, "data", "\\native-js-All", "", true) : null;
+$paramArray[] = $shrewd->getParameter("Relationship", 1, $this->data, "data", "mixed", "", true);
 return $paramArray;
 }
 public function setShrewd(
@@ -52,10 +52,6 @@ if (isset($shrewdArray[1])) {$this->source = $shrewd->setParameter("Relationship
 if (isset($shrewdArray[2])) {$this->event = $shrewd->setParameter("Relationship", 2, $shrewdArray[2], "event", "string", "", false);}
 if (isset($shrewdArray[3])) {$this->target = $shrewd->setParameter("Relationship", 2, $shrewdArray[3], "target", "string", "", false);}
 if (isset($shrewdArray[4])) {$this->action = $shrewd->setParameter("Relationship", 2, $shrewdArray[4], "action", "string", "", false);}
-if ($shrewdArray[5]) {
-$theClass = new \\native-js-All();
-$theClass->setShrewd($shrewd, $shrewdArray[5]);
-$this->data = $theClass;
-}
+if (isset($shrewdArray[5])) {$this->data = $shrewd->setParameter("Relationship", 2, $shrewdArray[5], "data", "mixed", "", true);}
 }
 }

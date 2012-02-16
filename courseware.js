@@ -1,14 +1,18 @@
 /**
  * Automatically Generated Shrewd File
  */
-var CoursewareConnectorInboundService = new Class({
+var BuildEmpire = BuildEmpire || {};
+BuildEmpire.Mosaic = BuildEmpire.Mosaic || {};
+BuildEmpire.Mosaic.Courseware = BuildEmpire.Mosaic.Courseware || {};
+BuildEmpire.Mosaic.Courseware.ConnectorInboundService = new Class({
+Extends:AShrewdBase,
 /**
  * Get the version of the generated shrewd file.
  * 
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
+return "a410f36affc0eba0e7b371833391434b2dd6db1c";
 },
 /**
  * Get the shrewd namespace.
@@ -24,7 +28,7 @@ return "BuildEmpire.Mosaic.Courseware.ConnectorInboundService";
  * @returns {string}
  */
 getName : function(){
-return "CoursewareConnectorInboundService";
+return "BuildEmpire.Mosaic.Courseware.ConnectorInboundService";
 },
 /**
  * @param {Object} OutboundService
@@ -36,7 +40,7 @@ var parametersArray = new Array();
 if (this._shrewd.isLocal && this._shrewd.isServer) {
 parametersArray.push(OutboundService);
 } else {
-parametersArray.push(OutboundService);
+
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
@@ -60,7 +64,7 @@ var parametersArray = new Array();
 if (this._shrewd.isLocal && this._shrewd.isServer) {
 parametersArray.push(mode);
 } else {
-parametersArray.push(mode);
+parametersArray.push(this._getShrewd(mode, "integer", ""));
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
@@ -84,7 +88,7 @@ var parametersArray = new Array();
 if (this._shrewd.isLocal && this._shrewd.isServer) {
 parametersArray.push(scale);
 } else {
-parametersArray.push(scale);
+parametersArray.push(this._getShrewd(scale, "float", ""));
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
@@ -150,7 +154,7 @@ var parametersArray = new Array();
 if (this._shrewd.isLocal && this._shrewd.isServer) {
 parametersArray.push(transformation);
 } else {
-parametersArray.push(transformation);
+parametersArray.push(this._getShrewd(transformation, "float", ""));
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
@@ -186,7 +190,7 @@ exceptionsArray
 }
 },
 /**
- * @param {CoursewareConfigurationData}
+ * @param {BuildEmpire.Mosaic.Courseware.ConfigurationData}
  * @returns {void} 
  */
 SetConfigurationData: function(configurationData){
@@ -195,7 +199,7 @@ var parametersArray = new Array();
 if (this._shrewd.isLocal && this._shrewd.isServer) {
 parametersArray.push(configurationData);
 } else {
-parametersArray.push((configurationData) ? configurationData.getShrewd() : null);
+parametersArray.push(this._getShrewd(configurationData, "courseware.ConfigurationData", ""));
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
@@ -210,7 +214,7 @@ exceptionsArray
 }
 },
 /**
- * @returns {CoursewareConfigurationData}
+ * @returns {BuildEmpire.Mosaic.Courseware.ConfigurationData}
  */
 GetConfigurationData: function(){
 if (this._shrewd) {
@@ -224,14 +228,14 @@ this.getShrewdVersion(),
 (this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
 "GetConfigurationData",
 parametersArray,
-"CoursewareConfigurationData",
+"BuildEmpire.Mosaic.Courseware.ConfigurationData",
 "",
 exceptionsArray
 );
 }
 },
 /**
- * @param {CoursewareScreenData}
+ * @param {BuildEmpire.Mosaic.Courseware.ScreenData}
  * @returns {void} 
  */
 SetScreenData: function(screenData){
@@ -240,7 +244,7 @@ var parametersArray = new Array();
 if (this._shrewd.isLocal && this._shrewd.isServer) {
 parametersArray.push(screenData);
 } else {
-parametersArray.push((screenData) ? screenData.getShrewd() : null);
+parametersArray.push(this._getShrewd(screenData, "courseware.ScreenData", ""));
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
@@ -255,7 +259,7 @@ exceptionsArray
 }
 },
 /**
- * @returns {CoursewareScreenData}
+ * @returns {BuildEmpire.Mosaic.Courseware.ScreenData}
  */
 GetScreenData: function(){
 if (this._shrewd) {
@@ -269,7 +273,7 @@ this.getShrewdVersion(),
 (this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
 "GetScreenData",
 parametersArray,
-"CoursewareScreenData",
+"BuildEmpire.Mosaic.Courseware.ScreenData",
 "",
 exceptionsArray
 );
@@ -318,7 +322,7 @@ exceptionsArray
 }
 },
 /**
- * @param {string} componentName
+ * @param {String} componentName
  * @returns {void} 
  */
 AddComponent: function(componentName){
@@ -327,7 +331,7 @@ var parametersArray = new Array();
 if (this._shrewd.isLocal && this._shrewd.isServer) {
 parametersArray.push(componentName);
 } else {
-parametersArray.push(componentName);
+parametersArray.push(this._getShrewd(componentName, "string", ""));
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
@@ -342,7 +346,7 @@ exceptionsArray
 }
 },
 /**
- * @param {string} id
+ * @param {String} id
  * @returns {void} 
  */
 HighlightColumn: function(id){
@@ -351,7 +355,7 @@ var parametersArray = new Array();
 if (this._shrewd.isLocal && this._shrewd.isServer) {
 parametersArray.push(id);
 } else {
-parametersArray.push(id);
+parametersArray.push(this._getShrewd(id, "string", ""));
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
@@ -366,7 +370,7 @@ exceptionsArray
 }
 },
 /**
- * @param {string} id
+ * @param {String} id
  * @returns {void} 
  */
 UnhighlightColumn: function(id){
@@ -375,7 +379,7 @@ var parametersArray = new Array();
 if (this._shrewd.isLocal && this._shrewd.isServer) {
 parametersArray.push(id);
 } else {
-parametersArray.push(id);
+parametersArray.push(this._getShrewd(id, "string", ""));
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
@@ -390,7 +394,7 @@ exceptionsArray
 }
 },
 /**
- * @param {string} id
+ * @param {String} id
  * @returns {void} 
  */
 HighlightComponent: function(id){
@@ -399,7 +403,7 @@ var parametersArray = new Array();
 if (this._shrewd.isLocal && this._shrewd.isServer) {
 parametersArray.push(id);
 } else {
-parametersArray.push(id);
+parametersArray.push(this._getShrewd(id, "string", ""));
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
@@ -414,7 +418,7 @@ exceptionsArray
 }
 },
 /**
- * @param {string} id
+ * @param {String} id
  * @returns {void} 
  */
 UnhighlightComponent: function(id){
@@ -423,7 +427,7 @@ var parametersArray = new Array();
 if (this._shrewd.isLocal && this._shrewd.isServer) {
 parametersArray.push(id);
 } else {
-parametersArray.push(id);
+parametersArray.push(this._getShrewd(id, "string", ""));
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
@@ -438,7 +442,7 @@ exceptionsArray
 }
 },
 /**
- * @returns {CoursewareRelationshipContainer}
+ * @returns {BuildEmpire.Mosaic.Courseware.RelationshipContainer}
  */
 GetValidRelationships: function(){
 if (this._shrewd) {
@@ -452,14 +456,14 @@ this.getShrewdVersion(),
 (this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
 "GetValidRelationships",
 parametersArray,
-"CoursewareRelationshipContainer",
+"BuildEmpire.Mosaic.Courseware.RelationshipContainer",
 "",
 exceptionsArray
 );
 }
 },
 /**
- * @param {string} componentName
+ * @param {String} componentName
  * @returns {Object} 
  */
 GetValidComponentRelationships: function(componentName){
@@ -468,7 +472,7 @@ var parametersArray = new Array();
 if (this._shrewd.isLocal && this._shrewd.isServer) {
 parametersArray.push(componentName);
 } else {
-parametersArray.push(componentName);
+parametersArray.push(this._getShrewd(componentName, "string", ""));
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
@@ -525,7 +529,7 @@ exceptionsArray
 }
 },
 /**
- * @param {string} relationshipId
+ * @param {String} relationshipId
  * @returns {void} 
  */
 ShowVisualRelationship: function(relationshipId){
@@ -534,7 +538,7 @@ var parametersArray = new Array();
 if (this._shrewd.isLocal && this._shrewd.isServer) {
 parametersArray.push(relationshipId);
 } else {
-parametersArray.push(relationshipId);
+parametersArray.push(this._getShrewd(relationshipId, "string", ""));
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
@@ -549,7 +553,7 @@ exceptionsArray
 }
 },
 /**
- * @param {string} relationshipId
+ * @param {String} relationshipId
  * @returns {void} 
  */
 HideVisualRelationship: function(relationshipId){
@@ -558,7 +562,7 @@ var parametersArray = new Array();
 if (this._shrewd.isLocal && this._shrewd.isServer) {
 parametersArray.push(relationshipId);
 } else {
-parametersArray.push(relationshipId);
+parametersArray.push(this._getShrewd(relationshipId, "string", ""));
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
@@ -582,7 +586,7 @@ var parametersArray = new Array();
 if (this._shrewd.isLocal && this._shrewd.isServer) {
 parametersArray.push(relationshipsData);
 } else {
-if (relationshipsData) {var l=relationshipsData.length;var lArray = new Array();for (var a=0; a<l; a++) {lArray.push((relationshipsData[a]) ? relationshipsData[a].getShrewd() : null);}parametersArray.push(lArray);} else {parametersArray.push(relationshipsData)}
+parametersArray.push(this._getShrewd(relationshipsData, "list", "courseware.Relationship"));
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
@@ -612,7 +616,7 @@ this.getShrewdVersion(),
 "GetRelationshipsData",
 parametersArray,
 "list",
-"CoursewareRelationship",
+"BuildEmpire.Mosaic.Courseware.Relationship",
 exceptionsArray
 );
 }
@@ -666,7 +670,7 @@ _SetConfigurationDataGetReturnContentType: function() {
 return "";
 },
 _GetConfigurationDataGetReturnType: function() {
-return "CoursewareConfigurationData";
+return "BuildEmpire.Mosaic.Courseware.ConfigurationData";
 },
 _GetConfigurationDataGetReturnContentType: function() {
 return "";
@@ -678,7 +682,7 @@ _SetScreenDataGetReturnContentType: function() {
 return "";
 },
 _GetScreenDataGetReturnType: function() {
-return "CoursewareScreenData";
+return "BuildEmpire.Mosaic.Courseware.ScreenData";
 },
 _GetScreenDataGetReturnContentType: function() {
 return "";
@@ -726,7 +730,7 @@ _UnhighlightComponentGetReturnContentType: function() {
 return "";
 },
 _GetValidRelationshipsGetReturnType: function() {
-return "CoursewareRelationshipContainer";
+return "BuildEmpire.Mosaic.Courseware.RelationshipContainer";
 },
 _GetValidRelationshipsGetReturnContentType: function() {
 return "";
@@ -771,7 +775,7 @@ _GetRelationshipsDataGetReturnType: function() {
 return "list";
 },
 _GetRelationshipsDataGetReturnContentType: function() {
-return "CoursewareRelationship";
+return "BuildEmpire.Mosaic.Courseware.Relationship";
 },
 _ReadyGetArguments: function() {
 var params;
@@ -841,7 +845,7 @@ var param;
 params = [];
 param = {};
 param.name = "configurationData";
-param.type = "CoursewareConfigurationData";
+param.type = "BuildEmpire.Mosaic.Courseware.ConfigurationData";
 param.optional = false;
 params.push(param);
 return params;
@@ -858,7 +862,7 @@ var param;
 params = [];
 param = {};
 param.name = "screenData";
-param.type = "CoursewareScreenData";
+param.type = "BuildEmpire.Mosaic.Courseware.ScreenData";
 param.optional = false;
 params.push(param);
 return params;
@@ -994,7 +998,7 @@ params = [];
 param = {};
 param.name = "relationshipsData";
 param.type = "list";
-param.contentType = "CoursewareRelationship";
+param.contentType = "BuildEmpire.Mosaic.Courseware.Relationship";
 param.optional = false;
 params.push(param);
 return params;
@@ -1175,7 +1179,7 @@ initialize: function(shrewdObject){
 if (shrewdObject instanceof AShrewd) {
 this._shrewd = shrewdObject;
 } else {
-alert ('The object passed to CoursewareConnectorInboundService is not an instance of AShrewd.');
+alert ('The object passed to BuildEmpire.Mosaic.Courseware.ConnectorInboundService is not an instance of AShrewd.');
 }
 },
 /**
@@ -1190,14 +1194,18 @@ return this._shrewd;
 /**
  * Automatically Generated Shrewd File
  */
-var CoursewareConnectorOutboundService = new Class({
+var BuildEmpire = BuildEmpire || {};
+BuildEmpire.Mosaic = BuildEmpire.Mosaic || {};
+BuildEmpire.Mosaic.Courseware = BuildEmpire.Mosaic.Courseware || {};
+BuildEmpire.Mosaic.Courseware.ConnectorOutboundService = new Class({
+Extends:AShrewdBase,
 /**
  * Get the version of the generated shrewd file.
  * 
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
+return "a410f36affc0eba0e7b371833391434b2dd6db1c";
 },
 /**
  * Get the shrewd namespace.
@@ -1213,7 +1221,7 @@ return "BuildEmpire.Mosaic.Courseware.ConnectorOutboundService";
  * @returns {string}
  */
 getName : function(){
-return "CoursewareConnectorOutboundService";
+return "BuildEmpire.Mosaic.Courseware.ConnectorOutboundService";
 },
 /**
  * @returns {void} 
@@ -1237,7 +1245,7 @@ exceptionsArray
 }
 },
 /**
- * @param {CoursewareScreenData}
+ * @param {BuildEmpire.Mosaic.Courseware.ScreenData}
  * @returns {void} 
  */
 UpdateScreenData: function(sScreenData){
@@ -1246,7 +1254,7 @@ var parametersArray = new Array();
 if (this._shrewd.isLocal && this._shrewd.isServer) {
 parametersArray.push(sScreenData);
 } else {
-parametersArray.push((sScreenData) ? sScreenData.getShrewd() : null);
+parametersArray.push(this._getShrewd(sScreenData, "courseware.ScreenData", ""));
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
@@ -1262,7 +1270,7 @@ exceptionsArray
 },
 /**
  * @param {integer} context
- * @param {string} text
+ * @param {String} text
  * @returns {void} 
  */
 SetContextInformation: function(context, text){
@@ -1272,8 +1280,8 @@ if (this._shrewd.isLocal && this._shrewd.isServer) {
 parametersArray.push(context);
 parametersArray.push(text);
 } else {
-parametersArray.push(context);
-parametersArray.push(text);
+parametersArray.push(this._getShrewd(context, "integer", ""));
+parametersArray.push(this._getShrewd(text, "string", ""));
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
@@ -1301,9 +1309,9 @@ parametersArray.push(fileExtensions);
 parametersArray.push(onSelectCallback);
 parametersArray.push(onCancelCallback);
 } else {
-if (fileExtensions) {var l=fileExtensions.length;var lArray = new Array();for (var a=0; a<l; a++) {lArray.push(fileExtensions[a]);}parametersArray.push(lArray);} else {parametersArray.push(fileExtensions)}
-parametersArray.push(onSelectCallback);
-parametersArray.push(onCancelCallback);
+parametersArray.push(this._getShrewd(fileExtensions, "list", "string"));
+
+
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
@@ -1318,7 +1326,7 @@ exceptionsArray
 }
 },
 /**
- * @param {CoursewareEditableForm}
+ * @param {BuildEmpire.Mosaic.Courseware.EditableForm}
  * @param {Object} onSaveCallback
  * @param {Object} onCancelCallback
  * @returns {void} 
@@ -1331,9 +1339,9 @@ parametersArray.push(editableForm);
 parametersArray.push(onSaveCallback);
 parametersArray.push(onCancelCallback);
 } else {
-parametersArray.push((editableForm) ? editableForm.getShrewd() : null);
-parametersArray.push(onSaveCallback);
-parametersArray.push(onCancelCallback);
+parametersArray.push(this._getShrewd(editableForm, "courseware.EditableForm", ""));
+
+
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
@@ -1348,7 +1356,7 @@ exceptionsArray
 }
 },
 /**
- * @param {CoursewareEditableForm}
+ * @param {BuildEmpire.Mosaic.Courseware.EditableForm}
  * @param {Object} onSaveCallback
  * @param {Object} onCancelCallback
  * @returns {void} 
@@ -1361,9 +1369,9 @@ parametersArray.push(editableForm);
 parametersArray.push(onSaveCallback);
 parametersArray.push(onCancelCallback);
 } else {
-parametersArray.push((editableForm) ? editableForm.getShrewd() : null);
-parametersArray.push(onSaveCallback);
-parametersArray.push(onCancelCallback);
+parametersArray.push(this._getShrewd(editableForm, "courseware.EditableForm", ""));
+
+
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
@@ -1425,7 +1433,7 @@ var param;
 params = [];
 param = {};
 param.name = "sScreenData";
-param.type = "CoursewareScreenData";
+param.type = "BuildEmpire.Mosaic.Courseware.ScreenData";
 param.optional = false;
 params.push(param);
 return params;
@@ -1474,7 +1482,7 @@ var param;
 params = [];
 param = {};
 param.name = "editableForm";
-param.type = "CoursewareEditableForm";
+param.type = "BuildEmpire.Mosaic.Courseware.EditableForm";
 param.optional = false;
 params.push(param);
 param = {};
@@ -1495,7 +1503,7 @@ var param;
 params = [];
 param = {};
 param.name = "editableForm";
-param.type = "CoursewareEditableForm";
+param.type = "BuildEmpire.Mosaic.Courseware.EditableForm";
 param.optional = false;
 params.push(param);
 param = {};
@@ -1560,7 +1568,7 @@ initialize: function(shrewdObject){
 if (shrewdObject instanceof AShrewd) {
 this._shrewd = shrewdObject;
 } else {
-alert ('The object passed to CoursewareConnectorOutboundService is not an instance of AShrewd.');
+alert ('The object passed to BuildEmpire.Mosaic.Courseware.ConnectorOutboundService is not an instance of AShrewd.');
 }
 },
 /**
@@ -1575,45 +1583,76 @@ return this._shrewd;
 /**
  * Automatically Generated Shrewd File
  */
-var CoursewareMode = {"SCREEN_EDITOR" : 1, "SCREEN_DISPLAY" : 2};
+var BuildEmpire = BuildEmpire || {};
+BuildEmpire.Mosaic = BuildEmpire.Mosaic || {};
+BuildEmpire.Mosaic.Courseware = BuildEmpire.Mosaic.Courseware || {};
+BuildEmpire.Mosaic.Courseware.Mode = {"SCREEN_EDITOR" : 1, "SCREEN_DISPLAY" : 2};
 /**
  * Automatically Generated Shrewd File
  */
-var CoursewareContext = {"GENERAL" : 1, "POSITION" : 2};
+var BuildEmpire = BuildEmpire || {};
+BuildEmpire.Mosaic = BuildEmpire.Mosaic || {};
+BuildEmpire.Mosaic.Courseware = BuildEmpire.Mosaic.Courseware || {};
+BuildEmpire.Mosaic.Courseware.Context = {"GENERAL" : 1, "POSITION" : 2};
 /**
  * Automatically Generated Shrewd File
  */
-var CoursewareScalingMode = {"FREE" : 1, "RATIO" : 2, "XAXIS" : 3, "YAXIS" : 4};
+var BuildEmpire = BuildEmpire || {};
+BuildEmpire.Mosaic = BuildEmpire.Mosaic || {};
+BuildEmpire.Mosaic.Courseware = BuildEmpire.Mosaic.Courseware || {};
+BuildEmpire.Mosaic.Courseware.ScalingMode = {"FREE" : 1, "RATIO" : 2, "XAXIS" : 3, "YAXIS" : 4};
 /**
  * Automatically Generated Shrewd File
  */
-var CoursewareLearningPathFulfilmentType = {"NONE" : 1, "CHILDREN" : 2, "ALL" : 3};
+var BuildEmpire = BuildEmpire || {};
+BuildEmpire.Mosaic = BuildEmpire.Mosaic || {};
+BuildEmpire.Mosaic.Courseware = BuildEmpire.Mosaic.Courseware || {};
+BuildEmpire.Mosaic.Courseware.LearningPathFulfilmentType = {"NONE" : 1, "CHILDREN" : 2, "ALL" : 3};
 /**
  * Automatically Generated Shrewd File
  */
-var CoursewareDragMode = {"FREE" : 1, "COLUMNS" : 2, "ALL" : 3};
+var BuildEmpire = BuildEmpire || {};
+BuildEmpire.Mosaic = BuildEmpire.Mosaic || {};
+BuildEmpire.Mosaic.Courseware = BuildEmpire.Mosaic.Courseware || {};
+BuildEmpire.Mosaic.Courseware.DragMode = {"FREE" : 1, "COLUMNS" : 2, "ALL" : 3};
 /**
  * Automatically Generated Shrewd File
  */
-var CoursewareEditableFormFieldType = {"TEXT" : 1, "PASSWORD" : 2, "TEXTAREA" : 3, "HTML" : 4, "SELECT" : 5, "CHECKBOX" : 6, "RADIO" : 7, "RANGE" : 8};
+var BuildEmpire = BuildEmpire || {};
+BuildEmpire.Mosaic = BuildEmpire.Mosaic || {};
+BuildEmpire.Mosaic.Courseware = BuildEmpire.Mosaic.Courseware || {};
+BuildEmpire.Mosaic.Courseware.EditableFormFieldType = {"TEXT" : 1, "PASSWORD" : 2, "TEXTAREA" : 3, "HTML" : 4, "SELECT" : 5, "CHECKBOX" : 6, "RADIO" : 7, "RANGE" : 8};
 /**
  * Automatically Generated Shrewd File
  */
-var CoursewareStructureItemType = {"PROJECT" : 1, "FOLDER" : 2, "SCREEN" : 3};
+var BuildEmpire = BuildEmpire || {};
+BuildEmpire.Mosaic = BuildEmpire.Mosaic || {};
+BuildEmpire.Mosaic.Courseware = BuildEmpire.Mosaic.Courseware || {};
+BuildEmpire.Mosaic.Courseware.StructureItemType = {"PROJECT" : 1, "FOLDER" : 2, "SCREEN" : 3};
 /**
  * Automatically Generated Shrewd File
  */
-var CoursewareEventsInbound = {"READY" : "READY", "SCALE" : "SCALE", "DATA_CONFIGURATION" : "DATA_CONFIGURATION", "DATA_SCREEN" : "DATA_SCREEN", "DRAW" : "DRAW", "COLUMN_ADD" : "COLUMN_ADD", "COLUMN_HIGHLIGHT" : "COLUMN_HIGHLIGHT", "COLUMN_UNHIGHLIGHT" : "COLUMN_UNHIGHLIGHT", "COMPONENT_ADD" : "COMPONENT_ADD"};
+var BuildEmpire = BuildEmpire || {};
+BuildEmpire.Mosaic = BuildEmpire.Mosaic || {};
+BuildEmpire.Mosaic.Courseware = BuildEmpire.Mosaic.Courseware || {};
+BuildEmpire.Mosaic.Courseware.EventsInbound = {"READY" : "READY", "SCALE" : "SCALE", "DATA_CONFIGURATION" : "DATA_CONFIGURATION", "DATA_SCREEN" : "DATA_SCREEN", "DRAW" : "DRAW", "COLUMN_ADD" : "COLUMN_ADD", "COLUMN_HIGHLIGHT" : "COLUMN_HIGHLIGHT", "COLUMN_UNHIGHLIGHT" : "COLUMN_UNHIGHLIGHT", "COMPONENT_ADD" : "COMPONENT_ADD"};
 /**
  * Automatically Generated Shrewd File
  */
-var CoursewareEventsOutbound = {"READY" : "READY", "MODE" : "MODE", "CONTEXT" : "CONTEXT", "UPDATE" : "UPDATE"};
+var BuildEmpire = BuildEmpire || {};
+BuildEmpire.Mosaic = BuildEmpire.Mosaic || {};
+BuildEmpire.Mosaic.Courseware = BuildEmpire.Mosaic.Courseware || {};
+BuildEmpire.Mosaic.Courseware.EventsOutbound = {"READY" : "READY", "MODE" : "MODE", "CONTEXT" : "CONTEXT", "UPDATE" : "UPDATE"};
 /**
  * Automatically Generated Shrewd File
  */
-var CoursewareTranslation = new Class({
+var BuildEmpire = BuildEmpire || {};
+BuildEmpire.Mosaic = BuildEmpire.Mosaic || {};
+BuildEmpire.Mosaic.Courseware = BuildEmpire.Mosaic.Courseware || {};
+BuildEmpire.Mosaic.Courseware.Translation = new Class({
+Extends:AShrewdBase,
 /**
- * @type {string} id (ID).
+ * @type {String} id (ID).
  */
 id : null,
 /**
@@ -1621,11 +1660,11 @@ id : null,
  */
 base : false,
 /**
- * @type {string} name
+ * @type {String} name
  */
 name : null,
 /**
- * @type {string} value
+ * @type {String} value
  */
 value : null,
 /**
@@ -1638,7 +1677,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.Translation",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
+return "a410f36affc0eba0e7b371833391434b2dd6db1c";
 },
 /**
  * Get the name of the MooTools class.
@@ -1646,7 +1685,7 @@ return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
  * @returns {string}
  */
 getName : function(){
-return "CoursewareTranslation";
+return "BuildEmpire.Mosaic.Courseware.Translation";
 },
 /**
  * Get the content as a shrewd array.
@@ -1655,10 +1694,10 @@ return "CoursewareTranslation";
  */
 getShrewd: function(){
 var parametersArray = new Array();
-parametersArray.push(this.id);
-parametersArray.push(this.base);
-parametersArray.push(this.name);
-parametersArray.push(this.value);
+parametersArray.push(this._getShrewd(this.id, "string-id", ""));
+parametersArray.push(this._getShrewd(this.base, "boolean", ""));
+parametersArray.push(this._getShrewd(this.name, "string", ""));
+parametersArray.push(this._getShrewd(this.value, "string", ""));
 return parametersArray;
 },
 /**
@@ -1668,10 +1707,10 @@ return parametersArray;
  * @returns {null} 
  */
 setShrewd: function(shrewdArray){
-this.id = shrewdArray[0];
-this.base = shrewdArray[1];
-this.name = shrewdArray[2];
-this.value = shrewdArray[3];
+this.id = this._setShrewd(shrewdArray[0],"string-id","");
+this.base = this._setShrewd(shrewdArray[1],"boolean","");
+this.name = this._setShrewd(shrewdArray[2],"string","");
+this.value = this._setShrewd(shrewdArray[3],"string","");
 },
 initialize: function(){
 }
@@ -1679,9 +1718,13 @@ initialize: function(){
 /**
  * Automatically Generated Shrewd File
  */
-var CoursewareLearningPath = new Class({
+var BuildEmpire = BuildEmpire || {};
+BuildEmpire.Mosaic = BuildEmpire.Mosaic || {};
+BuildEmpire.Mosaic.Courseware = BuildEmpire.Mosaic.Courseware || {};
+BuildEmpire.Mosaic.Courseware.LearningPath = new Class({
+Extends:AShrewdBase,
 /**
- * @type {string} id (ID).
+ * @type {String} id (ID).
  */
 id : null,
 /**
@@ -1689,7 +1732,7 @@ id : null,
  */
 base : false,
 /**
- * @type {string} name
+ * @type {String} name
  */
 name : null,
 /**
@@ -1702,7 +1745,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.LearningPath",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
+return "a410f36affc0eba0e7b371833391434b2dd6db1c";
 },
 /**
  * Get the name of the MooTools class.
@@ -1710,7 +1753,7 @@ return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
  * @returns {string}
  */
 getName : function(){
-return "CoursewareLearningPath";
+return "BuildEmpire.Mosaic.Courseware.LearningPath";
 },
 /**
  * Get the content as a shrewd array.
@@ -1719,9 +1762,9 @@ return "CoursewareLearningPath";
  */
 getShrewd: function(){
 var parametersArray = new Array();
-parametersArray.push(this.id);
-parametersArray.push(this.base);
-parametersArray.push(this.name);
+parametersArray.push(this._getShrewd(this.id, "string-id", ""));
+parametersArray.push(this._getShrewd(this.base, "boolean", ""));
+parametersArray.push(this._getShrewd(this.name, "string", ""));
 return parametersArray;
 },
 /**
@@ -1731,9 +1774,9 @@ return parametersArray;
  * @returns {null} 
  */
 setShrewd: function(shrewdArray){
-this.id = shrewdArray[0];
-this.base = shrewdArray[1];
-this.name = shrewdArray[2];
+this.id = this._setShrewd(shrewdArray[0],"string-id","");
+this.base = this._setShrewd(shrewdArray[1],"boolean","");
+this.name = this._setShrewd(shrewdArray[2],"string","");
 },
 initialize: function(){
 }
@@ -1741,7 +1784,11 @@ initialize: function(){
 /**
  * Automatically Generated Shrewd File
  */
-var CoursewareComponentMetrics = new Class({
+var BuildEmpire = BuildEmpire || {};
+BuildEmpire.Mosaic = BuildEmpire.Mosaic || {};
+BuildEmpire.Mosaic.Courseware = BuildEmpire.Mosaic.Courseware || {};
+BuildEmpire.Mosaic.Courseware.ComponentMetrics = new Class({
+Extends:AShrewdBase,
 /**
  * @type {float} xPercent
  */
@@ -1776,7 +1823,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.ComponentMetrics",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
+return "a410f36affc0eba0e7b371833391434b2dd6db1c";
 },
 /**
  * Get the name of the MooTools class.
@@ -1784,7 +1831,7 @@ return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
  * @returns {string}
  */
 getName : function(){
-return "CoursewareComponentMetrics";
+return "BuildEmpire.Mosaic.Courseware.ComponentMetrics";
 },
 /**
  * Get the content as a shrewd array.
@@ -1793,12 +1840,12 @@ return "CoursewareComponentMetrics";
  */
 getShrewd: function(){
 var parametersArray = new Array();
-parametersArray.push(this.xPercent);
-parametersArray.push(this.yPercent);
-parametersArray.push(this.widthPercent);
-parametersArray.push(this.heightPercent);
-parametersArray.push(this.tabIndex);
-parametersArray.push(this.zIndex);
+parametersArray.push(this._getShrewd(this.xPercent, "float", ""));
+parametersArray.push(this._getShrewd(this.yPercent, "float", ""));
+parametersArray.push(this._getShrewd(this.widthPercent, "float", ""));
+parametersArray.push(this._getShrewd(this.heightPercent, "float", ""));
+parametersArray.push(this._getShrewd(this.tabIndex, "integer", ""));
+parametersArray.push(this._getShrewd(this.zIndex, "integer", ""));
 return parametersArray;
 },
 /**
@@ -1808,12 +1855,12 @@ return parametersArray;
  * @returns {null} 
  */
 setShrewd: function(shrewdArray){
-this.xPercent = shrewdArray[0];
-this.yPercent = shrewdArray[1];
-this.widthPercent = shrewdArray[2];
-this.heightPercent = shrewdArray[3];
-this.tabIndex = shrewdArray[4];
-this.zIndex = shrewdArray[5];
+this.xPercent = this._setShrewd(shrewdArray[0],"float","");
+this.yPercent = this._setShrewd(shrewdArray[1],"float","");
+this.widthPercent = this._setShrewd(shrewdArray[2],"float","");
+this.heightPercent = this._setShrewd(shrewdArray[3],"float","");
+this.tabIndex = this._setShrewd(shrewdArray[4],"integer","");
+this.zIndex = this._setShrewd(shrewdArray[5],"integer","");
 },
 initialize: function(){
 }
@@ -1821,13 +1868,17 @@ initialize: function(){
 /**
  * Automatically Generated Shrewd File
  */
-var CoursewareComponent = new Class({
+var BuildEmpire = BuildEmpire || {};
+BuildEmpire.Mosaic = BuildEmpire.Mosaic || {};
+BuildEmpire.Mosaic.Courseware = BuildEmpire.Mosaic.Courseware || {};
+BuildEmpire.Mosaic.Courseware.Component = new Class({
+Extends:AShrewdBase,
 /**
- * @type {string} name
+ * @type {String} name
  */
 name : null,
 /**
- * @type {string} title
+ * @type {String} title
  */
 title : null,
 /**
@@ -1844,7 +1895,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.Component",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
+return "a410f36affc0eba0e7b371833391434b2dd6db1c";
 },
 /**
  * Get the name of the MooTools class.
@@ -1852,7 +1903,7 @@ return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
  * @returns {string}
  */
 getName : function(){
-return "CoursewareComponent";
+return "BuildEmpire.Mosaic.Courseware.Component";
 },
 /**
  * Get the content as a shrewd array.
@@ -1861,9 +1912,9 @@ return "CoursewareComponent";
  */
 getShrewd: function(){
 var parametersArray = new Array();
-parametersArray.push(this.name);
-parametersArray.push(this.title);
-parametersArray.push(this.active);
+parametersArray.push(this._getShrewd(this.name, "string", ""));
+parametersArray.push(this._getShrewd(this.title, "string", ""));
+parametersArray.push(this._getShrewd(this.active, "integer", ""));
 return parametersArray;
 },
 /**
@@ -1873,9 +1924,9 @@ return parametersArray;
  * @returns {null} 
  */
 setShrewd: function(shrewdArray){
-this.name = shrewdArray[0];
-this.title = shrewdArray[1];
-this.active = shrewdArray[2];
+this.name = this._setShrewd(shrewdArray[0],"string","");
+this.title = this._setShrewd(shrewdArray[1],"string","");
+this.active = this._setShrewd(shrewdArray[2],"integer","");
 },
 initialize: function(){
 }
@@ -1883,17 +1934,21 @@ initialize: function(){
 /**
  * Automatically Generated Shrewd File
  */
-var CoursewareComponentInstance = new Class({
+var BuildEmpire = BuildEmpire || {};
+BuildEmpire.Mosaic = BuildEmpire.Mosaic || {};
+BuildEmpire.Mosaic.Courseware = BuildEmpire.Mosaic.Courseware || {};
+BuildEmpire.Mosaic.Courseware.ComponentInstance = new Class({
+Extends:AShrewdBase,
 /**
- * @type {string} id (ID).
+ * @type {String} id (ID).
  */
 id : null,
 /**
- * @type {string} alias
+ * @type {String} alias
  */
 alias : null,
 /**
- * @type {string} name
+ * @type {String} name
  */
 name : null,
 /**
@@ -1901,7 +1956,7 @@ name : null,
  */
 data : null,
 /**
- * @type {CoursewareComponentMetrics}
+ * @type {BuildEmpire.Mosaic.Courseware.ComponentMetrics}
  */
 metrics : null,
 /**
@@ -1918,7 +1973,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.ComponentInstance",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
+return "a410f36affc0eba0e7b371833391434b2dd6db1c";
 },
 /**
  * Get the name of the MooTools class.
@@ -1926,7 +1981,7 @@ return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
  * @returns {string}
  */
 getName : function(){
-return "CoursewareComponentInstance";
+return "BuildEmpire.Mosaic.Courseware.ComponentInstance";
 },
 /**
  * Get the content as a shrewd array.
@@ -1935,12 +1990,12 @@ return "CoursewareComponentInstance";
  */
 getShrewd: function(){
 var parametersArray = new Array();
-parametersArray.push(this.id);
-parametersArray.push(this.alias);
-parametersArray.push(this.name);
-parametersArray.push(this.data);
-parametersArray.push((this.metrics) ? this.metrics.getShrewd() : null);
-parametersArray.push(this.scale);
+parametersArray.push(this._getShrewd(this.id, "string-id", ""));
+parametersArray.push(this._getShrewd(this.alias, "string", ""));
+parametersArray.push(this._getShrewd(this.name, "string", ""));
+parametersArray.push(this._getShrewd(this.data, "map", ""));
+parametersArray.push(this._getShrewd(this.metrics, "courseware.ComponentMetrics", ""));
+parametersArray.push(this._getShrewd(this.scale, "integer", ""));
 return parametersArray;
 },
 /**
@@ -1950,18 +2005,12 @@ return parametersArray;
  * @returns {null} 
  */
 setShrewd: function(shrewdArray){
-this.id = shrewdArray[0];
-this.alias = shrewdArray[1];
-this.name = shrewdArray[2];
-this.data = shrewdArray[3];
-if (shrewdArray[4]) {
-var theClass = new CoursewareComponentMetrics();
-theClass.setShrewd(shrewdArray[4]);
-this.metrics = theClass;
-} else {
-this.metrics = null;
-}
-this.scale = shrewdArray[5];
+this.id = this._setShrewd(shrewdArray[0],"string-id","");
+this.alias = this._setShrewd(shrewdArray[1],"string","");
+this.name = this._setShrewd(shrewdArray[2],"string","");
+this.data = this._setShrewd(shrewdArray[3],"map","");
+this.metrics = this._setShrewd(shrewdArray[4],"courseware.ComponentMetrics","");
+this.scale = this._setShrewd(shrewdArray[5],"integer","");
 },
 initialize: function(){
 }
@@ -1969,7 +2018,11 @@ initialize: function(){
 /**
  * Automatically Generated Shrewd File
  */
-var CoursewareColumnRowMetrics = new Class({
+var BuildEmpire = BuildEmpire || {};
+BuildEmpire.Mosaic = BuildEmpire.Mosaic || {};
+BuildEmpire.Mosaic.Courseware = BuildEmpire.Mosaic.Courseware || {};
+BuildEmpire.Mosaic.Courseware.ColumnRowMetrics = new Class({
+Extends:AShrewdBase,
 /**
  * @type {float} widthPercent
  */
@@ -1988,7 +2041,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.ColumnRowMetrics",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
+return "a410f36affc0eba0e7b371833391434b2dd6db1c";
 },
 /**
  * Get the name of the MooTools class.
@@ -1996,7 +2049,7 @@ return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
  * @returns {string}
  */
 getName : function(){
-return "CoursewareColumnRowMetrics";
+return "BuildEmpire.Mosaic.Courseware.ColumnRowMetrics";
 },
 /**
  * Get the content as a shrewd array.
@@ -2005,8 +2058,8 @@ return "CoursewareColumnRowMetrics";
  */
 getShrewd: function(){
 var parametersArray = new Array();
-parametersArray.push(this.widthPercent);
-parametersArray.push(this.heightPercent);
+parametersArray.push(this._getShrewd(this.widthPercent, "float", ""));
+parametersArray.push(this._getShrewd(this.heightPercent, "float", ""));
 return parametersArray;
 },
 /**
@@ -2016,8 +2069,8 @@ return parametersArray;
  * @returns {null} 
  */
 setShrewd: function(shrewdArray){
-this.widthPercent = shrewdArray[0];
-this.heightPercent = shrewdArray[1];
+this.widthPercent = this._setShrewd(shrewdArray[0],"float","");
+this.heightPercent = this._setShrewd(shrewdArray[1],"float","");
 },
 initialize: function(){
 }
@@ -2025,9 +2078,13 @@ initialize: function(){
 /**
  * Automatically Generated Shrewd File
  */
-var CoursewareColumn = new Class({
+var BuildEmpire = BuildEmpire || {};
+BuildEmpire.Mosaic = BuildEmpire.Mosaic || {};
+BuildEmpire.Mosaic.Courseware = BuildEmpire.Mosaic.Courseware || {};
+BuildEmpire.Mosaic.Courseware.Column = new Class({
+Extends:AShrewdBase,
 /**
- * @type {string} id (ID).
+ * @type {String} id (ID).
  */
 id : null,
 /**
@@ -2035,7 +2092,7 @@ id : null,
  */
 components : null,
 /**
- * @type {CoursewareColumnRowMetrics}
+ * @type {BuildEmpire.Mosaic.Courseware.ColumnRowMetrics}
  */
 metrics : null,
 /**
@@ -2048,7 +2105,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.Column",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
+return "a410f36affc0eba0e7b371833391434b2dd6db1c";
 },
 /**
  * Get the name of the MooTools class.
@@ -2056,7 +2113,7 @@ return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
  * @returns {string}
  */
 getName : function(){
-return "CoursewareColumn";
+return "BuildEmpire.Mosaic.Courseware.Column";
 },
 /**
  * Get the content as a shrewd array.
@@ -2065,9 +2122,9 @@ return "CoursewareColumn";
  */
 getShrewd: function(){
 var parametersArray = new Array();
-parametersArray.push(this.id);
-if (this.components) {var l=this.components.length;var lArray = new Array();for (var a=0; a<l; a++) {lArray.push((this.components[a]) ? this.components[a].getShrewd() : null);}parametersArray.push(lArray);} else {parametersArray.push(this.components)}
-parametersArray.push((this.metrics) ? this.metrics.getShrewd() : null);
+parametersArray.push(this._getShrewd(this.id, "string-id", ""));
+parametersArray.push(this._getShrewd(this.components, "list", "courseware.ComponentInstance"));
+parametersArray.push(this._getShrewd(this.metrics, "courseware.ColumnRowMetrics", ""));
 return parametersArray;
 },
 /**
@@ -2077,30 +2134,9 @@ return parametersArray;
  * @returns {null} 
  */
 setShrewd: function(shrewdArray){
-this.id = shrewdArray[0];
-if (shrewdArray[1]) {
-var l=shrewdArray[1].length;
-var lArray = new Array();
-for (var a=0; a<l; a++) {
-if (shrewdArray[1][a]) {
-var theClass = new CoursewareComponentInstance();
-theClass.setShrewd(shrewdArray[1][a]);
-lArray[a] = theClass;
-} else {
-lArray[a] = null;
-}
-}
-} else {
-lArray = null;
-}
-this.components = lArray;
-if (shrewdArray[2]) {
-var theClass = new CoursewareColumnRowMetrics();
-theClass.setShrewd(shrewdArray[2]);
-this.metrics = theClass;
-} else {
-this.metrics = null;
-}
+this.id = this._setShrewd(shrewdArray[0],"string-id","");
+this.components = this._setShrewd(shrewdArray[1],"list","courseware.ComponentInstance");
+this.metrics = this._setShrewd(shrewdArray[2],"courseware.ColumnRowMetrics","");
 },
 initialize: function(){
 }
@@ -2108,9 +2144,13 @@ initialize: function(){
 /**
  * Automatically Generated Shrewd File
  */
-var CoursewareRow = new Class({
+var BuildEmpire = BuildEmpire || {};
+BuildEmpire.Mosaic = BuildEmpire.Mosaic || {};
+BuildEmpire.Mosaic.Courseware = BuildEmpire.Mosaic.Courseware || {};
+BuildEmpire.Mosaic.Courseware.Row = new Class({
+Extends:AShrewdBase,
 /**
- * @type {string} id (ID).
+ * @type {String} id (ID).
  */
 id : null,
 /**
@@ -2118,7 +2158,7 @@ id : null,
  */
 columns : null,
 /**
- * @type {CoursewareColumnRowMetrics}
+ * @type {BuildEmpire.Mosaic.Courseware.ColumnRowMetrics}
  */
 metrics : null,
 /**
@@ -2131,7 +2171,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.Row",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
+return "a410f36affc0eba0e7b371833391434b2dd6db1c";
 },
 /**
  * Get the name of the MooTools class.
@@ -2139,7 +2179,7 @@ return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
  * @returns {string}
  */
 getName : function(){
-return "CoursewareRow";
+return "BuildEmpire.Mosaic.Courseware.Row";
 },
 /**
  * Get the content as a shrewd array.
@@ -2148,9 +2188,9 @@ return "CoursewareRow";
  */
 getShrewd: function(){
 var parametersArray = new Array();
-parametersArray.push(this.id);
-if (this.columns) {var l=this.columns.length;var lArray = new Array();for (var a=0; a<l; a++) {lArray.push((this.columns[a]) ? this.columns[a].getShrewd() : null);}parametersArray.push(lArray);} else {parametersArray.push(this.columns)}
-parametersArray.push((this.metrics) ? this.metrics.getShrewd() : null);
+parametersArray.push(this._getShrewd(this.id, "string-id", ""));
+parametersArray.push(this._getShrewd(this.columns, "list", "courseware.Column"));
+parametersArray.push(this._getShrewd(this.metrics, "courseware.ColumnRowMetrics", ""));
 return parametersArray;
 },
 /**
@@ -2160,30 +2200,9 @@ return parametersArray;
  * @returns {null} 
  */
 setShrewd: function(shrewdArray){
-this.id = shrewdArray[0];
-if (shrewdArray[1]) {
-var l=shrewdArray[1].length;
-var lArray = new Array();
-for (var a=0; a<l; a++) {
-if (shrewdArray[1][a]) {
-var theClass = new CoursewareColumn();
-theClass.setShrewd(shrewdArray[1][a]);
-lArray[a] = theClass;
-} else {
-lArray[a] = null;
-}
-}
-} else {
-lArray = null;
-}
-this.columns = lArray;
-if (shrewdArray[2]) {
-var theClass = new CoursewareColumnRowMetrics();
-theClass.setShrewd(shrewdArray[2]);
-this.metrics = theClass;
-} else {
-this.metrics = null;
-}
+this.id = this._setShrewd(shrewdArray[0],"string-id","");
+this.columns = this._setShrewd(shrewdArray[1],"list","courseware.Column");
+this.metrics = this._setShrewd(shrewdArray[2],"courseware.ColumnRowMetrics","");
 },
 initialize: function(){
 }
@@ -2191,9 +2210,13 @@ initialize: function(){
 /**
  * Automatically Generated Shrewd File
  */
-var CoursewareTemplate = new Class({
+var BuildEmpire = BuildEmpire || {};
+BuildEmpire.Mosaic = BuildEmpire.Mosaic || {};
+BuildEmpire.Mosaic.Courseware = BuildEmpire.Mosaic.Courseware || {};
+BuildEmpire.Mosaic.Courseware.Template = new Class({
+Extends:AShrewdBase,
 /**
- * @type {string} name
+ * @type {String} name
  */
 name : null,
 /**
@@ -2210,7 +2233,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.Template",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
+return "a410f36affc0eba0e7b371833391434b2dd6db1c";
 },
 /**
  * Get the name of the MooTools class.
@@ -2218,7 +2241,7 @@ return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
  * @returns {string}
  */
 getName : function(){
-return "CoursewareTemplate";
+return "BuildEmpire.Mosaic.Courseware.Template";
 },
 /**
  * Get the content as a shrewd array.
@@ -2227,8 +2250,8 @@ return "CoursewareTemplate";
  */
 getShrewd: function(){
 var parametersArray = new Array();
-parametersArray.push(this.name);
-if (this.rows) {var l=this.rows.length;var lArray = new Array();for (var a=0; a<l; a++) {lArray.push((this.rows[a]) ? this.rows[a].getShrewd() : null);}parametersArray.push(lArray);} else {parametersArray.push(this.rows)}
+parametersArray.push(this._getShrewd(this.name, "string", ""));
+parametersArray.push(this._getShrewd(this.rows, "list", "courseware.Row"));
 return parametersArray;
 },
 /**
@@ -2238,23 +2261,8 @@ return parametersArray;
  * @returns {null} 
  */
 setShrewd: function(shrewdArray){
-this.name = shrewdArray[0];
-if (shrewdArray[1]) {
-var l=shrewdArray[1].length;
-var lArray = new Array();
-for (var a=0; a<l; a++) {
-if (shrewdArray[1][a]) {
-var theClass = new CoursewareRow();
-theClass.setShrewd(shrewdArray[1][a]);
-lArray[a] = theClass;
-} else {
-lArray[a] = null;
-}
-}
-} else {
-lArray = null;
-}
-this.rows = lArray;
+this.name = this._setShrewd(shrewdArray[0],"string","");
+this.rows = this._setShrewd(shrewdArray[1],"list","courseware.Row");
 },
 initialize: function(){
 }
@@ -2262,7 +2270,11 @@ initialize: function(){
 /**
  * Automatically Generated Shrewd File
  */
-var CoursewareDataRows = new Class({
+var BuildEmpire = BuildEmpire || {};
+BuildEmpire.Mosaic = BuildEmpire.Mosaic || {};
+BuildEmpire.Mosaic.Courseware = BuildEmpire.Mosaic.Courseware || {};
+BuildEmpire.Mosaic.Courseware.DataRows = new Class({
+Extends:AShrewdBase,
 /**
  * @type {boolean} allow
  */
@@ -2293,7 +2305,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.DataRows",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
+return "a410f36affc0eba0e7b371833391434b2dd6db1c";
 },
 /**
  * Get the name of the MooTools class.
@@ -2301,7 +2313,7 @@ return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
  * @returns {string}
  */
 getName : function(){
-return "CoursewareDataRows";
+return "BuildEmpire.Mosaic.Courseware.DataRows";
 },
 /**
  * Get the content as a shrewd array.
@@ -2310,11 +2322,11 @@ return "CoursewareDataRows";
  */
 getShrewd: function(){
 var parametersArray = new Array();
-parametersArray.push(this.allow);
-parametersArray.push(this.resizable);
-parametersArray.push(this.initial);
-parametersArray.push(this.min);
-parametersArray.push(this.max);
+parametersArray.push(this._getShrewd(this.allow, "boolean", ""));
+parametersArray.push(this._getShrewd(this.resizable, "boolean", ""));
+parametersArray.push(this._getShrewd(this.initial, "integer", ""));
+parametersArray.push(this._getShrewd(this.min, "integer", ""));
+parametersArray.push(this._getShrewd(this.max, "integer", ""));
 return parametersArray;
 },
 /**
@@ -2324,11 +2336,11 @@ return parametersArray;
  * @returns {null} 
  */
 setShrewd: function(shrewdArray){
-this.allow = shrewdArray[0];
-this.resizable = shrewdArray[1];
-this.initial = shrewdArray[2];
-this.min = shrewdArray[3];
-this.max = shrewdArray[4];
+this.allow = this._setShrewd(shrewdArray[0],"boolean","");
+this.resizable = this._setShrewd(shrewdArray[1],"boolean","");
+this.initial = this._setShrewd(shrewdArray[2],"integer","");
+this.min = this._setShrewd(shrewdArray[3],"integer","");
+this.max = this._setShrewd(shrewdArray[4],"integer","");
 },
 initialize: function(){
 }
@@ -2336,7 +2348,11 @@ initialize: function(){
 /**
  * Automatically Generated Shrewd File
  */
-var CoursewareDataColumns = new Class({
+var BuildEmpire = BuildEmpire || {};
+BuildEmpire.Mosaic = BuildEmpire.Mosaic || {};
+BuildEmpire.Mosaic.Courseware = BuildEmpire.Mosaic.Courseware || {};
+BuildEmpire.Mosaic.Courseware.DataColumns = new Class({
+Extends:AShrewdBase,
 /**
  * @type {boolean} allow
  */
@@ -2367,7 +2383,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.DataColumns",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
+return "a410f36affc0eba0e7b371833391434b2dd6db1c";
 },
 /**
  * Get the name of the MooTools class.
@@ -2375,7 +2391,7 @@ return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
  * @returns {string}
  */
 getName : function(){
-return "CoursewareDataColumns";
+return "BuildEmpire.Mosaic.Courseware.DataColumns";
 },
 /**
  * Get the content as a shrewd array.
@@ -2384,11 +2400,11 @@ return "CoursewareDataColumns";
  */
 getShrewd: function(){
 var parametersArray = new Array();
-parametersArray.push(this.allow);
-parametersArray.push(this.resizable);
-parametersArray.push(this.initial);
-parametersArray.push(this.min);
-parametersArray.push(this.max);
+parametersArray.push(this._getShrewd(this.allow, "boolean", ""));
+parametersArray.push(this._getShrewd(this.resizable, "boolean", ""));
+parametersArray.push(this._getShrewd(this.initial, "integer", ""));
+parametersArray.push(this._getShrewd(this.min, "integer", ""));
+parametersArray.push(this._getShrewd(this.max, "integer", ""));
 return parametersArray;
 },
 /**
@@ -2398,11 +2414,11 @@ return parametersArray;
  * @returns {null} 
  */
 setShrewd: function(shrewdArray){
-this.allow = shrewdArray[0];
-this.resizable = shrewdArray[1];
-this.initial = shrewdArray[2];
-this.min = shrewdArray[3];
-this.max = shrewdArray[4];
+this.allow = this._setShrewd(shrewdArray[0],"boolean","");
+this.resizable = this._setShrewd(shrewdArray[1],"boolean","");
+this.initial = this._setShrewd(shrewdArray[2],"integer","");
+this.min = this._setShrewd(shrewdArray[3],"integer","");
+this.max = this._setShrewd(shrewdArray[4],"integer","");
 },
 initialize: function(){
 }
@@ -2410,7 +2426,11 @@ initialize: function(){
 /**
  * Automatically Generated Shrewd File
  */
-var CoursewareDataCanvas = new Class({
+var BuildEmpire = BuildEmpire || {};
+BuildEmpire.Mosaic = BuildEmpire.Mosaic || {};
+BuildEmpire.Mosaic.Courseware = BuildEmpire.Mosaic.Courseware || {};
+BuildEmpire.Mosaic.Courseware.DataCanvas = new Class({
+Extends:AShrewdBase,
 /**
  * @type {integer} width
  */
@@ -2441,7 +2461,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.DataCanvas",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
+return "a410f36affc0eba0e7b371833391434b2dd6db1c";
 },
 /**
  * Get the name of the MooTools class.
@@ -2449,7 +2469,7 @@ return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
  * @returns {string}
  */
 getName : function(){
-return "CoursewareDataCanvas";
+return "BuildEmpire.Mosaic.Courseware.DataCanvas";
 },
 /**
  * Get the content as a shrewd array.
@@ -2458,11 +2478,11 @@ return "CoursewareDataCanvas";
  */
 getShrewd: function(){
 var parametersArray = new Array();
-parametersArray.push(this.width);
-parametersArray.push(this.height);
-parametersArray.push(this.placeInColumns);
-parametersArray.push(this.restrictWidth);
-parametersArray.push(this.restrictHeight);
+parametersArray.push(this._getShrewd(this.width, "integer", ""));
+parametersArray.push(this._getShrewd(this.height, "integer", ""));
+parametersArray.push(this._getShrewd(this.placeInColumns, "boolean", ""));
+parametersArray.push(this._getShrewd(this.restrictWidth, "boolean", ""));
+parametersArray.push(this._getShrewd(this.restrictHeight, "boolean", ""));
 return parametersArray;
 },
 /**
@@ -2472,11 +2492,11 @@ return parametersArray;
  * @returns {null} 
  */
 setShrewd: function(shrewdArray){
-this.width = shrewdArray[0];
-this.height = shrewdArray[1];
-this.placeInColumns = shrewdArray[2];
-this.restrictWidth = shrewdArray[3];
-this.restrictHeight = shrewdArray[4];
+this.width = this._setShrewd(shrewdArray[0],"integer","");
+this.height = this._setShrewd(shrewdArray[1],"integer","");
+this.placeInColumns = this._setShrewd(shrewdArray[2],"boolean","");
+this.restrictWidth = this._setShrewd(shrewdArray[3],"boolean","");
+this.restrictHeight = this._setShrewd(shrewdArray[4],"boolean","");
 },
 initialize: function(){
 }
@@ -2484,7 +2504,11 @@ initialize: function(){
 /**
  * Automatically Generated Shrewd File
  */
-var CoursewareDataGrid = new Class({
+var BuildEmpire = BuildEmpire || {};
+BuildEmpire.Mosaic = BuildEmpire.Mosaic || {};
+BuildEmpire.Mosaic.Courseware = BuildEmpire.Mosaic.Courseware || {};
+BuildEmpire.Mosaic.Courseware.DataGrid = new Class({
+Extends:AShrewdBase,
 /**
  * @type {integer} x
  */
@@ -2503,7 +2527,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.DataGrid",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
+return "a410f36affc0eba0e7b371833391434b2dd6db1c";
 },
 /**
  * Get the name of the MooTools class.
@@ -2511,7 +2535,7 @@ return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
  * @returns {string}
  */
 getName : function(){
-return "CoursewareDataGrid";
+return "BuildEmpire.Mosaic.Courseware.DataGrid";
 },
 /**
  * Get the content as a shrewd array.
@@ -2520,8 +2544,8 @@ return "CoursewareDataGrid";
  */
 getShrewd: function(){
 var parametersArray = new Array();
-parametersArray.push(this.x);
-parametersArray.push(this.y);
+parametersArray.push(this._getShrewd(this.x, "integer", ""));
+parametersArray.push(this._getShrewd(this.y, "integer", ""));
 return parametersArray;
 },
 /**
@@ -2531,8 +2555,8 @@ return parametersArray;
  * @returns {null} 
  */
 setShrewd: function(shrewdArray){
-this.x = shrewdArray[0];
-this.y = shrewdArray[1];
+this.x = this._setShrewd(shrewdArray[0],"integer","");
+this.y = this._setShrewd(shrewdArray[1],"integer","");
 },
 initialize: function(){
 }
@@ -2540,13 +2564,17 @@ initialize: function(){
 /**
  * Automatically Generated Shrewd File
  */
-var CoursewareConfigurationData = new Class({
+var BuildEmpire = BuildEmpire || {};
+BuildEmpire.Mosaic = BuildEmpire.Mosaic || {};
+BuildEmpire.Mosaic.Courseware = BuildEmpire.Mosaic.Courseware || {};
+BuildEmpire.Mosaic.Courseware.ConfigurationData = new Class({
+Extends:AShrewdBase,
 /**
- * @type {string} id (ID).
+ * @type {String} id (ID).
  */
 id : null,
 /**
- * @type {string} name
+ * @type {String} name
  */
 name : null,
 /**
@@ -2566,23 +2594,23 @@ components : null,
  */
 dragMode : null,
 /**
- * @type {CoursewareDataRows}
+ * @type {BuildEmpire.Mosaic.Courseware.DataRows}
  */
 rows : null,
 /**
- * @type {CoursewareDataColumns}
+ * @type {BuildEmpire.Mosaic.Courseware.DataColumns}
  */
 columns : null,
 /**
- * @type {CoursewareDataCanvas}
+ * @type {BuildEmpire.Mosaic.Courseware.DataCanvas}
  */
 canvas : null,
 /**
- * @type {CoursewareDataGrid}
+ * @type {BuildEmpire.Mosaic.Courseware.DataGrid}
  */
 grid : null,
 /**
- * @type {string} language
+ * @type {String} language
  */
 language : "en",
 /**
@@ -2599,7 +2627,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.ConfigurationData",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
+return "a410f36affc0eba0e7b371833391434b2dd6db1c";
 },
 /**
  * Get the name of the MooTools class.
@@ -2607,7 +2635,7 @@ return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
  * @returns {string}
  */
 getName : function(){
-return "CoursewareConfigurationData";
+return "BuildEmpire.Mosaic.Courseware.ConfigurationData";
 },
 /**
  * Get the content as a shrewd array.
@@ -2616,18 +2644,18 @@ return "CoursewareConfigurationData";
  */
 getShrewd: function(){
 var parametersArray = new Array();
-parametersArray.push(this.id);
-parametersArray.push(this.name);
-if (this.translations) {var l=this.translations.length;var lArray = new Array();for (var a=0; a<l; a++) {lArray.push((this.translations[a]) ? this.translations[a].getShrewd() : null);}parametersArray.push(lArray);} else {parametersArray.push(this.translations)}
-if (this.learningPaths) {var l=this.learningPaths.length;var lArray = new Array();for (var a=0; a<l; a++) {lArray.push((this.learningPaths[a]) ? this.learningPaths[a].getShrewd() : null);}parametersArray.push(lArray);} else {parametersArray.push(this.learningPaths)}
-if (this.components) {var l=this.components.length;var lArray = new Array();for (var a=0; a<l; a++) {lArray.push((this.components[a]) ? this.components[a].getShrewd() : null);}parametersArray.push(lArray);} else {parametersArray.push(this.components)}
-parametersArray.push(this.dragMode);
-parametersArray.push((this.rows) ? this.rows.getShrewd() : null);
-parametersArray.push((this.columns) ? this.columns.getShrewd() : null);
-parametersArray.push((this.canvas) ? this.canvas.getShrewd() : null);
-parametersArray.push((this.grid) ? this.grid.getShrewd() : null);
-parametersArray.push(this.language);
-parametersArray.push(this.valid);
+parametersArray.push(this._getShrewd(this.id, "string-id", ""));
+parametersArray.push(this._getShrewd(this.name, "string", ""));
+parametersArray.push(this._getShrewd(this.translations, "list", "courseware.Translation"));
+parametersArray.push(this._getShrewd(this.learningPaths, "list", "courseware.LearningPath"));
+parametersArray.push(this._getShrewd(this.components, "list", "courseware.Component"));
+parametersArray.push(this._getShrewd(this.dragMode, "integer", ""));
+parametersArray.push(this._getShrewd(this.rows, "courseware.DataRows", ""));
+parametersArray.push(this._getShrewd(this.columns, "courseware.DataColumns", ""));
+parametersArray.push(this._getShrewd(this.canvas, "courseware.DataCanvas", ""));
+parametersArray.push(this._getShrewd(this.grid, "courseware.DataGrid", ""));
+parametersArray.push(this._getShrewd(this.language, "string", ""));
+parametersArray.push(this._getShrewd(this.valid, "boolean", ""));
 return parametersArray;
 },
 /**
@@ -2637,87 +2665,18 @@ return parametersArray;
  * @returns {null} 
  */
 setShrewd: function(shrewdArray){
-this.id = shrewdArray[0];
-this.name = shrewdArray[1];
-if (shrewdArray[2]) {
-var l=shrewdArray[2].length;
-var lArray = new Array();
-for (var a=0; a<l; a++) {
-if (shrewdArray[2][a]) {
-var theClass = new CoursewareTranslation();
-theClass.setShrewd(shrewdArray[2][a]);
-lArray[a] = theClass;
-} else {
-lArray[a] = null;
-}
-}
-} else {
-lArray = null;
-}
-this.translations = lArray;
-if (shrewdArray[3]) {
-var l=shrewdArray[3].length;
-var lArray = new Array();
-for (var a=0; a<l; a++) {
-if (shrewdArray[3][a]) {
-var theClass = new CoursewareLearningPath();
-theClass.setShrewd(shrewdArray[3][a]);
-lArray[a] = theClass;
-} else {
-lArray[a] = null;
-}
-}
-} else {
-lArray = null;
-}
-this.learningPaths = lArray;
-if (shrewdArray[4]) {
-var l=shrewdArray[4].length;
-var lArray = new Array();
-for (var a=0; a<l; a++) {
-if (shrewdArray[4][a]) {
-var theClass = new CoursewareComponent();
-theClass.setShrewd(shrewdArray[4][a]);
-lArray[a] = theClass;
-} else {
-lArray[a] = null;
-}
-}
-} else {
-lArray = null;
-}
-this.components = lArray;
-this.dragMode = shrewdArray[5];
-if (shrewdArray[6]) {
-var theClass = new CoursewareDataRows();
-theClass.setShrewd(shrewdArray[6]);
-this.rows = theClass;
-} else {
-this.rows = null;
-}
-if (shrewdArray[7]) {
-var theClass = new CoursewareDataColumns();
-theClass.setShrewd(shrewdArray[7]);
-this.columns = theClass;
-} else {
-this.columns = null;
-}
-if (shrewdArray[8]) {
-var theClass = new CoursewareDataCanvas();
-theClass.setShrewd(shrewdArray[8]);
-this.canvas = theClass;
-} else {
-this.canvas = null;
-}
-if (shrewdArray[9]) {
-var theClass = new CoursewareDataGrid();
-theClass.setShrewd(shrewdArray[9]);
-this.grid = theClass;
-} else {
-this.grid = null;
-}
-this.language = shrewdArray[10];
-this.valid = shrewdArray[11];
+this.id = this._setShrewd(shrewdArray[0],"string-id","");
+this.name = this._setShrewd(shrewdArray[1],"string","");
+this.translations = this._setShrewd(shrewdArray[2],"list","courseware.Translation");
+this.learningPaths = this._setShrewd(shrewdArray[3],"list","courseware.LearningPath");
+this.components = this._setShrewd(shrewdArray[4],"list","courseware.Component");
+this.dragMode = this._setShrewd(shrewdArray[5],"integer","");
+this.rows = this._setShrewd(shrewdArray[6],"courseware.DataRows","");
+this.columns = this._setShrewd(shrewdArray[7],"courseware.DataColumns","");
+this.canvas = this._setShrewd(shrewdArray[8],"courseware.DataCanvas","");
+this.grid = this._setShrewd(shrewdArray[9],"courseware.DataGrid","");
+this.language = this._setShrewd(shrewdArray[10],"string","");
+this.valid = this._setShrewd(shrewdArray[11],"boolean","");
 },
 initialize: function(){
 }
@@ -2725,7 +2684,11 @@ initialize: function(){
 /**
  * Automatically Generated Shrewd File
  */
-var CoursewareEditableFormFieldHtml = new Class({
+var BuildEmpire = BuildEmpire || {};
+BuildEmpire.Mosaic = BuildEmpire.Mosaic || {};
+BuildEmpire.Mosaic.Courseware = BuildEmpire.Mosaic.Courseware || {};
+BuildEmpire.Mosaic.Courseware.EditableFormFieldHtml = new Class({
+Extends:AShrewdBase,
 /**
  * @type {Array} cssPath
  */
@@ -2752,7 +2715,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.EditableFormFieldHtml",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
+return "a410f36affc0eba0e7b371833391434b2dd6db1c";
 },
 /**
  * Get the name of the MooTools class.
@@ -2760,7 +2723,7 @@ return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
  * @returns {string}
  */
 getName : function(){
-return "CoursewareEditableFormFieldHtml";
+return "BuildEmpire.Mosaic.Courseware.EditableFormFieldHtml";
 },
 /**
  * Get the content as a shrewd array.
@@ -2769,10 +2732,10 @@ return "CoursewareEditableFormFieldHtml";
  */
 getShrewd: function(){
 var parametersArray = new Array();
-parametersArray.push(this.cssPath);
-parametersArray.push(this.styleFormats);
-parametersArray.push(this.rows);
-if (this.cssAttributes) {var lHash = new Hash();this.cssAttributes.each(function(v, k){lHash[k] = v;});parametersArray.push(lHash);} else {parametersArray.push(this.cssAttributes)}
+parametersArray.push(this._getShrewd(this.cssPath, "list", ""));
+parametersArray.push(this._getShrewd(this.styleFormats, "list", ""));
+parametersArray.push(this._getShrewd(this.rows, "integer", ""));
+parametersArray.push(this._getShrewd(this.cssAttributes, "map", "string"));
 return parametersArray;
 },
 /**
@@ -2782,18 +2745,10 @@ return parametersArray;
  * @returns {null} 
  */
 setShrewd: function(shrewdArray){
-this.cssPath = shrewdArray[0];
-this.styleFormats = shrewdArray[1];
-this.rows = shrewdArray[2];
-if (shrewdArray[3]) {
-var lHash = new Hash();
-for (var p in shrewdArray[3]) {
-lHash[p] = shrewdArray[3][p];
-};
-} else {
-lHash = null;
-}
-this.cssAttributes = lHash;
+this.cssPath = this._setShrewd(shrewdArray[0],"list","");
+this.styleFormats = this._setShrewd(shrewdArray[1],"list","");
+this.rows = this._setShrewd(shrewdArray[2],"integer","");
+this.cssAttributes = this._setShrewd(shrewdArray[3],"map","string");
 },
 initialize: function(){
 }
@@ -2801,7 +2756,11 @@ initialize: function(){
 /**
  * Automatically Generated Shrewd File
  */
-var CoursewareEditableFormFieldSelect = new Class({
+var BuildEmpire = BuildEmpire || {};
+BuildEmpire.Mosaic = BuildEmpire.Mosaic || {};
+BuildEmpire.Mosaic.Courseware = BuildEmpire.Mosaic.Courseware || {};
+BuildEmpire.Mosaic.Courseware.EditableFormFieldSelect = new Class({
+Extends:AShrewdBase,
 /**
  * @type {Hash} options
  */
@@ -2816,7 +2775,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.EditableFormFieldSelect",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
+return "a410f36affc0eba0e7b371833391434b2dd6db1c";
 },
 /**
  * Get the name of the MooTools class.
@@ -2824,7 +2783,7 @@ return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
  * @returns {string}
  */
 getName : function(){
-return "CoursewareEditableFormFieldSelect";
+return "BuildEmpire.Mosaic.Courseware.EditableFormFieldSelect";
 },
 /**
  * Get the content as a shrewd array.
@@ -2833,7 +2792,7 @@ return "CoursewareEditableFormFieldSelect";
  */
 getShrewd: function(){
 var parametersArray = new Array();
-if (this.options) {var lHash = new Hash();this.options.each(function(v, k){lHash[k] = v;});parametersArray.push(lHash);} else {parametersArray.push(this.options)}
+parametersArray.push(this._getShrewd(this.options, "map", "string"));
 return parametersArray;
 },
 /**
@@ -2843,15 +2802,7 @@ return parametersArray;
  * @returns {null} 
  */
 setShrewd: function(shrewdArray){
-if (shrewdArray[0]) {
-var lHash = new Hash();
-for (var p in shrewdArray[0]) {
-lHash[p] = shrewdArray[0][p];
-};
-} else {
-lHash = null;
-}
-this.options = lHash;
+this.options = this._setShrewd(shrewdArray[0],"map","string");
 },
 initialize: function(){
 }
@@ -2859,7 +2810,11 @@ initialize: function(){
 /**
  * Automatically Generated Shrewd File
  */
-var CoursewareEditableFormFieldRange = new Class({
+var BuildEmpire = BuildEmpire || {};
+BuildEmpire.Mosaic = BuildEmpire.Mosaic || {};
+BuildEmpire.Mosaic.Courseware = BuildEmpire.Mosaic.Courseware || {};
+BuildEmpire.Mosaic.Courseware.EditableFormFieldRange = new Class({
+Extends:AShrewdBase,
 /**
  * @type {integer} min
  */
@@ -2882,7 +2837,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.EditableFormFieldRange",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
+return "a410f36affc0eba0e7b371833391434b2dd6db1c";
 },
 /**
  * Get the name of the MooTools class.
@@ -2890,7 +2845,7 @@ return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
  * @returns {string}
  */
 getName : function(){
-return "CoursewareEditableFormFieldRange";
+return "BuildEmpire.Mosaic.Courseware.EditableFormFieldRange";
 },
 /**
  * Get the content as a shrewd array.
@@ -2899,9 +2854,9 @@ return "CoursewareEditableFormFieldRange";
  */
 getShrewd: function(){
 var parametersArray = new Array();
-parametersArray.push(this.min);
-parametersArray.push(this.max);
-parametersArray.push(this.step);
+parametersArray.push(this._getShrewd(this.min, "integer", ""));
+parametersArray.push(this._getShrewd(this.max, "integer", ""));
+parametersArray.push(this._getShrewd(this.step, "integer", ""));
 return parametersArray;
 },
 /**
@@ -2911,9 +2866,9 @@ return parametersArray;
  * @returns {null} 
  */
 setShrewd: function(shrewdArray){
-this.min = shrewdArray[0];
-this.max = shrewdArray[1];
-this.step = shrewdArray[2];
+this.min = this._setShrewd(shrewdArray[0],"integer","");
+this.max = this._setShrewd(shrewdArray[1],"integer","");
+this.step = this._setShrewd(shrewdArray[2],"integer","");
 },
 initialize: function(){
 }
@@ -2921,7 +2876,11 @@ initialize: function(){
 /**
  * Automatically Generated Shrewd File
  */
-var CoursewareEditableFormFieldText = new Class({
+var BuildEmpire = BuildEmpire || {};
+BuildEmpire.Mosaic = BuildEmpire.Mosaic || {};
+BuildEmpire.Mosaic.Courseware = BuildEmpire.Mosaic.Courseware || {};
+BuildEmpire.Mosaic.Courseware.EditableFormFieldText = new Class({
+Extends:AShrewdBase,
 /**
  * @type {integer} rows
  */
@@ -2936,7 +2895,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.EditableFormFieldText",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
+return "a410f36affc0eba0e7b371833391434b2dd6db1c";
 },
 /**
  * Get the name of the MooTools class.
@@ -2944,7 +2903,7 @@ return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
  * @returns {string}
  */
 getName : function(){
-return "CoursewareEditableFormFieldText";
+return "BuildEmpire.Mosaic.Courseware.EditableFormFieldText";
 },
 /**
  * Get the content as a shrewd array.
@@ -2953,7 +2912,7 @@ return "CoursewareEditableFormFieldText";
  */
 getShrewd: function(){
 var parametersArray = new Array();
-parametersArray.push(this.rows);
+parametersArray.push(this._getShrewd(this.rows, "integer", ""));
 return parametersArray;
 },
 /**
@@ -2963,7 +2922,7 @@ return parametersArray;
  * @returns {null} 
  */
 setShrewd: function(shrewdArray){
-this.rows = shrewdArray[0];
+this.rows = this._setShrewd(shrewdArray[0],"integer","");
 },
 initialize: function(){
 }
@@ -2971,17 +2930,21 @@ initialize: function(){
 /**
  * Automatically Generated Shrewd File
  */
-var CoursewareEditableFormField = new Class({
+var BuildEmpire = BuildEmpire || {};
+BuildEmpire.Mosaic = BuildEmpire.Mosaic || {};
+BuildEmpire.Mosaic.Courseware = BuildEmpire.Mosaic.Courseware || {};
+BuildEmpire.Mosaic.Courseware.EditableFormField = new Class({
+Extends:AShrewdBase,
 /**
  * @type {integer} type
  */
 type : null,
 /**
- * @type {string} name
+ * @type {String} name
  */
 name : null,
 /**
- * @type {string} title
+ * @type {String} title
  */
 title : null,
 /**
@@ -2989,11 +2952,11 @@ title : null,
  */
 required : null,
 /**
- * @type {string} value
+ * @type {String} value
  */
 value : null,
 /**
- * @type {Object} data
+ * @type {Object} data (struct)
  */
 data : null,
 /**
@@ -3006,7 +2969,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.EditableFormField",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
+return "a410f36affc0eba0e7b371833391434b2dd6db1c";
 },
 /**
  * Get the name of the MooTools class.
@@ -3014,7 +2977,7 @@ return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
  * @returns {string}
  */
 getName : function(){
-return "CoursewareEditableFormField";
+return "BuildEmpire.Mosaic.Courseware.EditableFormField";
 },
 /**
  * Get the content as a shrewd array.
@@ -3023,12 +2986,12 @@ return "CoursewareEditableFormField";
  */
 getShrewd: function(){
 var parametersArray = new Array();
-parametersArray.push(this.type);
-parametersArray.push(this.name);
-parametersArray.push(this.title);
-parametersArray.push(this.required);
-parametersArray.push(this.value);
-parametersArray.push(this.data);
+parametersArray.push(this._getShrewd(this.type, "integer", ""));
+parametersArray.push(this._getShrewd(this.name, "string", ""));
+parametersArray.push(this._getShrewd(this.title, "string", ""));
+parametersArray.push(this._getShrewd(this.required, "boolean", ""));
+parametersArray.push(this._getShrewd(this.value, "string", ""));
+parametersArray.push(this._getShrewd(this.data, "struct", ""));
 return parametersArray;
 },
 /**
@@ -3038,12 +3001,12 @@ return parametersArray;
  * @returns {null} 
  */
 setShrewd: function(shrewdArray){
-this.type = shrewdArray[0];
-this.name = shrewdArray[1];
-this.title = shrewdArray[2];
-this.required = shrewdArray[3];
-this.value = shrewdArray[4];
-this.data = shrewdArray[5];
+this.type = this._setShrewd(shrewdArray[0],"integer","");
+this.name = this._setShrewd(shrewdArray[1],"string","");
+this.title = this._setShrewd(shrewdArray[2],"string","");
+this.required = this._setShrewd(shrewdArray[3],"boolean","");
+this.value = this._setShrewd(shrewdArray[4],"string","");
+this.data = this._setShrewd(shrewdArray[5],"struct","");
 },
 initialize: function(){
 }
@@ -3051,9 +3014,13 @@ initialize: function(){
 /**
  * Automatically Generated Shrewd File
  */
-var CoursewareEditableFormGroup = new Class({
+var BuildEmpire = BuildEmpire || {};
+BuildEmpire.Mosaic = BuildEmpire.Mosaic || {};
+BuildEmpire.Mosaic.Courseware = BuildEmpire.Mosaic.Courseware || {};
+BuildEmpire.Mosaic.Courseware.EditableFormGroup = new Class({
+Extends:AShrewdBase,
 /**
- * @type {string} name
+ * @type {String} name
  */
 name : null,
 /**
@@ -3070,7 +3037,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.EditableFormGroup",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
+return "a410f36affc0eba0e7b371833391434b2dd6db1c";
 },
 /**
  * Get the name of the MooTools class.
@@ -3078,7 +3045,7 @@ return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
  * @returns {string}
  */
 getName : function(){
-return "CoursewareEditableFormGroup";
+return "BuildEmpire.Mosaic.Courseware.EditableFormGroup";
 },
 /**
  * Get the content as a shrewd array.
@@ -3087,8 +3054,8 @@ return "CoursewareEditableFormGroup";
  */
 getShrewd: function(){
 var parametersArray = new Array();
-parametersArray.push(this.name);
-if (this.fields) {var l=this.fields.length;var lArray = new Array();for (var a=0; a<l; a++) {lArray.push((this.fields[a]) ? this.fields[a].getShrewd() : null);}parametersArray.push(lArray);} else {parametersArray.push(this.fields)}
+parametersArray.push(this._getShrewd(this.name, "string", ""));
+parametersArray.push(this._getShrewd(this.fields, "list", "courseware.EditableFormField"));
 return parametersArray;
 },
 /**
@@ -3098,23 +3065,8 @@ return parametersArray;
  * @returns {null} 
  */
 setShrewd: function(shrewdArray){
-this.name = shrewdArray[0];
-if (shrewdArray[1]) {
-var l=shrewdArray[1].length;
-var lArray = new Array();
-for (var a=0; a<l; a++) {
-if (shrewdArray[1][a]) {
-var theClass = new CoursewareEditableFormField();
-theClass.setShrewd(shrewdArray[1][a]);
-lArray[a] = theClass;
-} else {
-lArray[a] = null;
-}
-}
-} else {
-lArray = null;
-}
-this.fields = lArray;
+this.name = this._setShrewd(shrewdArray[0],"string","");
+this.fields = this._setShrewd(shrewdArray[1],"list","courseware.EditableFormField");
 },
 initialize: function(){
 }
@@ -3122,9 +3074,13 @@ initialize: function(){
 /**
  * Automatically Generated Shrewd File
  */
-var CoursewareEditableForm = new Class({
+var BuildEmpire = BuildEmpire || {};
+BuildEmpire.Mosaic = BuildEmpire.Mosaic || {};
+BuildEmpire.Mosaic.Courseware = BuildEmpire.Mosaic.Courseware || {};
+BuildEmpire.Mosaic.Courseware.EditableForm = new Class({
+Extends:AShrewdBase,
 /**
- * @type {string} name
+ * @type {String} name
  */
 name : null,
 /**
@@ -3141,7 +3097,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.EditableForm",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
+return "a410f36affc0eba0e7b371833391434b2dd6db1c";
 },
 /**
  * Get the name of the MooTools class.
@@ -3149,7 +3105,7 @@ return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
  * @returns {string}
  */
 getName : function(){
-return "CoursewareEditableForm";
+return "BuildEmpire.Mosaic.Courseware.EditableForm";
 },
 /**
  * Get the content as a shrewd array.
@@ -3158,8 +3114,8 @@ return "CoursewareEditableForm";
  */
 getShrewd: function(){
 var parametersArray = new Array();
-parametersArray.push(this.name);
-if (this.groups) {var l=this.groups.length;var lArray = new Array();for (var a=0; a<l; a++) {lArray.push((this.groups[a]) ? this.groups[a].getShrewd() : null);}parametersArray.push(lArray);} else {parametersArray.push(this.groups)}
+parametersArray.push(this._getShrewd(this.name, "string", ""));
+parametersArray.push(this._getShrewd(this.groups, "list", "courseware.EditableFormGroup"));
 return parametersArray;
 },
 /**
@@ -3169,23 +3125,8 @@ return parametersArray;
  * @returns {null} 
  */
 setShrewd: function(shrewdArray){
-this.name = shrewdArray[0];
-if (shrewdArray[1]) {
-var l=shrewdArray[1].length;
-var lArray = new Array();
-for (var a=0; a<l; a++) {
-if (shrewdArray[1][a]) {
-var theClass = new CoursewareEditableFormGroup();
-theClass.setShrewd(shrewdArray[1][a]);
-lArray[a] = theClass;
-} else {
-lArray[a] = null;
-}
-}
-} else {
-lArray = null;
-}
-this.groups = lArray;
+this.name = this._setShrewd(shrewdArray[0],"string","");
+this.groups = this._setShrewd(shrewdArray[1],"list","courseware.EditableFormGroup");
 },
 initialize: function(){
 }
@@ -3193,29 +3134,33 @@ initialize: function(){
 /**
  * Automatically Generated Shrewd File
  */
-var CoursewareRelationship = new Class({
+var BuildEmpire = BuildEmpire || {};
+BuildEmpire.Mosaic = BuildEmpire.Mosaic || {};
+BuildEmpire.Mosaic.Courseware = BuildEmpire.Mosaic.Courseware || {};
+BuildEmpire.Mosaic.Courseware.Relationship = new Class({
+Extends:AShrewdBase,
 /**
- * @type {string} id
+ * @type {String} id
  */
 id : null,
 /**
- * @type {string} source
+ * @type {String} source
  */
 source : null,
 /**
- * @type {string} event
+ * @type {String} event
  */
 event : null,
 /**
- * @type {string} target
+ * @type {String} target
  */
 target : null,
 /**
- * @type {string} action
+ * @type {String} action
  */
 action : null,
 /**
- * @type {All} data
+ * @type {Object} data (mixed)
  */
 data : null,
 /**
@@ -3228,7 +3173,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.Relationship",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
+return "a410f36affc0eba0e7b371833391434b2dd6db1c";
 },
 /**
  * Get the name of the MooTools class.
@@ -3236,7 +3181,7 @@ return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
  * @returns {string}
  */
 getName : function(){
-return "CoursewareRelationship";
+return "BuildEmpire.Mosaic.Courseware.Relationship";
 },
 /**
  * Get the content as a shrewd array.
@@ -3245,12 +3190,12 @@ return "CoursewareRelationship";
  */
 getShrewd: function(){
 var parametersArray = new Array();
-parametersArray.push(this.id);
-parametersArray.push(this.source);
-parametersArray.push(this.event);
-parametersArray.push(this.target);
-parametersArray.push(this.action);
-parametersArray.push(this.data);
+parametersArray.push(this._getShrewd(this.id, "string", ""));
+parametersArray.push(this._getShrewd(this.source, "string", ""));
+parametersArray.push(this._getShrewd(this.event, "string", ""));
+parametersArray.push(this._getShrewd(this.target, "string", ""));
+parametersArray.push(this._getShrewd(this.action, "string", ""));
+parametersArray.push(this._getShrewd(this.data, "mixed", ""));
 return parametersArray;
 },
 /**
@@ -3260,12 +3205,12 @@ return parametersArray;
  * @returns {null} 
  */
 setShrewd: function(shrewdArray){
-this.id = shrewdArray[0];
-this.source = shrewdArray[1];
-this.event = shrewdArray[2];
-this.target = shrewdArray[3];
-this.action = shrewdArray[4];
-this.data = shrewdArray[5];
+this.id = this._setShrewd(shrewdArray[0],"string","");
+this.source = this._setShrewd(shrewdArray[1],"string","");
+this.event = this._setShrewd(shrewdArray[2],"string","");
+this.target = this._setShrewd(shrewdArray[3],"string","");
+this.action = this._setShrewd(shrewdArray[4],"string","");
+this.data = this._setShrewd(shrewdArray[5],"mixed","");
 },
 initialize: function(){
 }
@@ -3273,21 +3218,25 @@ initialize: function(){
 /**
  * Automatically Generated Shrewd File
  */
-var CoursewareValidRelationshipEvent = new Class({
+var BuildEmpire = BuildEmpire || {};
+BuildEmpire.Mosaic = BuildEmpire.Mosaic || {};
+BuildEmpire.Mosaic.Courseware = BuildEmpire.Mosaic.Courseware || {};
+BuildEmpire.Mosaic.Courseware.ValidRelationshipEvent = new Class({
+Extends:AShrewdBase,
 /**
- * @type {string} context
+ * @type {String} context
  */
 context : null,
 /**
- * @type {string} event
+ * @type {String} event
  */
 event : null,
 /**
- * @type {string} key
+ * @type {String} key
  */
 key : null,
 /**
- * @type {string} string
+ * @type {String} string
  */
 string : null,
 /**
@@ -3304,7 +3253,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.ValidRelationshipEvent",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
+return "a410f36affc0eba0e7b371833391434b2dd6db1c";
 },
 /**
  * Get the name of the MooTools class.
@@ -3312,7 +3261,7 @@ return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
  * @returns {string}
  */
 getName : function(){
-return "CoursewareValidRelationshipEvent";
+return "BuildEmpire.Mosaic.Courseware.ValidRelationshipEvent";
 },
 /**
  * Get the content as a shrewd array.
@@ -3321,11 +3270,11 @@ return "CoursewareValidRelationshipEvent";
  */
 getShrewd: function(){
 var parametersArray = new Array();
-parametersArray.push(this.context);
-parametersArray.push(this.event);
-parametersArray.push(this.key);
-parametersArray.push(this.string);
-parametersArray.push(this.data);
+parametersArray.push(this._getShrewd(this.context, "string", ""));
+parametersArray.push(this._getShrewd(this.event, "string", ""));
+parametersArray.push(this._getShrewd(this.key, "string", ""));
+parametersArray.push(this._getShrewd(this.string, "string", ""));
+
 return parametersArray;
 },
 /**
@@ -3335,11 +3284,10 @@ return parametersArray;
  * @returns {null} 
  */
 setShrewd: function(shrewdArray){
-this.context = shrewdArray[0];
-this.event = shrewdArray[1];
-this.key = shrewdArray[2];
-this.string = shrewdArray[3];
-this.data = shrewdArray[4];
+this.context = this._setShrewd(shrewdArray[0],"string","");
+this.event = this._setShrewd(shrewdArray[1],"string","");
+this.key = this._setShrewd(shrewdArray[2],"string","");
+this.string = this._setShrewd(shrewdArray[3],"string","");
 },
 initialize: function(){
 }
@@ -3347,21 +3295,25 @@ initialize: function(){
 /**
  * Automatically Generated Shrewd File
  */
-var CoursewareValidRelationshipAction = new Class({
+var BuildEmpire = BuildEmpire || {};
+BuildEmpire.Mosaic = BuildEmpire.Mosaic || {};
+BuildEmpire.Mosaic.Courseware = BuildEmpire.Mosaic.Courseware || {};
+BuildEmpire.Mosaic.Courseware.ValidRelationshipAction = new Class({
+Extends:AShrewdBase,
 /**
- * @type {string} context
+ * @type {String} context
  */
 context : null,
 /**
- * @type {string} action
+ * @type {String} action
  */
 action : null,
 /**
- * @type {string} key
+ * @type {String} key
  */
 key : null,
 /**
- * @type {string} string
+ * @type {String} string
  */
 string : null,
 /**
@@ -3378,7 +3330,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.ValidRelationshipAction",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
+return "a410f36affc0eba0e7b371833391434b2dd6db1c";
 },
 /**
  * Get the name of the MooTools class.
@@ -3386,7 +3338,7 @@ return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
  * @returns {string}
  */
 getName : function(){
-return "CoursewareValidRelationshipAction";
+return "BuildEmpire.Mosaic.Courseware.ValidRelationshipAction";
 },
 /**
  * Get the content as a shrewd array.
@@ -3395,11 +3347,11 @@ return "CoursewareValidRelationshipAction";
  */
 getShrewd: function(){
 var parametersArray = new Array();
-parametersArray.push(this.context);
-parametersArray.push(this.action);
-parametersArray.push(this.key);
-parametersArray.push(this.string);
-if (this.fields) {var l=this.fields.length;var lArray = new Array();for (var a=0; a<l; a++) {lArray.push((this.fields[a]) ? this.fields[a].getShrewd() : null);}parametersArray.push(lArray);} else {parametersArray.push(this.fields)}
+parametersArray.push(this._getShrewd(this.context, "string", ""));
+parametersArray.push(this._getShrewd(this.action, "string", ""));
+parametersArray.push(this._getShrewd(this.key, "string", ""));
+parametersArray.push(this._getShrewd(this.string, "string", ""));
+parametersArray.push(this._getShrewd(this.fields, "list", "courseware.EditableFormField"));
 return parametersArray;
 },
 /**
@@ -3409,26 +3361,11 @@ return parametersArray;
  * @returns {null} 
  */
 setShrewd: function(shrewdArray){
-this.context = shrewdArray[0];
-this.action = shrewdArray[1];
-this.key = shrewdArray[2];
-this.string = shrewdArray[3];
-if (shrewdArray[4]) {
-var l=shrewdArray[4].length;
-var lArray = new Array();
-for (var a=0; a<l; a++) {
-if (shrewdArray[4][a]) {
-var theClass = new CoursewareEditableFormField();
-theClass.setShrewd(shrewdArray[4][a]);
-lArray[a] = theClass;
-} else {
-lArray[a] = null;
-}
-}
-} else {
-lArray = null;
-}
-this.fields = lArray;
+this.context = this._setShrewd(shrewdArray[0],"string","");
+this.action = this._setShrewd(shrewdArray[1],"string","");
+this.key = this._setShrewd(shrewdArray[2],"string","");
+this.string = this._setShrewd(shrewdArray[3],"string","");
+this.fields = this._setShrewd(shrewdArray[4],"list","courseware.EditableFormField");
 },
 initialize: function(){
 }
@@ -3436,7 +3373,11 @@ initialize: function(){
 /**
  * Automatically Generated Shrewd File
  */
-var CoursewareRelationshipCollection = new Class({
+var BuildEmpire = BuildEmpire || {};
+BuildEmpire.Mosaic = BuildEmpire.Mosaic || {};
+BuildEmpire.Mosaic.Courseware = BuildEmpire.Mosaic.Courseware || {};
+BuildEmpire.Mosaic.Courseware.RelationshipCollection = new Class({
+Extends:AShrewdBase,
 /**
  * @type {Array} events
  */
@@ -3455,7 +3396,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.RelationshipCollection",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
+return "a410f36affc0eba0e7b371833391434b2dd6db1c";
 },
 /**
  * Get the name of the MooTools class.
@@ -3463,7 +3404,7 @@ return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
  * @returns {string}
  */
 getName : function(){
-return "CoursewareRelationshipCollection";
+return "BuildEmpire.Mosaic.Courseware.RelationshipCollection";
 },
 /**
  * Get the content as a shrewd array.
@@ -3472,8 +3413,8 @@ return "CoursewareRelationshipCollection";
  */
 getShrewd: function(){
 var parametersArray = new Array();
-if (this.events) {var l=this.events.length;var lArray = new Array();for (var a=0; a<l; a++) {lArray.push((this.events[a]) ? this.events[a].getShrewd() : null);}parametersArray.push(lArray);} else {parametersArray.push(this.events)}
-if (this.actions) {var l=this.actions.length;var lArray = new Array();for (var a=0; a<l; a++) {lArray.push((this.actions[a]) ? this.actions[a].getShrewd() : null);}parametersArray.push(lArray);} else {parametersArray.push(this.actions)}
+parametersArray.push(this._getShrewd(this.events, "list", "courseware.ValidRelationshipEvent"));
+parametersArray.push(this._getShrewd(this.actions, "list", "courseware.ValidRelationshipAction"));
 return parametersArray;
 },
 /**
@@ -3483,38 +3424,8 @@ return parametersArray;
  * @returns {null} 
  */
 setShrewd: function(shrewdArray){
-if (shrewdArray[0]) {
-var l=shrewdArray[0].length;
-var lArray = new Array();
-for (var a=0; a<l; a++) {
-if (shrewdArray[0][a]) {
-var theClass = new CoursewareValidRelationshipEvent();
-theClass.setShrewd(shrewdArray[0][a]);
-lArray[a] = theClass;
-} else {
-lArray[a] = null;
-}
-}
-} else {
-lArray = null;
-}
-this.events = lArray;
-if (shrewdArray[1]) {
-var l=shrewdArray[1].length;
-var lArray = new Array();
-for (var a=0; a<l; a++) {
-if (shrewdArray[1][a]) {
-var theClass = new CoursewareValidRelationshipAction();
-theClass.setShrewd(shrewdArray[1][a]);
-lArray[a] = theClass;
-} else {
-lArray[a] = null;
-}
-}
-} else {
-lArray = null;
-}
-this.actions = lArray;
+this.events = this._setShrewd(shrewdArray[0],"list","courseware.ValidRelationshipEvent");
+this.actions = this._setShrewd(shrewdArray[1],"list","courseware.ValidRelationshipAction");
 },
 initialize: function(){
 }
@@ -3522,9 +3433,13 @@ initialize: function(){
 /**
  * Automatically Generated Shrewd File
  */
-var CoursewareRelationshipComponentContainer = new Class({
+var BuildEmpire = BuildEmpire || {};
+BuildEmpire.Mosaic = BuildEmpire.Mosaic || {};
+BuildEmpire.Mosaic.Courseware = BuildEmpire.Mosaic.Courseware || {};
+BuildEmpire.Mosaic.Courseware.RelationshipComponentContainer = new Class({
+Extends:AShrewdBase,
 /**
- * @type {string} name
+ * @type {String} name
  */
 name : null,
 /**
@@ -3549,7 +3464,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.RelationshipComponentContainer",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
+return "a410f36affc0eba0e7b371833391434b2dd6db1c";
 },
 /**
  * Get the name of the MooTools class.
@@ -3557,7 +3472,7 @@ return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
  * @returns {string}
  */
 getName : function(){
-return "CoursewareRelationshipComponentContainer";
+return "BuildEmpire.Mosaic.Courseware.RelationshipComponentContainer";
 },
 /**
  * Get the content as a shrewd array.
@@ -3566,10 +3481,10 @@ return "CoursewareRelationshipComponentContainer";
  */
 getShrewd: function(){
 var parametersArray = new Array();
-parametersArray.push(this.name);
-if (this.actions) {var l=this.actions.length;var lArray = new Array();for (var a=0; a<l; a++) {lArray.push((this.actions[a]) ? this.actions[a].getShrewd() : null);}parametersArray.push(lArray);} else {parametersArray.push(this.actions)}
-if (this.events) {var l=this.events.length;var lArray = new Array();for (var a=0; a<l; a++) {lArray.push((this.events[a]) ? this.events[a].getShrewd() : null);}parametersArray.push(lArray);} else {parametersArray.push(this.events)}
-if (this.items) {var l=this.items.length;var lArray = new Array();for (var a=0; a<l; a++) {lArray.push((this.items[a]) ? this.items[a].getShrewd() : null);}parametersArray.push(lArray);} else {parametersArray.push(this.items)}
+parametersArray.push(this._getShrewd(this.name, "string", ""));
+parametersArray.push(this._getShrewd(this.actions, "list", "courseware.ValidRelationshipAction"));
+parametersArray.push(this._getShrewd(this.events, "list", "courseware.ValidRelationshipEvent"));
+parametersArray.push(this._getShrewd(this.items, "list", "courseware.RelationshipCollection"));
 return parametersArray;
 },
 /**
@@ -3579,55 +3494,10 @@ return parametersArray;
  * @returns {null} 
  */
 setShrewd: function(shrewdArray){
-this.name = shrewdArray[0];
-if (shrewdArray[1]) {
-var l=shrewdArray[1].length;
-var lArray = new Array();
-for (var a=0; a<l; a++) {
-if (shrewdArray[1][a]) {
-var theClass = new CoursewareValidRelationshipAction();
-theClass.setShrewd(shrewdArray[1][a]);
-lArray[a] = theClass;
-} else {
-lArray[a] = null;
-}
-}
-} else {
-lArray = null;
-}
-this.actions = lArray;
-if (shrewdArray[2]) {
-var l=shrewdArray[2].length;
-var lArray = new Array();
-for (var a=0; a<l; a++) {
-if (shrewdArray[2][a]) {
-var theClass = new CoursewareValidRelationshipEvent();
-theClass.setShrewd(shrewdArray[2][a]);
-lArray[a] = theClass;
-} else {
-lArray[a] = null;
-}
-}
-} else {
-lArray = null;
-}
-this.events = lArray;
-if (shrewdArray[3]) {
-var l=shrewdArray[3].length;
-var lArray = new Array();
-for (var a=0; a<l; a++) {
-if (shrewdArray[3][a]) {
-var theClass = new CoursewareRelationshipCollection();
-theClass.setShrewd(shrewdArray[3][a]);
-lArray[a] = theClass;
-} else {
-lArray[a] = null;
-}
-}
-} else {
-lArray = null;
-}
-this.items = lArray;
+this.name = this._setShrewd(shrewdArray[0],"string","");
+this.actions = this._setShrewd(shrewdArray[1],"list","courseware.ValidRelationshipAction");
+this.events = this._setShrewd(shrewdArray[2],"list","courseware.ValidRelationshipEvent");
+this.items = this._setShrewd(shrewdArray[3],"list","courseware.RelationshipCollection");
 },
 initialize: function(){
 }
@@ -3635,9 +3505,13 @@ initialize: function(){
 /**
  * Automatically Generated Shrewd File
  */
-var CoursewareRelationshipContainer = new Class({
+var BuildEmpire = BuildEmpire || {};
+BuildEmpire.Mosaic = BuildEmpire.Mosaic || {};
+BuildEmpire.Mosaic.Courseware = BuildEmpire.Mosaic.Courseware || {};
+BuildEmpire.Mosaic.Courseware.RelationshipContainer = new Class({
+Extends:AShrewdBase,
 /**
- * @type {CoursewareRelationshipCollection}
+ * @type {BuildEmpire.Mosaic.Courseware.RelationshipCollection}
  */
 engine : null,
 /**
@@ -3654,7 +3528,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.RelationshipContainer",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
+return "a410f36affc0eba0e7b371833391434b2dd6db1c";
 },
 /**
  * Get the name of the MooTools class.
@@ -3662,7 +3536,7 @@ return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
  * @returns {string}
  */
 getName : function(){
-return "CoursewareRelationshipContainer";
+return "BuildEmpire.Mosaic.Courseware.RelationshipContainer";
 },
 /**
  * Get the content as a shrewd array.
@@ -3671,8 +3545,8 @@ return "CoursewareRelationshipContainer";
  */
 getShrewd: function(){
 var parametersArray = new Array();
-parametersArray.push((this.engine) ? this.engine.getShrewd() : null);
-if (this.components) {var lHash = new Hash();this.components.each(function(v, k){lHash[k] = (v) ? v.getShrewd() : null;});parametersArray.push(lHash);} else {parametersArray.push(this.components)}
+parametersArray.push(this._getShrewd(this.engine, "courseware.RelationshipCollection", ""));
+parametersArray.push(this._getShrewd(this.components, "map", "courseware.RelationshipComponentContainer"));
 return parametersArray;
 },
 /**
@@ -3682,28 +3556,8 @@ return parametersArray;
  * @returns {null} 
  */
 setShrewd: function(shrewdArray){
-if (shrewdArray[0]) {
-var theClass = new CoursewareRelationshipCollection();
-theClass.setShrewd(shrewdArray[0]);
-this.engine = theClass;
-} else {
-this.engine = null;
-}
-if (shrewdArray[1]) {
-var lHash = new Hash();
-for (var p in shrewdArray[1]) {
-if (shrewdArray[1][p]) {
-var theClass = new CoursewareRelationshipComponentContainer();
-theClass.setShrewd(shrewdArray[1][p]);
-lHash[p] = theClass;
-} else {
-lHash[p] = null;
-}
-};
-} else {
-lHash = null;
-}
-this.components = lHash;
+this.engine = this._setShrewd(shrewdArray[0],"courseware.RelationshipCollection","");
+this.components = this._setShrewd(shrewdArray[1],"map","courseware.RelationshipComponentContainer");
 },
 initialize: function(){
 }
@@ -3711,7 +3565,11 @@ initialize: function(){
 /**
  * Automatically Generated Shrewd File
  */
-var CoursewareScreenData = new Class({
+var BuildEmpire = BuildEmpire || {};
+BuildEmpire.Mosaic = BuildEmpire.Mosaic || {};
+BuildEmpire.Mosaic.Courseware = BuildEmpire.Mosaic.Courseware || {};
+BuildEmpire.Mosaic.Courseware.ScreenData = new Class({
+Extends:AShrewdBase,
 /**
  * @type {Array} rows
  */
@@ -3734,7 +3592,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.ScreenData",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
+return "a410f36affc0eba0e7b371833391434b2dd6db1c";
 },
 /**
  * Get the name of the MooTools class.
@@ -3742,7 +3600,7 @@ return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
  * @returns {string}
  */
 getName : function(){
-return "CoursewareScreenData";
+return "BuildEmpire.Mosaic.Courseware.ScreenData";
 },
 /**
  * Get the content as a shrewd array.
@@ -3751,9 +3609,9 @@ return "CoursewareScreenData";
  */
 getShrewd: function(){
 var parametersArray = new Array();
-if (this.rows) {var l=this.rows.length;var lArray = new Array();for (var a=0; a<l; a++) {lArray.push((this.rows[a]) ? this.rows[a].getShrewd() : null);}parametersArray.push(lArray);} else {parametersArray.push(this.rows)}
-if (this.freeComponents) {var l=this.freeComponents.length;var lArray = new Array();for (var a=0; a<l; a++) {lArray.push((this.freeComponents[a]) ? this.freeComponents[a].getShrewd() : null);}parametersArray.push(lArray);} else {parametersArray.push(this.freeComponents)}
-if (this.relationships) {var l=this.relationships.length;var lArray = new Array();for (var a=0; a<l; a++) {lArray.push((this.relationships[a]) ? this.relationships[a].getShrewd() : null);}parametersArray.push(lArray);} else {parametersArray.push(this.relationships)}
+parametersArray.push(this._getShrewd(this.rows, "list", "courseware.Row"));
+parametersArray.push(this._getShrewd(this.freeComponents, "list", "courseware.ComponentInstance"));
+parametersArray.push(this._getShrewd(this.relationships, "list", "courseware.Relationship"));
 return parametersArray;
 },
 /**
@@ -3763,54 +3621,9 @@ return parametersArray;
  * @returns {null} 
  */
 setShrewd: function(shrewdArray){
-if (shrewdArray[0]) {
-var l=shrewdArray[0].length;
-var lArray = new Array();
-for (var a=0; a<l; a++) {
-if (shrewdArray[0][a]) {
-var theClass = new CoursewareRow();
-theClass.setShrewd(shrewdArray[0][a]);
-lArray[a] = theClass;
-} else {
-lArray[a] = null;
-}
-}
-} else {
-lArray = null;
-}
-this.rows = lArray;
-if (shrewdArray[1]) {
-var l=shrewdArray[1].length;
-var lArray = new Array();
-for (var a=0; a<l; a++) {
-if (shrewdArray[1][a]) {
-var theClass = new CoursewareComponentInstance();
-theClass.setShrewd(shrewdArray[1][a]);
-lArray[a] = theClass;
-} else {
-lArray[a] = null;
-}
-}
-} else {
-lArray = null;
-}
-this.freeComponents = lArray;
-if (shrewdArray[2]) {
-var l=shrewdArray[2].length;
-var lArray = new Array();
-for (var a=0; a<l; a++) {
-if (shrewdArray[2][a]) {
-var theClass = new CoursewareRelationship();
-theClass.setShrewd(shrewdArray[2][a]);
-lArray[a] = theClass;
-} else {
-lArray[a] = null;
-}
-}
-} else {
-lArray = null;
-}
-this.relationships = lArray;
+this.rows = this._setShrewd(shrewdArray[0],"list","courseware.Row");
+this.freeComponents = this._setShrewd(shrewdArray[1],"list","courseware.ComponentInstance");
+this.relationships = this._setShrewd(shrewdArray[2],"list","courseware.Relationship");
 },
 initialize: function(){
 }
@@ -3818,13 +3631,17 @@ initialize: function(){
 /**
  * Automatically Generated Shrewd File
  */
-var CoursewareStructureItem = new Class({
+var BuildEmpire = BuildEmpire || {};
+BuildEmpire.Mosaic = BuildEmpire.Mosaic || {};
+BuildEmpire.Mosaic.Courseware = BuildEmpire.Mosaic.Courseware || {};
+BuildEmpire.Mosaic.Courseware.StructureItem = new Class({
+Extends:AShrewdBase,
 /**
- * @type {string} id (ID).
+ * @type {String} id (ID).
  */
 id : null,
 /**
- * @type {string} alias (ID).
+ * @type {String} alias (ID).
  */
 alias : null,
 /**
@@ -3832,7 +3649,7 @@ alias : null,
  */
 type : null,
 /**
- * @type {string} title
+ * @type {String} title
  */
 title : null,
 /**
@@ -3848,7 +3665,7 @@ children : null,
  */
 learningPathIds : null,
 /**
- * @type {CoursewareScreenData}
+ * @type {BuildEmpire.Mosaic.Courseware.ScreenData}
  */
 screenData : null,
 /**
@@ -3861,7 +3678,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.StructureItem",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
+return "a410f36affc0eba0e7b371833391434b2dd6db1c";
 },
 /**
  * Get the name of the MooTools class.
@@ -3869,7 +3686,7 @@ return "f4501cf5e959a9cc0c47a1ce402cfcfb26796a6f";
  * @returns {string}
  */
 getName : function(){
-return "CoursewareStructureItem";
+return "BuildEmpire.Mosaic.Courseware.StructureItem";
 },
 /**
  * Get the content as a shrewd array.
@@ -3878,14 +3695,14 @@ return "CoursewareStructureItem";
  */
 getShrewd: function(){
 var parametersArray = new Array();
-parametersArray.push(this.id);
-parametersArray.push(this.alias);
-parametersArray.push(this.type);
-parametersArray.push(this.title);
-parametersArray.push(this.populated);
-if (this.children) {var l=this.children.length;var lArray = new Array();for (var a=0; a<l; a++) {lArray.push((this.children[a]) ? this.children[a].getShrewd() : null);}parametersArray.push(lArray);} else {parametersArray.push(this.children)}
-if (this.learningPathIds) {var lHash = new Hash();this.learningPathIds.each(function(v, k){lHash[k] = v;});parametersArray.push(lHash);} else {parametersArray.push(this.learningPathIds)}
-parametersArray.push((this.screenData) ? this.screenData.getShrewd() : null);
+parametersArray.push(this._getShrewd(this.id, "string-id", ""));
+parametersArray.push(this._getShrewd(this.alias, "string-id", ""));
+parametersArray.push(this._getShrewd(this.type, "integer", ""));
+parametersArray.push(this._getShrewd(this.title, "string", ""));
+parametersArray.push(this._getShrewd(this.populated, "boolean", ""));
+parametersArray.push(this._getShrewd(this.children, "list", "courseware.StructureItem"));
+parametersArray.push(this._getShrewd(this.learningPathIds, "map", "integer"));
+parametersArray.push(this._getShrewd(this.screenData, "courseware.ScreenData", ""));
 return parametersArray;
 },
 /**
@@ -3895,43 +3712,14 @@ return parametersArray;
  * @returns {null} 
  */
 setShrewd: function(shrewdArray){
-this.id = shrewdArray[0];
-this.alias = shrewdArray[1];
-this.type = shrewdArray[2];
-this.title = shrewdArray[3];
-this.populated = shrewdArray[4];
-if (shrewdArray[5]) {
-var l=shrewdArray[5].length;
-var lArray = new Array();
-for (var a=0; a<l; a++) {
-if (shrewdArray[5][a]) {
-var theClass = new CoursewareStructureItem();
-theClass.setShrewd(shrewdArray[5][a]);
-lArray[a] = theClass;
-} else {
-lArray[a] = null;
-}
-}
-} else {
-lArray = null;
-}
-this.children = lArray;
-if (shrewdArray[6]) {
-var lHash = new Hash();
-for (var p in shrewdArray[6]) {
-lHash[p] = shrewdArray[6][p];
-};
-} else {
-lHash = null;
-}
-this.learningPathIds = lHash;
-if (shrewdArray[7]) {
-var theClass = new CoursewareScreenData();
-theClass.setShrewd(shrewdArray[7]);
-this.screenData = theClass;
-} else {
-this.screenData = null;
-}
+this.id = this._setShrewd(shrewdArray[0],"string-id","");
+this.alias = this._setShrewd(shrewdArray[1],"string-id","");
+this.type = this._setShrewd(shrewdArray[2],"integer","");
+this.title = this._setShrewd(shrewdArray[3],"string","");
+this.populated = this._setShrewd(shrewdArray[4],"boolean","");
+this.children = this._setShrewd(shrewdArray[5],"list","courseware.StructureItem");
+this.learningPathIds = this._setShrewd(shrewdArray[6],"map","integer");
+this.screenData = this._setShrewd(shrewdArray[7],"courseware.ScreenData","");
 },
 initialize: function(){
 }

@@ -1,5 +1,5 @@
 namespace shrewd BuildEmpire.Mosaic.Courseware
-namespace js Courseware
+namespace js BuildEmpire.Mosaic.Courseware
 namespace php BuildEmpire\Mosaic\Courseware
 
 /*
@@ -199,7 +199,7 @@ struct EditableFormField {
     3:              string                  title,
     4:              boolean                 required,
     5: optional     string                  value,
-    6: optional     native-js-Object        data
+    6: optional     struct                  data
 }
 
 struct EditableFormGroup {
@@ -226,7 +226,7 @@ struct Relationship {
     3:              string                  event,
     4:              string                  target,
     5:              string                  action,
-    6:  optional    native-js-All           data
+    6:  optional    mixed                   data
 }
 
 

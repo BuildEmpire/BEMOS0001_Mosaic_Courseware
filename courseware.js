@@ -199,7 +199,7 @@ var parametersArray = new Array();
 if (this._shrewd.isLocal && this._shrewd.isServer) {
 parametersArray.push(configurationData);
 } else {
-parametersArray.push(this._getShrewd(configurationData, "courseware.ConfigurationData", ""));
+parametersArray.push(this._getShrewd(configurationData, "BuildEmpire.Mosaic.Courseware.ConfigurationData", ""));
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
@@ -244,7 +244,7 @@ var parametersArray = new Array();
 if (this._shrewd.isLocal && this._shrewd.isServer) {
 parametersArray.push(screenData);
 } else {
-parametersArray.push(this._getShrewd(screenData, "courseware.ScreenData", ""));
+parametersArray.push(this._getShrewd(screenData, "BuildEmpire.Mosaic.Courseware.ScreenData", ""));
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
@@ -586,7 +586,7 @@ var parametersArray = new Array();
 if (this._shrewd.isLocal && this._shrewd.isServer) {
 parametersArray.push(relationshipsData);
 } else {
-parametersArray.push(this._getShrewd(relationshipsData, "list", "courseware.Relationship"));
+parametersArray.push(this._getShrewd(relationshipsData, "list", "BuildEmpire.Mosaic.Courseware.Relationship"));
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
@@ -1254,7 +1254,7 @@ var parametersArray = new Array();
 if (this._shrewd.isLocal && this._shrewd.isServer) {
 parametersArray.push(sScreenData);
 } else {
-parametersArray.push(this._getShrewd(sScreenData, "courseware.ScreenData", ""));
+parametersArray.push(this._getShrewd(sScreenData, "BuildEmpire.Mosaic.Courseware.ScreenData", ""));
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
@@ -1339,7 +1339,7 @@ parametersArray.push(editableForm);
 parametersArray.push(onSaveCallback);
 parametersArray.push(onCancelCallback);
 } else {
-parametersArray.push(this._getShrewd(editableForm, "courseware.EditableForm", ""));
+parametersArray.push(this._getShrewd(editableForm, "BuildEmpire.Mosaic.Courseware.EditableForm", ""));
 
 
 }
@@ -1369,7 +1369,7 @@ parametersArray.push(editableForm);
 parametersArray.push(onSaveCallback);
 parametersArray.push(onCancelCallback);
 } else {
-parametersArray.push(this._getShrewd(editableForm, "courseware.EditableForm", ""));
+parametersArray.push(this._getShrewd(editableForm, "BuildEmpire.Mosaic.Courseware.EditableForm", ""));
 
 
 }
@@ -1707,10 +1707,10 @@ return parametersArray;
  * @returns {null} 
  */
 setShrewd: function(shrewdArray){
-this.id = this._setShrewd(shrewdArray[0],"string-id","");
-this.base = this._setShrewd(shrewdArray[1],"boolean","");
-this.name = this._setShrewd(shrewdArray[2],"string","");
-this.value = this._setShrewd(shrewdArray[3],"string","");
+this.id = this._setShrewd(shrewdArray[0],"string-id","",true);
+this.base = this._setShrewd(shrewdArray[1],"boolean","",false);
+this.name = this._setShrewd(shrewdArray[2],"string","",false);
+this.value = this._setShrewd(shrewdArray[3],"string","",false);
 },
 initialize: function(){
 }
@@ -1774,9 +1774,9 @@ return parametersArray;
  * @returns {null} 
  */
 setShrewd: function(shrewdArray){
-this.id = this._setShrewd(shrewdArray[0],"string-id","");
-this.base = this._setShrewd(shrewdArray[1],"boolean","");
-this.name = this._setShrewd(shrewdArray[2],"string","");
+this.id = this._setShrewd(shrewdArray[0],"string-id","",true);
+this.base = this._setShrewd(shrewdArray[1],"boolean","",false);
+this.name = this._setShrewd(shrewdArray[2],"string","",false);
 },
 initialize: function(){
 }
@@ -1855,12 +1855,12 @@ return parametersArray;
  * @returns {null} 
  */
 setShrewd: function(shrewdArray){
-this.xPercent = this._setShrewd(shrewdArray[0],"float","");
-this.yPercent = this._setShrewd(shrewdArray[1],"float","");
-this.widthPercent = this._setShrewd(shrewdArray[2],"float","");
-this.heightPercent = this._setShrewd(shrewdArray[3],"float","");
-this.tabIndex = this._setShrewd(shrewdArray[4],"integer","");
-this.zIndex = this._setShrewd(shrewdArray[5],"integer","");
+this.xPercent = this._setShrewd(shrewdArray[0],"float","",true);
+this.yPercent = this._setShrewd(shrewdArray[1],"float","",true);
+this.widthPercent = this._setShrewd(shrewdArray[2],"float","",true);
+this.heightPercent = this._setShrewd(shrewdArray[3],"float","",true);
+this.tabIndex = this._setShrewd(shrewdArray[4],"integer","",true);
+this.zIndex = this._setShrewd(shrewdArray[5],"integer","",true);
 },
 initialize: function(){
 }
@@ -1924,9 +1924,9 @@ return parametersArray;
  * @returns {null} 
  */
 setShrewd: function(shrewdArray){
-this.name = this._setShrewd(shrewdArray[0],"string","");
-this.title = this._setShrewd(shrewdArray[1],"string","");
-this.active = this._setShrewd(shrewdArray[2],"integer","");
+this.name = this._setShrewd(shrewdArray[0],"string","",false);
+this.title = this._setShrewd(shrewdArray[1],"string","",false);
+this.active = this._setShrewd(shrewdArray[2],"integer","",false);
 },
 initialize: function(){
 }
@@ -1994,7 +1994,7 @@ parametersArray.push(this._getShrewd(this.id, "string-id", ""));
 parametersArray.push(this._getShrewd(this.alias, "string", ""));
 parametersArray.push(this._getShrewd(this.name, "string", ""));
 parametersArray.push(this._getShrewd(this.data, "map", ""));
-parametersArray.push(this._getShrewd(this.metrics, "courseware.ComponentMetrics", ""));
+parametersArray.push(this._getShrewd(this.metrics, "BuildEmpire.Mosaic.Courseware.ComponentMetrics", ""));
 parametersArray.push(this._getShrewd(this.scale, "integer", ""));
 return parametersArray;
 },
@@ -2005,12 +2005,12 @@ return parametersArray;
  * @returns {null} 
  */
 setShrewd: function(shrewdArray){
-this.id = this._setShrewd(shrewdArray[0],"string-id","");
-this.alias = this._setShrewd(shrewdArray[1],"string","");
-this.name = this._setShrewd(shrewdArray[2],"string","");
-this.data = this._setShrewd(shrewdArray[3],"map","");
-this.metrics = this._setShrewd(shrewdArray[4],"courseware.ComponentMetrics","");
-this.scale = this._setShrewd(shrewdArray[5],"integer","");
+this.id = this._setShrewd(shrewdArray[0],"string-id","",false);
+this.alias = this._setShrewd(shrewdArray[1],"string","",false);
+this.name = this._setShrewd(shrewdArray[2],"string","",false);
+this.data = this._setShrewd(shrewdArray[3],"map","",false);
+this.metrics = this._setShrewd(shrewdArray[4],"BuildEmpire.Mosaic.Courseware.ComponentMetrics","",true);
+this.scale = this._setShrewd(shrewdArray[5],"integer","",true);
 },
 initialize: function(){
 }
@@ -2069,8 +2069,8 @@ return parametersArray;
  * @returns {null} 
  */
 setShrewd: function(shrewdArray){
-this.widthPercent = this._setShrewd(shrewdArray[0],"float","");
-this.heightPercent = this._setShrewd(shrewdArray[1],"float","");
+this.widthPercent = this._setShrewd(shrewdArray[0],"float","",true);
+this.heightPercent = this._setShrewd(shrewdArray[1],"float","",true);
 },
 initialize: function(){
 }
@@ -2123,8 +2123,8 @@ return "BuildEmpire.Mosaic.Courseware.Column";
 getShrewd: function(){
 var parametersArray = new Array();
 parametersArray.push(this._getShrewd(this.id, "string-id", ""));
-parametersArray.push(this._getShrewd(this.components, "list", "courseware.ComponentInstance"));
-parametersArray.push(this._getShrewd(this.metrics, "courseware.ColumnRowMetrics", ""));
+parametersArray.push(this._getShrewd(this.components, "list", "BuildEmpire.Mosaic.Courseware.ComponentInstance"));
+parametersArray.push(this._getShrewd(this.metrics, "BuildEmpire.Mosaic.Courseware.ColumnRowMetrics", ""));
 return parametersArray;
 },
 /**
@@ -2134,9 +2134,9 @@ return parametersArray;
  * @returns {null} 
  */
 setShrewd: function(shrewdArray){
-this.id = this._setShrewd(shrewdArray[0],"string-id","");
-this.components = this._setShrewd(shrewdArray[1],"list","courseware.ComponentInstance");
-this.metrics = this._setShrewd(shrewdArray[2],"courseware.ColumnRowMetrics","");
+this.id = this._setShrewd(shrewdArray[0],"string-id","",false);
+this.components = this._setShrewd(shrewdArray[1],"list","BuildEmpire.Mosaic.Courseware.ComponentInstance",true);
+this.metrics = this._setShrewd(shrewdArray[2],"BuildEmpire.Mosaic.Courseware.ColumnRowMetrics","",true);
 },
 initialize: function(){
 }
@@ -2189,8 +2189,8 @@ return "BuildEmpire.Mosaic.Courseware.Row";
 getShrewd: function(){
 var parametersArray = new Array();
 parametersArray.push(this._getShrewd(this.id, "string-id", ""));
-parametersArray.push(this._getShrewd(this.columns, "list", "courseware.Column"));
-parametersArray.push(this._getShrewd(this.metrics, "courseware.ColumnRowMetrics", ""));
+parametersArray.push(this._getShrewd(this.columns, "list", "BuildEmpire.Mosaic.Courseware.Column"));
+parametersArray.push(this._getShrewd(this.metrics, "BuildEmpire.Mosaic.Courseware.ColumnRowMetrics", ""));
 return parametersArray;
 },
 /**
@@ -2200,9 +2200,9 @@ return parametersArray;
  * @returns {null} 
  */
 setShrewd: function(shrewdArray){
-this.id = this._setShrewd(shrewdArray[0],"string-id","");
-this.columns = this._setShrewd(shrewdArray[1],"list","courseware.Column");
-this.metrics = this._setShrewd(shrewdArray[2],"courseware.ColumnRowMetrics","");
+this.id = this._setShrewd(shrewdArray[0],"string-id","",false);
+this.columns = this._setShrewd(shrewdArray[1],"list","BuildEmpire.Mosaic.Courseware.Column",true);
+this.metrics = this._setShrewd(shrewdArray[2],"BuildEmpire.Mosaic.Courseware.ColumnRowMetrics","",true);
 },
 initialize: function(){
 }
@@ -2251,7 +2251,7 @@ return "BuildEmpire.Mosaic.Courseware.Template";
 getShrewd: function(){
 var parametersArray = new Array();
 parametersArray.push(this._getShrewd(this.name, "string", ""));
-parametersArray.push(this._getShrewd(this.rows, "list", "courseware.Row"));
+parametersArray.push(this._getShrewd(this.rows, "list", "BuildEmpire.Mosaic.Courseware.Row"));
 return parametersArray;
 },
 /**
@@ -2261,8 +2261,8 @@ return parametersArray;
  * @returns {null} 
  */
 setShrewd: function(shrewdArray){
-this.name = this._setShrewd(shrewdArray[0],"string","");
-this.rows = this._setShrewd(shrewdArray[1],"list","courseware.Row");
+this.name = this._setShrewd(shrewdArray[0],"string","",false);
+this.rows = this._setShrewd(shrewdArray[1],"list","BuildEmpire.Mosaic.Courseware.Row",false);
 },
 initialize: function(){
 }
@@ -2336,11 +2336,11 @@ return parametersArray;
  * @returns {null} 
  */
 setShrewd: function(shrewdArray){
-this.allow = this._setShrewd(shrewdArray[0],"boolean","");
-this.resizable = this._setShrewd(shrewdArray[1],"boolean","");
-this.initial = this._setShrewd(shrewdArray[2],"integer","");
-this.min = this._setShrewd(shrewdArray[3],"integer","");
-this.max = this._setShrewd(shrewdArray[4],"integer","");
+this.allow = this._setShrewd(shrewdArray[0],"boolean","",false);
+this.resizable = this._setShrewd(shrewdArray[1],"boolean","",false);
+this.initial = this._setShrewd(shrewdArray[2],"integer","",false);
+this.min = this._setShrewd(shrewdArray[3],"integer","",false);
+this.max = this._setShrewd(shrewdArray[4],"integer","",false);
 },
 initialize: function(){
 }
@@ -2414,11 +2414,11 @@ return parametersArray;
  * @returns {null} 
  */
 setShrewd: function(shrewdArray){
-this.allow = this._setShrewd(shrewdArray[0],"boolean","");
-this.resizable = this._setShrewd(shrewdArray[1],"boolean","");
-this.initial = this._setShrewd(shrewdArray[2],"integer","");
-this.min = this._setShrewd(shrewdArray[3],"integer","");
-this.max = this._setShrewd(shrewdArray[4],"integer","");
+this.allow = this._setShrewd(shrewdArray[0],"boolean","",false);
+this.resizable = this._setShrewd(shrewdArray[1],"boolean","",false);
+this.initial = this._setShrewd(shrewdArray[2],"integer","",false);
+this.min = this._setShrewd(shrewdArray[3],"integer","",false);
+this.max = this._setShrewd(shrewdArray[4],"integer","",false);
 },
 initialize: function(){
 }
@@ -2492,11 +2492,11 @@ return parametersArray;
  * @returns {null} 
  */
 setShrewd: function(shrewdArray){
-this.width = this._setShrewd(shrewdArray[0],"integer","");
-this.height = this._setShrewd(shrewdArray[1],"integer","");
-this.placeInColumns = this._setShrewd(shrewdArray[2],"boolean","");
-this.restrictWidth = this._setShrewd(shrewdArray[3],"boolean","");
-this.restrictHeight = this._setShrewd(shrewdArray[4],"boolean","");
+this.width = this._setShrewd(shrewdArray[0],"integer","",false);
+this.height = this._setShrewd(shrewdArray[1],"integer","",false);
+this.placeInColumns = this._setShrewd(shrewdArray[2],"boolean","",false);
+this.restrictWidth = this._setShrewd(shrewdArray[3],"boolean","",false);
+this.restrictHeight = this._setShrewd(shrewdArray[4],"boolean","",false);
 },
 initialize: function(){
 }
@@ -2555,8 +2555,8 @@ return parametersArray;
  * @returns {null} 
  */
 setShrewd: function(shrewdArray){
-this.x = this._setShrewd(shrewdArray[0],"integer","");
-this.y = this._setShrewd(shrewdArray[1],"integer","");
+this.x = this._setShrewd(shrewdArray[0],"integer","",false);
+this.y = this._setShrewd(shrewdArray[1],"integer","",false);
 },
 initialize: function(){
 }
@@ -2646,14 +2646,14 @@ getShrewd: function(){
 var parametersArray = new Array();
 parametersArray.push(this._getShrewd(this.id, "string-id", ""));
 parametersArray.push(this._getShrewd(this.name, "string", ""));
-parametersArray.push(this._getShrewd(this.translations, "list", "courseware.Translation"));
-parametersArray.push(this._getShrewd(this.learningPaths, "list", "courseware.LearningPath"));
-parametersArray.push(this._getShrewd(this.components, "list", "courseware.Component"));
+parametersArray.push(this._getShrewd(this.translations, "list", "BuildEmpire.Mosaic.Courseware.Translation"));
+parametersArray.push(this._getShrewd(this.learningPaths, "list", "BuildEmpire.Mosaic.Courseware.LearningPath"));
+parametersArray.push(this._getShrewd(this.components, "list", "BuildEmpire.Mosaic.Courseware.Component"));
 parametersArray.push(this._getShrewd(this.dragMode, "integer", ""));
-parametersArray.push(this._getShrewd(this.rows, "courseware.DataRows", ""));
-parametersArray.push(this._getShrewd(this.columns, "courseware.DataColumns", ""));
-parametersArray.push(this._getShrewd(this.canvas, "courseware.DataCanvas", ""));
-parametersArray.push(this._getShrewd(this.grid, "courseware.DataGrid", ""));
+parametersArray.push(this._getShrewd(this.rows, "BuildEmpire.Mosaic.Courseware.DataRows", ""));
+parametersArray.push(this._getShrewd(this.columns, "BuildEmpire.Mosaic.Courseware.DataColumns", ""));
+parametersArray.push(this._getShrewd(this.canvas, "BuildEmpire.Mosaic.Courseware.DataCanvas", ""));
+parametersArray.push(this._getShrewd(this.grid, "BuildEmpire.Mosaic.Courseware.DataGrid", ""));
 parametersArray.push(this._getShrewd(this.language, "string", ""));
 parametersArray.push(this._getShrewd(this.valid, "boolean", ""));
 return parametersArray;
@@ -2665,18 +2665,18 @@ return parametersArray;
  * @returns {null} 
  */
 setShrewd: function(shrewdArray){
-this.id = this._setShrewd(shrewdArray[0],"string-id","");
-this.name = this._setShrewd(shrewdArray[1],"string","");
-this.translations = this._setShrewd(shrewdArray[2],"list","courseware.Translation");
-this.learningPaths = this._setShrewd(shrewdArray[3],"list","courseware.LearningPath");
-this.components = this._setShrewd(shrewdArray[4],"list","courseware.Component");
-this.dragMode = this._setShrewd(shrewdArray[5],"integer","");
-this.rows = this._setShrewd(shrewdArray[6],"courseware.DataRows","");
-this.columns = this._setShrewd(shrewdArray[7],"courseware.DataColumns","");
-this.canvas = this._setShrewd(shrewdArray[8],"courseware.DataCanvas","");
-this.grid = this._setShrewd(shrewdArray[9],"courseware.DataGrid","");
-this.language = this._setShrewd(shrewdArray[10],"string","");
-this.valid = this._setShrewd(shrewdArray[11],"boolean","");
+this.id = this._setShrewd(shrewdArray[0],"string-id","",false);
+this.name = this._setShrewd(shrewdArray[1],"string","",false);
+this.translations = this._setShrewd(shrewdArray[2],"list","BuildEmpire.Mosaic.Courseware.Translation",true);
+this.learningPaths = this._setShrewd(shrewdArray[3],"list","BuildEmpire.Mosaic.Courseware.LearningPath",true);
+this.components = this._setShrewd(shrewdArray[4],"list","BuildEmpire.Mosaic.Courseware.Component",true);
+this.dragMode = this._setShrewd(shrewdArray[5],"integer","",false);
+this.rows = this._setShrewd(shrewdArray[6],"BuildEmpire.Mosaic.Courseware.DataRows","",false);
+this.columns = this._setShrewd(shrewdArray[7],"BuildEmpire.Mosaic.Courseware.DataColumns","",false);
+this.canvas = this._setShrewd(shrewdArray[8],"BuildEmpire.Mosaic.Courseware.DataCanvas","",false);
+this.grid = this._setShrewd(shrewdArray[9],"BuildEmpire.Mosaic.Courseware.DataGrid","",false);
+this.language = this._setShrewd(shrewdArray[10],"string","",false);
+this.valid = this._setShrewd(shrewdArray[11],"boolean","",false);
 },
 initialize: function(){
 }
@@ -2745,10 +2745,10 @@ return parametersArray;
  * @returns {null} 
  */
 setShrewd: function(shrewdArray){
-this.cssPath = this._setShrewd(shrewdArray[0],"list","");
-this.styleFormats = this._setShrewd(shrewdArray[1],"list","");
-this.rows = this._setShrewd(shrewdArray[2],"integer","");
-this.cssAttributes = this._setShrewd(shrewdArray[3],"map","string");
+this.cssPath = this._setShrewd(shrewdArray[0],"list","",false);
+this.styleFormats = this._setShrewd(shrewdArray[1],"list","",false);
+this.rows = this._setShrewd(shrewdArray[2],"integer","",true);
+this.cssAttributes = this._setShrewd(shrewdArray[3],"map","string",true);
 },
 initialize: function(){
 }
@@ -2802,7 +2802,7 @@ return parametersArray;
  * @returns {null} 
  */
 setShrewd: function(shrewdArray){
-this.options = this._setShrewd(shrewdArray[0],"map","string");
+this.options = this._setShrewd(shrewdArray[0],"map","string",false);
 },
 initialize: function(){
 }
@@ -2866,9 +2866,9 @@ return parametersArray;
  * @returns {null} 
  */
 setShrewd: function(shrewdArray){
-this.min = this._setShrewd(shrewdArray[0],"integer","");
-this.max = this._setShrewd(shrewdArray[1],"integer","");
-this.step = this._setShrewd(shrewdArray[2],"integer","");
+this.min = this._setShrewd(shrewdArray[0],"integer","",false);
+this.max = this._setShrewd(shrewdArray[1],"integer","",false);
+this.step = this._setShrewd(shrewdArray[2],"integer","",false);
 },
 initialize: function(){
 }
@@ -2922,7 +2922,7 @@ return parametersArray;
  * @returns {null} 
  */
 setShrewd: function(shrewdArray){
-this.rows = this._setShrewd(shrewdArray[0],"integer","");
+this.rows = this._setShrewd(shrewdArray[0],"integer","",true);
 },
 initialize: function(){
 }
@@ -2991,7 +2991,7 @@ parametersArray.push(this._getShrewd(this.name, "string", ""));
 parametersArray.push(this._getShrewd(this.title, "string", ""));
 parametersArray.push(this._getShrewd(this.required, "boolean", ""));
 parametersArray.push(this._getShrewd(this.value, "string", ""));
-parametersArray.push(this._getShrewd(this.data, "struct", ""));
+parametersArray.push(this._getShrewd(this.data, "BuildEmpire.Mosaic.Courseware.struct", ""));
 return parametersArray;
 },
 /**
@@ -3001,12 +3001,12 @@ return parametersArray;
  * @returns {null} 
  */
 setShrewd: function(shrewdArray){
-this.type = this._setShrewd(shrewdArray[0],"integer","");
-this.name = this._setShrewd(shrewdArray[1],"string","");
-this.title = this._setShrewd(shrewdArray[2],"string","");
-this.required = this._setShrewd(shrewdArray[3],"boolean","");
-this.value = this._setShrewd(shrewdArray[4],"string","");
-this.data = this._setShrewd(shrewdArray[5],"struct","");
+this.type = this._setShrewd(shrewdArray[0],"integer","",false);
+this.name = this._setShrewd(shrewdArray[1],"string","",false);
+this.title = this._setShrewd(shrewdArray[2],"string","",false);
+this.required = this._setShrewd(shrewdArray[3],"boolean","",false);
+this.value = this._setShrewd(shrewdArray[4],"string","",true);
+this.data = this._setShrewd(shrewdArray[5],"BuildEmpire.Mosaic.Courseware.struct","",true);
 },
 initialize: function(){
 }
@@ -3055,7 +3055,7 @@ return "BuildEmpire.Mosaic.Courseware.EditableFormGroup";
 getShrewd: function(){
 var parametersArray = new Array();
 parametersArray.push(this._getShrewd(this.name, "string", ""));
-parametersArray.push(this._getShrewd(this.fields, "list", "courseware.EditableFormField"));
+parametersArray.push(this._getShrewd(this.fields, "list", "BuildEmpire.Mosaic.Courseware.EditableFormField"));
 return parametersArray;
 },
 /**
@@ -3065,8 +3065,8 @@ return parametersArray;
  * @returns {null} 
  */
 setShrewd: function(shrewdArray){
-this.name = this._setShrewd(shrewdArray[0],"string","");
-this.fields = this._setShrewd(shrewdArray[1],"list","courseware.EditableFormField");
+this.name = this._setShrewd(shrewdArray[0],"string","",false);
+this.fields = this._setShrewd(shrewdArray[1],"list","BuildEmpire.Mosaic.Courseware.EditableFormField",false);
 },
 initialize: function(){
 }
@@ -3115,7 +3115,7 @@ return "BuildEmpire.Mosaic.Courseware.EditableForm";
 getShrewd: function(){
 var parametersArray = new Array();
 parametersArray.push(this._getShrewd(this.name, "string", ""));
-parametersArray.push(this._getShrewd(this.groups, "list", "courseware.EditableFormGroup"));
+parametersArray.push(this._getShrewd(this.groups, "list", "BuildEmpire.Mosaic.Courseware.EditableFormGroup"));
 return parametersArray;
 },
 /**
@@ -3125,8 +3125,8 @@ return parametersArray;
  * @returns {null} 
  */
 setShrewd: function(shrewdArray){
-this.name = this._setShrewd(shrewdArray[0],"string","");
-this.groups = this._setShrewd(shrewdArray[1],"list","courseware.EditableFormGroup");
+this.name = this._setShrewd(shrewdArray[0],"string","",false);
+this.groups = this._setShrewd(shrewdArray[1],"list","BuildEmpire.Mosaic.Courseware.EditableFormGroup",false);
 },
 initialize: function(){
 }
@@ -3195,7 +3195,7 @@ parametersArray.push(this._getShrewd(this.source, "string", ""));
 parametersArray.push(this._getShrewd(this.event, "string", ""));
 parametersArray.push(this._getShrewd(this.target, "string", ""));
 parametersArray.push(this._getShrewd(this.action, "string", ""));
-parametersArray.push(this._getShrewd(this.data, "mixed", ""));
+parametersArray.push(this._getShrewd(this.data, "BuildEmpire.Mosaic.Courseware.mixed", ""));
 return parametersArray;
 },
 /**
@@ -3205,12 +3205,12 @@ return parametersArray;
  * @returns {null} 
  */
 setShrewd: function(shrewdArray){
-this.id = this._setShrewd(shrewdArray[0],"string","");
-this.source = this._setShrewd(shrewdArray[1],"string","");
-this.event = this._setShrewd(shrewdArray[2],"string","");
-this.target = this._setShrewd(shrewdArray[3],"string","");
-this.action = this._setShrewd(shrewdArray[4],"string","");
-this.data = this._setShrewd(shrewdArray[5],"mixed","");
+this.id = this._setShrewd(shrewdArray[0],"string","",false);
+this.source = this._setShrewd(shrewdArray[1],"string","",false);
+this.event = this._setShrewd(shrewdArray[2],"string","",false);
+this.target = this._setShrewd(shrewdArray[3],"string","",false);
+this.action = this._setShrewd(shrewdArray[4],"string","",false);
+this.data = this._setShrewd(shrewdArray[5],"BuildEmpire.Mosaic.Courseware.mixed","",true);
 },
 initialize: function(){
 }
@@ -3284,10 +3284,10 @@ return parametersArray;
  * @returns {null} 
  */
 setShrewd: function(shrewdArray){
-this.context = this._setShrewd(shrewdArray[0],"string","");
-this.event = this._setShrewd(shrewdArray[1],"string","");
-this.key = this._setShrewd(shrewdArray[2],"string","");
-this.string = this._setShrewd(shrewdArray[3],"string","");
+this.context = this._setShrewd(shrewdArray[0],"string","",false);
+this.event = this._setShrewd(shrewdArray[1],"string","",false);
+this.key = this._setShrewd(shrewdArray[2],"string","",false);
+this.string = this._setShrewd(shrewdArray[3],"string","",false);
 },
 initialize: function(){
 }
@@ -3351,7 +3351,7 @@ parametersArray.push(this._getShrewd(this.context, "string", ""));
 parametersArray.push(this._getShrewd(this.action, "string", ""));
 parametersArray.push(this._getShrewd(this.key, "string", ""));
 parametersArray.push(this._getShrewd(this.string, "string", ""));
-parametersArray.push(this._getShrewd(this.fields, "list", "courseware.EditableFormField"));
+parametersArray.push(this._getShrewd(this.fields, "list", "BuildEmpire.Mosaic.Courseware.EditableFormField"));
 return parametersArray;
 },
 /**
@@ -3361,11 +3361,11 @@ return parametersArray;
  * @returns {null} 
  */
 setShrewd: function(shrewdArray){
-this.context = this._setShrewd(shrewdArray[0],"string","");
-this.action = this._setShrewd(shrewdArray[1],"string","");
-this.key = this._setShrewd(shrewdArray[2],"string","");
-this.string = this._setShrewd(shrewdArray[3],"string","");
-this.fields = this._setShrewd(shrewdArray[4],"list","courseware.EditableFormField");
+this.context = this._setShrewd(shrewdArray[0],"string","",false);
+this.action = this._setShrewd(shrewdArray[1],"string","",false);
+this.key = this._setShrewd(shrewdArray[2],"string","",false);
+this.string = this._setShrewd(shrewdArray[3],"string","",false);
+this.fields = this._setShrewd(shrewdArray[4],"list","BuildEmpire.Mosaic.Courseware.EditableFormField",true);
 },
 initialize: function(){
 }
@@ -3413,8 +3413,8 @@ return "BuildEmpire.Mosaic.Courseware.RelationshipCollection";
  */
 getShrewd: function(){
 var parametersArray = new Array();
-parametersArray.push(this._getShrewd(this.events, "list", "courseware.ValidRelationshipEvent"));
-parametersArray.push(this._getShrewd(this.actions, "list", "courseware.ValidRelationshipAction"));
+parametersArray.push(this._getShrewd(this.events, "list", "BuildEmpire.Mosaic.Courseware.ValidRelationshipEvent"));
+parametersArray.push(this._getShrewd(this.actions, "list", "BuildEmpire.Mosaic.Courseware.ValidRelationshipAction"));
 return parametersArray;
 },
 /**
@@ -3424,8 +3424,8 @@ return parametersArray;
  * @returns {null} 
  */
 setShrewd: function(shrewdArray){
-this.events = this._setShrewd(shrewdArray[0],"list","courseware.ValidRelationshipEvent");
-this.actions = this._setShrewd(shrewdArray[1],"list","courseware.ValidRelationshipAction");
+this.events = this._setShrewd(shrewdArray[0],"list","BuildEmpire.Mosaic.Courseware.ValidRelationshipEvent",true);
+this.actions = this._setShrewd(shrewdArray[1],"list","BuildEmpire.Mosaic.Courseware.ValidRelationshipAction",true);
 },
 initialize: function(){
 }
@@ -3482,9 +3482,9 @@ return "BuildEmpire.Mosaic.Courseware.RelationshipComponentContainer";
 getShrewd: function(){
 var parametersArray = new Array();
 parametersArray.push(this._getShrewd(this.name, "string", ""));
-parametersArray.push(this._getShrewd(this.actions, "list", "courseware.ValidRelationshipAction"));
-parametersArray.push(this._getShrewd(this.events, "list", "courseware.ValidRelationshipEvent"));
-parametersArray.push(this._getShrewd(this.items, "list", "courseware.RelationshipCollection"));
+parametersArray.push(this._getShrewd(this.actions, "list", "BuildEmpire.Mosaic.Courseware.ValidRelationshipAction"));
+parametersArray.push(this._getShrewd(this.events, "list", "BuildEmpire.Mosaic.Courseware.ValidRelationshipEvent"));
+parametersArray.push(this._getShrewd(this.items, "list", "BuildEmpire.Mosaic.Courseware.RelationshipCollection"));
 return parametersArray;
 },
 /**
@@ -3494,10 +3494,10 @@ return parametersArray;
  * @returns {null} 
  */
 setShrewd: function(shrewdArray){
-this.name = this._setShrewd(shrewdArray[0],"string","");
-this.actions = this._setShrewd(shrewdArray[1],"list","courseware.ValidRelationshipAction");
-this.events = this._setShrewd(shrewdArray[2],"list","courseware.ValidRelationshipEvent");
-this.items = this._setShrewd(shrewdArray[3],"list","courseware.RelationshipCollection");
+this.name = this._setShrewd(shrewdArray[0],"string","",true);
+this.actions = this._setShrewd(shrewdArray[1],"list","BuildEmpire.Mosaic.Courseware.ValidRelationshipAction",true);
+this.events = this._setShrewd(shrewdArray[2],"list","BuildEmpire.Mosaic.Courseware.ValidRelationshipEvent",true);
+this.items = this._setShrewd(shrewdArray[3],"list","BuildEmpire.Mosaic.Courseware.RelationshipCollection",true);
 },
 initialize: function(){
 }
@@ -3545,8 +3545,8 @@ return "BuildEmpire.Mosaic.Courseware.RelationshipContainer";
  */
 getShrewd: function(){
 var parametersArray = new Array();
-parametersArray.push(this._getShrewd(this.engine, "courseware.RelationshipCollection", ""));
-parametersArray.push(this._getShrewd(this.components, "map", "courseware.RelationshipComponentContainer"));
+parametersArray.push(this._getShrewd(this.engine, "BuildEmpire.Mosaic.Courseware.RelationshipCollection", ""));
+parametersArray.push(this._getShrewd(this.components, "map", "BuildEmpire.Mosaic.Courseware.RelationshipComponentContainer"));
 return parametersArray;
 },
 /**
@@ -3556,8 +3556,8 @@ return parametersArray;
  * @returns {null} 
  */
 setShrewd: function(shrewdArray){
-this.engine = this._setShrewd(shrewdArray[0],"courseware.RelationshipCollection","");
-this.components = this._setShrewd(shrewdArray[1],"map","courseware.RelationshipComponentContainer");
+this.engine = this._setShrewd(shrewdArray[0],"BuildEmpire.Mosaic.Courseware.RelationshipCollection","",true);
+this.components = this._setShrewd(shrewdArray[1],"map","BuildEmpire.Mosaic.Courseware.RelationshipComponentContainer",true);
 },
 initialize: function(){
 }
@@ -3609,9 +3609,9 @@ return "BuildEmpire.Mosaic.Courseware.ScreenData";
  */
 getShrewd: function(){
 var parametersArray = new Array();
-parametersArray.push(this._getShrewd(this.rows, "list", "courseware.Row"));
-parametersArray.push(this._getShrewd(this.freeComponents, "list", "courseware.ComponentInstance"));
-parametersArray.push(this._getShrewd(this.relationships, "list", "courseware.Relationship"));
+parametersArray.push(this._getShrewd(this.rows, "list", "BuildEmpire.Mosaic.Courseware.Row"));
+parametersArray.push(this._getShrewd(this.freeComponents, "list", "BuildEmpire.Mosaic.Courseware.ComponentInstance"));
+parametersArray.push(this._getShrewd(this.relationships, "list", "BuildEmpire.Mosaic.Courseware.Relationship"));
 return parametersArray;
 },
 /**
@@ -3621,9 +3621,9 @@ return parametersArray;
  * @returns {null} 
  */
 setShrewd: function(shrewdArray){
-this.rows = this._setShrewd(shrewdArray[0],"list","courseware.Row");
-this.freeComponents = this._setShrewd(shrewdArray[1],"list","courseware.ComponentInstance");
-this.relationships = this._setShrewd(shrewdArray[2],"list","courseware.Relationship");
+this.rows = this._setShrewd(shrewdArray[0],"list","BuildEmpire.Mosaic.Courseware.Row",true);
+this.freeComponents = this._setShrewd(shrewdArray[1],"list","BuildEmpire.Mosaic.Courseware.ComponentInstance",true);
+this.relationships = this._setShrewd(shrewdArray[2],"list","BuildEmpire.Mosaic.Courseware.Relationship",true);
 },
 initialize: function(){
 }
@@ -3700,9 +3700,9 @@ parametersArray.push(this._getShrewd(this.alias, "string-id", ""));
 parametersArray.push(this._getShrewd(this.type, "integer", ""));
 parametersArray.push(this._getShrewd(this.title, "string", ""));
 parametersArray.push(this._getShrewd(this.populated, "boolean", ""));
-parametersArray.push(this._getShrewd(this.children, "list", "courseware.StructureItem"));
+parametersArray.push(this._getShrewd(this.children, "list", "BuildEmpire.Mosaic.Courseware.StructureItem"));
 parametersArray.push(this._getShrewd(this.learningPathIds, "map", "integer"));
-parametersArray.push(this._getShrewd(this.screenData, "courseware.ScreenData", ""));
+parametersArray.push(this._getShrewd(this.screenData, "BuildEmpire.Mosaic.Courseware.ScreenData", ""));
 return parametersArray;
 },
 /**
@@ -3712,14 +3712,14 @@ return parametersArray;
  * @returns {null} 
  */
 setShrewd: function(shrewdArray){
-this.id = this._setShrewd(shrewdArray[0],"string-id","");
-this.alias = this._setShrewd(shrewdArray[1],"string-id","");
-this.type = this._setShrewd(shrewdArray[2],"integer","");
-this.title = this._setShrewd(shrewdArray[3],"string","");
-this.populated = this._setShrewd(shrewdArray[4],"boolean","");
-this.children = this._setShrewd(shrewdArray[5],"list","courseware.StructureItem");
-this.learningPathIds = this._setShrewd(shrewdArray[6],"map","integer");
-this.screenData = this._setShrewd(shrewdArray[7],"courseware.ScreenData","");
+this.id = this._setShrewd(shrewdArray[0],"string-id","",false);
+this.alias = this._setShrewd(shrewdArray[1],"string-id","",false);
+this.type = this._setShrewd(shrewdArray[2],"integer","",false);
+this.title = this._setShrewd(shrewdArray[3],"string","",false);
+this.populated = this._setShrewd(shrewdArray[4],"boolean","",false);
+this.children = this._setShrewd(shrewdArray[5],"list","BuildEmpire.Mosaic.Courseware.StructureItem",true);
+this.learningPathIds = this._setShrewd(shrewdArray[6],"map","integer",true);
+this.screenData = this._setShrewd(shrewdArray[7],"BuildEmpire.Mosaic.Courseware.ScreenData","",true);
 },
 initialize: function(){
 }

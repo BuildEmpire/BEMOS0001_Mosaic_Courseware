@@ -223,9 +223,9 @@ Specific relationships stored within the screen data
 struct Relationship {
     1:              string                  id,
     2:              string                  source,
-    3:              string                  event,
+    3:              mixed                   event,
     4:              string                  target,
-    5:              string                  action,
+    5:              mixed                   action,
     6:  optional    mixed                   data
 }
 

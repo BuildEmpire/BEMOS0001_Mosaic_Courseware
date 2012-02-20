@@ -240,7 +240,7 @@ struct ValidRelationshipEvent {
     2:              string                  event,
     3:              string                  key,
     4:              string                  string,
-    5:  optional    native-js-Object        data
+    5:  optional    mixed                   data
 }
 
 struct ValidRelationshipAction {
@@ -470,8 +470,15 @@ service ConnectorInbound {
     GetValidComponentRelationships
     Get an object containing valid event and actions available on a specified component name (eg. 'image')
     */
-    native-js-Object    GetValidComponentRelationships(
+    RelationshipComponentContainer    GetValidComponentRelationships(
         1:  string      componentName
+    ),
+
+    /**
+    GetAllValidComponentRelationships
+    Get an object containing valid event and actions available on all loaded components
+    */
+    map<string-id,RelationshipComponentContainer>    GetAllValidComponentRelationships(
     ),
 
     /**

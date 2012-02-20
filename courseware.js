@@ -1214,8 +1214,8 @@ _shrewd:null,
  * @type {AShrewd}
  * @returns {null}
  */
-initialize: function(shrewdObject){
-if (shrewdObject instanceof AShrewd) {
+initialize: function(shrewdObject, skipCheck){
+if (shrewdObject instanceof AShrewd || skipCheck) {
 this._shrewd = shrewdObject;
 } else {
 alert ('The object passed to BuildEmpire.Mosaic.Courseware.ConnectorInboundService is not an instance of AShrewd.');
@@ -1603,8 +1603,8 @@ _shrewd:null,
  * @type {AShrewd}
  * @returns {null}
  */
-initialize: function(shrewdObject){
-if (shrewdObject instanceof AShrewd) {
+initialize: function(shrewdObject, skipCheck){
+if (shrewdObject instanceof AShrewd || skipCheck) {
 this._shrewd = shrewdObject;
 } else {
 alert ('The object passed to BuildEmpire.Mosaic.Courseware.ConnectorOutboundService is not an instance of AShrewd.');

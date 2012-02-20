@@ -223,9 +223,9 @@ Specific relationships stored within the screen data
 struct Relationship {
     1:              string                  id,
     2:              string                  source,
-    3:              string                  event,
+    3:              mixed                   event,
     4:              string                  target,
-    5:              string                  action,
+    5:              mixed                   action,
     6:  optional    mixed                   data
 }
 
@@ -240,7 +240,7 @@ struct ValidRelationshipEvent {
     2:              string                  event,
     3:              string                  key,
     4:              string                  string,
-    5:  optional    native-js-Object        data
+    5:  optional    mixed                   data
 }
 
 struct ValidRelationshipAction {
@@ -258,9 +258,10 @@ struct RelationshipCollection {
 
 struct RelationshipComponentContainer {
     1:  optional    string                          name,
-    2:  optional    list<ValidRelationshipAction>   actions,
-    3:  optional    list<ValidRelationshipEvent>    events,
-    4:  optional    list<RelationshipCollection>    items
+    2:  optional    string                          selector,
+    3:  optional    list<ValidRelationshipAction>   actions,
+    4:  optional    list<ValidRelationshipEvent>    events,
+    5:  optional    list<RelationshipCollection>    items
 }
 
 struct RelationshipContainer {
@@ -469,8 +470,15 @@ service ConnectorInbound {
     GetValidComponentRelationships
     Get an object containing valid event and actions available on a specified component name (eg. 'image')
     */
-    native-js-Object    GetValidComponentRelationships(
+    RelationshipComponentContainer    GetValidComponentRelationships(
         1:  string      componentName
+    ),
+
+    /**
+    GetAllValidComponentRelationships
+    Get an object containing valid event and actions available on all loaded components
+    */
+    map<string-id,RelationshipComponentContainer>    GetAllValidComponentRelationships(
     ),
 
     /**

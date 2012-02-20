@@ -12,7 +12,7 @@ public function __construct($handler) {
 $this->_handler = $handler;
 }
 public function getShrewdVersion(){
-return "b4fb96f7323275957197872a9ebcb4bfc1b0f51f";
+return "633bb5cc893d47b2d116a78eda714ed33ade06a4";
 }
 public function getHandler(){
 return $this->_handler;
@@ -135,10 +135,16 @@ private function _GetValidRelationshipsGetReturnContentType() {
 return "";
 }
 private function _GetValidComponentRelationshipsGetReturnType() {
-return "\\native-js-Object";
+return "\BuildEmpire\Mosaic\Courseware\RelationshipComponentContainer";
 }
 private function _GetValidComponentRelationshipsGetReturnContentType() {
 return "";
+}
+private function _GetAllValidComponentRelationshipsGetReturnType() {
+return "map";
+}
+private function _GetAllValidComponentRelationshipsGetReturnContentType() {
+return "\BuildEmpire\Mosaic\Courseware\RelationshipComponentContainer";
 }
 private function _ShowVisualRelationshipsEditorGetReturnType() {
 return "void";
@@ -316,6 +322,10 @@ $param->optional = false;
 $params[] = $param;
 return $params;
 }
+private function _GetAllValidComponentRelationshipsGetArguments() {
+$params = array();
+return $params;
+}
 private function _ShowVisualRelationshipsEditorGetArguments() {
 $params = array();
 return $params;
@@ -433,6 +443,10 @@ $params = array();
 return $params;
 }
 private function _GetValidComponentRelationshipsGetExceptions() {
+$params = array();
+return $params;
+}
+private function _GetAllValidComponentRelationshipsGetExceptions() {
 $params = array();
 return $params;
 }

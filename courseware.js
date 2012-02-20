@@ -12,7 +12,7 @@ Extends:AShrewdBase,
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "b4fb96f7323275957197872a9ebcb4bfc1b0f51f";
+return "633bb5cc893d47b2d116a78eda714ed33ade06a4";
 },
 /**
  * Get the shrewd namespace.
@@ -464,7 +464,7 @@ exceptionsArray
 },
 /**
  * @param {String} componentName
- * @returns {Object} 
+ * @returns {BuildEmpire.Mosaic.Courseware.RelationshipComponentContainer}
  */
 GetValidComponentRelationships: function(componentName){
 if (this._shrewd) {
@@ -480,8 +480,29 @@ this.getShrewdVersion(),
 (this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
 "GetValidComponentRelationships",
 parametersArray,
-"Object",
+"BuildEmpire.Mosaic.Courseware.RelationshipComponentContainer",
 "",
+exceptionsArray
+);
+}
+},
+/**
+ * @returns {Hash} 
+ */
+GetAllValidComponentRelationships: function(){
+if (this._shrewd) {
+var parametersArray = new Array();
+if (this._shrewd.isLocal && this._shrewd.isServer) {
+} else {
+}
+var exceptionsArray = new Array();
+return this._shrewd.communicate(
+this.getShrewdVersion(),
+(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
+"GetAllValidComponentRelationships",
+parametersArray,
+"map",
+"BuildEmpire.Mosaic.Courseware.RelationshipComponentContainer",
 exceptionsArray
 );
 }
@@ -736,10 +757,16 @@ _GetValidRelationshipsGetReturnContentType: function() {
 return "";
 },
 _GetValidComponentRelationshipsGetReturnType: function() {
-return "Object";
+return "BuildEmpire.Mosaic.Courseware.RelationshipComponentContainer";
 },
 _GetValidComponentRelationshipsGetReturnContentType: function() {
 return "";
+},
+_GetAllValidComponentRelationshipsGetReturnType: function() {
+return "map";
+},
+_GetAllValidComponentRelationshipsGetReturnContentType: function() {
+return "BuildEmpire.Mosaic.Courseware.RelationshipComponentContainer";
 },
 _ShowVisualRelationshipsEditorGetReturnType: function() {
 return "void";
@@ -957,6 +984,12 @@ param.optional = false;
 params.push(param);
 return params;
 },
+_GetAllValidComponentRelationshipsGetArguments: function() {
+var params;
+var param;
+params = [];
+return params;
+},
 _ShowVisualRelationshipsEditorGetArguments: function() {
 var params;
 var param;
@@ -1129,6 +1162,12 @@ var param;
 params = [];
 return params;
 },
+_GetAllValidComponentRelationshipsGetExceptions: function() {
+var params;
+var param;
+params = [];
+return params;
+},
 _ShowVisualRelationshipsEditorGetExceptions: function() {
 var params;
 var param;
@@ -1205,7 +1244,7 @@ Extends:AShrewdBase,
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "b4fb96f7323275957197872a9ebcb4bfc1b0f51f";
+return "633bb5cc893d47b2d116a78eda714ed33ade06a4";
 },
 /**
  * Get the shrewd namespace.
@@ -1677,7 +1716,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.Translation",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "b4fb96f7323275957197872a9ebcb4bfc1b0f51f";
+return "633bb5cc893d47b2d116a78eda714ed33ade06a4";
 },
 /**
  * Get the name of the MooTools class.
@@ -1745,7 +1784,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.LearningPath",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "b4fb96f7323275957197872a9ebcb4bfc1b0f51f";
+return "633bb5cc893d47b2d116a78eda714ed33ade06a4";
 },
 /**
  * Get the name of the MooTools class.
@@ -1823,7 +1862,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.ComponentMetrics",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "b4fb96f7323275957197872a9ebcb4bfc1b0f51f";
+return "633bb5cc893d47b2d116a78eda714ed33ade06a4";
 },
 /**
  * Get the name of the MooTools class.
@@ -1895,7 +1934,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.Component",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "b4fb96f7323275957197872a9ebcb4bfc1b0f51f";
+return "633bb5cc893d47b2d116a78eda714ed33ade06a4";
 },
 /**
  * Get the name of the MooTools class.
@@ -1973,7 +2012,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.ComponentInstance",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "b4fb96f7323275957197872a9ebcb4bfc1b0f51f";
+return "633bb5cc893d47b2d116a78eda714ed33ade06a4";
 },
 /**
  * Get the name of the MooTools class.
@@ -2041,7 +2080,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.ColumnRowMetrics",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "b4fb96f7323275957197872a9ebcb4bfc1b0f51f";
+return "633bb5cc893d47b2d116a78eda714ed33ade06a4";
 },
 /**
  * Get the name of the MooTools class.
@@ -2105,7 +2144,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.Column",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "b4fb96f7323275957197872a9ebcb4bfc1b0f51f";
+return "633bb5cc893d47b2d116a78eda714ed33ade06a4";
 },
 /**
  * Get the name of the MooTools class.
@@ -2171,7 +2210,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.Row",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "b4fb96f7323275957197872a9ebcb4bfc1b0f51f";
+return "633bb5cc893d47b2d116a78eda714ed33ade06a4";
 },
 /**
  * Get the name of the MooTools class.
@@ -2233,7 +2272,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.Template",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "b4fb96f7323275957197872a9ebcb4bfc1b0f51f";
+return "633bb5cc893d47b2d116a78eda714ed33ade06a4";
 },
 /**
  * Get the name of the MooTools class.
@@ -2305,7 +2344,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.DataRows",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "b4fb96f7323275957197872a9ebcb4bfc1b0f51f";
+return "633bb5cc893d47b2d116a78eda714ed33ade06a4";
 },
 /**
  * Get the name of the MooTools class.
@@ -2383,7 +2422,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.DataColumns",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "b4fb96f7323275957197872a9ebcb4bfc1b0f51f";
+return "633bb5cc893d47b2d116a78eda714ed33ade06a4";
 },
 /**
  * Get the name of the MooTools class.
@@ -2461,7 +2500,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.DataCanvas",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "b4fb96f7323275957197872a9ebcb4bfc1b0f51f";
+return "633bb5cc893d47b2d116a78eda714ed33ade06a4";
 },
 /**
  * Get the name of the MooTools class.
@@ -2527,7 +2566,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.DataGrid",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "b4fb96f7323275957197872a9ebcb4bfc1b0f51f";
+return "633bb5cc893d47b2d116a78eda714ed33ade06a4";
 },
 /**
  * Get the name of the MooTools class.
@@ -2627,7 +2666,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.ConfigurationData",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "b4fb96f7323275957197872a9ebcb4bfc1b0f51f";
+return "633bb5cc893d47b2d116a78eda714ed33ade06a4";
 },
 /**
  * Get the name of the MooTools class.
@@ -2715,7 +2754,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.EditableFormFieldHtml",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "b4fb96f7323275957197872a9ebcb4bfc1b0f51f";
+return "633bb5cc893d47b2d116a78eda714ed33ade06a4";
 },
 /**
  * Get the name of the MooTools class.
@@ -2775,7 +2814,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.EditableFormFieldSelect",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "b4fb96f7323275957197872a9ebcb4bfc1b0f51f";
+return "633bb5cc893d47b2d116a78eda714ed33ade06a4";
 },
 /**
  * Get the name of the MooTools class.
@@ -2837,7 +2876,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.EditableFormFieldRange",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "b4fb96f7323275957197872a9ebcb4bfc1b0f51f";
+return "633bb5cc893d47b2d116a78eda714ed33ade06a4";
 },
 /**
  * Get the name of the MooTools class.
@@ -2895,7 +2934,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.EditableFormFieldText",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "b4fb96f7323275957197872a9ebcb4bfc1b0f51f";
+return "633bb5cc893d47b2d116a78eda714ed33ade06a4";
 },
 /**
  * Get the name of the MooTools class.
@@ -2969,7 +3008,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.EditableFormField",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "b4fb96f7323275957197872a9ebcb4bfc1b0f51f";
+return "633bb5cc893d47b2d116a78eda714ed33ade06a4";
 },
 /**
  * Get the name of the MooTools class.
@@ -2991,7 +3030,7 @@ parametersArray.push(this._getShrewd(this.name, "string", ""));
 parametersArray.push(this._getShrewd(this.title, "string", ""));
 parametersArray.push(this._getShrewd(this.required, "boolean", ""));
 parametersArray.push(this._getShrewd(this.value, "string", ""));
-parametersArray.push(this._getShrewd(this.data, "BuildEmpire.Mosaic.Courseware.struct", ""));
+parametersArray.push(this._getShrewd(this.data, "struct", ""));
 return parametersArray;
 },
 /**
@@ -3006,7 +3045,7 @@ this.name = this._setShrewd(shrewdArray[1],"string","",false);
 this.title = this._setShrewd(shrewdArray[2],"string","",false);
 this.required = this._setShrewd(shrewdArray[3],"boolean","",false);
 this.value = this._setShrewd(shrewdArray[4],"string","",true);
-this.data = this._setShrewd(shrewdArray[5],"BuildEmpire.Mosaic.Courseware.struct","",true);
+this.data = this._setShrewd(shrewdArray[5],"struct","",true);
 },
 initialize: function(){
 }
@@ -3037,7 +3076,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.EditableFormGroup",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "b4fb96f7323275957197872a9ebcb4bfc1b0f51f";
+return "633bb5cc893d47b2d116a78eda714ed33ade06a4";
 },
 /**
  * Get the name of the MooTools class.
@@ -3097,7 +3136,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.EditableForm",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "b4fb96f7323275957197872a9ebcb4bfc1b0f51f";
+return "633bb5cc893d47b2d116a78eda714ed33ade06a4";
 },
 /**
  * Get the name of the MooTools class.
@@ -3148,7 +3187,7 @@ id : null,
  */
 source : null,
 /**
- * @type {String} event
+ * @type {Object} event (mixed)
  */
 event : null,
 /**
@@ -3156,7 +3195,7 @@ event : null,
  */
 target : null,
 /**
- * @type {String} action
+ * @type {Object} action (mixed)
  */
 action : null,
 /**
@@ -3173,7 +3212,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.Relationship",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "b4fb96f7323275957197872a9ebcb4bfc1b0f51f";
+return "633bb5cc893d47b2d116a78eda714ed33ade06a4";
 },
 /**
  * Get the name of the MooTools class.
@@ -3192,10 +3231,10 @@ getShrewd: function(){
 var parametersArray = new Array();
 parametersArray.push(this._getShrewd(this.id, "string", ""));
 parametersArray.push(this._getShrewd(this.source, "string", ""));
-parametersArray.push(this._getShrewd(this.event, "string", ""));
+parametersArray.push(this._getShrewd(this.event, "mixed", ""));
 parametersArray.push(this._getShrewd(this.target, "string", ""));
-parametersArray.push(this._getShrewd(this.action, "string", ""));
-parametersArray.push(this._getShrewd(this.data, "BuildEmpire.Mosaic.Courseware.mixed", ""));
+parametersArray.push(this._getShrewd(this.action, "mixed", ""));
+parametersArray.push(this._getShrewd(this.data, "mixed", ""));
 return parametersArray;
 },
 /**
@@ -3207,10 +3246,10 @@ return parametersArray;
 setShrewd: function(shrewdArray){
 this.id = this._setShrewd(shrewdArray[0],"string","",false);
 this.source = this._setShrewd(shrewdArray[1],"string","",false);
-this.event = this._setShrewd(shrewdArray[2],"string","",false);
+this.event = this._setShrewd(shrewdArray[2],"mixed","",false);
 this.target = this._setShrewd(shrewdArray[3],"string","",false);
-this.action = this._setShrewd(shrewdArray[4],"string","",false);
-this.data = this._setShrewd(shrewdArray[5],"BuildEmpire.Mosaic.Courseware.mixed","",true);
+this.action = this._setShrewd(shrewdArray[4],"mixed","",false);
+this.data = this._setShrewd(shrewdArray[5],"mixed","",true);
 },
 initialize: function(){
 }
@@ -3240,7 +3279,7 @@ key : null,
  */
 string : null,
 /**
- * @type {Object} data
+ * @type {Object} data (mixed)
  */
 data : null,
 /**
@@ -3253,7 +3292,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.ValidRelationshipEvent",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "b4fb96f7323275957197872a9ebcb4bfc1b0f51f";
+return "633bb5cc893d47b2d116a78eda714ed33ade06a4";
 },
 /**
  * Get the name of the MooTools class.
@@ -3274,7 +3313,7 @@ parametersArray.push(this._getShrewd(this.context, "string", ""));
 parametersArray.push(this._getShrewd(this.event, "string", ""));
 parametersArray.push(this._getShrewd(this.key, "string", ""));
 parametersArray.push(this._getShrewd(this.string, "string", ""));
-
+parametersArray.push(this._getShrewd(this.data, "mixed", ""));
 return parametersArray;
 },
 /**
@@ -3288,6 +3327,7 @@ this.context = this._setShrewd(shrewdArray[0],"string","",false);
 this.event = this._setShrewd(shrewdArray[1],"string","",false);
 this.key = this._setShrewd(shrewdArray[2],"string","",false);
 this.string = this._setShrewd(shrewdArray[3],"string","",false);
+this.data = this._setShrewd(shrewdArray[4],"mixed","",true);
 },
 initialize: function(){
 }
@@ -3330,7 +3370,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.ValidRelationshipAction",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "b4fb96f7323275957197872a9ebcb4bfc1b0f51f";
+return "633bb5cc893d47b2d116a78eda714ed33ade06a4";
 },
 /**
  * Get the name of the MooTools class.
@@ -3396,7 +3436,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.RelationshipCollection",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "b4fb96f7323275957197872a9ebcb4bfc1b0f51f";
+return "633bb5cc893d47b2d116a78eda714ed33ade06a4";
 },
 /**
  * Get the name of the MooTools class.
@@ -3443,6 +3483,10 @@ Extends:AShrewdBase,
  */
 name : null,
 /**
+ * @type {String} selector
+ */
+selector : null,
+/**
  * @type {Array} actions
  */
 actions : null,
@@ -3464,7 +3508,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.RelationshipComponentContainer",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "b4fb96f7323275957197872a9ebcb4bfc1b0f51f";
+return "633bb5cc893d47b2d116a78eda714ed33ade06a4";
 },
 /**
  * Get the name of the MooTools class.
@@ -3482,6 +3526,7 @@ return "BuildEmpire.Mosaic.Courseware.RelationshipComponentContainer";
 getShrewd: function(){
 var parametersArray = new Array();
 parametersArray.push(this._getShrewd(this.name, "string", ""));
+parametersArray.push(this._getShrewd(this.selector, "string", ""));
 parametersArray.push(this._getShrewd(this.actions, "list", "BuildEmpire.Mosaic.Courseware.ValidRelationshipAction"));
 parametersArray.push(this._getShrewd(this.events, "list", "BuildEmpire.Mosaic.Courseware.ValidRelationshipEvent"));
 parametersArray.push(this._getShrewd(this.items, "list", "BuildEmpire.Mosaic.Courseware.RelationshipCollection"));
@@ -3495,9 +3540,10 @@ return parametersArray;
  */
 setShrewd: function(shrewdArray){
 this.name = this._setShrewd(shrewdArray[0],"string","",true);
-this.actions = this._setShrewd(shrewdArray[1],"list","BuildEmpire.Mosaic.Courseware.ValidRelationshipAction",true);
-this.events = this._setShrewd(shrewdArray[2],"list","BuildEmpire.Mosaic.Courseware.ValidRelationshipEvent",true);
-this.items = this._setShrewd(shrewdArray[3],"list","BuildEmpire.Mosaic.Courseware.RelationshipCollection",true);
+this.selector = this._setShrewd(shrewdArray[1],"string","",true);
+this.actions = this._setShrewd(shrewdArray[2],"list","BuildEmpire.Mosaic.Courseware.ValidRelationshipAction",true);
+this.events = this._setShrewd(shrewdArray[3],"list","BuildEmpire.Mosaic.Courseware.ValidRelationshipEvent",true);
+this.items = this._setShrewd(shrewdArray[4],"list","BuildEmpire.Mosaic.Courseware.RelationshipCollection",true);
 },
 initialize: function(){
 }
@@ -3528,7 +3574,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.RelationshipContainer",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "b4fb96f7323275957197872a9ebcb4bfc1b0f51f";
+return "633bb5cc893d47b2d116a78eda714ed33ade06a4";
 },
 /**
  * Get the name of the MooTools class.
@@ -3592,7 +3638,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.ScreenData",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "b4fb96f7323275957197872a9ebcb4bfc1b0f51f";
+return "633bb5cc893d47b2d116a78eda714ed33ade06a4";
 },
 /**
  * Get the name of the MooTools class.
@@ -3678,7 +3724,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.StructureItem",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "b4fb96f7323275957197872a9ebcb4bfc1b0f51f";
+return "633bb5cc893d47b2d116a78eda714ed33ade06a4";
 },
 /**
  * Get the name of the MooTools class.

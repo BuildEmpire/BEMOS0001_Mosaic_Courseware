@@ -198,7 +198,7 @@ struct EditableFormField {
     2:              string                  name,
     3:              string                  title,
     4:              boolean                 required,
-    5: optional     string                  value,
+    5: optional     mixed                   value,
     6: optional     struct                  data
 }
 

@@ -23,7 +23,7 @@ public $title;
  */
 public $required;
 /**
- * @var string
+ * @var mixed
  */
 public $value;
 /**
@@ -40,7 +40,7 @@ $paramArray[] = $shrewd->getParameter("EditableFormField", 1, $this->type, "type
 $paramArray[] = $shrewd->getParameter("EditableFormField", 1, $this->name, "name", "string", "", false);
 $paramArray[] = $shrewd->getParameter("EditableFormField", 1, $this->title, "title", "string", "", false);
 $paramArray[] = $shrewd->getParameter("EditableFormField", 1, $this->required, "required", "boolean", "", false);
-$paramArray[] = $shrewd->getParameter("EditableFormField", 1, $this->value, "value", "string", "", true);
+$paramArray[] = $shrewd->getParameter("EditableFormField", 1, $this->value, "value", "mixed", "", true);
 $paramArray[] = $shrewd->getParameter("EditableFormField", 1, $this->data, "data", "struct", "", true);
 return $paramArray;
 }
@@ -51,7 +51,7 @@ if (isset($shrewdArray[0])) {$this->type = $shrewd->setParameter("EditableFormFi
 if (isset($shrewdArray[1])) {$this->name = $shrewd->setParameter("EditableFormField", 2, $shrewdArray[1], "name", "string", "", false);}
 if (isset($shrewdArray[2])) {$this->title = $shrewd->setParameter("EditableFormField", 2, $shrewdArray[2], "title", "string", "", false);}
 if (isset($shrewdArray[3])) {$this->required = $shrewd->setParameter("EditableFormField", 2, $shrewdArray[3], "required", "boolean", "", false);}
-if (isset($shrewdArray[4])) {$this->value = $shrewd->setParameter("EditableFormField", 2, $shrewdArray[4], "value", "string", "", true);}
+if (isset($shrewdArray[4])) {$this->value = $shrewd->setParameter("EditableFormField", 2, $shrewdArray[4], "value", "mixed", "", true);}
 if (isset($shrewdArray[5])) {$this->data = $shrewd->setParameter("EditableFormField", 2, $shrewdArray[5], "data", "struct", "", true);}
 }
 }

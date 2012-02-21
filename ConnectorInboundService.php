@@ -12,7 +12,7 @@ public function __construct($handler) {
 $this->_handler = $handler;
 }
 public function getShrewdVersion(){
-return "633bb5cc893d47b2d116a78eda714ed33ade06a4";
+return "d600eeb3d99053abbf9ebb259149510e345234b4";
 }
 public function getHandler(){
 return $this->_handler;
@@ -181,6 +181,42 @@ return "list";
 }
 private function _GetRelationshipsDataGetReturnContentType() {
 return "\BuildEmpire\Mosaic\Courseware\Relationship";
+}
+private function _OnResourceManagerSelectGetReturnType() {
+return "void";
+}
+private function _OnResourceManagerSelectGetReturnContentType() {
+return "";
+}
+private function _OnResourceManagerCloseGetReturnType() {
+return "void";
+}
+private function _OnResourceManagerCloseGetReturnContentType() {
+return "";
+}
+private function _OnRelationshipManagerSaveGetReturnType() {
+return "void";
+}
+private function _OnRelationshipManagerSaveGetReturnContentType() {
+return "";
+}
+private function _OnRelationshipManagerCloseGetReturnType() {
+return "void";
+}
+private function _OnRelationshipManagerCloseGetReturnContentType() {
+return "";
+}
+private function _OnEditDialogSaveGetReturnType() {
+return "void";
+}
+private function _OnEditDialogSaveGetReturnContentType() {
+return "";
+}
+private function _OnEditDialogCloseGetReturnType() {
+return "void";
+}
+private function _OnEditDialogCloseGetReturnContentType() {
+return "";
 }
 private function _ReadyGetArguments() {
 $params = array();
@@ -366,6 +402,45 @@ private function _GetRelationshipsDataGetArguments() {
 $params = array();
 return $params;
 }
+private function _OnResourceManagerSelectGetArguments() {
+$params = array();
+$param = new Parameter();
+$param->name = "filePathRelative";
+$param->type = "string";
+$param->optional = false;
+$params[] = $param;
+return $params;
+}
+private function _OnResourceManagerCloseGetArguments() {
+$params = array();
+return $params;
+}
+private function _OnRelationshipManagerSaveGetArguments() {
+$params = array();
+$param = new Parameter();
+$param->name = "sForm";
+$param->type = "\BuildEmpire\Mosaic\Courseware\EditableForm";
+$param->optional = false;
+$params[] = $param;
+return $params;
+}
+private function _OnRelationshipManagerCloseGetArguments() {
+$params = array();
+return $params;
+}
+private function _OnEditDialogSaveGetArguments() {
+$params = array();
+$param = new Parameter();
+$param->name = "sForm";
+$param->type = "\BuildEmpire\Mosaic\Courseware\EditableForm";
+$param->optional = false;
+$params[] = $param;
+return $params;
+}
+private function _OnEditDialogCloseGetArguments() {
+$params = array();
+return $params;
+}
 private function _ReadyGetExceptions() {
 $params = array();
 return $params;
@@ -471,6 +546,30 @@ $params = array();
 return $params;
 }
 private function _GetRelationshipsDataGetExceptions() {
+$params = array();
+return $params;
+}
+private function _OnResourceManagerSelectGetExceptions() {
+$params = array();
+return $params;
+}
+private function _OnResourceManagerCloseGetExceptions() {
+$params = array();
+return $params;
+}
+private function _OnRelationshipManagerSaveGetExceptions() {
+$params = array();
+return $params;
+}
+private function _OnRelationshipManagerCloseGetExceptions() {
+$params = array();
+return $params;
+}
+private function _OnEditDialogSaveGetExceptions() {
+$params = array();
+return $params;
+}
+private function _OnEditDialogCloseGetExceptions() {
 $params = array();
 return $params;
 }

@@ -12,7 +12,7 @@ public function __construct($handler) {
 $this->_handler = $handler;
 }
 public function getShrewdVersion(){
-return "633bb5cc893d47b2d116a78eda714ed33ade06a4";
+return "d600eeb3d99053abbf9ebb259149510e345234b4";
 }
 public function getHandler(){
 return $this->_handler;
@@ -24,6 +24,12 @@ private function _ReadyGetReturnType() {
 return "void";
 }
 private function _ReadyGetReturnContentType() {
+return "";
+}
+private function _SetInboundServiceGetReturnType() {
+return "void";
+}
+private function _SetInboundServiceGetReturnContentType() {
 return "";
 }
 private function _UpdateScreenDataGetReturnType() {
@@ -60,6 +66,15 @@ private function _ReadyGetArguments() {
 $params = array();
 return $params;
 }
+private function _SetInboundServiceGetArguments() {
+$params = array();
+$param = new Parameter();
+$param->name = "InboundService";
+$param->type = "\\native-js-Object";
+$param->optional = false;
+$params[] = $param;
+return $params;
+}
 private function _UpdateScreenDataGetArguments() {
 $params = array();
 $param = new Parameter();
@@ -91,16 +106,6 @@ $param->type = "list";
 $param->contentType = "string";
 $param->optional = false;
 $params[] = $param;
-$param = new Parameter();
-$param->name = "onSelectCallback";
-$param->type = "\\native-js-Object";
-$param->optional = true;
-$params[] = $param;
-$param = new Parameter();
-$param->name = "onCancelCallback";
-$param->type = "\\native-js-Object";
-$param->optional = true;
-$params[] = $param;
 return $params;
 }
 private function _OpenRelationshipManagerGetArguments() {
@@ -109,16 +114,6 @@ $param = new Parameter();
 $param->name = "editableForm";
 $param->type = "\BuildEmpire\Mosaic\Courseware\EditableForm";
 $param->optional = false;
-$params[] = $param;
-$param = new Parameter();
-$param->name = "onSaveCallback";
-$param->type = "\\native-js-Object";
-$param->optional = true;
-$params[] = $param;
-$param = new Parameter();
-$param->name = "onCancelCallback";
-$param->type = "\\native-js-Object";
-$param->optional = true;
 $params[] = $param;
 return $params;
 }
@@ -129,19 +124,13 @@ $param->name = "editableForm";
 $param->type = "\BuildEmpire\Mosaic\Courseware\EditableForm";
 $param->optional = false;
 $params[] = $param;
-$param = new Parameter();
-$param->name = "onSaveCallback";
-$param->type = "\\native-js-Object";
-$param->optional = true;
-$params[] = $param;
-$param = new Parameter();
-$param->name = "onCancelCallback";
-$param->type = "\\native-js-Object";
-$param->optional = true;
-$params[] = $param;
 return $params;
 }
 private function _ReadyGetExceptions() {
+$params = array();
+return $params;
+}
+private function _SetInboundServiceGetExceptions() {
 $params = array();
 return $params;
 }

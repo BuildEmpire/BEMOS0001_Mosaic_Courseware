@@ -12,7 +12,7 @@ Extends:AShrewdBase,
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "ec1475b73148589ece1c0e956c00aacf992e28d8";
+return "d600eeb3d99053abbf9ebb259149510e345234b4";
 },
 /**
  * Get the shrewd namespace.
@@ -37,7 +37,7 @@ return "BuildEmpire.Mosaic.Courseware.ConnectorInboundService";
 Ready: function(OutboundService){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.isServer) {
+if (this._shrewd.isLocal && this._shrewd.isServer) {
 parametersArray.push(OutboundService);
 } else {
 
@@ -45,7 +45,7 @@ parametersArray.push(OutboundService);
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-this.getShrewdNS(),
+(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
 "Ready",
 parametersArray,
 "void",
@@ -61,7 +61,7 @@ exceptionsArray
 SetMode: function(mode){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.isServer) {
+if (this._shrewd.isLocal && this._shrewd.isServer) {
 parametersArray.push(mode);
 } else {
 parametersArray.push(this._getShrewd(mode, "integer", ""));
@@ -69,7 +69,7 @@ parametersArray.push(this._getShrewd(mode, "integer", ""));
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-this.getShrewdNS(),
+(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
 "SetMode",
 parametersArray,
 "boolean",
@@ -85,7 +85,7 @@ exceptionsArray
 SetScale: function(scale){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.isServer) {
+if (this._shrewd.isLocal && this._shrewd.isServer) {
 parametersArray.push(scale);
 } else {
 parametersArray.push(this._getShrewd(scale, "float", ""));
@@ -93,7 +93,7 @@ parametersArray.push(this._getShrewd(scale, "float", ""));
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-this.getShrewdNS(),
+(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
 "SetScale",
 parametersArray,
 "boolean",
@@ -108,13 +108,13 @@ exceptionsArray
 GetScale: function(){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.isServer) {
+if (this._shrewd.isLocal && this._shrewd.isServer) {
 } else {
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-this.getShrewdNS(),
+(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
 "GetScale",
 parametersArray,
 "float",
@@ -129,13 +129,13 @@ exceptionsArray
 IsTransformationApplied: function(){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.isServer) {
+if (this._shrewd.isLocal && this._shrewd.isServer) {
 } else {
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-this.getShrewdNS(),
+(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
 "IsTransformationApplied",
 parametersArray,
 "boolean",
@@ -151,7 +151,7 @@ exceptionsArray
 SetTransformation: function(transformation){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.isServer) {
+if (this._shrewd.isLocal && this._shrewd.isServer) {
 parametersArray.push(transformation);
 } else {
 parametersArray.push(this._getShrewd(transformation, "float", ""));
@@ -159,7 +159,7 @@ parametersArray.push(this._getShrewd(transformation, "float", ""));
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-this.getShrewdNS(),
+(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
 "SetTransformation",
 parametersArray,
 "boolean",
@@ -174,13 +174,13 @@ exceptionsArray
 GetTransformation: function(){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.isServer) {
+if (this._shrewd.isLocal && this._shrewd.isServer) {
 } else {
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-this.getShrewdNS(),
+(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
 "GetTransformation",
 parametersArray,
 "float",
@@ -196,7 +196,7 @@ exceptionsArray
 SetConfigurationData: function(configurationData){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.isServer) {
+if (this._shrewd.isLocal && this._shrewd.isServer) {
 parametersArray.push(configurationData);
 } else {
 parametersArray.push(this._getShrewd(configurationData, "BuildEmpire.Mosaic.Courseware.ConfigurationData", ""));
@@ -204,7 +204,7 @@ parametersArray.push(this._getShrewd(configurationData, "BuildEmpire.Mosaic.Cour
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-this.getShrewdNS(),
+(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
 "SetConfigurationData",
 parametersArray,
 "void",
@@ -219,13 +219,13 @@ exceptionsArray
 GetConfigurationData: function(){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.isServer) {
+if (this._shrewd.isLocal && this._shrewd.isServer) {
 } else {
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-this.getShrewdNS(),
+(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
 "GetConfigurationData",
 parametersArray,
 "BuildEmpire.Mosaic.Courseware.ConfigurationData",
@@ -241,7 +241,7 @@ exceptionsArray
 SetScreenData: function(screenData){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.isServer) {
+if (this._shrewd.isLocal && this._shrewd.isServer) {
 parametersArray.push(screenData);
 } else {
 parametersArray.push(this._getShrewd(screenData, "BuildEmpire.Mosaic.Courseware.ScreenData", ""));
@@ -249,7 +249,7 @@ parametersArray.push(this._getShrewd(screenData, "BuildEmpire.Mosaic.Courseware.
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-this.getShrewdNS(),
+(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
 "SetScreenData",
 parametersArray,
 "void",
@@ -264,13 +264,13 @@ exceptionsArray
 GetScreenData: function(){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.isServer) {
+if (this._shrewd.isLocal && this._shrewd.isServer) {
 } else {
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-this.getShrewdNS(),
+(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
 "GetScreenData",
 parametersArray,
 "BuildEmpire.Mosaic.Courseware.ScreenData",
@@ -285,13 +285,13 @@ exceptionsArray
 Draw: function(){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.isServer) {
+if (this._shrewd.isLocal && this._shrewd.isServer) {
 } else {
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-this.getShrewdNS(),
+(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
 "Draw",
 parametersArray,
 "void",
@@ -306,13 +306,13 @@ exceptionsArray
 AddColumn: function(){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.isServer) {
+if (this._shrewd.isLocal && this._shrewd.isServer) {
 } else {
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-this.getShrewdNS(),
+(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
 "AddColumn",
 parametersArray,
 "void",
@@ -328,7 +328,7 @@ exceptionsArray
 AddComponent: function(componentName){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.isServer) {
+if (this._shrewd.isLocal && this._shrewd.isServer) {
 parametersArray.push(componentName);
 } else {
 parametersArray.push(this._getShrewd(componentName, "string", ""));
@@ -336,7 +336,7 @@ parametersArray.push(this._getShrewd(componentName, "string", ""));
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-this.getShrewdNS(),
+(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
 "AddComponent",
 parametersArray,
 "void",
@@ -352,7 +352,7 @@ exceptionsArray
 HighlightColumn: function(id){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.isServer) {
+if (this._shrewd.isLocal && this._shrewd.isServer) {
 parametersArray.push(id);
 } else {
 parametersArray.push(this._getShrewd(id, "string", ""));
@@ -360,7 +360,7 @@ parametersArray.push(this._getShrewd(id, "string", ""));
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-this.getShrewdNS(),
+(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
 "HighlightColumn",
 parametersArray,
 "void",
@@ -376,7 +376,7 @@ exceptionsArray
 UnhighlightColumn: function(id){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.isServer) {
+if (this._shrewd.isLocal && this._shrewd.isServer) {
 parametersArray.push(id);
 } else {
 parametersArray.push(this._getShrewd(id, "string", ""));
@@ -384,7 +384,7 @@ parametersArray.push(this._getShrewd(id, "string", ""));
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-this.getShrewdNS(),
+(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
 "UnhighlightColumn",
 parametersArray,
 "void",
@@ -400,7 +400,7 @@ exceptionsArray
 HighlightComponent: function(id){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.isServer) {
+if (this._shrewd.isLocal && this._shrewd.isServer) {
 parametersArray.push(id);
 } else {
 parametersArray.push(this._getShrewd(id, "string", ""));
@@ -408,7 +408,7 @@ parametersArray.push(this._getShrewd(id, "string", ""));
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-this.getShrewdNS(),
+(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
 "HighlightComponent",
 parametersArray,
 "void",
@@ -424,7 +424,7 @@ exceptionsArray
 UnhighlightComponent: function(id){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.isServer) {
+if (this._shrewd.isLocal && this._shrewd.isServer) {
 parametersArray.push(id);
 } else {
 parametersArray.push(this._getShrewd(id, "string", ""));
@@ -432,7 +432,7 @@ parametersArray.push(this._getShrewd(id, "string", ""));
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-this.getShrewdNS(),
+(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
 "UnhighlightComponent",
 parametersArray,
 "void",
@@ -447,13 +447,13 @@ exceptionsArray
 GetValidRelationships: function(){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.isServer) {
+if (this._shrewd.isLocal && this._shrewd.isServer) {
 } else {
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-this.getShrewdNS(),
+(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
 "GetValidRelationships",
 parametersArray,
 "BuildEmpire.Mosaic.Courseware.RelationshipContainer",
@@ -469,7 +469,7 @@ exceptionsArray
 GetValidComponentRelationships: function(componentName){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.isServer) {
+if (this._shrewd.isLocal && this._shrewd.isServer) {
 parametersArray.push(componentName);
 } else {
 parametersArray.push(this._getShrewd(componentName, "string", ""));
@@ -477,7 +477,7 @@ parametersArray.push(this._getShrewd(componentName, "string", ""));
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-this.getShrewdNS(),
+(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
 "GetValidComponentRelationships",
 parametersArray,
 "BuildEmpire.Mosaic.Courseware.RelationshipComponentContainer",
@@ -492,13 +492,13 @@ exceptionsArray
 GetAllValidComponentRelationships: function(){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.isServer) {
+if (this._shrewd.isLocal && this._shrewd.isServer) {
 } else {
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-this.getShrewdNS(),
+(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
 "GetAllValidComponentRelationships",
 parametersArray,
 "map",
@@ -513,13 +513,13 @@ exceptionsArray
 ShowVisualRelationshipsEditor: function(){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.isServer) {
+if (this._shrewd.isLocal && this._shrewd.isServer) {
 } else {
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-this.getShrewdNS(),
+(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
 "ShowVisualRelationshipsEditor",
 parametersArray,
 "void",
@@ -534,13 +534,13 @@ exceptionsArray
 HideVisualRelationshipsEditor: function(){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.isServer) {
+if (this._shrewd.isLocal && this._shrewd.isServer) {
 } else {
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-this.getShrewdNS(),
+(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
 "HideVisualRelationshipsEditor",
 parametersArray,
 "void",
@@ -556,7 +556,7 @@ exceptionsArray
 ShowVisualRelationship: function(relationshipId){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.isServer) {
+if (this._shrewd.isLocal && this._shrewd.isServer) {
 parametersArray.push(relationshipId);
 } else {
 parametersArray.push(this._getShrewd(relationshipId, "string", ""));
@@ -564,7 +564,7 @@ parametersArray.push(this._getShrewd(relationshipId, "string", ""));
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-this.getShrewdNS(),
+(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
 "ShowVisualRelationship",
 parametersArray,
 "void",
@@ -580,7 +580,7 @@ exceptionsArray
 HideVisualRelationship: function(relationshipId){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.isServer) {
+if (this._shrewd.isLocal && this._shrewd.isServer) {
 parametersArray.push(relationshipId);
 } else {
 parametersArray.push(this._getShrewd(relationshipId, "string", ""));
@@ -588,7 +588,7 @@ parametersArray.push(this._getShrewd(relationshipId, "string", ""));
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-this.getShrewdNS(),
+(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
 "HideVisualRelationship",
 parametersArray,
 "void",
@@ -604,7 +604,7 @@ exceptionsArray
 SetRelationshipsData: function(relationshipsData){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.isServer) {
+if (this._shrewd.isLocal && this._shrewd.isServer) {
 parametersArray.push(relationshipsData);
 } else {
 parametersArray.push(this._getShrewd(relationshipsData, "list", "BuildEmpire.Mosaic.Courseware.Relationship"));
@@ -612,7 +612,7 @@ parametersArray.push(this._getShrewd(relationshipsData, "list", "BuildEmpire.Mos
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-this.getShrewdNS(),
+(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
 "SetRelationshipsData",
 parametersArray,
 "void",
@@ -627,13 +627,13 @@ exceptionsArray
 GetRelationshipsData: function(){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.isServer) {
+if (this._shrewd.isLocal && this._shrewd.isServer) {
 } else {
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-this.getShrewdNS(),
+(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
 "GetRelationshipsData",
 parametersArray,
 "list",
@@ -649,7 +649,7 @@ exceptionsArray
 OnResourceManagerSelect: function(filePathRelative){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.isServer) {
+if (this._shrewd.isLocal && this._shrewd.isServer) {
 parametersArray.push(filePathRelative);
 } else {
 parametersArray.push(this._getShrewd(filePathRelative, "string", ""));
@@ -657,7 +657,7 @@ parametersArray.push(this._getShrewd(filePathRelative, "string", ""));
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-this.getShrewdNS(),
+(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
 "OnResourceManagerSelect",
 parametersArray,
 "void",
@@ -672,13 +672,13 @@ exceptionsArray
 OnResourceManagerClose: function(){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.isServer) {
+if (this._shrewd.isLocal && this._shrewd.isServer) {
 } else {
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-this.getShrewdNS(),
+(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
 "OnResourceManagerClose",
 parametersArray,
 "void",
@@ -694,7 +694,7 @@ exceptionsArray
 OnRelationshipManagerSave: function(sForm){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.isServer) {
+if (this._shrewd.isLocal && this._shrewd.isServer) {
 parametersArray.push(sForm);
 } else {
 parametersArray.push(this._getShrewd(sForm, "BuildEmpire.Mosaic.Courseware.EditableForm", ""));
@@ -702,7 +702,7 @@ parametersArray.push(this._getShrewd(sForm, "BuildEmpire.Mosaic.Courseware.Edita
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-this.getShrewdNS(),
+(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
 "OnRelationshipManagerSave",
 parametersArray,
 "void",
@@ -717,13 +717,13 @@ exceptionsArray
 OnRelationshipManagerClose: function(){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.isServer) {
+if (this._shrewd.isLocal && this._shrewd.isServer) {
 } else {
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-this.getShrewdNS(),
+(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
 "OnRelationshipManagerClose",
 parametersArray,
 "void",
@@ -739,7 +739,7 @@ exceptionsArray
 OnEditDialogSave: function(sForm){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.isServer) {
+if (this._shrewd.isLocal && this._shrewd.isServer) {
 parametersArray.push(sForm);
 } else {
 parametersArray.push(this._getShrewd(sForm, "BuildEmpire.Mosaic.Courseware.EditableForm", ""));
@@ -747,7 +747,7 @@ parametersArray.push(this._getShrewd(sForm, "BuildEmpire.Mosaic.Courseware.Edita
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-this.getShrewdNS(),
+(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
 "OnEditDialogSave",
 parametersArray,
 "void",
@@ -762,13 +762,13 @@ exceptionsArray
 OnEditDialogClose: function(){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.isServer) {
+if (this._shrewd.isLocal && this._shrewd.isServer) {
 } else {
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-this.getShrewdNS(),
+(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
 "OnEditDialogClose",
 parametersArray,
 "void",
@@ -1472,8 +1472,8 @@ _shrewd:null,
  * @type {AShrewd}
  * @returns {null}
  */
-initialize: function(shrewdObject, skipCheck){
-if (shrewdObject instanceof AShrewd || skipCheck) {
+initialize: function(shrewdObject){
+if (shrewdObject instanceof AShrewd) {
 this._shrewd = shrewdObject;
 } else {
 alert ('The object passed to BuildEmpire.Mosaic.Courseware.ConnectorInboundService is not an instance of AShrewd.');
@@ -1502,7 +1502,7 @@ Extends:AShrewdBase,
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "ec1475b73148589ece1c0e956c00aacf992e28d8";
+return "d600eeb3d99053abbf9ebb259149510e345234b4";
 },
 /**
  * Get the shrewd namespace.
@@ -1526,13 +1526,13 @@ return "BuildEmpire.Mosaic.Courseware.ConnectorOutboundService";
 Ready: function(){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.isServer) {
+if (this._shrewd.isLocal && this._shrewd.isServer) {
 } else {
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-this.getShrewdNS(),
+(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
 "Ready",
 parametersArray,
 "void",
@@ -1548,7 +1548,7 @@ exceptionsArray
 SetInboundService: function(InboundService){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.isServer) {
+if (this._shrewd.isLocal && this._shrewd.isServer) {
 parametersArray.push(InboundService);
 } else {
 
@@ -1556,7 +1556,7 @@ parametersArray.push(InboundService);
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-this.getShrewdNS(),
+(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
 "SetInboundService",
 parametersArray,
 "void",
@@ -1572,7 +1572,7 @@ exceptionsArray
 UpdateScreenData: function(sScreenData){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.isServer) {
+if (this._shrewd.isLocal && this._shrewd.isServer) {
 parametersArray.push(sScreenData);
 } else {
 parametersArray.push(this._getShrewd(sScreenData, "BuildEmpire.Mosaic.Courseware.ScreenData", ""));
@@ -1580,7 +1580,7 @@ parametersArray.push(this._getShrewd(sScreenData, "BuildEmpire.Mosaic.Courseware
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-this.getShrewdNS(),
+(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
 "UpdateScreenData",
 parametersArray,
 "void",
@@ -1597,7 +1597,7 @@ exceptionsArray
 SetContextInformation: function(context, text){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.isServer) {
+if (this._shrewd.isLocal && this._shrewd.isServer) {
 parametersArray.push(context);
 parametersArray.push(text);
 } else {
@@ -1607,7 +1607,7 @@ parametersArray.push(this._getShrewd(text, "string", ""));
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-this.getShrewdNS(),
+(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
 "SetContextInformation",
 parametersArray,
 "void",
@@ -1623,7 +1623,7 @@ exceptionsArray
 OpenResourceManager: function(fileExtensions){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.isServer) {
+if (this._shrewd.isLocal && this._shrewd.isServer) {
 parametersArray.push(fileExtensions);
 } else {
 parametersArray.push(this._getShrewd(fileExtensions, "list", "string"));
@@ -1631,7 +1631,7 @@ parametersArray.push(this._getShrewd(fileExtensions, "list", "string"));
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-this.getShrewdNS(),
+(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
 "OpenResourceManager",
 parametersArray,
 "void",
@@ -1647,7 +1647,7 @@ exceptionsArray
 OpenRelationshipManager: function(editableForm){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.isServer) {
+if (this._shrewd.isLocal && this._shrewd.isServer) {
 parametersArray.push(editableForm);
 } else {
 parametersArray.push(this._getShrewd(editableForm, "BuildEmpire.Mosaic.Courseware.EditableForm", ""));
@@ -1655,7 +1655,7 @@ parametersArray.push(this._getShrewd(editableForm, "BuildEmpire.Mosaic.Coursewar
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-this.getShrewdNS(),
+(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
 "OpenRelationshipManager",
 parametersArray,
 "void",
@@ -1671,7 +1671,7 @@ exceptionsArray
 OpenEditDialog: function(editableForm){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.isServer) {
+if (this._shrewd.isLocal && this._shrewd.isServer) {
 parametersArray.push(editableForm);
 } else {
 parametersArray.push(this._getShrewd(editableForm, "BuildEmpire.Mosaic.Courseware.EditableForm", ""));
@@ -1679,7 +1679,7 @@ parametersArray.push(this._getShrewd(editableForm, "BuildEmpire.Mosaic.Coursewar
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-this.getShrewdNS(),
+(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
 "OpenEditDialog",
 parametersArray,
 "void",
@@ -1860,8 +1860,8 @@ _shrewd:null,
  * @type {AShrewd}
  * @returns {null}
  */
-initialize: function(shrewdObject, skipCheck){
-if (shrewdObject instanceof AShrewd || skipCheck) {
+initialize: function(shrewdObject){
+if (shrewdObject instanceof AShrewd) {
 this._shrewd = shrewdObject;
 } else {
 alert ('The object passed to BuildEmpire.Mosaic.Courseware.ConnectorOutboundService is not an instance of AShrewd.');
@@ -1973,7 +1973,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.Translation",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "ec1475b73148589ece1c0e956c00aacf992e28d8";
+return "d600eeb3d99053abbf9ebb259149510e345234b4";
 },
 /**
  * Get the name of the MooTools class.
@@ -2041,7 +2041,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.LearningPath",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "ec1475b73148589ece1c0e956c00aacf992e28d8";
+return "d600eeb3d99053abbf9ebb259149510e345234b4";
 },
 /**
  * Get the name of the MooTools class.
@@ -2119,7 +2119,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.ComponentMetrics",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "ec1475b73148589ece1c0e956c00aacf992e28d8";
+return "d600eeb3d99053abbf9ebb259149510e345234b4";
 },
 /**
  * Get the name of the MooTools class.
@@ -2191,7 +2191,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.Component",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "ec1475b73148589ece1c0e956c00aacf992e28d8";
+return "d600eeb3d99053abbf9ebb259149510e345234b4";
 },
 /**
  * Get the name of the MooTools class.
@@ -2269,7 +2269,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.ComponentInstance",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "ec1475b73148589ece1c0e956c00aacf992e28d8";
+return "d600eeb3d99053abbf9ebb259149510e345234b4";
 },
 /**
  * Get the name of the MooTools class.
@@ -2337,7 +2337,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.ColumnRowMetrics",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "ec1475b73148589ece1c0e956c00aacf992e28d8";
+return "d600eeb3d99053abbf9ebb259149510e345234b4";
 },
 /**
  * Get the name of the MooTools class.
@@ -2401,7 +2401,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.Column",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "ec1475b73148589ece1c0e956c00aacf992e28d8";
+return "d600eeb3d99053abbf9ebb259149510e345234b4";
 },
 /**
  * Get the name of the MooTools class.
@@ -2467,7 +2467,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.Row",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "ec1475b73148589ece1c0e956c00aacf992e28d8";
+return "d600eeb3d99053abbf9ebb259149510e345234b4";
 },
 /**
  * Get the name of the MooTools class.
@@ -2529,7 +2529,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.Template",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "ec1475b73148589ece1c0e956c00aacf992e28d8";
+return "d600eeb3d99053abbf9ebb259149510e345234b4";
 },
 /**
  * Get the name of the MooTools class.
@@ -2601,7 +2601,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.DataRows",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "ec1475b73148589ece1c0e956c00aacf992e28d8";
+return "d600eeb3d99053abbf9ebb259149510e345234b4";
 },
 /**
  * Get the name of the MooTools class.
@@ -2679,7 +2679,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.DataColumns",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "ec1475b73148589ece1c0e956c00aacf992e28d8";
+return "d600eeb3d99053abbf9ebb259149510e345234b4";
 },
 /**
  * Get the name of the MooTools class.
@@ -2757,7 +2757,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.DataCanvas",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "ec1475b73148589ece1c0e956c00aacf992e28d8";
+return "d600eeb3d99053abbf9ebb259149510e345234b4";
 },
 /**
  * Get the name of the MooTools class.
@@ -2823,7 +2823,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.DataGrid",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "ec1475b73148589ece1c0e956c00aacf992e28d8";
+return "d600eeb3d99053abbf9ebb259149510e345234b4";
 },
 /**
  * Get the name of the MooTools class.
@@ -2923,7 +2923,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.ConfigurationData",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "ec1475b73148589ece1c0e956c00aacf992e28d8";
+return "d600eeb3d99053abbf9ebb259149510e345234b4";
 },
 /**
  * Get the name of the MooTools class.
@@ -3011,7 +3011,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.EditableFormFieldHtml",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "ec1475b73148589ece1c0e956c00aacf992e28d8";
+return "d600eeb3d99053abbf9ebb259149510e345234b4";
 },
 /**
  * Get the name of the MooTools class.
@@ -3071,7 +3071,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.EditableFormFieldSelect",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "ec1475b73148589ece1c0e956c00aacf992e28d8";
+return "d600eeb3d99053abbf9ebb259149510e345234b4";
 },
 /**
  * Get the name of the MooTools class.
@@ -3133,7 +3133,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.EditableFormFieldRange",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "ec1475b73148589ece1c0e956c00aacf992e28d8";
+return "d600eeb3d99053abbf9ebb259149510e345234b4";
 },
 /**
  * Get the name of the MooTools class.
@@ -3191,7 +3191,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.EditableFormFieldText",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "ec1475b73148589ece1c0e956c00aacf992e28d8";
+return "d600eeb3d99053abbf9ebb259149510e345234b4";
 },
 /**
  * Get the name of the MooTools class.
@@ -3265,7 +3265,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.EditableFormField",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "ec1475b73148589ece1c0e956c00aacf992e28d8";
+return "d600eeb3d99053abbf9ebb259149510e345234b4";
 },
 /**
  * Get the name of the MooTools class.
@@ -3333,7 +3333,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.EditableFormGroup",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "ec1475b73148589ece1c0e956c00aacf992e28d8";
+return "d600eeb3d99053abbf9ebb259149510e345234b4";
 },
 /**
  * Get the name of the MooTools class.
@@ -3393,7 +3393,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.EditableForm",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "ec1475b73148589ece1c0e956c00aacf992e28d8";
+return "d600eeb3d99053abbf9ebb259149510e345234b4";
 },
 /**
  * Get the name of the MooTools class.
@@ -3469,7 +3469,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.Relationship",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "ec1475b73148589ece1c0e956c00aacf992e28d8";
+return "d600eeb3d99053abbf9ebb259149510e345234b4";
 },
 /**
  * Get the name of the MooTools class.
@@ -3549,7 +3549,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.ValidRelationshipEvent",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "ec1475b73148589ece1c0e956c00aacf992e28d8";
+return "d600eeb3d99053abbf9ebb259149510e345234b4";
 },
 /**
  * Get the name of the MooTools class.
@@ -3627,7 +3627,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.ValidRelationshipAction",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "ec1475b73148589ece1c0e956c00aacf992e28d8";
+return "d600eeb3d99053abbf9ebb259149510e345234b4";
 },
 /**
  * Get the name of the MooTools class.
@@ -3693,7 +3693,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.RelationshipCollection",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "ec1475b73148589ece1c0e956c00aacf992e28d8";
+return "d600eeb3d99053abbf9ebb259149510e345234b4";
 },
 /**
  * Get the name of the MooTools class.
@@ -3765,7 +3765,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.RelationshipComponentContainer",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "ec1475b73148589ece1c0e956c00aacf992e28d8";
+return "d600eeb3d99053abbf9ebb259149510e345234b4";
 },
 /**
  * Get the name of the MooTools class.
@@ -3831,7 +3831,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.RelationshipContainer",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "ec1475b73148589ece1c0e956c00aacf992e28d8";
+return "d600eeb3d99053abbf9ebb259149510e345234b4";
 },
 /**
  * Get the name of the MooTools class.
@@ -3895,7 +3895,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.ScreenData",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "ec1475b73148589ece1c0e956c00aacf992e28d8";
+return "d600eeb3d99053abbf9ebb259149510e345234b4";
 },
 /**
  * Get the name of the MooTools class.
@@ -3981,7 +3981,7 @@ shrewdNS : "BuildEmpire.Mosaic.Courseware.StructureItem",
  * @returns {string}
  */
 getShrewdVersion : function(){
-return "ec1475b73148589ece1c0e956c00aacf992e28d8";
+return "d600eeb3d99053abbf9ebb259149510e345234b4";
 },
 /**
  * Get the name of the MooTools class.

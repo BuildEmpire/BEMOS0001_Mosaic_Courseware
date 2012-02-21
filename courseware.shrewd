@@ -571,7 +571,6 @@ service ConnectorInbound {
     */
     void    OnEditDialogClose(
     )
-
 }
 
 /*

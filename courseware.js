@@ -37,6 +37,7 @@ return "BuildEmpire.Mosaic.Courseware.ConnectorInboundService";
 Ready: function(OutboundService){
 if (this._shrewd) {
 var parametersArray = new Array();
+    console.debug(this._shrewd.isLocal + "&&" + this._shrewd.isServer);
 if (this._shrewd.isLocal && this._shrewd.isServer) {
 parametersArray.push(OutboundService);
 } else {

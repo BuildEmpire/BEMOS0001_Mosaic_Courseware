@@ -524,7 +524,54 @@ service ConnectorInbound {
     Sets the list of active event/action relationships from the current screen
     */
     list<Relationship>    GetRelationshipsData(
+    ),
+
+    /**
+    OnResourceManagerSelect
+    A resource has been selected from the resource manager.
+    */
+    void    OnResourceManagerSelect(
+        1:  string  filePathRelative
+    ),
+
+    /**
+    OnResourceManagerClose
+    The resource manager has been closed and no resource has been selected.
+    */
+    void    OnResourceManagerClose(
+    ),
+
+    /**
+    OnRelationshipManagerSave
+    The relationships manager has been closed, and the relationships saved.
+    */
+    void    OnRelationshipManagerSave(
+        1:  EditableForm    sForm
+    ),
+
+    /**
+    OnRelationshipManagerClose
+    The relationship manager has been closed, and no relationsips
+    have been saved.
+    */
+    void    OnRelationshipManagerClose(
+    ),
+
+    /**
+    OnEditDialogSave
+    The edit dialog has been closed and saved.
+    */
+    void    OnEditDialogSave(
+        1:  EditableForm    sForm
+    ),
+
+    /**
+    OnEditDialogClose
+    The edit dialog has been closed and no data has been daved.
+    */
+    void    OnEditDialogClose(
     )
+
 }
 
 /*
@@ -558,6 +605,15 @@ service ConnectorOutbound {
     void    Ready(),
 
     /**
+    SetInboundService
+    Used by Mosaic internally, this method allows the outbound service to be
+    informed of the inbound service, in case it requires two way comms.
+    */
+    void    SetInboundService(
+        1:   native-js-Object     InboundService
+    ),
+
+    /**
     UpdateScreenData
     Inform the external service that the screen data has been updated.
     This could additionally, for instance, prompt the save button in
@@ -587,9 +643,7 @@ service ConnectorOutbound {
     cancel.
     */
     void    OpenResourceManager(
-        1:              list<string>         fileExtensions,
-        2:   optional   native-js-Object     onSelectCallback,
-        3:   optional   native-js-Object     onCancelCallback
+        1:              list<string>         fileExtensions
     ),
 
     /**
@@ -599,9 +653,7 @@ service ConnectorOutbound {
     cancel.
     */
     void    OpenRelationshipManager(
-        1:              EditableForm         editableForm,
-        2:   optional   native-js-Object     onSaveCallback,
-        3:   optional   native-js-Object     onCancelCallback
+        1:              EditableForm         editableForm
     ),
 
     /**
@@ -613,9 +665,7 @@ service ConnectorOutbound {
     cancel.
     */
     void    OpenEditDialog(
-        1:              EditableForm         editableForm,
-        2:   optional   native-js-Object     onSaveCallback,
-        3:   optional   native-js-Object     onCancelCallback
+        1:              EditableForm         editableForm
     )
 }
 

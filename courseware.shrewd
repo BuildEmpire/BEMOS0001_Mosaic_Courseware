@@ -613,13 +613,12 @@ service ConnectorOutbound {
     ),
 
     /**
-    UpdateScreenData
+    SetScreenDataDirty
     Inform the external service that the screen data has been updated.
     This could additionally, for instance, prompt the save button in
     the external service to enable.
     */
-    void    UpdateScreenData(
-        1:  ScreenData     sScreenData
+    void    SetScreenDataDirty(
     ),
 
     /**
@@ -676,5 +675,5 @@ enum EventsOutbound {
     READY   = "READY",
     MODE    = "MODE",
     CONTEXT = "CONTEXT",
-    UPDATE  = "UPDATE"
+    DIRTY   = "DIRTY"
 }

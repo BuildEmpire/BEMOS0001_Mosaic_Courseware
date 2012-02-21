@@ -12,7 +12,7 @@ public function __construct($handler) {
 $this->_handler = $handler;
 }
 public function getShrewdVersion(){
-return "979835873d065ece2509599a5ad7ed7208cc7c38";
+return "0545913f01809c702fb4e811c3286791b4c13c8e";
 }
 public function getHandler(){
 return $this->_handler;
@@ -32,10 +32,10 @@ return "void";
 private function _SetInboundServiceGetReturnContentType() {
 return "";
 }
-private function _UpdateScreenDataGetReturnType() {
+private function _SetScreenDataDirtyGetReturnType() {
 return "void";
 }
-private function _UpdateScreenDataGetReturnContentType() {
+private function _SetScreenDataDirtyGetReturnContentType() {
 return "";
 }
 private function _SetContextInformationGetReturnType() {
@@ -75,13 +75,8 @@ $param->optional = false;
 $params[] = $param;
 return $params;
 }
-private function _UpdateScreenDataGetArguments() {
+private function _SetScreenDataDirtyGetArguments() {
 $params = array();
-$param = new Parameter();
-$param->name = "sScreenData";
-$param->type = "\BuildEmpire\Mosaic\Courseware\ScreenData";
-$param->optional = false;
-$params[] = $param;
 return $params;
 }
 private function _SetContextInformationGetArguments() {
@@ -134,7 +129,7 @@ private function _SetInboundServiceGetExceptions() {
 $params = array();
 return $params;
 }
-private function _UpdateScreenDataGetExceptions() {
+private function _SetScreenDataDirtyGetExceptions() {
 $params = array();
 return $params;
 }

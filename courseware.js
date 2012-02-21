@@ -37,8 +37,7 @@ return "BuildEmpire.Mosaic.Courseware.ConnectorInboundService";
 Ready: function(OutboundService){
 if (this._shrewd) {
 var parametersArray = new Array();
-    console.debug(this._shrewd.isLocal + "&&" + this._shrewd.isServer);
-if (this._shrewd.isLocal && this._shrewd.isServer) {
+if (this._shrewd.isServer) {
 parametersArray.push(OutboundService);
 } else {
 
@@ -46,7 +45,7 @@ parametersArray.push(OutboundService);
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
+this.getShrewdNS(),
 "Ready",
 parametersArray,
 "void",
@@ -62,7 +61,7 @@ exceptionsArray
 SetMode: function(mode){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.isLocal && this._shrewd.isServer) {
+if (this._shrewd.isServer) {
 parametersArray.push(mode);
 } else {
 parametersArray.push(this._getShrewd(mode, "integer", ""));
@@ -70,7 +69,7 @@ parametersArray.push(this._getShrewd(mode, "integer", ""));
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
+this.getShrewdNS(),
 "SetMode",
 parametersArray,
 "boolean",
@@ -86,7 +85,7 @@ exceptionsArray
 SetScale: function(scale){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.isLocal && this._shrewd.isServer) {
+if (this._shrewd.isServer) {
 parametersArray.push(scale);
 } else {
 parametersArray.push(this._getShrewd(scale, "float", ""));
@@ -94,7 +93,7 @@ parametersArray.push(this._getShrewd(scale, "float", ""));
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
+this.getShrewdNS(),
 "SetScale",
 parametersArray,
 "boolean",
@@ -109,13 +108,13 @@ exceptionsArray
 GetScale: function(){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.isLocal && this._shrewd.isServer) {
+if (this._shrewd.isServer) {
 } else {
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
+this.getShrewdNS(),
 "GetScale",
 parametersArray,
 "float",
@@ -130,13 +129,13 @@ exceptionsArray
 IsTransformationApplied: function(){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.isLocal && this._shrewd.isServer) {
+if (this._shrewd.isServer) {
 } else {
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
+this.getShrewdNS(),
 "IsTransformationApplied",
 parametersArray,
 "boolean",
@@ -152,7 +151,7 @@ exceptionsArray
 SetTransformation: function(transformation){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.isLocal && this._shrewd.isServer) {
+if (this._shrewd.isServer) {
 parametersArray.push(transformation);
 } else {
 parametersArray.push(this._getShrewd(transformation, "float", ""));
@@ -160,7 +159,7 @@ parametersArray.push(this._getShrewd(transformation, "float", ""));
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
+this.getShrewdNS(),
 "SetTransformation",
 parametersArray,
 "boolean",
@@ -175,13 +174,13 @@ exceptionsArray
 GetTransformation: function(){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.isLocal && this._shrewd.isServer) {
+if (this._shrewd.isServer) {
 } else {
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
+this.getShrewdNS(),
 "GetTransformation",
 parametersArray,
 "float",
@@ -197,7 +196,7 @@ exceptionsArray
 SetConfigurationData: function(configurationData){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.isLocal && this._shrewd.isServer) {
+if (this._shrewd.isServer) {
 parametersArray.push(configurationData);
 } else {
 parametersArray.push(this._getShrewd(configurationData, "BuildEmpire.Mosaic.Courseware.ConfigurationData", ""));
@@ -205,7 +204,7 @@ parametersArray.push(this._getShrewd(configurationData, "BuildEmpire.Mosaic.Cour
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
+this.getShrewdNS(),
 "SetConfigurationData",
 parametersArray,
 "void",
@@ -220,13 +219,13 @@ exceptionsArray
 GetConfigurationData: function(){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.isLocal && this._shrewd.isServer) {
+if (this._shrewd.isServer) {
 } else {
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
+this.getShrewdNS(),
 "GetConfigurationData",
 parametersArray,
 "BuildEmpire.Mosaic.Courseware.ConfigurationData",
@@ -242,7 +241,7 @@ exceptionsArray
 SetScreenData: function(screenData){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.isLocal && this._shrewd.isServer) {
+if (this._shrewd.isServer) {
 parametersArray.push(screenData);
 } else {
 parametersArray.push(this._getShrewd(screenData, "BuildEmpire.Mosaic.Courseware.ScreenData", ""));
@@ -250,7 +249,7 @@ parametersArray.push(this._getShrewd(screenData, "BuildEmpire.Mosaic.Courseware.
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
+this.getShrewdNS(),
 "SetScreenData",
 parametersArray,
 "void",
@@ -265,13 +264,13 @@ exceptionsArray
 GetScreenData: function(){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.isLocal && this._shrewd.isServer) {
+if (this._shrewd.isServer) {
 } else {
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
+this.getShrewdNS(),
 "GetScreenData",
 parametersArray,
 "BuildEmpire.Mosaic.Courseware.ScreenData",
@@ -286,13 +285,13 @@ exceptionsArray
 Draw: function(){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.isLocal && this._shrewd.isServer) {
+if (this._shrewd.isServer) {
 } else {
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
+this.getShrewdNS(),
 "Draw",
 parametersArray,
 "void",
@@ -307,13 +306,13 @@ exceptionsArray
 AddColumn: function(){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.isLocal && this._shrewd.isServer) {
+if (this._shrewd.isServer) {
 } else {
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
+this.getShrewdNS(),
 "AddColumn",
 parametersArray,
 "void",
@@ -329,7 +328,7 @@ exceptionsArray
 AddComponent: function(componentName){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.isLocal && this._shrewd.isServer) {
+if (this._shrewd.isServer) {
 parametersArray.push(componentName);
 } else {
 parametersArray.push(this._getShrewd(componentName, "string", ""));
@@ -337,7 +336,7 @@ parametersArray.push(this._getShrewd(componentName, "string", ""));
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
+this.getShrewdNS(),
 "AddComponent",
 parametersArray,
 "void",
@@ -353,7 +352,7 @@ exceptionsArray
 HighlightColumn: function(id){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.isLocal && this._shrewd.isServer) {
+if (this._shrewd.isServer) {
 parametersArray.push(id);
 } else {
 parametersArray.push(this._getShrewd(id, "string", ""));
@@ -361,7 +360,7 @@ parametersArray.push(this._getShrewd(id, "string", ""));
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
+this.getShrewdNS(),
 "HighlightColumn",
 parametersArray,
 "void",
@@ -377,7 +376,7 @@ exceptionsArray
 UnhighlightColumn: function(id){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.isLocal && this._shrewd.isServer) {
+if (this._shrewd.isServer) {
 parametersArray.push(id);
 } else {
 parametersArray.push(this._getShrewd(id, "string", ""));
@@ -385,7 +384,7 @@ parametersArray.push(this._getShrewd(id, "string", ""));
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
+this.getShrewdNS(),
 "UnhighlightColumn",
 parametersArray,
 "void",
@@ -401,7 +400,7 @@ exceptionsArray
 HighlightComponent: function(id){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.isLocal && this._shrewd.isServer) {
+if (this._shrewd.isServer) {
 parametersArray.push(id);
 } else {
 parametersArray.push(this._getShrewd(id, "string", ""));
@@ -409,7 +408,7 @@ parametersArray.push(this._getShrewd(id, "string", ""));
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
+this.getShrewdNS(),
 "HighlightComponent",
 parametersArray,
 "void",
@@ -425,7 +424,7 @@ exceptionsArray
 UnhighlightComponent: function(id){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.isLocal && this._shrewd.isServer) {
+if (this._shrewd.isServer) {
 parametersArray.push(id);
 } else {
 parametersArray.push(this._getShrewd(id, "string", ""));
@@ -433,7 +432,7 @@ parametersArray.push(this._getShrewd(id, "string", ""));
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
+this.getShrewdNS(),
 "UnhighlightComponent",
 parametersArray,
 "void",
@@ -448,13 +447,13 @@ exceptionsArray
 GetValidRelationships: function(){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.isLocal && this._shrewd.isServer) {
+if (this._shrewd.isServer) {
 } else {
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
+this.getShrewdNS(),
 "GetValidRelationships",
 parametersArray,
 "BuildEmpire.Mosaic.Courseware.RelationshipContainer",
@@ -470,7 +469,7 @@ exceptionsArray
 GetValidComponentRelationships: function(componentName){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.isLocal && this._shrewd.isServer) {
+if (this._shrewd.isServer) {
 parametersArray.push(componentName);
 } else {
 parametersArray.push(this._getShrewd(componentName, "string", ""));
@@ -478,7 +477,7 @@ parametersArray.push(this._getShrewd(componentName, "string", ""));
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
+this.getShrewdNS(),
 "GetValidComponentRelationships",
 parametersArray,
 "BuildEmpire.Mosaic.Courseware.RelationshipComponentContainer",
@@ -493,13 +492,13 @@ exceptionsArray
 GetAllValidComponentRelationships: function(){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.isLocal && this._shrewd.isServer) {
+if (this._shrewd.isServer) {
 } else {
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
+this.getShrewdNS(),
 "GetAllValidComponentRelationships",
 parametersArray,
 "map",
@@ -514,13 +513,13 @@ exceptionsArray
 ShowVisualRelationshipsEditor: function(){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.isLocal && this._shrewd.isServer) {
+if (this._shrewd.isServer) {
 } else {
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
+this.getShrewdNS(),
 "ShowVisualRelationshipsEditor",
 parametersArray,
 "void",
@@ -535,13 +534,13 @@ exceptionsArray
 HideVisualRelationshipsEditor: function(){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.isLocal && this._shrewd.isServer) {
+if (this._shrewd.isServer) {
 } else {
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
+this.getShrewdNS(),
 "HideVisualRelationshipsEditor",
 parametersArray,
 "void",
@@ -557,7 +556,7 @@ exceptionsArray
 ShowVisualRelationship: function(relationshipId){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.isLocal && this._shrewd.isServer) {
+if (this._shrewd.isServer) {
 parametersArray.push(relationshipId);
 } else {
 parametersArray.push(this._getShrewd(relationshipId, "string", ""));
@@ -565,7 +564,7 @@ parametersArray.push(this._getShrewd(relationshipId, "string", ""));
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
+this.getShrewdNS(),
 "ShowVisualRelationship",
 parametersArray,
 "void",
@@ -581,7 +580,7 @@ exceptionsArray
 HideVisualRelationship: function(relationshipId){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.isLocal && this._shrewd.isServer) {
+if (this._shrewd.isServer) {
 parametersArray.push(relationshipId);
 } else {
 parametersArray.push(this._getShrewd(relationshipId, "string", ""));
@@ -589,7 +588,7 @@ parametersArray.push(this._getShrewd(relationshipId, "string", ""));
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
+this.getShrewdNS(),
 "HideVisualRelationship",
 parametersArray,
 "void",
@@ -605,7 +604,7 @@ exceptionsArray
 SetRelationshipsData: function(relationshipsData){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.isLocal && this._shrewd.isServer) {
+if (this._shrewd.isServer) {
 parametersArray.push(relationshipsData);
 } else {
 parametersArray.push(this._getShrewd(relationshipsData, "list", "BuildEmpire.Mosaic.Courseware.Relationship"));
@@ -613,7 +612,7 @@ parametersArray.push(this._getShrewd(relationshipsData, "list", "BuildEmpire.Mos
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
+this.getShrewdNS(),
 "SetRelationshipsData",
 parametersArray,
 "void",
@@ -628,13 +627,13 @@ exceptionsArray
 GetRelationshipsData: function(){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.isLocal && this._shrewd.isServer) {
+if (this._shrewd.isServer) {
 } else {
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
+this.getShrewdNS(),
 "GetRelationshipsData",
 parametersArray,
 "list",
@@ -1269,13 +1268,13 @@ return "BuildEmpire.Mosaic.Courseware.ConnectorOutboundService";
 Ready: function(){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.isLocal && this._shrewd.isServer) {
+if (this._shrewd.isServer) {
 } else {
 }
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
+this.getShrewdNS(),
 "Ready",
 parametersArray,
 "void",
@@ -1291,7 +1290,7 @@ exceptionsArray
 UpdateScreenData: function(sScreenData){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.isLocal && this._shrewd.isServer) {
+if (this._shrewd.isServer) {
 parametersArray.push(sScreenData);
 } else {
 parametersArray.push(this._getShrewd(sScreenData, "BuildEmpire.Mosaic.Courseware.ScreenData", ""));
@@ -1299,7 +1298,7 @@ parametersArray.push(this._getShrewd(sScreenData, "BuildEmpire.Mosaic.Courseware
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
+this.getShrewdNS(),
 "UpdateScreenData",
 parametersArray,
 "void",
@@ -1316,7 +1315,7 @@ exceptionsArray
 SetContextInformation: function(context, text){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.isLocal && this._shrewd.isServer) {
+if (this._shrewd.isServer) {
 parametersArray.push(context);
 parametersArray.push(text);
 } else {
@@ -1326,7 +1325,7 @@ parametersArray.push(this._getShrewd(text, "string", ""));
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
+this.getShrewdNS(),
 "SetContextInformation",
 parametersArray,
 "void",
@@ -1344,7 +1343,7 @@ exceptionsArray
 OpenResourceManager: function(fileExtensions, onSelectCallback, onCancelCallback){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.isLocal && this._shrewd.isServer) {
+if (this._shrewd.isServer) {
 parametersArray.push(fileExtensions);
 parametersArray.push(onSelectCallback);
 parametersArray.push(onCancelCallback);
@@ -1356,7 +1355,7 @@ parametersArray.push(this._getShrewd(fileExtensions, "list", "string"));
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
+this.getShrewdNS(),
 "OpenResourceManager",
 parametersArray,
 "void",
@@ -1374,7 +1373,7 @@ exceptionsArray
 OpenRelationshipManager: function(editableForm, onSaveCallback, onCancelCallback){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.isLocal && this._shrewd.isServer) {
+if (this._shrewd.isServer) {
 parametersArray.push(editableForm);
 parametersArray.push(onSaveCallback);
 parametersArray.push(onCancelCallback);
@@ -1386,7 +1385,7 @@ parametersArray.push(this._getShrewd(editableForm, "BuildEmpire.Mosaic.Coursewar
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
+this.getShrewdNS(),
 "OpenRelationshipManager",
 parametersArray,
 "void",
@@ -1404,7 +1403,7 @@ exceptionsArray
 OpenEditDialog: function(editableForm, onSaveCallback, onCancelCallback){
 if (this._shrewd) {
 var parametersArray = new Array();
-if (this._shrewd.isLocal && this._shrewd.isServer) {
+if (this._shrewd.isServer) {
 parametersArray.push(editableForm);
 parametersArray.push(onSaveCallback);
 parametersArray.push(onCancelCallback);
@@ -1416,7 +1415,7 @@ parametersArray.push(this._getShrewd(editableForm, "BuildEmpire.Mosaic.Coursewar
 var exceptionsArray = new Array();
 return this._shrewd.communicate(
 this.getShrewdVersion(),
-(this._shrewd.isLocal && !this._shrewd.isServer) ? this.getName() : this.getShrewdNS(),
+this.getShrewdNS(),
 "OpenEditDialog",
 parametersArray,
 "void",

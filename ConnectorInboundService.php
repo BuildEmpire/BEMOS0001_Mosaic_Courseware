@@ -12,7 +12,7 @@ public function __construct($handler) {
 $this->_handler = $handler;
 }
 public function getShrewdVersion(){
-return "811ddb23ee4d1bc4ccb4d51156e6e64d330d05a9";
+return "4ef8b455020f864df7f1fc03ec94cd1d2d623525";
 }
 public function getHandler(){
 return $this->_handler;
@@ -418,8 +418,9 @@ return $params;
 private function _OnRelationshipManagerSaveGetArguments() {
 $params = array();
 $param = new Parameter();
-$param->name = "sForm";
-$param->type = "\BuildEmpire\Mosaic\Courseware\EditableForm";
+$param->name = "relationshipsData";
+$param->type = "list";
+$param->contentType = "\BuildEmpire\Mosaic\Courseware\Relationship";
 $param->optional = false;
 $params[] = $param;
 return $params;

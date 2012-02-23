@@ -544,15 +544,15 @@ service ConnectorInbound {
 
     /**
     OnRelationshipManagerSave
-    The relationships manager has been closed, and the relationships saved.
+    The relationships manager has been closed, and the relationships sent back.
     */
     void    OnRelationshipManagerSave(
-        1:  EditableForm    sForm
+        1:  list<Relationship>     relationshipsData
     ),
 
     /**
     OnRelationshipManagerClose
-    The relationship manager has been closed, and no relationsips
+    The relationship manager has been closed, and no relationships
     have been saved.
     */
     void    OnRelationshipManagerClose(
@@ -568,7 +568,7 @@ service ConnectorInbound {
 
     /**
     OnEditDialogClose
-    The edit dialog has been closed and no data has been daved.
+    The edit dialog has been closed and no data has been saved.
     */
     void    OnEditDialogClose(
     )

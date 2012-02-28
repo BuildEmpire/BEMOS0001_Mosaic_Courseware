@@ -39,13 +39,21 @@ public $rows;
  */
 public $columns;
 /**
+ * @var \BuildEmpire\Mosaic\Courseware\DataGrid
+ */
+public $grid;
+/**
  * @var \BuildEmpire\Mosaic\Courseware\DataCanvas
  */
 public $canvas;
 /**
- * @var \BuildEmpire\Mosaic\Courseware\DataGrid
+ * @var integer
  */
-public $grid;
+public $screenWidth = 800;
+/**
+ * @var integer
+ */
+public $screenHeight = 600;
 /**
  * @var string
  */
@@ -68,8 +76,10 @@ $paramArray[] = $shrewd->getParameter("ConfigurationData", 1, $this->components,
 $paramArray[] = $shrewd->getParameter("ConfigurationData", 1, $this->dragMode, "dragMode", "integer", "", false);
 $paramArray[] = ($shrewd->getParameter("ConfigurationData", 1, $this->rows, "rows", "\BuildEmpire\Mosaic\Courseware\DataRows", "", false)) ? $shrewd->getParameter("ConfigurationData", 1, $this->rows, "rows", "\BuildEmpire\Mosaic\Courseware\DataRows", "", false) : null;
 $paramArray[] = ($shrewd->getParameter("ConfigurationData", 1, $this->columns, "columns", "\BuildEmpire\Mosaic\Courseware\DataColumns", "", false)) ? $shrewd->getParameter("ConfigurationData", 1, $this->columns, "columns", "\BuildEmpire\Mosaic\Courseware\DataColumns", "", false) : null;
-$paramArray[] = ($shrewd->getParameter("ConfigurationData", 1, $this->canvas, "canvas", "\BuildEmpire\Mosaic\Courseware\DataCanvas", "", false)) ? $shrewd->getParameter("ConfigurationData", 1, $this->canvas, "canvas", "\BuildEmpire\Mosaic\Courseware\DataCanvas", "", false) : null;
 $paramArray[] = ($shrewd->getParameter("ConfigurationData", 1, $this->grid, "grid", "\BuildEmpire\Mosaic\Courseware\DataGrid", "", false)) ? $shrewd->getParameter("ConfigurationData", 1, $this->grid, "grid", "\BuildEmpire\Mosaic\Courseware\DataGrid", "", false) : null;
+$paramArray[] = ($shrewd->getParameter("ConfigurationData", 1, $this->canvas, "canvas", "\BuildEmpire\Mosaic\Courseware\DataCanvas", "", false)) ? $shrewd->getParameter("ConfigurationData", 1, $this->canvas, "canvas", "\BuildEmpire\Mosaic\Courseware\DataCanvas", "", false) : null;
+$paramArray[] = $shrewd->getParameter("ConfigurationData", 1, $this->screenWidth, "screenWidth", "integer", "", false);
+$paramArray[] = $shrewd->getParameter("ConfigurationData", 1, $this->screenHeight, "screenHeight", "integer", "", false);
 $paramArray[] = $shrewd->getParameter("ConfigurationData", 1, $this->language, "language", "string", "", false);
 $paramArray[] = $shrewd->getParameter("ConfigurationData", 1, $this->valid, "valid", "boolean", "", false);
 return $paramArray;
@@ -94,16 +104,18 @@ $theClass->setShrewd($shrewd, $shrewdArray[7]);
 $this->columns = $theClass;
 }
 if ($shrewdArray[8]) {
-$theClass = new \BuildEmpire\Mosaic\Courseware\DataCanvas();
-$theClass->setShrewd($shrewd, $shrewdArray[8]);
-$this->canvas = $theClass;
-}
-if ($shrewdArray[9]) {
 $theClass = new \BuildEmpire\Mosaic\Courseware\DataGrid();
-$theClass->setShrewd($shrewd, $shrewdArray[9]);
+$theClass->setShrewd($shrewd, $shrewdArray[8]);
 $this->grid = $theClass;
 }
-if (isset($shrewdArray[10])) {$this->language = $shrewd->setParameter("ConfigurationData", 2, $shrewdArray[10], "language", "string", "", false);}
-if (isset($shrewdArray[11])) {$this->valid = $shrewd->setParameter("ConfigurationData", 2, $shrewdArray[11], "valid", "boolean", "", false);}
+if ($shrewdArray[9]) {
+$theClass = new \BuildEmpire\Mosaic\Courseware\DataCanvas();
+$theClass->setShrewd($shrewd, $shrewdArray[9]);
+$this->canvas = $theClass;
+}
+if (isset($shrewdArray[10])) {$this->screenWidth = $shrewd->setParameter("ConfigurationData", 2, $shrewdArray[10], "screenWidth", "integer", "", false);}
+if (isset($shrewdArray[11])) {$this->screenHeight = $shrewd->setParameter("ConfigurationData", 2, $shrewdArray[11], "screenHeight", "integer", "", false);}
+if (isset($shrewdArray[12])) {$this->language = $shrewd->setParameter("ConfigurationData", 2, $shrewdArray[12], "language", "string", "", false);}
+if (isset($shrewdArray[13])) {$this->valid = $shrewd->setParameter("ConfigurationData", 2, $shrewdArray[13], "valid", "boolean", "", false);}
 }
 }

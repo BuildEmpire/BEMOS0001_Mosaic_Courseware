@@ -149,12 +149,14 @@ struct ConfigurationData {
 
     7:              DataRows                rows,
     8:              DataColumns             columns,
-    9:              DataCanvas              canvas,
-    10:             DataGrid                grid,
+    9:              DataGrid                grid,
 
-    11:             string                  language = "en",
+    10:             DataCanvas              canvas,
+    11:             integer                 screenWidth     = 800,
+    12:             integer                 screenHeight    = 600,
 
-    12:             boolean                 valid = false
+    13:             string                  language = "en",
+    14:             boolean                 valid = false
 }
 
 

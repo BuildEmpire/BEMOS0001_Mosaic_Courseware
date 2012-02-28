@@ -17,19 +17,11 @@ public $height = 600;
 /**
  * @var integer
  */
-public $canvasWidth = 800;
+public $leftPos = 0;
 /**
  * @var integer
  */
-public $canvasHeight = 600;
-/**
- * @var integer
- */
-public $canvasLeftPos = 0;
-/**
- * @var integer
- */
-public $canvasTopPos = 0;
+public $topPos = 0;
 /**
  * @var boolean
  */
@@ -50,10 +42,8 @@ public function getShrewd(
 $paramArray = array();
 $paramArray[] = $shrewd->getParameter("DataCanvas", 1, $this->width, "width", "integer", "", false);
 $paramArray[] = $shrewd->getParameter("DataCanvas", 1, $this->height, "height", "integer", "", false);
-$paramArray[] = $shrewd->getParameter("DataCanvas", 1, $this->canvasWidth, "canvasWidth", "integer", "", false);
-$paramArray[] = $shrewd->getParameter("DataCanvas", 1, $this->canvasHeight, "canvasHeight", "integer", "", false);
-$paramArray[] = $shrewd->getParameter("DataCanvas", 1, $this->canvasLeftPos, "canvasLeftPos", "integer", "", false);
-$paramArray[] = $shrewd->getParameter("DataCanvas", 1, $this->canvasTopPos, "canvasTopPos", "integer", "", false);
+$paramArray[] = $shrewd->getParameter("DataCanvas", 1, $this->leftPos, "leftPos", "integer", "", false);
+$paramArray[] = $shrewd->getParameter("DataCanvas", 1, $this->topPos, "topPos", "integer", "", false);
 $paramArray[] = $shrewd->getParameter("DataCanvas", 1, $this->placeInColumns, "placeInColumns", "boolean", "", false);
 $paramArray[] = $shrewd->getParameter("DataCanvas", 1, $this->restrictWidth, "restrictWidth", "boolean", "", false);
 $paramArray[] = $shrewd->getParameter("DataCanvas", 1, $this->restrictHeight, "restrictHeight", "boolean", "", false);
@@ -64,12 +54,10 @@ public function setShrewd(
 $shrewdArray){
 if (isset($shrewdArray[0])) {$this->width = $shrewd->setParameter("DataCanvas", 2, $shrewdArray[0], "width", "integer", "", false);}
 if (isset($shrewdArray[1])) {$this->height = $shrewd->setParameter("DataCanvas", 2, $shrewdArray[1], "height", "integer", "", false);}
-if (isset($shrewdArray[2])) {$this->canvasWidth = $shrewd->setParameter("DataCanvas", 2, $shrewdArray[2], "canvasWidth", "integer", "", false);}
-if (isset($shrewdArray[3])) {$this->canvasHeight = $shrewd->setParameter("DataCanvas", 2, $shrewdArray[3], "canvasHeight", "integer", "", false);}
-if (isset($shrewdArray[4])) {$this->canvasLeftPos = $shrewd->setParameter("DataCanvas", 2, $shrewdArray[4], "canvasLeftPos", "integer", "", false);}
-if (isset($shrewdArray[5])) {$this->canvasTopPos = $shrewd->setParameter("DataCanvas", 2, $shrewdArray[5], "canvasTopPos", "integer", "", false);}
-if (isset($shrewdArray[6])) {$this->placeInColumns = $shrewd->setParameter("DataCanvas", 2, $shrewdArray[6], "placeInColumns", "boolean", "", false);}
-if (isset($shrewdArray[7])) {$this->restrictWidth = $shrewd->setParameter("DataCanvas", 2, $shrewdArray[7], "restrictWidth", "boolean", "", false);}
-if (isset($shrewdArray[8])) {$this->restrictHeight = $shrewd->setParameter("DataCanvas", 2, $shrewdArray[8], "restrictHeight", "boolean", "", false);}
+if (isset($shrewdArray[2])) {$this->leftPos = $shrewd->setParameter("DataCanvas", 2, $shrewdArray[2], "leftPos", "integer", "", false);}
+if (isset($shrewdArray[3])) {$this->topPos = $shrewd->setParameter("DataCanvas", 2, $shrewdArray[3], "topPos", "integer", "", false);}
+if (isset($shrewdArray[4])) {$this->placeInColumns = $shrewd->setParameter("DataCanvas", 2, $shrewdArray[4], "placeInColumns", "boolean", "", false);}
+if (isset($shrewdArray[5])) {$this->restrictWidth = $shrewd->setParameter("DataCanvas", 2, $shrewdArray[5], "restrictWidth", "boolean", "", false);}
+if (isset($shrewdArray[6])) {$this->restrictHeight = $shrewd->setParameter("DataCanvas", 2, $shrewdArray[6], "restrictHeight", "boolean", "", false);}
 }
 }

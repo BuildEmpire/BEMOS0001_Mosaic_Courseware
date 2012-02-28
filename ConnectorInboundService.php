@@ -12,7 +12,7 @@ public function __construct($handler) {
 $this->_handler = $handler;
 }
 public function getShrewdVersion(){
-return "4ef8b455020f864df7f1fc03ec94cd1d2d623525";
+return "d699243abcab817cf8d11810fe23602cf2d9cc4f";
 }
 public function getHandler(){
 return $this->_handler;

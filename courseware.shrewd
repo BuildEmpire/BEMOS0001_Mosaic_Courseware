@@ -37,10 +37,11 @@ struct LearningPath {
 
 
 enum ScalingMode {
-    FREE            = 1,
-    RATIO           = 2,
-    XAXIS           = 3,
-    YAXIS           = 4
+    NONE            = 1,
+    FREE            = 2,
+    RATIO           = 3,
+    XAXIS           = 4,
+    YAXIS           = 5
 }
 
 struct ComponentMetrics {

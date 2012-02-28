@@ -122,13 +122,13 @@ struct DataColumns {
 }
 
 struct DataCanvas {
-    1:              integer                 width           = 800,
-    2:              integer                 height          = 600,
-    3               integer                 leftPos         = 0,
-    4               integer                 topPos          = 0,
-    5:              boolean                 placeInColumns  = true,
-    6:              boolean                 restrictWidth   = true,
-    7:              boolean                 restrictHeight  = false
+    1:              boolean                 placeInColumns  = true,
+    2:              boolean                 restrictWidth   = true,
+    3:              boolean                 restrictHeight  = false,
+    4: optional     integer                 width,
+    5: optional     integer                 height,
+    6  optional     integer                 leftPos,
+    7  optional     integer                 topPos
 }
 
 struct DataGrid {
@@ -141,22 +141,22 @@ struct ConfigurationData {
     1:              string-id               id,
     2:              string                  name,
 
-    3:  optional    list<Translation>       translations,
-    4:  optional    list<LearningPath>      learningPaths,
-    5:  optional    list<Component>         components,
+    3: optional     list<Translation>       translations,
+    4: optional     list<LearningPath>      learningPaths,
+    5: optional     list<Component>         components,
 
-    6:              DragMode                dragMode,
+    6:              string                  language = "en",
+    7:              boolean                 valid = false,
 
-    7:              DataRows                rows,
-    8:              DataColumns             columns,
-    9:              DataGrid                grid,
+    8:              DragMode                dragMode,
 
-    10:             DataCanvas              canvas,
-    11:             integer                 screenWidth     = 800,
-    12:             integer                 screenHeight    = 600,
+    9:              DataRows                rows,
+    10:             DataColumns             columns,
+    11:             DataGrid                grid,
 
-    13:             string                  language = "en",
-    14:             boolean                 valid = false
+    12:             DataCanvas              canvas,
+    13: optional    integer                 screenWidth,
+    14: optional    integer                 screenHeight
 }
 
 

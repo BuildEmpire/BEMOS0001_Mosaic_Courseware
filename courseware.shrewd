@@ -178,8 +178,8 @@ enum EditableFormFieldType {
 }
 
 struct EditableFormFieldHtml {
-    1:              list                    cssPath,
-    2:              list                    styleFormats,
+    1:              list<string>            cssPath,
+    2:              list<map>               styleFormats,
     3: optional     integer                 rows,
     4: optional     map<string,string>      cssAttributes
 }

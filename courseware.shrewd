@@ -200,10 +200,10 @@ struct EditableFormFieldText {
 
 struct EditableFormField {
     1:              EditableFormFieldType   type,
-    2:              string                  id,
-    3:              string                  name,
-    4:              string                  title,
-    5:              boolean                 required,
+    2:              string                  name,
+    3:              string                  title,
+    4:              boolean                 required,
+    5: optional     string                  id,
     6: optional     mixed                   value,
     7: optional     struct                  data
 }
@@ -316,7 +316,7 @@ service ConnectorInbound {
     before page load completion.
     */
     void    Ready(
-        1:   native-js-Object     OutboundService
+        1:   native-js-Object     OutboundServer
     ),
 
     /**

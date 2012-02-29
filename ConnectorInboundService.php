@@ -12,7 +12,7 @@ public function __construct($handler) {
 $this->_handler = $handler;
 }
 public function getShrewdVersion(){
-return "3d3942ef298de699b46311f7badd1b52022f6298";
+return "ea9c854ea9b4d4c8462ab50f33f686cc0d16cc25";
 }
 public function getHandler(){
 return $this->_handler;
@@ -221,7 +221,7 @@ return "";
 private function _ReadyGetArguments() {
 $params = array();
 $param = new Parameter();
-$param->name = "OutboundService";
+$param->name = "OutboundServer";
 $param->type = "\\native-js-Object";
 $param->optional = false;
 $params[] = $param;

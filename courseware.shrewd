@@ -646,7 +646,7 @@ service ConnectorOutbound {
     It is also possible to send methods that will be called on select or
     cancel.
     */
-    void    OpenResourceManager(
+    boolean    OpenResourceManager(
         1:              list<string>         fileExtensions
     ),
 

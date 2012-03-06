@@ -30,6 +30,10 @@ public $metrics;
  * @var integer
  */
 public $scale;
+/**
+ * @var \BuildEmpire\Mosaic\Courseware\Relationship
+ */
+public $autoAdjacent;
 public function getShrewdNS(){
 return "BuildEmpire.Mosaic.Courseware.ComponentInstance";
 }
@@ -42,6 +46,7 @@ $paramArray[] = $shrewd->getParameter("ComponentInstance", 1, $this->name, "name
 $paramArray[] = $shrewd->getParameter("ComponentInstance", 1, $this->data, "data", "map", "", true);
 $paramArray[] = ($shrewd->getParameter("ComponentInstance", 1, $this->metrics, "metrics", "\BuildEmpire\Mosaic\Courseware\ComponentMetrics", "", true)) ? $shrewd->getParameter("ComponentInstance", 1, $this->metrics, "metrics", "\BuildEmpire\Mosaic\Courseware\ComponentMetrics", "", true) : null;
 $paramArray[] = $shrewd->getParameter("ComponentInstance", 1, $this->scale, "scale", "integer", "", true);
+$paramArray[] = ($shrewd->getParameter("ComponentInstance", 1, $this->autoAdjacent, "autoAdjacent", "\BuildEmpire\Mosaic\Courseware\Relationship", "", true)) ? $shrewd->getParameter("ComponentInstance", 1, $this->autoAdjacent, "autoAdjacent", "\BuildEmpire\Mosaic\Courseware\Relationship", "", true) : null;
 return $paramArray;
 }
 public function setShrewd(
@@ -57,5 +62,10 @@ $theClass->setShrewd($shrewd, $shrewdArray[4]);
 $this->metrics = $theClass;
 }
 if (isset($shrewdArray[5])) {$this->scale = $shrewd->setParameter("ComponentInstance", 2, $shrewdArray[5], "scale", "integer", "", true);}
+if ($shrewdArray[6]) {
+$theClass = new \BuildEmpire\Mosaic\Courseware\Relationship();
+$theClass->setShrewd($shrewd, $shrewdArray[6]);
+$this->autoAdjacent = $theClass;
+}
 }
 }

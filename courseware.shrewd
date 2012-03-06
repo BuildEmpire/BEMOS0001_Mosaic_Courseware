@@ -36,6 +36,36 @@ struct LearningPath {
 
 
 
+
+
+/*
+Specific relationships stored within the screen data
+*/
+enum RelationshipDirection {
+    ALL             = 1,
+    PREVIOUS        = 2,
+    NEXT            = 3
+}
+
+enum RelationshipTarget {
+    ALL             = 1,
+    SAME            = 2
+}
+
+struct Relationship {
+    1:              string                  id,
+    2:              mixed                   source,
+    3:              mixed                   event,
+    4:              mixed                   target,
+    5:              mixed                   action,
+    6:  optional    mixed                   data,
+    7:  optional    RelationshipDirection   direction
+}
+
+
+
+
+
 enum ScalingMode {
     NONE            = 1,
     FREE            = 2,
@@ -65,7 +95,8 @@ struct ComponentInstance {
     3:              string                  name,
     4:  optional    map                     data,
     5:  optional    ComponentMetrics        metrics,
-    6:  optional    ScalingMode             scale
+    6:  optional    ScalingMode             scale,
+    7:  optional    Relationship            autoAdjacent
 }
 
 struct ColumnRowMetrics {
@@ -219,21 +250,6 @@ struct EditableForm {
 }
 
 
-
-
-
-
-/*
-Specific relationships stored within the screen data
-*/
-struct Relationship {
-    1:              string                  id,
-    2:              string                  source,
-    3:              mixed                   event,
-    4:              string                  target,
-    5:              mixed                   action,
-    6:  optional    mixed                   data
-}
 
 
 

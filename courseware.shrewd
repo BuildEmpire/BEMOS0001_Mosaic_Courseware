@@ -48,7 +48,7 @@ enum RelationshipDirection {
 }
 
 enum RelationshipTarget {
-    ALL             = 1,
+    ANY             = 1,
     SAME            = 2
 }
 
@@ -96,7 +96,7 @@ struct ComponentInstance {
     4:  optional    map                     data,
     5:  optional    ComponentMetrics        metrics,
     6:  optional    ScalingMode             scale,
-    7:  optional    Relationship            autoAdjacent
+    7:  optional    mixed                   autoAdjacent
 }
 
 struct ColumnRowMetrics {

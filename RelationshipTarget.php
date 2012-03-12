@@ -5,6 +5,6 @@
 namespace BuildEmpire\Mosaic\Courseware;
 class RelationshipTarget
 {
-public static $ALL = 1;
+public static $ANY = 1;
 public static $SAME = 2;
 }

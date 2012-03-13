@@ -42,9 +42,8 @@ struct LearningPath {
 Specific relationships stored within the screen data
 */
 enum RelationshipDirection {
-    ALL             = 1,
-    PREVIOUS        = 2,
-    NEXT            = 3
+    PREVIOUS        = 1,
+    NEXT            = 2
 }
 
 enum RelationshipTarget {

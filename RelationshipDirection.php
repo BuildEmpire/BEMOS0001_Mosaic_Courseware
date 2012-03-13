@@ -5,7 +5,6 @@
 namespace BuildEmpire\Mosaic\Courseware;
 class RelationshipDirection
 {
-public static $ALL = 1;
-public static $PREVIOUS = 2;
-public static $NEXT = 3;
+public static $PREVIOUS = 1;
+public static $NEXT = 2;
 }

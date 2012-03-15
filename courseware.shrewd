@@ -218,6 +218,10 @@ struct EditableFormFieldSelect {
     1:              map<string,string>      options
 }
 
+struct EditableFormFieldRadio {
+    1:              list<map>               values
+}
+
 struct EditableFormFieldRange {
     1:              integer                 min,
     2:              integer                 max,

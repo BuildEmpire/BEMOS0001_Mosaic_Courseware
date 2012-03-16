@@ -218,6 +218,9 @@ struct EditableFormFieldSelect {
     1:              map<string,string>      options
 }
 
+/*
+The values map consists of a "value" and a "title" option.
+*/
 struct EditableFormFieldRadio {
     1:              list<map>               values
 }

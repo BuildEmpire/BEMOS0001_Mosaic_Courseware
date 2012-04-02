@@ -95,7 +95,8 @@ struct ComponentInstance {
     4:  optional    map                     data,
     5:  optional    ComponentMetrics        metrics,
     6:  optional    ScalingMode             scale,
-    7:  optional    mixed                   autoAdjacent
+    7:  optional    mixed                   autoAdjacent,
+    8:  optional    map                     settings,
 }
 
 struct ColumnRowMetrics {

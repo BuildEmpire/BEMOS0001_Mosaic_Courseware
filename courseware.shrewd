@@ -95,7 +95,8 @@ struct ComponentInstance {
     4:  optional    map                     data,
     5:  optional    ComponentMetrics        metrics,
     6:  optional    ScalingMode             scale,
-    7:  optional    mixed                   autoAdjacent
+    7:  optional    mixed                   autoAdjacent,
+    8:  optional    map                     settings,
 }
 
 struct ColumnRowMetrics {
@@ -240,7 +241,7 @@ struct EditableFormField {
     2:              string                  name,
     3:              string                  title,
     4:              boolean                 required,
-    5: optional     string                  id,
+    5: optional     string-id               id,
     6: optional     mixed                   value,
     7: optional     struct                  data
 }

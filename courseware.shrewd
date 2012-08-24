@@ -73,6 +73,12 @@ enum ScalingMode {
     YAXIS           = 5
 }
 
+enum Alignment {
+    LEFT            = 0,
+    CENTER          = 1,
+    RIGHT           = 2
+}
+
 struct ComponentMetrics {
     1:  optional    float                   xPercent,
     2:  optional    float                   yPercent,
@@ -80,6 +86,16 @@ struct ComponentMetrics {
     4:  optional    float                   heightPercent,
     5:  optional    integer                 tabIndex,
     6:  optional    integer                 zIndex
+}
+
+struct ComponentDisplayProps {
+	1:  optional    Alignment				alignment,
+    1:  optional    integer                 marginTop,
+    2:  optional    integer                 marginBottom,
+    3:  optional    integer                 marginLeft,
+    4:  optional    integer                 marginRight,
+    5:  optional    integer                 initialVisual,
+    6:  optional    string                  appliedClass
 }
 
 struct Component {
@@ -97,6 +113,7 @@ struct ComponentInstance {
     6:  optional    ScalingMode             scale,
     7:  optional    mixed                   autoAdjacent,
     8:  optional    map                     settings,
+	9:  optional    ComponentDisplayProps   displayProperties
 }
 
 struct ColumnRowMetrics {
@@ -305,7 +322,8 @@ struct RelationshipContainer {
 struct ScreenData {
     1:  optional    list<Row>               rows,
     2:  optional    list<ComponentInstance> freeComponents,
-    3:  optional    list<Relationship>      relationships
+    3:  optional    list<Relationship>      relationships,
+    4:  optional    string                  appliedClass
 }
 
 enum StructureItemType {

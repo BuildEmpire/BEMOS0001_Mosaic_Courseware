@@ -65,6 +65,19 @@ struct Relationship {
 
 
 
+/*
+Controller buttons
+*/
+struct ControllerButton {
+    1:              string                  id,
+    2:              string                  title,
+    3:              boolean                 selected
+}
+
+
+
+
+
 enum ScalingMode {
     NONE            = 1,
     FREE            = 2,
@@ -617,6 +630,23 @@ service ConnectorInbound {
     The edit dialog has been closed and no data has been saved.
     */
     void    OnEditDialogClose(
+    ),
+
+    /**
+    GetControllerButtons
+    Get a list of ControllerButton objects that should be drawn 
+    onscreen at the current moment.
+    */
+    list<ControllerButton>    GetControllerButtons(
+    ),
+
+    /**
+    TriggerControllerButton
+    Trigger the ControllerButton (simulates a "click" event).
+    */
+    mixed    TriggerControllerButton(
+        1:              string          id,
+        2:  optional    map             data
     )
 }
 
@@ -666,6 +696,15 @@ service ConnectorOutbound {
     the external service to enable.
     */
     void    SetScreenDataDirty(
+    ),
+
+    /**
+    SetControllerButtonsDirty
+    Inform the external service that the controller buttons have changed.
+    The external service should then call GetControllerButtons on the 
+    InboundService and redraw the buttons from scratch.
+    */
+    void    SetControllerButtonsDirty(
     ),
 
     /**

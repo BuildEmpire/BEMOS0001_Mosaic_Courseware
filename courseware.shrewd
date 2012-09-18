@@ -92,6 +92,11 @@ enum Alignment {
     RIGHT           = 2
 }
 
+struct ScreenSound {
+    1:              string                  soundFile,
+    2:              boolean                 startImmediately
+}
+
 struct ComponentMetrics {
     1:  optional    float                   xPercent,
     2:  optional    float                   yPercent,
@@ -103,12 +108,12 @@ struct ComponentMetrics {
 
 struct ComponentDisplayProps {
 	1:  optional    Alignment				alignment,
-    1:  optional    integer                 marginTop,
-    2:  optional    integer                 marginBottom,
-    3:  optional    integer                 marginLeft,
-    4:  optional    integer                 marginRight,
-    5:  optional    integer                 initialVisual,
-    6:  optional    string                  appliedClass
+    2:  optional    integer                 marginTop,
+    3:  optional    integer                 marginBottom,
+    4:  optional    integer                 marginLeft,
+    5:  optional    integer                 marginRight,
+    6:  optional    integer                 initialVisual,
+    7:  optional    string                  appliedClass
 }
 
 struct Component {
@@ -235,7 +240,8 @@ enum EditableFormFieldType {
     SELECT          = 5,
     CHECKBOX        = 6,
     RADIO           = 7,
-    RANGE           = 8
+    RANGE           = 8,
+    BUTTON          = 9
 }
 
 struct EditableFormFieldHtml {
@@ -336,7 +342,8 @@ struct ScreenData {
     1:  optional    list<Row>               rows,
     2:  optional    list<ComponentInstance> freeComponents,
     3:  optional    list<Relationship>      relationships,
-    4:  optional    string                  appliedClass
+    4:  optional    string                  appliedClass,
+    5:  optional    ScreenSound             sound
 }
 
 enum StructureItemType {

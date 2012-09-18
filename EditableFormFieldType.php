@@ -13,4 +13,5 @@ public static $SELECT = 5;
 public static $CHECKBOX = 6;
 public static $RADIO = 7;
 public static $RANGE = 8;
+public static $BUTTON = 9;
 }

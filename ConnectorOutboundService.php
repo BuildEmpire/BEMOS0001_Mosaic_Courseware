@@ -12,7 +12,7 @@ public function __construct($handler) {
 $this->_handler = $handler;
 }
 public function getShrewdVersion(){
-return "87820e03ace2cf2d27a2e0c05fb4d0843cc0f803";
+return "75cc842ee9ad90c9176dac6987a54d5167278c4a";
 }
 public function getHandler(){
 return $this->_handler;
@@ -36,6 +36,12 @@ private function _SetScreenDataDirtyGetReturnType() {
 return "void";
 }
 private function _SetScreenDataDirtyGetReturnContentType() {
+return "";
+}
+private function _SetControllerButtonsDirtyGetReturnType() {
+return "void";
+}
+private function _SetControllerButtonsDirtyGetReturnContentType() {
 return "";
 }
 private function _SetContextInformationGetReturnType() {
@@ -76,6 +82,10 @@ $params[] = $param;
 return $params;
 }
 private function _SetScreenDataDirtyGetArguments() {
+$params = array();
+return $params;
+}
+private function _SetControllerButtonsDirtyGetArguments() {
 $params = array();
 return $params;
 }
@@ -130,6 +140,10 @@ $params = array();
 return $params;
 }
 private function _SetScreenDataDirtyGetExceptions() {
+$params = array();
+return $params;
+}
+private function _SetControllerButtonsDirtyGetExceptions() {
 $params = array();
 return $params;
 }

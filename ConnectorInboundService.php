@@ -12,7 +12,7 @@ public function __construct($handler) {
 $this->_handler = $handler;
 }
 public function getShrewdVersion(){
-return "87820e03ace2cf2d27a2e0c05fb4d0843cc0f803";
+return "75cc842ee9ad90c9176dac6987a54d5167278c4a";
 }
 public function getHandler(){
 return $this->_handler;
@@ -216,6 +216,18 @@ private function _OnEditDialogCloseGetReturnType() {
 return "void";
 }
 private function _OnEditDialogCloseGetReturnContentType() {
+return "";
+}
+private function _GetControllerButtonsGetReturnType() {
+return "list";
+}
+private function _GetControllerButtonsGetReturnContentType() {
+return "\BuildEmpire\Mosaic\Courseware\ControllerButton";
+}
+private function _TriggerControllerButtonGetReturnType() {
+return "mixed";
+}
+private function _TriggerControllerButtonGetReturnContentType() {
 return "";
 }
 private function _ReadyGetArguments() {
@@ -442,6 +454,24 @@ private function _OnEditDialogCloseGetArguments() {
 $params = array();
 return $params;
 }
+private function _GetControllerButtonsGetArguments() {
+$params = array();
+return $params;
+}
+private function _TriggerControllerButtonGetArguments() {
+$params = array();
+$param = new Parameter();
+$param->name = "id";
+$param->type = "string";
+$param->optional = false;
+$params[] = $param;
+$param = new Parameter();
+$param->name = "data";
+$param->type = "map";
+$param->optional = true;
+$params[] = $param;
+return $params;
+}
 private function _ReadyGetExceptions() {
 $params = array();
 return $params;
@@ -571,6 +601,14 @@ $params = array();
 return $params;
 }
 private function _OnEditDialogCloseGetExceptions() {
+$params = array();
+return $params;
+}
+private function _GetControllerButtonsGetExceptions() {
+$params = array();
+return $params;
+}
+private function _TriggerControllerButtonGetExceptions() {
 $params = array();
 return $params;
 }

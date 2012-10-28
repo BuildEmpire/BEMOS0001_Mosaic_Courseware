@@ -352,6 +352,19 @@ enum StructureItemType {
     SCREEN  = 3
 }
 
+enum StructureItemTag {
+    ANIMATION_REQUIRED = 1,
+    ANIMATION_PRESENT  = 2,
+    AUDIO_REQUIRED = 4,
+    AUDIO_PRESENT  = 8,
+    GRAPHIC_REQUIRED = 16,
+    GRAPHIC_PRESENT  = 32,
+    VIDEO_REQUIRED = 64,
+    VIDEO_PRESENT  = 128,
+    STAR_REQUIRED = 256,
+    STAR_PRESENT  = 512
+}
+
 struct StructureItem {
     1:              string-id                           id,
     2:              string-id                           alias,
@@ -360,7 +373,8 @@ struct StructureItem {
     5:              boolean                             populated,
     6:  optional    list<StructureItem>                 children,
     7:  optional    map<string-id,StructureItemType>    learningPathIds,
-    8:  optional    ScreenData                          screenData
+    8:  optional    ScreenData                          screenData,
+    9:  optional    StructureItemTag                    tags = 0
 }
 
 

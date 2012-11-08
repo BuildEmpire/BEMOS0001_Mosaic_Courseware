@@ -27,7 +27,7 @@ return $paramArray;
 public function setShrewd(
 \BuildEmpire\Shrewd\IShrewd $shrewd, 
 $shrewdArray){
-if ($shrewdArray[0]) {
+if (isset($shrewdArray[0]) && $shrewdArray[0]) {
 $theClass = new \BuildEmpire\Mosaic\Courseware\RelationshipCollection();
 $theClass->setShrewd($shrewd, $shrewdArray[0]);
 $this->engine = $theClass;

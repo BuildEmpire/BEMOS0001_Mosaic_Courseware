@@ -34,7 +34,7 @@ public function setShrewd(
 $shrewdArray){
 if (isset($shrewdArray[0])) {$this->id = $shrewd->setParameter("Column", 2, $shrewdArray[0], "id", "string-id", "", false);}
 if (isset($shrewdArray[1])) {$this->components = $shrewd->setParameter("Column", 2, $shrewdArray[1], "components", "list", "\BuildEmpire\Mosaic\Courseware\ComponentInstance", true);}
-if ($shrewdArray[2]) {
+if (isset($shrewdArray[2]) && $shrewdArray[2]) {
 $theClass = new \BuildEmpire\Mosaic\Courseware\ColumnRowMetrics();
 $theClass->setShrewd($shrewd, $shrewdArray[2]);
 $this->metrics = $theClass;

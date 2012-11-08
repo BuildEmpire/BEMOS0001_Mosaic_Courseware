@@ -46,7 +46,7 @@ if (isset($shrewdArray[0])) {$this->rows = $shrewd->setParameter("ScreenData", 2
 if (isset($shrewdArray[1])) {$this->freeComponents = $shrewd->setParameter("ScreenData", 2, $shrewdArray[1], "freeComponents", "list", "\BuildEmpire\Mosaic\Courseware\ComponentInstance", true);}
 if (isset($shrewdArray[2])) {$this->relationships = $shrewd->setParameter("ScreenData", 2, $shrewdArray[2], "relationships", "list", "\BuildEmpire\Mosaic\Courseware\Relationship", true);}
 if (isset($shrewdArray[3])) {$this->appliedClass = $shrewd->setParameter("ScreenData", 2, $shrewdArray[3], "appliedClass", "string", "", true);}
-if (isset($shrewdArray[4]) && $shrewdArray[4]) {
+if ($shrewdArray[4]) {
 $theClass = new \BuildEmpire\Mosaic\Courseware\ScreenSound();
 $theClass->setShrewd($shrewd, $shrewdArray[4]);
 $this->sound = $theClass;

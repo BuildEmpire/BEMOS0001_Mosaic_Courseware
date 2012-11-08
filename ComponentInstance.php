@@ -66,7 +66,7 @@ if (isset($shrewdArray[0])) {$this->id = $shrewd->setParameter("ComponentInstanc
 if (isset($shrewdArray[1])) {$this->alias = $shrewd->setParameter("ComponentInstance", 2, $shrewdArray[1], "alias", "string", "", false);}
 if (isset($shrewdArray[2])) {$this->name = $shrewd->setParameter("ComponentInstance", 2, $shrewdArray[2], "name", "string", "", false);}
 if (isset($shrewdArray[3])) {$this->data = $shrewd->setParameter("ComponentInstance", 2, $shrewdArray[3], "data", "map", "", true);}
-if (isset($shrewdArray[4]) && $shrewdArray[4]) {
+if ($shrewdArray[4]) {
 $theClass = new \BuildEmpire\Mosaic\Courseware\ComponentMetrics();
 $theClass->setShrewd($shrewd, $shrewdArray[4]);
 $this->metrics = $theClass;
@@ -74,7 +74,7 @@ $this->metrics = $theClass;
 if (isset($shrewdArray[5])) {$this->scale = $shrewd->setParameter("ComponentInstance", 2, $shrewdArray[5], "scale", "integer", "", true);}
 if (isset($shrewdArray[6])) {$this->autoAdjacent = $shrewd->setParameter("ComponentInstance", 2, $shrewdArray[6], "autoAdjacent", "mixed", "", true);}
 if (isset($shrewdArray[7])) {$this->settings = $shrewd->setParameter("ComponentInstance", 2, $shrewdArray[7], "settings", "map", "", true);}
-if (isset($shrewdArray[8]) && $shrewdArray[8]) {
+if ($shrewdArray[8]) {
 $theClass = new \BuildEmpire\Mosaic\Courseware\ComponentDisplayProps();
 $theClass->setShrewd($shrewd, $shrewdArray[8]);
 $this->displayProperties = $theClass;

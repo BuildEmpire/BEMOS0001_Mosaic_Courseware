@@ -95,22 +95,22 @@ if (isset($shrewdArray[4])) {$this->components = $shrewd->setParameter("Configur
 if (isset($shrewdArray[5])) {$this->language = $shrewd->setParameter("ConfigurationData", 2, $shrewdArray[5], "language", "string", "", false);}
 if (isset($shrewdArray[6])) {$this->valid = $shrewd->setParameter("ConfigurationData", 2, $shrewdArray[6], "valid", "boolean", "", false);}
 if (isset($shrewdArray[7])) {$this->dragMode = $shrewd->setParameter("ConfigurationData", 2, $shrewdArray[7], "dragMode", "integer", "", false);}
-if (isset($shrewdArray[8]) && $shrewdArray[8]) {
+if ($shrewdArray[8]) {
 $theClass = new \BuildEmpire\Mosaic\Courseware\DataRows();
 $theClass->setShrewd($shrewd, $shrewdArray[8]);
 $this->rows = $theClass;
 }
-if (isset($shrewdArray[9]) && $shrewdArray[9]) {
+if ($shrewdArray[9]) {
 $theClass = new \BuildEmpire\Mosaic\Courseware\DataColumns();
 $theClass->setShrewd($shrewd, $shrewdArray[9]);
 $this->columns = $theClass;
 }
-if (isset($shrewdArray[10]) && $shrewdArray[10]) {
+if ($shrewdArray[10]) {
 $theClass = new \BuildEmpire\Mosaic\Courseware\DataGrid();
 $theClass->setShrewd($shrewd, $shrewdArray[10]);
 $this->grid = $theClass;
 }
-if (isset($shrewdArray[11]) && $shrewdArray[11]) {
+if ($shrewdArray[11]) {
 $theClass = new \BuildEmpire\Mosaic\Courseware\DataCanvas();
 $theClass->setShrewd($shrewd, $shrewdArray[11]);
 $this->canvas = $theClass;

@@ -245,10 +245,12 @@ enum EditableFormFieldType {
 }
 
 struct EditableFormFieldHtml {
-    1:              list<string>            cssPath,
-    2:              list<map>               styleFormats,
-    3: optional     integer                 rows,
-    4: optional     map<string,string>      cssAttributes
+    1: optional     list<string>            contentCss,
+    2: optional     list<map>               styleFormats,
+    3: optional     map<string,string>      cssAttributes,
+    4: optional     string                  validElements,
+    5: optional     map                     options,
+    6: optional     integer                 rows
 }
 
 struct EditableFormFieldSelect {
@@ -352,19 +354,6 @@ enum StructureItemType {
     SCREEN  = 3
 }
 
-enum StructureItemTag {
-    ANIMATION_REQUIRED = 1,
-    ANIMATION_PRESENT  = 2,
-    AUDIO_REQUIRED = 4,
-    AUDIO_PRESENT  = 8,
-    GRAPHIC_REQUIRED = 16,
-    GRAPHIC_PRESENT  = 32,
-    VIDEO_REQUIRED = 64,
-    VIDEO_PRESENT  = 128,
-    STAR_REQUIRED = 256,
-    STAR_PRESENT  = 512
-}
-
 struct StructureItem {
     1:              string-id                           id,
     2:              string-id                           alias,
@@ -373,8 +362,7 @@ struct StructureItem {
     5:              boolean                             populated,
     6:  optional    list<StructureItem>                 children,
     7:  optional    map<string-id,StructureItemType>    learningPathIds,
-    8:  optional    ScreenData                          screenData,
-    9:  optional    StructureItemTag                    tags = 0
+    8:  optional    ScreenData                          screenData
 }
 
 
@@ -655,7 +643,7 @@ service ConnectorInbound {
 
     /**
     GetControllerButtons
-    Get a list of ControllerButton objects that should be drawn 
+    Get a list of ControllerButton objects that should be drawn
     onscreen at the current moment.
     */
     list<ControllerButton>    GetControllerButtons(
@@ -722,7 +710,7 @@ service ConnectorOutbound {
     /**
     SetControllerButtonsDirty
     Inform the external service that the controller buttons have changed.
-    The external service should then call GetControllerButtons on the 
+    The external service should then call GetControllerButtons on the
     InboundService and redraw the buttons from scratch.
     */
     void    SetControllerButtonsDirty(

@@ -34,6 +34,10 @@ struct LearningPath {
     3:              string                  name
 }
 
+enum CoursewareType {
+    DANNY_01   = 1,
+    FRED_01    = 2
+}
 
 
 
@@ -222,7 +226,8 @@ struct ConfigurationData {
 
     12:             DataCanvas              canvas,
     13: optional    integer                 screenWidth,
-    14: optional    integer                 screenHeight
+    14: optional    integer                 screenHeight,
+    15: optional    CoursewareType          coursewareType
 }
 
 

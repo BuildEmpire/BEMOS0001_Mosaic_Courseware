@@ -62,6 +62,10 @@ public $screenWidth;
  * @var integer
  */
 public $screenHeight;
+/**
+ * @var integer
+ */
+public $coursewareType;
 public function getShrewdNS(){
 return "BuildEmpire.Mosaic.Courseware.ConfigurationData";
 }
@@ -82,6 +86,7 @@ $paramArray[] = ($shrewd->getParameter("ConfigurationData", 1, $this->grid, "gri
 $paramArray[] = ($shrewd->getParameter("ConfigurationData", 1, $this->canvas, "canvas", "\BuildEmpire\Mosaic\Courseware\DataCanvas", "", false)) ? $shrewd->getParameter("ConfigurationData", 1, $this->canvas, "canvas", "\BuildEmpire\Mosaic\Courseware\DataCanvas", "", false) : null;
 $paramArray[] = $shrewd->getParameter("ConfigurationData", 1, $this->screenWidth, "screenWidth", "integer", "", true);
 $paramArray[] = $shrewd->getParameter("ConfigurationData", 1, $this->screenHeight, "screenHeight", "integer", "", true);
+$paramArray[] = $shrewd->getParameter("ConfigurationData", 1, $this->coursewareType, "coursewareType", "integer", "", true);
 return $paramArray;
 }
 public function setShrewd(
@@ -117,5 +122,6 @@ $this->canvas = $theClass;
 }
 if (isset($shrewdArray[12])) {$this->screenWidth = $shrewd->setParameter("ConfigurationData", 2, $shrewdArray[12], "screenWidth", "integer", "", true);}
 if (isset($shrewdArray[13])) {$this->screenHeight = $shrewd->setParameter("ConfigurationData", 2, $shrewdArray[13], "screenHeight", "integer", "", true);}
+if (isset($shrewdArray[14])) {$this->coursewareType = $shrewd->setParameter("ConfigurationData", 2, $shrewdArray[14], "coursewareType", "integer", "", true);}
 }
 }

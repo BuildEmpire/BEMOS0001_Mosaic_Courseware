@@ -350,7 +350,8 @@ struct ScreenData {
     2:  optional    list<ComponentInstance> freeComponents,
     3:  optional    list<Relationship>      relationships,
     4:  optional    string                  appliedClass,
-    5:  optional    ScreenSound             sound
+    5:  optional    ScreenSound             sound,
+    6:  optional    html                    rawData,
 }
 
 enum StructureItemType {

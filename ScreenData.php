@@ -26,6 +26,10 @@ public $appliedClass;
  * @var \BuildEmpire\Mosaic\Courseware\ScreenSound
  */
 public $sound;
+/**
+ * @var html
+ */
+public $rawData;
 public function getShrewdNS(){
 return "BuildEmpire.Mosaic.Courseware.ScreenData";
 }
@@ -37,6 +41,7 @@ $paramArray[] = $shrewd->getParameter("ScreenData", 1, $this->freeComponents, "f
 $paramArray[] = $shrewd->getParameter("ScreenData", 1, $this->relationships, "relationships", "list", "\BuildEmpire\Mosaic\Courseware\Relationship", true);
 $paramArray[] = $shrewd->getParameter("ScreenData", 1, $this->appliedClass, "appliedClass", "string", "", true);
 $paramArray[] = ($shrewd->getParameter("ScreenData", 1, $this->sound, "sound", "\BuildEmpire\Mosaic\Courseware\ScreenSound", "", true)) ? $shrewd->getParameter("ScreenData", 1, $this->sound, "sound", "\BuildEmpire\Mosaic\Courseware\ScreenSound", "", true) : null;
+$paramArray[] = $shrewd->getParameter("ScreenData", 1, $this->rawData, "rawData", "html", "", true);
 return $paramArray;
 }
 public function setShrewd(
@@ -51,5 +56,6 @@ $theClass = new \BuildEmpire\Mosaic\Courseware\ScreenSound();
 $theClass->setShrewd($shrewd, $shrewdArray[4]);
 $this->sound = $theClass;
 }
+if (isset($shrewdArray[5])) {$this->rawData = $shrewd->setParameter("ScreenData", 2, $shrewdArray[5], "rawData", "html", "", true);}
 }
 }
